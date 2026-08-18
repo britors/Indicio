@@ -28,6 +28,16 @@ Todos os nomes, equipes, campeonatos e símbolos serão fictícios.
 
 O planejamento está dividido em issues do GitHub. Os textos-fonte do backlog também estão disponíveis em [`issues/`](issues/README.md).
 
+## Desenvolvimento
+
+Quem utiliza openSUSE Leap 16.0 pode preparar as ferramentas básicas com:
+
+```bash
+./scripts/setup-opensuse-leap.sh
+```
+
+Consulte o [guia de contribuição](CONTRIBUTING.md) para instalação do Android Studio, fluxo de branches, testes e critérios técnicos e editoriais.
+
 ## Estado do projeto
 
 O repositório está na fase inicial de planejamento do MVP. Ainda não há uma versão executável do aplicativo.
@@ -35,4 +45,3 @@ O repositório está na fase inicial de planejamento do MVP. Ainda não há uma 
 ## Licença
 
 Este projeto é software livre, licenciado sob a **GNU General Public License v3.0 (GPLv3)**. Consulte os termos oficiais em <https://www.gnu.org/licenses/gpl-3.0.html>.
-
