@@ -2,8 +2,8 @@
 
 set -Eeuo pipefail
 
-readonly EXPECTED_ID="opensuse-leap"
-readonly EXPECTED_VERSION="16.0"
+readonly EXPECTED_ID="lyra-os"
+readonly EXPECTED_VERSION="2026.08-alpha5"
 readonly ANDROID_STUDIO_APP_ID="com.google.AndroidStudio"
 
 install_android_studio=false
