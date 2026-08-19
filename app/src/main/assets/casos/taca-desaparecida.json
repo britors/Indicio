@@ -1,0 +1,368 @@
+{
+  "versaoEsquema": 1,
+  "id": "taca-desaparecida",
+  "titulo": "O Mistério da Taça Desaparecida",
+  "sinopse": "Poucas horas antes de uma exposição comemorativa, uma famosa taça do futebol desaparece de uma sala aparentemente trancada.",
+  "categoria": "futebol",
+  "cenaInicial": "chegada",
+  "cenas": [
+    {
+      "id": "chegada",
+      "tipo": "comum",
+      "texto": "A Casa da Memória Esportiva ainda está fechada ao público. Dona Ercília Mourão, curadora da exposição, espera você na porta da sala principal. Em poucas horas os visitantes chegarão para ver a Taça das Colinas, conquistada pelo Clube Atlético Farol em 1961. O pedestal onde a taça deveria estar continua ali. A taça, não.",
+      "imagem": {
+        "recurso": "cena_chegada",
+        "descricaoAcessivel": "Entrada de um pequeno museu, com uma sala iluminada ao fundo e uma vitrine de vidro vazia sobre um pedestal de madeira."
+      },
+      "escolhas": [
+        {
+          "id": "chegada-a",
+          "texto": "Observar a sala antes de conversar",
+          "proximaCena": "vitrine"
+        },
+        {
+          "id": "chegada-b",
+          "texto": "Ouvir o que dona Ercília tem a dizer",
+          "proximaCena": "ercilia"
+        }
+      ]
+    },
+    {
+      "id": "vitrine",
+      "tipo": "comum",
+      "texto": "A vitrine está intacta. O vidro não tem trinca, arranhão nem marca de força, e a tampa continua encaixada. O pedestal, porém, não está centralizado: ele foi parar alguns dedos à esquerda da marca no piso, onde o verniz é mais escuro.",
+      "imagem": {
+        "recurso": "cena_vitrine",
+        "descricaoAcessivel": "Vitrine de vidro fechada sobre um pedestal de madeira levemente deslocado, com uma marca mais escura no chão ao lado."
+      },
+      "pista": {
+        "id": "pedestal-deslocado",
+        "titulo": "O pedestal fora do lugar",
+        "descricao": "O pedestal está alguns centímetros à esquerda da marca antiga no piso, e a vitrine não foi forçada."
+      },
+      "escolhas": [
+        {
+          "id": "vitrine-a",
+          "texto": "Examinar o chão em volta do pedestal",
+          "proximaCena": "po"
+        },
+        {
+          "id": "vitrine-b",
+          "texto": "Olhar para o forro, acima da vitrine",
+          "proximaCena": "forro"
+        }
+      ]
+    },
+    {
+      "id": "ercilia",
+      "tipo": "comum",
+      "texto": "— Tranquei esta sala às sete da noite, como faço todo dia — diz dona Ercília. — Hoje cheguei direto para uma reunião e só entrei aqui há vinte minutos.\n\nEla fala com calma, mas aperta uma das mãos na outra.",
+      "narracao": "Dona Ercília diz: Tranquei esta sala às sete da noite, como faço todo dia. Hoje cheguei direto para uma reunião e só entrei aqui há vinte minutos. Ela fala com calma, mas aperta uma das mãos na outra.",
+      "imagem": {
+        "recurso": "cena_ercilia",
+        "descricaoAcessivel": "Mulher de meia-idade com crachá de curadora, em pé ao lado de um painel da exposição, com as mãos unidas à frente do corpo."
+      },
+      "pista": {
+        "id": "sala-trancada-as-19h",
+        "titulo": "A sala foi trancada às sete da noite",
+        "descricao": "Dona Ercília trancou a sala na noite anterior e só voltou hoje de manhã, depois de uma reunião."
+      },
+      "escolhas": [
+        {
+          "id": "ercilia-a",
+          "texto": "Perguntar quem mais tem chave",
+          "proximaCena": "chaves"
+        },
+        {
+          "id": "ercilia-b",
+          "texto": "Pedir licença e examinar a vitrine",
+          "proximaCena": "vitrine"
+        }
+      ]
+    },
+    {
+      "id": "po",
+      "tipo": "comum",
+      "texto": "No piso, uma faixa fina de poeira acompanha a base do pedestal. As marcas são contínuas, como as de um móvel empurrado devagar. Não há sinal de tombo, de pressa nem de objeto derrubado. Quem moveu o pedestal tinha tempo e tinha cuidado.",
+      "imagem": {
+        "recurso": "cena_po",
+        "descricaoAcessivel": "Detalhe do piso encerado mostrando duas faixas contínuas de poeira deslocada junto à base do pedestal."
+      },
+      "pista": {
+        "id": "marcas-de-arraste",
+        "titulo": "Marcas de arraste no piso",
+        "descricao": "O pedestal foi empurrado devagar, sem pressa e sem nada cair. É o movimento de quem trabalha, não de quem foge."
+      },
+      "escolhas": [
+        {
+          "id": "po-a",
+          "texto": "Procurar alguma coisa atrás do pedestal",
+          "proximaCena": "atras-do-pedestal"
+        },
+        {
+          "id": "po-b",
+          "texto": "Conversar com o segurança da noite",
+          "proximaCena": "nivaldo"
+        }
+      ]
+    },
+    {
+      "id": "forro",
+      "tipo": "comum",
+      "texto": "Acima da vitrine, o forro tem uma mancha clara de borda escura, do tamanho de um pires. Uma gota se forma devagar na beirada e cai no topo do vidro. O aparelho de ar-condicionado do corredor fica exatamente do outro lado da parede.",
+      "imagem": {
+        "recurso": "cena_forro",
+        "descricaoAcessivel": "Forro branco com uma mancha redonda de umidade e uma gota prestes a cair sobre a vitrine abaixo."
+      },
+      "pista": {
+        "id": "mancha-de-umidade",
+        "titulo": "Uma mancha de umidade no forro",
+        "descricao": "Há goteira acima da vitrine, vinda do ar-condicionado do corredor, caindo bem sobre o lugar da taça."
+      },
+      "escolhas": [
+        {
+          "id": "forro-a",
+          "texto": "Procurar quem cuida da manutenção",
+          "proximaCena": "zilda"
+        },
+        {
+          "id": "forro-b",
+          "texto": "Pedir o caderno de ocorrências",
+          "proximaCena": "livro"
+        }
+      ]
+    },
+    {
+      "id": "chaves",
+      "tipo": "comum",
+      "texto": "— A chave desta sala fica comigo, e há uma cópia na portaria — responde dona Ercília. — A manutenção tem o próprio molho, porque precisa entrar cedo. Abre também a sala de restauro, ali no fim do corredor.",
+      "narracao": "Dona Ercília responde: A chave desta sala fica comigo, e há uma cópia na portaria. A manutenção tem o próprio molho, porque precisa entrar cedo. Abre também a sala de restauro, ali no fim do corredor.",
+      "imagem": {
+        "recurso": "cena_chaves",
+        "descricaoAcessivel": "Quadro de chaves na parede da portaria, com molhos identificados por etiquetas escritas à mão."
+      },
+      "pista": {
+        "id": "chave-do-restauro",
+        "titulo": "A manutenção tem chave do restauro",
+        "descricao": "Além da curadora e da portaria, a equipe de manutenção entra cedo e abre também a sala de restauro."
+      },
+      "escolhas": [
+        {
+          "id": "chaves-a",
+          "texto": "Falar com o segurança da noite",
+          "proximaCena": "nivaldo"
+        },
+        {
+          "id": "chaves-b",
+          "texto": "Falar com a manutenção",
+          "proximaCena": "zilda"
+        }
+      ]
+    },
+    {
+      "id": "nivaldo",
+      "tipo": "comum",
+      "texto": "Seu Nivaldo Prates trabalhou até as seis da manhã e ainda não foi para casa.\n\n— Depois das dez da noite não entrou ninguém — diz ele, batendo de leve no caderno debaixo do braço. — Eu passo de hora em hora e anoto tudo. Às seis entreguei o turno.",
+      "narracao": "Seu Nivaldo Prates trabalhou até as seis da manhã e ainda não foi para casa. Ele diz: Depois das dez da noite não entrou ninguém. Eu passo de hora em hora e anoto tudo. Às seis entreguei o turno. E bate de leve no caderno debaixo do braço.",
+      "imagem": {
+        "recurso": "cena_nivaldo",
+        "descricaoAcessivel": "Homem de uniforme de segurança segurando um caderno de capa dura, em pé junto ao balcão da portaria."
+      },
+      "pista": {
+        "id": "troca-de-turno",
+        "titulo": "O turno terminou às seis",
+        "descricao": "Seu Nivaldo garante que ninguém entrou depois das dez da noite, e saiu às seis da manhã, ao entregar o turno."
+      },
+      "escolhas": [
+        {
+          "id": "nivaldo-a",
+          "texto": "Pedir para ver o caderno de ocorrências",
+          "proximaCena": "livro"
+        },
+        {
+          "id": "nivaldo-b",
+          "texto": "Comparar essa versão com a da curadora",
+          "proximaCena": "comparar"
+        }
+      ]
+    },
+    {
+      "id": "livro",
+      "tipo": "comum",
+      "texto": "O caderno é simples, de linhas largas. As rondas da noite estão todas anotadas, uma por hora, com a mesma letra firme. Depois da última, às seis e dez, há uma linha começada com outra letra: Retirada da peça para. A frase termina no meio, sem ponto final.",
+      "narracao": "O caderno é simples, de linhas largas. As rondas da noite estão todas anotadas, uma por hora, com a mesma letra firme. Depois da última, às seis e dez, há uma linha começada com outra letra, que diz apenas: Retirada da peça para. A frase termina no meio, sem ponto final.",
+      "imagem": {
+        "recurso": "cena_livro",
+        "descricaoAcessivel": "Página de caderno pautado com anotações de horários e uma última linha escrita com letra diferente, interrompida no meio."
+      },
+      "pista": {
+        "id": "registro-das-6h10",
+        "titulo": "Um registro interrompido às seis e dez",
+        "descricao": "Alguém escreveu no caderno, às seis e dez, que retirou a peça. A frase foi interrompida no meio."
+      },
+      "escolhas": [
+        {
+          "id": "livro-a",
+          "texto": "Procurar quem escreveu essa linha",
+          "proximaCena": "zilda"
+        },
+        {
+          "id": "livro-b",
+          "texto": "Voltar e olhar atrás do pedestal",
+          "proximaCena": "atras-do-pedestal"
+        }
+      ]
+    },
+    {
+      "id": "zilda",
+      "tipo": "comum",
+      "texto": "Zilda Carvalho, da manutenção, ouve a pergunta e relaxa os ombros.\n\n— Ah, era isso? A goteira começou ontem. O procedimento manda tirar a peça de baixo de qualquer infiltração e levar para o restauro. Fiz isso hoje cedo e deixei um bilhete avisando. Aí fui chamada no meio e não voltei aqui.",
+      "narracao": "Zilda Carvalho, da manutenção, ouve a pergunta e relaxa os ombros. Ela diz: Ah, era isso? A goteira começou ontem. O procedimento manda tirar a peça de baixo de qualquer infiltração e levar para o restauro. Fiz isso hoje cedo e deixei um bilhete avisando. Aí fui chamada no meio e não voltei aqui.",
+      "imagem": {
+        "recurso": "cena_zilda",
+        "descricaoAcessivel": "Mulher de macacão de trabalho e luvas de algodão, em pé no corredor ao lado de uma escada dobrável."
+      },
+      "pista": {
+        "id": "protocolo-de-umidade",
+        "titulo": "O procedimento contra infiltração",
+        "descricao": "Diante de uma goteira, a manutenção deve retirar a peça e levá-la à sala de restauro. Zilda seguiu o procedimento e deixou um aviso."
+      },
+      "escolhas": [
+        {
+          "id": "zilda-a",
+          "texto": "Pedir para ver a sala de restauro",
+          "proximaCena": "restauro"
+        },
+        {
+          "id": "zilda-b",
+          "texto": "Procurar o bilhete que ela deixou",
+          "proximaCena": "atras-do-pedestal"
+        }
+      ]
+    },
+    {
+      "id": "atras-do-pedestal",
+      "tipo": "comum",
+      "texto": "Atrás do pedestal, encostado no rodapé, há um papel dobrado ao meio. A letra é a mesma da linha interrompida no caderno: Peça recolhida por infiltração, está no restauro. O papel escorregou da base e foi parar fora do campo de visão de quem entra na sala.",
+      "narracao": "Atrás do pedestal, encostado no rodapé, há um papel dobrado ao meio. A letra é a mesma da linha interrompida no caderno. O bilhete diz: Peça recolhida por infiltração, está no restauro. O papel escorregou da base e foi parar fora do campo de visão de quem entra na sala.",
+      "imagem": {
+        "recurso": "cena_bilhete",
+        "descricaoAcessivel": "Papel dobrado caído no chão, entre a parte de trás do pedestal e o rodapé da parede."
+      },
+      "pista": {
+        "id": "bilhete-caido",
+        "titulo": "O bilhete que escorregou",
+        "descricao": "O aviso da manutenção existia, mas caiu atrás do pedestal e ninguém o viu ao entrar na sala."
+      },
+      "escolhas": [
+        {
+          "id": "atras-do-pedestal-a",
+          "texto": "Levar o bilhete a dona Ercília",
+          "proximaCena": "comparar"
+        },
+        {
+          "id": "atras-do-pedestal-b",
+          "texto": "Ir até a sala de restauro",
+          "proximaCena": "restauro"
+        }
+      ]
+    },
+    {
+      "id": "comparar",
+      "tipo": "comum",
+      "texto": "Colocadas lado a lado, as versões param de se contradizer. A sala foi trancada às sete da noite. Ninguém entrou de madrugada. Às seis e dez, a manutenção abriu com a própria chave, recolheu a peça e começou a escrever o aviso. Meia hora depois, a curadora chegou para uma reunião e não passou pela sala. Ninguém mentiu.",
+      "imagem": {
+        "recurso": "cena_comparar",
+        "descricaoAcessivel": "Mesa com o caderno de ocorrências aberto, um bilhete dobrado e uma folha de horários da exposição, lado a lado."
+      },
+      "pista": {
+        "id": "versoes-que-se-encaixam",
+        "titulo": "As três versões se encaixam",
+        "descricao": "Cada pessoa contou a verdade sobre o seu horário. O que faltou foi um aviso chegar de um turno ao outro."
+      },
+      "escolhas": [
+        {
+          "id": "comparar-a",
+          "texto": "Ir com dona Ercília até a sala de restauro",
+          "proximaCena": "restauro"
+        },
+        {
+          "id": "comparar-b",
+          "texto": "Propor um combinado antes de abrir a porta",
+          "proximaCena": "final-combinado"
+        }
+      ]
+    },
+    {
+      "id": "restauro",
+      "tipo": "comum",
+      "texto": "Na sala de restauro, sobre uma bancada forrada de feltro, está a Taça das Colinas. Ao lado, um par de luvas de algodão e um pano seco, dobrado. A prata está limpa, sem uma marca sequer. A peça passou a manhã inteira a vinte passos de onde todo mundo a procurava.",
+      "imagem": {
+        "recurso": "cena_restauro",
+        "descricaoAcessivel": "Taça de prata sobre uma bancada forrada de feltro, ao lado de luvas de algodão brancas e um pano dobrado."
+      },
+      "pista": {
+        "id": "taca-no-restauro",
+        "titulo": "A taça estava no restauro",
+        "descricao": "A Taça das Colinas passou a manhã em segurança sobre a bancada forrada, protegida da goteira."
+      },
+      "escolhas": [
+        {
+          "id": "restauro-a",
+          "texto": "Chamar dona Ercília e seu Nivaldo",
+          "proximaCena": "final-taca-em-seguranca"
+        },
+        {
+          "id": "restauro-b",
+          "texto": "Reconstituir a manhã em voz alta",
+          "proximaCena": "final-bilhete"
+        }
+      ]
+    },
+    {
+      "id": "final-taca-em-seguranca",
+      "tipo": "final",
+      "texto": "Dona Ercília chega primeiro e para na porta, com a mão no peito. Seu Nivaldo entra atrás e ri baixinho, de alívio. Zilda explica o procedimento do começo ao fim, e ninguém a interrompe. A taça volta para a vitrine limpa e seca, sob um forro já remendado. A exposição abre no horário.",
+      "narracao": "Dona Ercília chega primeiro e para na porta, com a mão no peito. Seu Nivaldo entra atrás e ri baixinho, de alívio. Zilda explica o procedimento do começo ao fim, e ninguém a interrompe. A taça volta para a vitrine limpa e seca, sob um forro já remendado. A exposição abre no horário.",
+      "imagem": {
+        "recurso": "cena_final_seguranca",
+        "descricaoAcessivel": "Três pessoas reunidas na porta da sala de restauro, olhando para a taça de prata sobre a bancada."
+      },
+      "desfecho": {
+        "titulo": "A taça em segurança",
+        "mensagem": "A Taça das Colinas nunca saiu da Casa da Memória Esportiva. Ela foi protegida de uma goteira, e a exposição abre no horário com todo mundo sabendo o que aconteceu.",
+        "explicacaoPistas": "A vitrine intacta e o pedestal deslocado mostravam que ninguém forçou nada: a peça foi retirada com calma, por quem tinha chave. A mancha no forro explicava o motivo, e o registro interrompido das seis e dez dava a hora. Cada versão estava correta dentro do seu horário. O que faltou foi apenas o aviso passar de um turno para o outro."
+      }
+    },
+    {
+      "id": "final-bilhete",
+      "tipo": "final",
+      "texto": "Você recompõe a manhã em voz alta, na ordem em que ela aconteceu: a goteira, o procedimento, a chave da manutenção, o bilhete que escorregou. Dona Ercília acompanha cada passo em silêncio. No fim, pega o papel dobrado e o alisa sobre a bancada.\n\n— Estava tudo aqui — ela diz.",
+      "narracao": "Você recompõe a manhã em voz alta, na ordem em que ela aconteceu: a goteira, o procedimento, a chave da manutenção, o bilhete que escorregou. Dona Ercília acompanha cada passo em silêncio. No fim, pega o papel dobrado e o alisa sobre a bancada, e diz: Estava tudo aqui.",
+      "imagem": {
+        "recurso": "cena_final_bilhete",
+        "descricaoAcessivel": "Mãos alisando um bilhete dobrado sobre uma bancada de trabalho, com a taça de prata ao fundo."
+      },
+      "desfecho": {
+        "titulo": "O aviso que ninguém viu",
+        "mensagem": "O caso se explica sem nenhum culpado: um aviso existia, foi escrito e simplesmente não chegou às mãos certas. A taça volta para a vitrine com o forro já consertado.",
+        "explicacaoPistas": "As marcas de arraste indicavam cuidado e tempo, não pressa. O bilhete caído atrás do pedestal era o elo que faltava entre a linha interrompida do caderno e o silêncio da manhã. Reunidas, as pistas apontavam para um problema de comunicação, e não para um desaparecimento."
+      }
+    },
+    {
+      "id": "final-combinado",
+      "tipo": "final",
+      "texto": "Antes de abrir a porta do restauro, você propõe uma coisa simples: um quadro na parede da portaria, onde cada turno escreve o que fez com as peças. Dona Ercília aprova na hora. Seu Nivaldo pede para ser o primeiro a escrever. Só então vocês abrem a sala, e a taça está lá, inteira.",
+      "narracao": "Antes de abrir a porta do restauro, você propõe uma coisa simples: um quadro na parede da portaria, onde cada turno escreve o que fez com as peças. Dona Ercília aprova na hora. Seu Nivaldo pede para ser o primeiro a escrever. Só então vocês abrem a sala, e a taça está lá, inteira.",
+      "imagem": {
+        "recurso": "cena_final_combinado",
+        "descricaoAcessivel": "Quadro de avisos novo na parede da portaria, com uma primeira anotação escrita à mão e uma caneta pendurada por um cordão."
+      },
+      "desfecho": {
+        "titulo": "Um combinado novo",
+        "mensagem": "A taça é encontrada em segurança, e a Casa da Memória Esportiva sai do caso com um combinado novo, para que nenhum aviso volte a se perder no caminho.",
+        "explicacaoPistas": "Comparar os horários foi o que resolveu o caso: às sete da noite a sala foi trancada, às seis e dez a manutenção registrou a retirada, e a curadora chegou depois disso. Nenhuma versão contradizia a outra. A goteira no forro dava o motivo, e o pedestal deslocado, o modo. O que faltava não era uma pista, era um caminho para o aviso circular."
+      }
+    }
+  ]
+}

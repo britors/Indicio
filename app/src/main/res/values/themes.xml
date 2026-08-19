@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Tema aplicado antes de o Compose assumir. Mantém o fundo em papel/creme
+        para que a abertura do aplicativo não pisque em branco puro nem escuro.
+    -->
+    <style name="Theme.Indicio" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/papel_creme</item>
+        <item name="android:statusBarColor">@color/papel_creme</item>
+        <item name="android:navigationBarColor">@color/papel_creme</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

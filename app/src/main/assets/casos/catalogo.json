@@ -1,0 +1,13 @@
+{
+  "versaoEsquema": 1,
+  "casos": [
+    {
+      "id": "taca-desaparecida",
+      "titulo": "O Mistério da Taça Desaparecida",
+      "sinopse": "Poucas horas antes de uma exposição comemorativa, uma famosa taça do futebol desaparece de uma sala aparentemente trancada.",
+      "categoria": "futebol",
+      "arquivo": "casos/taca-desaparecida.json",
+      "disponivel": true
+    }
+  ]
+}

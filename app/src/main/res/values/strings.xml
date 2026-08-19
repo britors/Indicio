@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_nome">Indício</string>
+    <string name="app_slogan">Toda escolha revela uma pista.</string>
+
+    <!-- Apresentação -->
+    <string name="apresentacao_pular">Toque para começar</string>
+
+    <!-- Início -->
+    <string name="inicio_continuar">Continuar</string>
+    <string name="inicio_continuar_caso">Continuar: %1$s</string>
+    <string name="inicio_escolher_caso">Escolher caso</string>
+    <string name="inicio_configuracoes">Configurações</string>
+    <string name="inicio_sobre">Sobre</string>
+    <string name="inicio_versao">Versão %1$s</string>
+
+    <!-- Catálogo -->
+    <string name="catalogo_titulo">Escolher caso</string>
+    <string name="catalogo_em_preparacao">Em preparação</string>
+    <string name="catalogo_categoria_vazia">Nenhum caso desta categoria foi escrito ainda.</string>
+    <string name="catalogo_abrir">Abrir o caso %1$s</string>
+
+    <!-- História -->
+    <string name="historia_pausar">Pausar</string>
+    <string name="historia_pistas">Pistas descobertas</string>
+    <string name="historia_pistas_nenhuma">Você ainda não anotou nenhuma pista.</string>
+
+    <!-- Conclusão -->
+    <string name="conclusao_titulo">Caso concluído</string>
+    <string name="conclusao_pistas">O que as pistas diziam</string>
+    <string name="conclusao_jogar_novamente">Jogar novamente</string>
+    <string name="conclusao_voltar_catalogo">Voltar ao catálogo</string>
+
+    <!-- Pausa -->
+    <string name="pausa_titulo">Pausa</string>
+    <string name="pausa_continuar">Continuar a história</string>
+    <string name="pausa_configuracoes">Configurações</string>
+    <string name="pausa_reiniciar">Reiniciar o caso</string>
+    <string name="pausa_voltar_inicio">Voltar ao início</string>
+    <string name="pausa_reiniciar_confirmar_titulo">Reiniciar o caso?</string>
+    <string name="pausa_reiniciar_confirmar_texto">A história volta ao começo e as pistas desta sessão são recolhidas de novo. Os casos que você já concluiu continuam guardados.</string>
+    <string name="pausa_reiniciar_confirmar_sim">Reiniciar</string>
+    <string name="pausa_cancelar">Cancelar</string>
+
+    <!-- Configurações -->
+    <string name="configuracoes_titulo">Configurações</string>
+    <string name="configuracoes_tamanho_texto">Tamanho do texto</string>
+    <string name="configuracoes_tamanho_grande">Grande</string>
+    <string name="configuracoes_tamanho_muito_grande">Muito grande</string>
+    <string name="configuracoes_movimento">Movimento</string>
+    <string name="configuracoes_reduzir_movimentos">Reduzir animações</string>
+    <string name="configuracoes_reduzir_movimentos_apoio">As telas trocam sem transições.</string>
+    <string name="configuracoes_exemplo">Assim ficará o texto das histórias.</string>
+
+    <!-- Sobre -->
+    <string name="sobre_titulo">Sobre</string>
+    <string name="sobre_descricao">Indício é um RPG narrativo leve de investigação. Em histórias curtas, você observa cenários, conversa com personagens, reúne pistas e decide entre dois caminhos.</string>
+    <string name="sobre_offline">O aplicativo funciona inteiramente offline. Não pede conta, não usa internet, não exibe anúncios e não coleta dados sobre você.</string>
+    <string name="sobre_ficcao">Todos os times, campeonatos, personagens e símbolos das histórias são fictícios.</string>
+    <string name="sobre_licenca">Software livre, licenciado sob a GNU General Public License versão 3.</string>
+    <string name="sobre_versao">Versão %1$s</string>
+    <!--
+        Aviso definido pelo produto. Deve aparecer exatamente uma vez no
+        aplicativo, apenas nesta tela. Não repita este texto em outro lugar.
+    -->
+    <string name="sobre_aviso_medico">Indício é uma experiência de entretenimento e estímulo cognitivo. Não substitui avaliação, tratamento ou acompanhamento médico.</string>
+
+    <!-- Comuns -->
+    <string name="comum_tentar_novamente">Tentar novamente</string>
+    <string name="comum_falha_conteudo">Não foi possível abrir este conteúdo agora.</string>
+</resources>

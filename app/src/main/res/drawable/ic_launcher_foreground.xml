@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Ícone provisório: lupa sobre uma pista iluminada.
+    A arte definitiva é responsabilidade da issue de identidade visual.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Pista iluminada sob a lente -->
+    <path
+        android:fillColor="#F3E4BE"
+        android:fillAlpha="0.35"
+        android:pathData="M48,46m-19,0a19,19 0,1 0,38 0a19,19 0,1 0,-38 0" />
+
+    <!-- Marca da pista -->
+    <path
+        android:fillColor="#F3E4BE"
+        android:pathData="M48,46m-5,0a5,5 0,1 0,10 0a5,5 0,1 0,-10 0" />
+
+    <!-- Aro da lente -->
+    <path
+        android:strokeColor="#C9A227"
+        android:strokeWidth="6"
+        android:pathData="M48,46m-19,0a19,19 0,1 0,38 0a19,19 0,1 0,-38 0" />
+
+    <!-- Cabo -->
+    <path
+        android:strokeColor="#C9A227"
+        android:strokeWidth="8"
+        android:strokeLineCap="round"
+        android:pathData="M61.5,59.5 L76,74" />
+</vector>

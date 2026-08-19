@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Apenas as cores exigidas pelo tema XML de abertura. A paleta usada pela
+    interface vive em ui/tema/Cores.kt.
+-->
+<resources>
+    <color name="papel_creme">#FBF6EC</color>
+</resources>

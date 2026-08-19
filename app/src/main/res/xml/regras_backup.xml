@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Progresso e preferências são locais; nada sensível é gerado pelo app. -->
+<full-backup-content>
+    <include domain="database" path="." />
+    <include domain="file" path="datastore" />
+</full-backup-content>
