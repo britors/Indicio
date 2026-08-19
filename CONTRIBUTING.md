@@ -29,7 +29,7 @@ O Android Studio requer Linux x86_64 com glibc 2.31 ou mais recente. O emulador 
 4. Execute as verificações aplicáveis antes de enviar a contribuição.
 5. Abra um pull request explicando o problema, a solução, os testes e eventuais impactos de acessibilidade.
 
-Quando o projeto Android estiver presente, os comandos principais serão:
+Os comandos principais são:
 
 ```bash
 ./gradlew test
@@ -38,13 +38,13 @@ Quando o projeto Android estiver presente, os comandos principais serão:
 ./gradlew assembleDebug
 ```
 
-`connectedCheck` requer emulador ou dispositivo conectado. Neste momento o repositório ainda está na fase de planejamento; o Gradle Wrapper será adicionado pela issue de fundação.
+`connectedCheck` requer emulador ou dispositivo conectado. Use sempre o Gradle Wrapper (`./gradlew`), que fixa a versão do Gradle usada pelo projeto.
 
 ## Padrões técnicos
 
 - Use Kotlin e APIs compatíveis com `minSdk 26`.
 - Preserve MVVM, fluxo unidirecional e dependências substituíveis em testes.
-- Mantenha histórias e transições nos arquivos JSON locais, sem regras específicas de um caso fixadas no código.
+- Mantenha histórias e transições nos arquivos JSON locais, sem regras específicas de um caso fixadas no código. Para escrever ou alterar um caso, siga [Como criar novos casos](docs/como-criar-novos-casos.md).
 - Não adicione serviços de rede, contas, anúncios, telemetria ou permissões sem uma discussão prévia em issue.
 - Não deixe TODOs essenciais, telas inoperantes ou implementações simuladas em código de produção.
 - Prefira commits claros e focados; não misture reformatações amplas com mudanças funcionais.
