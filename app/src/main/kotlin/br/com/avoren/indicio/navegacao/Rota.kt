@@ -24,7 +24,16 @@ sealed interface Rota {
     data class Historia(val casoId: String, val retomar: Boolean = true) : Rota
 
     @Serializable
-    data class Pausa(val casoId: String) : Rota
+    data class Pausa(val casoId: String, val temEtapas: Boolean = false) : Rota
+
+    @Serializable
+    data class Retomada(val casoId: String) : Rota
+
+    @Serializable
+    data class Etapas(val casoId: String) : Rota
+
+    @Serializable
+    data class Caderno(val casoId: String) : Rota
 
     @Serializable
     data object Configuracoes : Rota

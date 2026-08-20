@@ -25,6 +25,9 @@ class ValidadorCaso {
         caso.cenas.forEach { cena -> validarCena(caso, cena, idsDeCena, problemas) }
         validarPistas(caso, problemas)
         validarAlcancabilidade(caso, problemas)
+        if (caso.revisao.esquema == 2) {
+            problemas += ValidadorCasoLongo().validar(caso)
+        }
 
         return problemas
     }

@@ -23,9 +23,11 @@ import br.com.avoren.indicio.domain.model.caso.Desfecho
 import br.com.avoren.indicio.domain.model.caso.Imagem
 import br.com.avoren.indicio.domain.model.caso.Pista
 import br.com.avoren.indicio.domain.model.caso.TipoCena
-import br.com.avoren.indicio.ui.comum.BarraDoTopo
 import br.com.avoren.indicio.ui.comum.BotaoPrincipal
 import br.com.avoren.indicio.ui.comum.BotaoSecundario
+import br.com.avoren.indicio.ui.comum.TituloDeTela
+import br.com.avoren.indicio.ui.tema.BordaSuave
+import br.com.avoren.indicio.ui.tema.EspacamentoIndicio
 import br.com.avoren.indicio.ui.tema.TemaIndicio
 
 /**
@@ -43,15 +45,21 @@ internal fun ConteudoConclusao(
 ) {
     Scaffold(
         modifier = modifier.fillMaxSize(),
-        topBar = { BarraDoTopo(titulo = stringResource(R.string.conclusao_titulo)) },
     ) { espacamento ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(espacamento)
                 .verticalScroll(rememberScrollState())
-                .padding(horizontal = 24.dp, vertical = 24.dp),
+                .padding(
+                    horizontal = EspacamentoIndicio.margemDaTela,
+                    vertical = EspacamentoIndicio.grande,
+                ),
         ) {
+            TituloDeTela(texto = stringResource(R.string.conclusao_titulo))
+
+            Spacer(modifier = Modifier.height(EspacamentoIndicio.pequeno))
+
             Text(
                 text = estado.desfecho.titulo,
                 style = MaterialTheme.typography.headlineMedium,
@@ -59,18 +67,20 @@ internal fun ConteudoConclusao(
                 modifier = Modifier.semantics { heading() },
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(EspacamentoIndicio.grande))
 
             Text(text = estado.cena.texto, style = MaterialTheme.typography.bodyLarge)
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(EspacamentoIndicio.grande))
 
             Text(
                 text = estado.desfecho.mensagem,
                 style = MaterialTheme.typography.bodyLarge,
             )
 
-            Spacer(modifier = Modifier.height(32.dp))
+            androidx.compose.material3.HorizontalDivider(color = BordaSuave)
+
+            Spacer(modifier = Modifier.height(EspacamentoIndicio.grande))
 
             Text(
                 text = stringResource(R.string.conclusao_pistas),
@@ -79,25 +89,25 @@ internal fun ConteudoConclusao(
                 modifier = Modifier.semantics { heading() },
             )
 
-            Spacer(modifier = Modifier.height(12.dp))
+            Spacer(modifier = Modifier.height(EspacamentoIndicio.medio))
 
             Text(
                 text = estado.desfecho.explicacaoPistas,
                 style = MaterialTheme.typography.bodyMedium,
             )
 
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(EspacamentoIndicio.extraGrande))
 
             PainelDePistas(pistas = estado.pistas)
 
-            Spacer(modifier = Modifier.height(32.dp))
+            Spacer(modifier = Modifier.height(EspacamentoIndicio.destaque))
 
             BotaoPrincipal(
                 texto = stringResource(R.string.conclusao_jogar_novamente),
                 onClick = onJogarNovamente,
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(EspacamentoIndicio.padrao))
 
             BotaoSecundario(
                 texto = stringResource(R.string.conclusao_voltar_catalogo),

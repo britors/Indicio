@@ -111,8 +111,8 @@ class AcessibilidadeTest {
     fun os_titulos_de_secao_sao_cabecalhos() {
         montar()
 
-        composeRule.onNodeWithText("Escolha a próxima carta").assert(isHeading())
-        composeRule.onNodeWithText("Pistas descobertas").performScrollTo().assert(isHeading())
+        composeRule.onNodeWithText("Qual caminho seguir?").assert(isHeading())
+        composeRule.onNodeWithText("Caderno de pistas").performScrollTo().assert(isHeading())
     }
 
     @Test
@@ -162,8 +162,7 @@ class AcessibilidadeTest {
     fun a_pausa_continua_ao_alcance_com_texto_muito_grande() {
         montar(tamanho = TamanhoTexto.MUITO_GRANDE)
 
-        composeRule.onNodeWithText("Pausar")
-            .performScrollTo()
+        composeRule.onNodeWithContentDescription("Pausar")
             .assertIsDisplayed()
             .assertHasClickAction()
             .assertHeightIsAtLeast(AlturaMinimaBotao)

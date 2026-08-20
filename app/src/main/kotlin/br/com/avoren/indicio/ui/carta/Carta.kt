@@ -4,13 +4,10 @@ import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
@@ -27,23 +24,18 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.unit.dp
-import br.com.avoren.indicio.ui.tema.BordaSuave
 import br.com.avoren.indicio.R
+import br.com.avoren.indicio.ui.tema.ElevacaoIndicio
+import br.com.avoren.indicio.ui.tema.FormasIndicio
 import br.com.avoren.indicio.ui.tema.LocalReducaoDeMovimentos
 
 /** Proporção de carta de baralho, em retrato. */
 internal const val PROPORCAO_DA_CARTA = 2f / 3f
 
-internal val FormaDaCarta = RoundedCornerShape(20.dp)
-private val FormaInterna = RoundedCornerShape(14.dp)
+internal val FormaDaCarta = FormasIndicio.cartao
 
 /**
- * Moldura comum das cartas: borda dourada externa e um filete interno.
- *
- * A moldura é desenhada aqui, e não assada no vetor da arte, de propósito. O
- * jogador pode aumentar o texto até "muito grande"; um vetor de proporção fixa
- * cortaria o conteúdo, enquanto a moldura em Compose acompanha a altura real da
- * carta.
+ * Frente editorial comum das cartas, capaz de crescer com texto ampliado.
  */
 @Composable
 internal fun Carta(
@@ -53,17 +45,11 @@ internal fun Carta(
     Surface(
         shape = FormaDaCarta,
         color = MaterialTheme.colorScheme.surface,
-        border = BorderStroke(3.dp, MaterialTheme.colorScheme.secondary),
-        shadowElevation = 6.dp,
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.4f)),
+        shadowElevation = ElevacaoIndicio.cartao,
         modifier = modifier,
     ) {
-        Column(
-            modifier = Modifier
-                .padding(6.dp)
-                .border(1.dp, BordaSuave, FormaInterna)
-                .padding(horizontal = 16.dp, vertical = 18.dp),
-            content = conteudo,
-        )
+        Column(content = conteudo)
     }
 }
 
@@ -79,7 +65,7 @@ internal fun VersoDaCarta(modifier: Modifier = Modifier) {
         shape = FormaDaCarta,
         color = MaterialTheme.colorScheme.primary,
         border = BorderStroke(3.dp, MaterialTheme.colorScheme.secondary),
-        shadowElevation = 6.dp,
+        shadowElevation = ElevacaoIndicio.cartao,
         modifier = modifier.clearAndSetSemantics { },
     ) {
         Image(

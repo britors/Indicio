@@ -3,6 +3,7 @@ package br.com.avoren.indicio.data.banco
 import br.com.avoren.indicio.domain.armazenamento.RepositorioProgresso
 import br.com.avoren.indicio.domain.armazenamento.ResultadoArmazenamento
 import br.com.avoren.indicio.domain.model.caso.Pista
+import br.com.avoren.indicio.domain.model.caso.RevisaoCaso
 import br.com.avoren.indicio.domain.model.sessao.ConclusaoRegistrada
 import br.com.avoren.indicio.domain.model.sessao.ProgressoSalvo
 import br.com.avoren.indicio.domain.model.sessao.SessaoInvestigacao
@@ -49,6 +50,8 @@ class RepositorioProgressoRoom(
                 pistas = sessao.pistas.map(Pista::id),
                 desfechoAlcancado = sessao.desfecho?.let { sessao.cenaAtual },
                 atualizadoEm = instante,
+                versaoEsquema = sessao.revisao.esquema,
+                versaoConteudo = sessao.revisao.conteudo,
             ),
         )
 
@@ -60,6 +63,8 @@ class RepositorioProgressoRoom(
                     tituloDesfecho = tituloDesfecho ?: sessao.desfecho?.titulo.orEmpty(),
                     pistas = sessao.pistas.map(Pista::id),
                     concluidoEm = instante,
+                    versaoEsquema = sessao.revisao.esquema,
+                    versaoConteudo = sessao.revisao.conteudo,
                 ),
             )
         }
@@ -90,6 +95,7 @@ private fun ProgressoEntidade.paraDominio() = ProgressoSalvo(
     pistasDescobertas = pistas,
     desfechoAlcancado = desfechoAlcancado,
     atualizadoEm = atualizadoEm,
+    revisao = RevisaoCaso(versaoEsquema, versaoConteudo),
 )
 
 private fun ConclusaoEntidade.paraDominio() = ConclusaoRegistrada(
@@ -98,4 +104,5 @@ private fun ConclusaoEntidade.paraDominio() = ConclusaoRegistrada(
     tituloDesfecho = tituloDesfecho,
     pistas = pistas,
     concluidoEm = concluidoEm,
+    revisao = RevisaoCaso(versaoEsquema, versaoConteudo),
 )

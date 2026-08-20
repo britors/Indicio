@@ -4,19 +4,29 @@ Um caso do Indício é um arquivo JSON. Não é preciso escrever nem alterar có
 Kotlin para acrescentar uma história: o mecanismo narrativo apenas percorre o
 grafo declarado no arquivo.
 
-Este documento descreve o formato, as regras que o validador exige e o caminho
-completo para publicar um caso novo.
+Este documento descreve o formato `1`, atualmente executado pelo aplicativo, as
+regras que o validador exige e o caminho completo para publicar um caso novo.
+O contrato `2`, destinado a investigações longas com etapas, objetivos,
+retomada e caderno, está implementado e documentado em
+[Esquema narrativo v2](esquema-narrativo-v2.md). Este guia detalha o formato `1`;
+para um caso longo, a especificação v2 é a fonte normativa.
 
 ## Onde os arquivos ficam
 
 ```
 app/src/main/assets/casos/
 ├── catalogo.json              índice de todos os casos
-└── taca-desaparecida.json     um arquivo por caso
+├── taca-desaparecida.json     primeiro caso
+└── <id-do-caso>.json          um arquivo por caso novo
 ```
 
 O catálogo é lido de `casos/catalogo.json`; esse caminho é fixo. Os arquivos de
 caso ficam ao lado dele e são referenciados pelo campo `arquivo` do catálogo.
+
+O `id` é um contrato permanente: ele identifica a rota, o progresso e o
+histórico no banco. Depois que um caso for publicado, não renomeie seu `id`, os
+ids de cenas ou os ids de escolhas sem planejar uma migração. A arquitetura e
+o fluxo completo estão em [Arquitetura do Indício](arquitetura.md).
 
 ## Passo a passo
 
@@ -26,6 +36,8 @@ caso ficam ao lado dele e são referenciados pelo campo `arquivo` do catálogo.
    campo.
 4. Peça as ilustrações das cenas (veja [Imagens](#imagens)) antes de marcar o
    caso como `disponivel`.
+5. Conclua e registre a
+   [revisão jurídica de nomes e conteúdo](revisao-juridica-de-conteudo.md).
 
 Enquanto o caso estiver incompleto, deixe `"disponivel": false` e **omita** o
 campo `arquivo`. O catálogo então anuncia a história como futura, sem oferecê-la
@@ -183,7 +195,10 @@ de digitação. Quem acusa é o teste `ArteDasCartasTest`, que roda em
 `./gradlew test` e falha se alguma cena publicada apontar para uma arte que não
 existe — ou se sobrar arte que nenhuma cena usa.
 
-> **Use sempre o prefixo `cena_`.** O arquivo
+> **Use sempre `cena_<caso>_<cena>` em casos novos**, convertendo hífens em
+> sublinhados. Por exemplo, a cena `arquivo` do caso `cartas-perdidas` usa
+> `cena_cartas_perdidas_arquivo`. O primeiro caso conserva nomes mais curtos por
+> compatibilidade. O prefixo `cena_` é obrigatório: o arquivo
 > `app/src/main/res/raw/keep.xml` preserva `@drawable/cena_*` do encolhedor de
 > recursos; uma arte fora desse padrão não tem nenhuma referência estática, é
 > removida do APK de release e o caso cairia no texto de reserva justamente na
@@ -262,7 +277,7 @@ caso "taca-desaparecida", cena "abertura", campo "escolhas[0].proximaCena": a ce
 Além da estrutura, `ConteudoPublicadoTest` protege as regras do produto e roda
 em `./gradlew test`, sem emulador:
 
-- entre 12 e 18 cenas por caso;
+- ao menos 12 cenas por caso, sem teto artificial de duração;
 - entre dois e três finais, todos alcançáveis;
 - nenhuma escolha voltando para a própria cena;
 - ao menos três pistas distintas;
@@ -285,6 +300,9 @@ Estas dependem de leitura humana e são tão obrigatórias quanto as demais:
 - Escolhas menos adequadas **continuam a história** — de preferência revelando
   uma pista — em vez de punir.
 - Times, campeonatos, marcas, pessoas e símbolos são inteiramente fictícios.
+- Todo nome começa como provisório. Um caso não pode ser publicado antes da
+  busca e da aprovação descritas na
+  [revisão jurídica de conteúdo](revisao-juridica-de-conteudo.md).
 - Sem alegações de tratar, prevenir ou retardar qualquer condição de saúde. O
   aviso médico do produto vive apenas na tela Sobre.
 
@@ -326,3 +344,17 @@ PY
 `versaoEsquema` vale `1` e precisa bater no catálogo e em cada caso. Se o formato
 mudar, o aplicativo recusa arquivos de versão diferente com uma mensagem clara,
 em vez de tentar interpretá-los pela metade.
+
+Não acrescente campos do formato `2` a um arquivo `1`: a leitura é estrita e o
+arquivo será recusado. Os fixtures de `docs/exemplos/` são apenas entradas de
+teste e nunca devem ser marcados como conteúdo disponível.
+
+No formato `2`, catálogo e casos passam a ter versões independentes:
+
+- `versaoCatalogo` identifica apenas o índice;
+- `versaoEsquema` identifica a forma de cada caso;
+- `versaoConteudo` identifica revisões do mesmo caso que possam afetar o
+  progresso salvo.
+
+Consulte a [especificação normativa do formato 2](esquema-narrativo-v2.md) e os
+[fixtures técnicos](exemplos/esquema-v2/) antes de projetar um caso longo.

@@ -1,5 +1,7 @@
 package br.com.avoren.indicio.domain.model.sessao
 
+import br.com.avoren.indicio.domain.model.caso.RevisaoCaso
+
 /**
  * Progresso como está gravado no aparelho.
  *
@@ -14,10 +16,15 @@ data class ProgressoSalvo(
     val pistasDescobertas: List<String>,
     val desfechoAlcancado: String?,
     val atualizadoEm: Long,
+    val revisao: RevisaoCaso = RevisaoCaso.V1,
 ) {
     val concluido: Boolean get() = desfechoAlcancado != null
 
-    fun paraReconstrucao(): ProgressoCaso = ProgressoCaso(casoId = casoId, escolhas = escolhas)
+    fun paraReconstrucao(): ProgressoCaso = ProgressoCaso(
+        casoId = casoId,
+        escolhas = escolhas,
+        revisao = revisao,
+    )
 }
 
 /** Uma conclusão já registrada no histórico. */
@@ -27,4 +34,5 @@ data class ConclusaoRegistrada(
     val tituloDesfecho: String,
     val pistas: List<String>,
     val concluidoEm: Long,
+    val revisao: RevisaoCaso = RevisaoCaso.V1,
 )

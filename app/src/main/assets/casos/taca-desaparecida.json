@@ -9,7 +9,7 @@
     {
       "id": "chegada",
       "tipo": "comum",
-      "texto": "A Casa da Memória Esportiva ainda está fechada ao público. Dona Ercília Mourão, curadora da exposição, espera você na porta da sala principal. Em poucas horas os visitantes chegarão para ver a Taça das Colinas, conquistada pelo Clube Atlético Farol em 1961. O pedestal onde a taça deveria estar continua ali. A taça, não.",
+      "texto": "O centro de memória ainda está fechado ao público. Dona Ercília, curadora da exposição, espera você na porta da sala principal. Em poucas horas os visitantes chegarão para ver a taça de um antigo campeonato regional, conquistada pelo time da cidade em 1961. O pedestal onde ela deveria estar continua ali. A taça, não.",
       "imagem": {
         "recurso": "cena_chegada",
         "descricaoAcessivel": "Entrada de um pequeno museu, com uma sala iluminada ao fundo e uma vitrine de vidro vazia sobre um pedestal de madeira."
@@ -162,8 +162,8 @@
     {
       "id": "nivaldo",
       "tipo": "comum",
-      "texto": "Seu Nivaldo Prates trabalhou até as seis da manhã e ainda não foi para casa.\n\n— Depois das dez da noite não entrou ninguém — diz ele, batendo de leve no caderno debaixo do braço. — Eu passo de hora em hora e anoto tudo. Às seis entreguei o turno.",
-      "narracao": "Seu Nivaldo Prates trabalhou até as seis da manhã e ainda não foi para casa. Ele diz: Depois das dez da noite não entrou ninguém. Eu passo de hora em hora e anoto tudo. Às seis entreguei o turno. E bate de leve no caderno debaixo do braço.",
+      "texto": "Seu Nivaldo trabalhou até as seis da manhã e ainda não foi para casa.\n\n— Depois das dez da noite não entrou ninguém — diz ele, batendo de leve no caderno debaixo do braço. — Eu passo de hora em hora e anoto tudo. Às seis entreguei o turno.",
+      "narracao": "Seu Nivaldo trabalhou até as seis da manhã e ainda não foi para casa. Ele diz: Depois das dez da noite não entrou ninguém. Eu passo de hora em hora e anoto tudo. Às seis entreguei o turno. E bate de leve no caderno debaixo do braço.",
       "imagem": {
         "recurso": "cena_nivaldo",
         "descricaoAcessivel": "Homem de uniforme de segurança segurando um caderno de capa dura, em pé junto ao balcão da portaria."
@@ -216,8 +216,8 @@
     {
       "id": "zilda",
       "tipo": "comum",
-      "texto": "Zilda Carvalho, da manutenção, ouve a pergunta e relaxa os ombros.\n\n— Ah, era isso? A goteira começou ontem. O procedimento manda tirar a peça de baixo de qualquer infiltração e levar para o restauro. Fiz isso hoje cedo e deixei um bilhete avisando. Aí fui chamada no meio e não voltei aqui.",
-      "narracao": "Zilda Carvalho, da manutenção, ouve a pergunta e relaxa os ombros. Ela diz: Ah, era isso? A goteira começou ontem. O procedimento manda tirar a peça de baixo de qualquer infiltração e levar para o restauro. Fiz isso hoje cedo e deixei um bilhete avisando. Aí fui chamada no meio e não voltei aqui.",
+      "texto": "Zilda, da manutenção, ouve a pergunta e relaxa os ombros.\n\n— Ah, era isso? A goteira começou ontem. O procedimento manda tirar a peça de baixo de qualquer infiltração e levar para o restauro. Fiz isso hoje cedo e deixei um bilhete avisando. Aí fui chamada no meio e não voltei aqui.",
+      "narracao": "Zilda, da manutenção, ouve a pergunta e relaxa os ombros. Ela diz: Ah, era isso? A goteira começou ontem. O procedimento manda tirar a peça de baixo de qualquer infiltração e levar para o restauro. Fiz isso hoje cedo e deixei um bilhete avisando. Aí fui chamada no meio e não voltei aqui.",
       "imagem": {
         "recurso": "cena_zilda",
         "descricaoAcessivel": "Mulher de macacão de trabalho e luvas de algodão, em pé no corredor ao lado de uma escada dobrável."
@@ -296,7 +296,7 @@
     {
       "id": "restauro",
       "tipo": "comum",
-      "texto": "Na sala de restauro, sobre uma bancada forrada de feltro, está a Taça das Colinas. Ao lado, um par de luvas de algodão e um pano seco, dobrado. A prata está limpa, sem uma marca sequer. A peça passou a manhã inteira a vinte passos de onde todo mundo a procurava.",
+      "texto": "Na sala de restauro, sobre uma bancada forrada de feltro, está a taça. Ao lado, um par de luvas de algodão e um pano seco, dobrado. A prata está limpa, sem uma marca sequer. A peça passou a manhã inteira a vinte passos de onde todo mundo a procurava.",
       "imagem": {
         "recurso": "cena_restauro",
         "descricaoAcessivel": "Taça de prata sobre uma bancada forrada de feltro, ao lado de luvas de algodão brancas e um pano dobrado."
@@ -304,7 +304,7 @@
       "pista": {
         "id": "taca-no-restauro",
         "titulo": "A taça estava no restauro",
-        "descricao": "A Taça das Colinas passou a manhã em segurança sobre a bancada forrada, protegida da goteira."
+        "descricao": "A taça passou a manhã em segurança sobre a bancada forrada, protegida da goteira."
       },
       "escolhas": [
         {
@@ -330,7 +330,7 @@
       },
       "desfecho": {
         "titulo": "A taça em segurança",
-        "mensagem": "A Taça das Colinas nunca saiu da Casa da Memória Esportiva. Ela foi protegida de uma goteira, e a exposição abre no horário com todo mundo sabendo o que aconteceu.",
+        "mensagem": "A taça nunca saiu do centro de memória. Ela foi protegida de uma goteira, e a exposição abre no horário com todo mundo sabendo o que aconteceu.",
         "explicacaoPistas": "A vitrine intacta e o pedestal deslocado mostravam que ninguém forçou nada: a peça foi retirada com calma, por quem tinha chave. A mancha no forro explicava o motivo, e o registro interrompido das seis e dez dava a hora. Cada versão estava correta dentro do seu horário. O que faltou foi apenas o aviso passar de um turno para o outro."
       }
     },
@@ -360,7 +360,7 @@
       },
       "desfecho": {
         "titulo": "Um combinado novo",
-        "mensagem": "A taça é encontrada em segurança, e a Casa da Memória Esportiva sai do caso com um combinado novo, para que nenhum aviso volte a se perder no caminho.",
+        "mensagem": "A taça é encontrada em segurança, e o centro de memória sai do caso com um combinado novo, para que nenhum aviso volte a se perder no caminho.",
         "explicacaoPistas": "Comparar os horários foi o que resolveu o caso: às sete da noite a sala foi trancada, às seis e dez a manutenção registrou a retirada, e a curadora chegou depois disso. Nenhuma versão contradizia a outra. A goteira no forro dava o motivo, e o pedestal deslocado, o modo. O que faltava não era uma pista, era um caminho para o aviso circular."
       }
     }

@@ -34,8 +34,9 @@ import br.com.avoren.indicio.ui.tema.BordaSuave
 import br.com.avoren.indicio.R
 import br.com.avoren.indicio.domain.model.preferencias.Preferencias
 import br.com.avoren.indicio.domain.model.preferencias.TamanhoTexto
-import br.com.avoren.indicio.ui.comum.BarraDoTopo
+import br.com.avoren.indicio.ui.comum.TituloDeTela
 import br.com.avoren.indicio.ui.tema.AlturaMinimaBotao
+import br.com.avoren.indicio.ui.tema.EspacamentoIndicio
 import br.com.avoren.indicio.ui.tema.TemaIndicio
 
 /**
@@ -69,15 +70,21 @@ internal fun ConteudoConfiguracoes(
 ) {
     Scaffold(
         modifier = modifier.fillMaxSize(),
-        topBar = { BarraDoTopo(titulo = stringResource(R.string.configuracoes_titulo)) },
     ) { espacamento ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(espacamento)
                 .verticalScroll(rememberScrollState())
-                .padding(horizontal = 24.dp, vertical = 24.dp),
+                .padding(
+                    horizontal = EspacamentoIndicio.margemDaTela,
+                    vertical = EspacamentoIndicio.grande,
+                ),
         ) {
+            TituloDeTela(texto = stringResource(R.string.configuracoes_titulo))
+
+            Spacer(modifier = Modifier.height(EspacamentoIndicio.destaque))
+
             Text(
                 text = stringResource(R.string.configuracoes_tamanho_texto),
                 style = MaterialTheme.typography.titleMedium,
@@ -85,7 +92,7 @@ internal fun ConteudoConfiguracoes(
                 modifier = Modifier.semantics { heading() },
             )
 
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(EspacamentoIndicio.pequeno))
 
             Column(modifier = Modifier.selectableGroup()) {
                 OpcaoDeTamanho(
@@ -100,7 +107,7 @@ internal fun ConteudoConfiguracoes(
                 )
             }
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(EspacamentoIndicio.padrao))
 
             Text(
                 text = stringResource(R.string.configuracoes_exemplo),
@@ -108,9 +115,9 @@ internal fun ConteudoConfiguracoes(
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
 
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(EspacamentoIndicio.extraGrande))
             HorizontalDivider(color = BordaSuave)
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(EspacamentoIndicio.extraGrande))
 
             Text(
                 text = stringResource(R.string.configuracoes_movimento),
@@ -119,7 +126,7 @@ internal fun ConteudoConfiguracoes(
                 modifier = Modifier.semantics { heading() },
             )
 
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(EspacamentoIndicio.pequeno))
 
             // A linha inteira alterna a preferência: obrigar o toque a acertar
             // o próprio interruptor seria um alvo pequeno demais.

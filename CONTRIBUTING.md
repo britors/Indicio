@@ -43,17 +43,50 @@ Os comandos principais são:
 ## Padrões técnicos
 
 - Use Kotlin e APIs compatíveis com `minSdk 26`.
-- Preserve MVVM, fluxo unidirecional e dependências substituíveis em testes.
+- Preserve MVVM, fluxo unidirecional, DDD, SOLID e a regra de dependência da
+  Clean Architecture.
+- Respeite as fronteiras e os contratos descritos em [Arquitetura](docs/arquitetura.md); nenhuma regra de um caso específico deve entrar no motor ou na interface.
+- Mantenha `domain/` livre de Android, serialização e persistência;
+  `application/` depende somente do domínio; `ui/` não conhece `data/`, `di/`
+  ou `navegacao/`.
+- Represente JSON e banco com DTOs/entidades externos e converta-os na fronteira;
+  não anote agregados do domínio para atender um framework.
+- Injete dependências pelo construtor. Somente a raiz de composição pode
+  conhecer o container completo.
+- Prefira nomes da linguagem ubíqua (`Caso`, `Cena`, `Escolha`, `Pista`,
+  `SessaoInvestigacao`) e evite `Manager`, `Helper`, `Utils` ou abstrações sem
+  regra, porta ou variação real.
+- Mantenha funções pequenas e coesas, estados imutáveis e falhas explícitas;
+  comentários devem explicar decisões, não repetir o código.
 - Mantenha histórias e transições nos arquivos JSON locais, sem regras específicas de um caso fixadas no código. Para escrever ou alterar um caso, siga [Como criar novos casos](docs/como-criar-novos-casos.md).
 - Não adicione serviços de rede, contas, anúncios, telemetria ou permissões sem uma discussão prévia em issue.
 - Não deixe TODOs essenciais, telas inoperantes ou implementações simuladas em código de produção.
 - Prefira commits claros e focados; não misture reformatações amplas com mudanças funcionais.
 
+Toda revisão de código deve confirmar os cinco princípios SOLID:
+
+- a unidade alterada tem uma responsabilidade coesa e um único motivo para
+  mudar;
+- comportamento novo estende capacidades gerais sem condicionais de enredo no
+  motor;
+- implementações reais e dublês preservam integralmente os contratos das
+  portas;
+- interfaces expõem somente as operações necessárias a seus consumidores;
+- regras de alto nível dependem de abstrações internas, e detalhes externos são
+  ligados apenas na composição.
+
+Não se usa SOLID como justificativa para abstrações sem política, fronteira ou
+variação real. Se uma mudança parecer exigir a quebra de um princípio, pare e
+redesenhe a solução antes de implementar; a decisão arquitetural pode registrar
+o raciocínio, mas não autoriza a violação.
+
 ## Conteúdo narrativo e visual
 
 - Escreva em português do Brasil simples, respeitoso e adulto.
-- Use somente personagens, equipes, campeonatos, marcas e símbolos fictícios ou devidamente licenciados.
+- Use somente personagens, equipes, campeonatos, marcas e símbolos fictícios ou devidamente licenciados. Todo nome novo é provisório até cumprir a [revisão jurídica de conteúdo](docs/revisao-juridica-de-conteudo.md).
 - Evite violência, sustos, infantilização, tom hospitalar, punição e mensagens de fracasso.
+- Faça histórias leves, mas não rasas: sustente o interesse com curiosidade,
+  versões conflitantes, personagens marcantes e revelações significativas.
 - Toda escolha deve permitir continuar; caminhos menos adequados devem oferecer contexto ou uma nova pista.
 - Imagens e demais recursos precisam funcionar offline e ter origem/licença registrada.
 
@@ -81,6 +114,6 @@ Inclua na descrição:
 - capturas de tela para alterações visuais;
 - teste manual com TalkBack e tamanhos de texto, quando aplicável;
 - limitações ou decisões que mereçam revisão.
+- impacto da mudança sobre SOLID e as fronteiras arquiteturais, quando houver.
 
 Ao contribuir, você concorda que sua contribuição será licenciada sob a GNU General Public License v3.0, a mesma licença do projeto.
-

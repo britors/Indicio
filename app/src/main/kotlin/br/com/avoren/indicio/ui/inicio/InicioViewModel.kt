@@ -5,8 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import br.com.avoren.indicio.di.ContainerAplicacao
-import br.com.avoren.indicio.domain.caso.ObterCasoParaContinuar
+import br.com.avoren.indicio.application.caso.ObterCasoParaContinuar
 import br.com.avoren.indicio.domain.repositorio.RepositorioIdentidade
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -61,12 +60,15 @@ class InicioViewModel(
     }
 
     companion object {
-        fun fabrica(container: ContainerAplicacao): ViewModelProvider.Factory =
+        fun fabrica(
+            repositorioIdentidade: RepositorioIdentidade,
+            obterCasoParaContinuar: ObterCasoParaContinuar,
+        ): ViewModelProvider.Factory =
             viewModelFactory {
                 initializer {
                     InicioViewModel(
-                        repositorioIdentidade = container.repositorioIdentidade,
-                        obterCasoParaContinuar = container.obterCasoParaContinuar,
+                        repositorioIdentidade = repositorioIdentidade,
+                        obterCasoParaContinuar = obterCasoParaContinuar,
                     )
                 }
             }

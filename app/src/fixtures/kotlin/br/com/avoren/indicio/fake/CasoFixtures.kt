@@ -77,7 +77,6 @@ object CasoFixtures {
      * mesmo final positivo.
      */
     fun casoValido(cenas: List<Cena>? = null) = Caso(
-        versaoEsquema = 1,
         id = ID,
         titulo = "Caso de exemplo",
         sinopse = "Uma sinopse curta para os testes.",

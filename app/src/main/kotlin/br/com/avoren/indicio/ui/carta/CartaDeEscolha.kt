@@ -1,28 +1,25 @@
 package br.com.avoren.indicio.ui.carta
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.rotate
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import br.com.avoren.indicio.ui.tema.AlturaMinimaBotao
+import br.com.avoren.indicio.ui.tema.ElevacaoIndicio
+import br.com.avoren.indicio.ui.tema.EspacamentoIndicio
+import br.com.avoren.indicio.ui.tema.FormasIndicio
 
 /**
  * Uma escolha, apresentada como carta a jogar.
@@ -33,6 +30,7 @@ import br.com.avoren.indicio.ui.tema.AlturaMinimaBotao
  */
 @Composable
 internal fun CartaDeEscolha(
+    numero: Int,
     texto: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
@@ -47,11 +45,11 @@ internal fun CartaDeEscolha(
     Surface(
         onClick = onClick,
         enabled = habilitado,
-        shape = FormaDaEscolha,
-        color = MaterialTheme.colorScheme.surfaceVariant,
+        shape = FormasIndicio.controle,
+        color = MaterialTheme.colorScheme.surface,
         contentColor = MaterialTheme.colorScheme.onSurface,
         border = BorderStroke(2.dp, corDaBorda),
-        shadowElevation = if (habilitado) 3.dp else 0.dp,
+        shadowElevation = if (habilitado) ElevacaoIndicio.controle else 0.dp,
         modifier = modifier
             .fillMaxWidth()
             .heightIn(min = AlturaMinimaBotao)
@@ -59,28 +57,34 @@ internal fun CartaDeEscolha(
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(14.dp),
-            modifier = Modifier.padding(horizontal = 18.dp, vertical = 14.dp),
+            horizontalArrangement = Arrangement.spacedBy(EspacamentoIndicio.medio),
+            modifier = Modifier.padding(
+                horizontal = EspacamentoIndicio.medio,
+                vertical = EspacamentoIndicio.pequeno,
+            ),
         ) {
-            MarcaDaCarta(cor = corDaBorda)
+            Surface(
+                shape = FormasIndicio.pequena,
+                color = MaterialTheme.colorScheme.secondaryContainer,
+                contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
+            ) {
+                Text(
+                    text = numero.toString().padStart(2, '0'),
+                    style = MaterialTheme.typography.labelLarge,
+                    modifier = Modifier.padding(
+                        horizontal = EspacamentoIndicio.medio,
+                        vertical = EspacamentoIndicio.pequeno,
+                    ),
+                )
+            }
 
             Text(
                 text = texto,
                 style = MaterialTheme.typography.labelLarge,
+                modifier = Modifier.weight(1f),
             )
+
+            Text(text = "→", style = MaterialTheme.typography.labelLarge)
         }
     }
 }
-
-/** Losango dourado: a mesma marca que aparece nos cantos do verso. */
-@Composable
-private fun MarcaDaCarta(cor: Color) {
-    Box(
-        modifier = Modifier
-            .size(12.dp)
-            .rotate(45f)
-            .background(cor, RoundedCornerShape(2.dp)),
-    )
-}
-
-private val FormaDaEscolha = RoundedCornerShape(14.dp)

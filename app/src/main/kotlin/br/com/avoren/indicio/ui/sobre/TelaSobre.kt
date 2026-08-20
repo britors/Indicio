@@ -22,7 +22,8 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.com.avoren.indicio.R
-import br.com.avoren.indicio.ui.comum.BarraDoTopo
+import br.com.avoren.indicio.ui.comum.TituloDeTela
+import br.com.avoren.indicio.ui.tema.EspacamentoIndicio
 import br.com.avoren.indicio.ui.tema.TemaIndicio
 
 /**
@@ -38,28 +39,19 @@ fun TelaSobre(
 ) {
     Scaffold(
         modifier = modifier.fillMaxSize(),
-        topBar = { BarraDoTopo(titulo = stringResource(R.string.sobre_titulo)) },
     ) { espacamento ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(espacamento)
                 .verticalScroll(rememberScrollState())
-                .padding(horizontal = 24.dp, vertical = 24.dp),
-            verticalArrangement = Arrangement.spacedBy(20.dp),
+                .padding(
+                    horizontal = EspacamentoIndicio.margemDaTela,
+                    vertical = EspacamentoIndicio.grande,
+                ),
+            verticalArrangement = Arrangement.spacedBy(EspacamentoIndicio.grande),
         ) {
-            Text(
-                text = stringResource(R.string.app_nome),
-                style = MaterialTheme.typography.headlineMedium,
-                color = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.semantics { heading() },
-            )
-
-            Text(
-                text = stringResource(R.string.app_slogan),
-                style = MaterialTheme.typography.bodyLarge,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
+            TituloDeTela(texto = stringResource(R.string.sobre_titulo))
 
             Text(
                 text = stringResource(R.string.sobre_descricao),

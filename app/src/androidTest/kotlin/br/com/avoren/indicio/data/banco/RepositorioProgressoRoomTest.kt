@@ -5,6 +5,7 @@ import androidx.test.platform.app.InstrumentationRegistry
 import br.com.avoren.indicio.domain.armazenamento.ResultadoArmazenamento
 import br.com.avoren.indicio.fake.CasoFixtures
 import br.com.avoren.indicio.domain.model.caso.Pista
+import br.com.avoren.indicio.domain.model.caso.RevisaoCaso
 import br.com.avoren.indicio.domain.model.sessao.SessaoInvestigacao
 import br.com.avoren.indicio.domain.narrativa.MecanismoNarrativo
 import br.com.avoren.indicio.domain.narrativa.ResultadoEscolha
@@ -131,5 +132,28 @@ class RepositorioProgressoRoomTest {
         banco.close()
 
         assertNull(repositorio.progresso(caso.id))
+    }
+
+    @Test
+    fun salvaERestauraVersoesDoCaso() = runBlocking {
+        val revisado = caso.copy(revisao = RevisaoCaso(2, 3))
+        val sessao = requireNotNull(mecanismo.iniciar(revisado))
+
+        repositorio.salvar(sessao)
+
+        assertEquals(RevisaoCaso(2, 3), repositorio.progresso(caso.id)?.revisao)
+    }
+
+    @Test
+    fun mantemProgressoIndependenteParaDoisCasos() = runBlocking {
+        val primeiro = sessaoApos("abertura-a")
+        val segundoCaso = caso.copy(id = "segundo-caso")
+        val segundo = requireNotNull(mecanismo.iniciar(segundoCaso))
+
+        repositorio.salvar(primeiro)
+        repositorio.salvar(segundo)
+
+        assertEquals("sala", repositorio.progresso(caso.id)?.cenaAtual)
+        assertEquals("abertura", repositorio.progresso(segundoCaso.id)?.cenaAtual)
     }
 }

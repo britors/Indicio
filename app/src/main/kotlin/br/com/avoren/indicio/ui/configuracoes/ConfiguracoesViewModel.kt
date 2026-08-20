@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import br.com.avoren.indicio.di.ContainerAplicacao
 import br.com.avoren.indicio.domain.armazenamento.RepositorioPreferencias
 import br.com.avoren.indicio.domain.model.preferencias.Preferencias
 import br.com.avoren.indicio.domain.model.preferencias.TamanhoTexto
@@ -41,9 +40,9 @@ class ConfiguracoesViewModel(
     companion object {
         private const val TEMPO_DE_ESPERA = 5_000L
 
-        fun fabrica(container: ContainerAplicacao): ViewModelProvider.Factory =
+        fun fabrica(repositorio: RepositorioPreferencias): ViewModelProvider.Factory =
             viewModelFactory {
-                initializer { ConfiguracoesViewModel(container.repositorioPreferencias) }
+                initializer { ConfiguracoesViewModel(repositorio) }
             }
     }
 }

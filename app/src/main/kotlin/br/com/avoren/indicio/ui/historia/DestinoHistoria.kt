@@ -11,7 +11,9 @@ import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import br.com.avoren.indicio.di.ContainerAplicacao
+import br.com.avoren.indicio.domain.armazenamento.RepositorioProgresso
+import br.com.avoren.indicio.domain.caso.RepositorioCasos
+import br.com.avoren.indicio.domain.narracao.Narrador
 import br.com.avoren.indicio.ui.comum.ConteudoCarregando
 import br.com.avoren.indicio.ui.comum.ConteudoDeFalha
 
@@ -24,13 +26,23 @@ import br.com.avoren.indicio.ui.comum.ConteudoDeFalha
  */
 @Composable
 fun DestinoHistoria(
-    container: ContainerAplicacao,
+    repositorioCasos: RepositorioCasos,
+    repositorioProgresso: RepositorioProgresso,
+    criarNarrador: () -> Narrador,
     casoId: String,
     retomar: Boolean,
-    onPausar: () -> Unit,
+    onPausar: (Boolean) -> Unit,
+    onAbrirEtapas: () -> Unit,
+    onAbrirCaderno: () -> Unit,
     onVoltarAoCatalogo: () -> Unit,
     modifier: Modifier = Modifier,
-    viewModel: HistoriaViewModel = viewModel(factory = HistoriaViewModel.fabrica(container)),
+    viewModel: HistoriaViewModel = viewModel(
+        factory = HistoriaViewModel.fabrica(
+            repositorioCasos = repositorioCasos,
+            repositorioProgresso = repositorioProgresso,
+            criarNarrador = criarNarrador,
+        ),
+    ),
 ) {
     LaunchedEffect(casoId, retomar) {
         viewModel.abrir(casoId, retomar = retomar)
@@ -54,7 +66,10 @@ fun DestinoHistoria(
     }
 
     // O botão do sistema abre a pausa em vez de sair da história sem aviso.
-    BackHandler(enabled = estado is EstadoHistoria.EmCurso, onBack = onPausar)
+    BackHandler(enabled = estado is EstadoHistoria.EmCurso) {
+        val emCurso = estado as? EstadoHistoria.EmCurso
+        onPausar(emCurso?.temInvestigacaoLonga == true)
+    }
 
     when (val atual = estado) {
         is EstadoHistoria.Carregando -> ConteudoCarregando(modifier)
@@ -64,12 +79,21 @@ fun DestinoHistoria(
             modifier = modifier,
         )
 
+        is EstadoHistoria.AtualizacaoNecessaria -> ConteudoAtualizacaoNecessaria(
+            tituloCaso = atual.tituloCaso,
+            onReiniciar = viewModel::reiniciar,
+            onVoltarAoCatalogo = onVoltarAoCatalogo,
+            modifier = modifier,
+        )
+
         is EstadoHistoria.EmCurso -> ConteudoHistoria(
             estado = atual,
             estadoNarracao = estadoNarracao,
             onEscolher = viewModel::escolher,
             onAlternarNarracao = viewModel::alternarNarracao,
-            onPausar = onPausar,
+            onPausar = { onPausar(atual.temInvestigacaoLonga) },
+            onAbrirEtapas = onAbrirEtapas,
+            onAbrirCaderno = onAbrirCaderno,
             modifier = modifier,
         )
 

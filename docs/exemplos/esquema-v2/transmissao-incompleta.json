@@ -1,0 +1,409 @@
+{
+  "versaoEsquema": 2,
+  "versaoConteudo": 1,
+  "id": "transmissao-incompleta",
+  "titulo": "A Transmissão Incompleta",
+  "sinopse": "A gravação final de uma peça radiofônica termina com um trecho inesperadamente vazio.",
+  "categoria": "cultura_popular_antiga",
+  "cenaInicial": "primeira-escuta",
+  "etapas": [
+    {
+      "id": "ouvir-material",
+      "titulo": "O silêncio no final",
+      "descricao": "O rolo, o roteiro e a duração gravada oferecem os primeiros sinais.",
+      "resumoConclusao": "O rolo está inteiro, mas o trecho final nunca chegou à gravação principal.",
+      "resumoRetomada": "Você começou a comparar o que está no rolo com o que foi escrito no roteiro.",
+      "objetivos": [
+        {
+          "id": "confirmar-trecho-ausente",
+          "texto": "Confirmar se o trecho foi apagado ou deixou de ser gravado",
+          "perguntaEmAberto": "Por que a gravação termina antes da última fala?"
+        }
+      ]
+    },
+    {
+      "id": "comparar-versoes",
+      "titulo": "O ensaio e a gravação",
+      "descricao": "As lembranças da equipe explicam como o final foi preparado.",
+      "resumoConclusao": "O final foi ensaiado e registrado numa gravação-guia separada.",
+      "resumoRetomada": "Você está comparando a sessão principal com a gravação usada durante o ensaio.",
+      "objetivos": [
+        {
+          "id": "encontrar-versao-guia",
+          "texto": "Encontrar a versão usada como guia no último ensaio",
+          "perguntaEmAberto": "Onde ficou registrado o final que todos lembram?"
+        }
+      ]
+    },
+    {
+      "id": "preparar-versao-completa",
+      "titulo": "Uma versão completa",
+      "descricao": "O trecho preservado pode ser reunido ao rolo principal com clareza.",
+      "resumoConclusao": "A peça ganhou uma versão completa e uma cópia de preservação.",
+      "resumoRetomada": "Você encontrou o final e falta decidir como incorporá-lo à gravação principal.",
+      "objetivos": [
+        {
+          "id": "reunir-gravacoes",
+          "texto": "Reunir o trecho final e registrar sua origem",
+          "perguntaEmAberto": "Como preservar o final sem esconder que veio do ensaio?"
+        }
+      ]
+    }
+  ],
+  "caderno": {
+    "pistas": [
+      {
+        "id": "rolo-sem-corte",
+        "titulo": "O rolo não foi cortado",
+        "descricao": "A extremidade do rolo está íntegra e identificada; não há emenda nem trecho removido."
+      },
+      {
+        "id": "roteiro-mais-longo",
+        "titulo": "O roteiro continua",
+        "descricao": "Duas falas e uma breve passagem musical aparecem depois do ponto em que o áudio termina."
+      },
+      {
+        "id": "gravacao-guia",
+        "titulo": "Uma gravação de ensaio",
+        "descricao": "Um rolo menor contém o final completo, gravado como referência para a equipe."
+      },
+      {
+        "id": "chave-em-ensaio",
+        "titulo": "A chave ficou em modo de ensaio",
+        "descricao": "A cabine enviou o som final apenas ao rolo-guia, sem retornar à gravação principal."
+      }
+    ],
+    "pessoas": [
+      {
+        "id": "locutora",
+        "nome": "A locutora",
+        "papel": "Voz principal da peça",
+        "imagem": {
+          "recurso": "pessoa_transmissao_locutora",
+          "descricaoAcessivel": "Locutora sentada diante de um microfone antigo com o roteiro aberto."
+        },
+        "anotacoes": [
+          {
+            "id": "locutora-lembra-final",
+            "texto": "Ela se lembra de ter dito as últimas falas durante o ensaio e a sessão principal."
+          },
+          {
+            "id": "locutora-ouviu-guia",
+            "texto": "No ensaio, ela ouviu a passagem musical voltar pelos fones antes da última fala."
+          }
+        ]
+      },
+      {
+        "id": "tecnico",
+        "nome": "O técnico de som",
+        "papel": "Operação da cabine",
+        "anotacoes": [
+          {
+            "id": "tecnico-usou-dois-rolos",
+            "texto": "Ele usou um rolo principal e outro menor como guia durante o ensaio."
+          }
+        ]
+      },
+      {
+        "id": "pianista",
+        "nome": "A pianista",
+        "papel": "Passagem musical final",
+        "anotacoes": [
+          {
+            "id": "pianista-tocou-duas-vezes",
+            "texto": "Ela tocou o final no ensaio e repetiu a passagem na sessão principal."
+          }
+        ]
+      }
+    ],
+    "locais": [
+      {
+        "id": "estudio",
+        "nome": "Estúdio",
+        "anotacoes": [
+          {
+            "id": "estudio-dois-reprodutores",
+            "texto": "A mesa do estúdio podia ouvir o rolo principal e o rolo-guia separadamente."
+          }
+        ]
+      },
+      {
+        "id": "cabine",
+        "nome": "Cabine de som",
+        "imagem": {
+          "recurso": "local_transmissao_cabine",
+          "descricaoAcessivel": "Cabine compacta com duas máquinas de rolo e uma mesa de chaves."
+        },
+        "anotacoes": [
+          {
+            "id": "cabine-chave-de-retorno",
+            "texto": "Uma chave decide se o som volta ao rolo principal ou permanece apenas no guia."
+          }
+        ]
+      }
+    ],
+    "conversas": [
+      {
+        "id": "conversa-locutora-final",
+        "pessoaId": "locutora",
+        "titulo": "As últimas falas",
+        "texto": "A locutora recorda as duas falas finais e a passagem de piano entre elas."
+      },
+      {
+        "id": "conversa-tecnico-rolos",
+        "pessoaId": "tecnico",
+        "titulo": "Dois rolos na cabine",
+        "texto": "O técnico explica que o rolo menor servia para repetir trechos durante o ensaio."
+      },
+      {
+        "id": "conversa-pianista-passagem",
+        "pessoaId": "pianista",
+        "titulo": "A passagem de piano",
+        "texto": "A pianista confirma que tocou a mesma passagem nas duas sessões."
+      }
+    ]
+  },
+  "lembrancas": [
+    {
+      "id": "audio-nao-foi-cortado",
+      "texto": "O rolo principal termina inteiro, sem sinal de corte.",
+      "essencial": true
+    },
+    {
+      "id": "roteiro-tem-final",
+      "texto": "O roteiro contém duas falas depois do fim da gravação.",
+      "essencial": true
+    },
+    {
+      "id": "ensaio-foi-gravado",
+      "texto": "Um rolo menor guardou o final durante o ensaio.",
+      "essencial": true
+    },
+    {
+      "id": "retorno-ficou-desligado",
+      "texto": "A chave de retorno não enviou o trecho final ao rolo principal.",
+      "essencial": true
+    }
+  ],
+  "cenas": [
+    {
+      "id": "primeira-escuta",
+      "etapaId": "ouvir-material",
+      "objetivoId": "confirmar-trecho-ausente",
+      "texto": "A peça segue com clareza até a locutora anunciar uma última música. Depois disso, há poucos segundos de silêncio e o rolo termina.",
+      "imagem": {
+        "recurso": "cena_transmissao_primeira_escuta",
+        "descricaoAcessivel": "Máquina de rolo sobre uma mesa, ao lado de um roteiro aberto e fones de ouvido."
+      },
+      "revelacoes": {
+        "anotacoesPessoas": ["locutora-lembra-final"],
+        "conversas": ["conversa-locutora-final"],
+        "anotacoesLocais": ["estudio-dois-reprodutores"]
+      },
+      "escolhas": [
+        {
+          "id": "primeira-escuta-a",
+          "texto": "Examinar o fim do rolo",
+          "proximaCena": "fim-do-rolo"
+        },
+        {
+          "id": "primeira-escuta-b",
+          "texto": "Comparar o áudio com o roteiro",
+          "proximaCena": "roteiro"
+        }
+      ]
+    },
+    {
+      "id": "fim-do-rolo",
+      "etapaId": "ouvir-material",
+      "objetivoId": "confirmar-trecho-ausente",
+      "texto": "A ponta do rolo conserva a identificação escrita na sessão. Não há corte, emenda ou espaço suficiente para o final descrito no roteiro.",
+      "imagem": {
+        "recurso": "cena_transmissao_fim_rolo",
+        "descricaoAcessivel": "Extremidade intacta de uma fita de áudio com identificação manuscrita."
+      },
+      "revelacoes": {
+        "pistas": ["rolo-sem-corte"],
+        "lembrancas": ["audio-nao-foi-cortado"]
+      },
+      "escolhas": [
+        {
+          "id": "fim-do-rolo-a",
+          "texto": "Perguntar ao técnico sobre a sessão",
+          "proximaCena": "tecnico"
+        },
+        {
+          "id": "fim-do-rolo-b",
+          "texto": "Procurar gravações do ensaio",
+          "proximaCena": "rolo-guia"
+        }
+      ]
+    },
+    {
+      "id": "roteiro",
+      "etapaId": "ouvir-material",
+      "objetivoId": "confirmar-trecho-ausente",
+      "pontoDePausa": true,
+      "texto": "O roteiro continua por mais duas falas e uma passagem de piano. As páginas estão numeradas e nenhuma folha está ausente.",
+      "imagem": {
+        "recurso": "cena_transmissao_roteiro",
+        "descricaoAcessivel": "Duas páginas numeradas de roteiro com falas e uma indicação musical no final."
+      },
+      "revelacoes": {
+        "pistas": ["roteiro-mais-longo"],
+        "lembrancas": ["roteiro-tem-final"]
+      },
+      "escolhas": [
+        {
+          "id": "roteiro-a",
+          "texto": "Ouvir a lembrança do técnico",
+          "proximaCena": "tecnico"
+        },
+        {
+          "id": "roteiro-b",
+          "texto": "Buscar o material do ensaio",
+          "proximaCena": "rolo-guia"
+        }
+      ]
+    },
+    {
+      "id": "tecnico",
+      "etapaId": "comparar-versoes",
+      "objetivoId": "encontrar-versao-guia",
+      "texto": "O técnico lembra que usou dois rolos. O menor permitia repetir a música durante o ensaio sem voltar a gravação principal.",
+      "imagem": {
+        "recurso": "cena_transmissao_tecnico",
+        "descricaoAcessivel": "Técnico aponta duas máquinas de fita lado a lado na cabine de som."
+      },
+      "revelacoes": {
+        "anotacoesPessoas": ["tecnico-usou-dois-rolos"],
+        "conversas": ["conversa-tecnico-rolos"]
+      },
+      "escolhas": [
+        {
+          "id": "tecnico-a",
+          "texto": "Examinar as chaves da cabine",
+          "proximaCena": "chave-retorno"
+        },
+        {
+          "id": "tecnico-b",
+          "texto": "Confirmar a passagem com a pianista",
+          "proximaCena": "pianista"
+        }
+      ]
+    },
+    {
+      "id": "rolo-guia",
+      "etapaId": "comparar-versoes",
+      "objetivoId": "encontrar-versao-guia",
+      "pontoDePausa": true,
+      "texto": "Um rolo menor está identificado como guia. Nele, a música e as duas falas finais aparecem completas e sem interrupção.",
+      "imagem": {
+        "recurso": "cena_transmissao_rolo_guia",
+        "descricaoAcessivel": "Pequeno rolo de áudio com etiqueta escrita como guia ao lado de uma caixa protetora."
+      },
+      "revelacoes": {
+        "pistas": ["gravacao-guia"],
+        "anotacoesPessoas": ["locutora-ouviu-guia"],
+        "lembrancas": ["ensaio-foi-gravado"]
+      },
+      "escolhas": [
+        {
+          "id": "rolo-guia-a",
+          "texto": "Comparar as chaves da cabine",
+          "proximaCena": "chave-retorno"
+        },
+        {
+          "id": "rolo-guia-b",
+          "texto": "Ouvir quem tocou a passagem",
+          "proximaCena": "pianista"
+        }
+      ]
+    },
+    {
+      "id": "chave-retorno",
+      "etapaId": "preparar-versao-completa",
+      "objetivoId": "reunir-gravacoes",
+      "texto": "Uma anotação na mesa mostra que a chave de retorno ficou na posição de ensaio. Assim, o final chegou ao rolo-guia, mas não ao principal.",
+      "imagem": {
+        "recurso": "cena_transmissao_chave",
+        "descricaoAcessivel": "Mesa de som com uma chave marcada como ensaio e uma anotação presa ao lado."
+      },
+      "revelacoes": {
+        "pistas": ["chave-em-ensaio"],
+        "anotacoesLocais": ["cabine-chave-de-retorno"],
+        "lembrancas": ["retorno-ficou-desligado"]
+      },
+      "escolhas": [
+        {
+          "id": "chave-retorno-a",
+          "texto": "Montar uma versão contínua identificada",
+          "proximaCena": "final-versao-completa"
+        },
+        {
+          "id": "chave-retorno-b",
+          "texto": "Preservar os rolos e criar uma cópia de escuta",
+          "proximaCena": "final-copia-de-escuta"
+        }
+      ]
+    },
+    {
+      "id": "pianista",
+      "etapaId": "preparar-versao-completa",
+      "objetivoId": "reunir-gravacoes",
+      "texto": "A pianista reconhece a passagem no rolo-guia. Ela a tocou duas vezes e confirma que as duas versões pertencem à mesma sessão de trabalho.",
+      "imagem": {
+        "recurso": "cena_transmissao_pianista",
+        "descricaoAcessivel": "Pianista ouve fones ao lado de um teclado e acompanha notas em uma partitura."
+      },
+      "revelacoes": {
+        "pistas": ["gravacao-guia"],
+        "anotacoesPessoas": ["pianista-tocou-duas-vezes"],
+        "conversas": ["conversa-pianista-passagem"],
+        "lembrancas": ["ensaio-foi-gravado"]
+      },
+      "escolhas": [
+        {
+          "id": "pianista-a",
+          "texto": "Preparar uma versão completa com registro",
+          "proximaCena": "final-versao-completa"
+        },
+        {
+          "id": "pianista-b",
+          "texto": "Criar uma cópia de escuta sem alterar os rolos",
+          "proximaCena": "final-copia-de-escuta"
+        }
+      ]
+    },
+    {
+      "id": "final-versao-completa",
+      "tipo": "final",
+      "etapaId": "preparar-versao-completa",
+      "texto": "O final do ensaio é incorporado a uma versão de escuta claramente identificada. Os dois rolos originais permanecem guardados com suas histórias registradas.",
+      "imagem": {
+        "recurso": "cena_transmissao_final_completa",
+        "descricaoAcessivel": "Duas caixas de rolos identificadas ao lado de uma nova cópia pronta para escuta."
+      },
+      "desfecho": {
+        "titulo": "A peça volta a ter um final",
+        "mensagem": "O público poderá ouvir a versão completa e saber de onde veio cada trecho.",
+        "explicacaoPistas": "O rolo intacto mostrou que nada foi cortado, o roteiro confirmou o trecho ausente e o guia preservou o final que a chave não enviou ao rolo principal."
+      }
+    },
+    {
+      "id": "final-copia-de-escuta",
+      "tipo": "final",
+      "etapaId": "preparar-versao-completa",
+      "texto": "A equipe preserva os dois rolos como foram encontrados e prepara uma cópia de escuta que reúne a sessão principal e o final do ensaio.",
+      "imagem": {
+        "recurso": "cena_transmissao_final_copia",
+        "descricaoAcessivel": "Rolos protegidos em caixas e uma cópia de escuta com ficha explicativa."
+      },
+      "desfecho": {
+        "titulo": "Originais preservados, história completa",
+        "mensagem": "A gravação pode ser ouvida por inteiro sem apagar a história dos materiais originais.",
+        "explicacaoPistas": "O roteiro orientou a montagem, o rolo-guia forneceu o final e os relatos da equipe confirmaram que ambas as gravações faziam parte do mesmo trabalho."
+      }
+    }
+  ]
+}

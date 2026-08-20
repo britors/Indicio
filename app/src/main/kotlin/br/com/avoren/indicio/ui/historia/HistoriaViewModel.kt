@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import br.com.avoren.indicio.di.ContainerAplicacao
 import br.com.avoren.indicio.domain.armazenamento.RepositorioProgresso
 import br.com.avoren.indicio.domain.armazenamento.ResultadoArmazenamento
 import br.com.avoren.indicio.domain.caso.RepositorioCasos
@@ -193,9 +192,11 @@ class HistoriaViewModel(
 
             else -> when (val reconstrucao = mecanismo.reconstruir(caso, progresso)) {
                 is ResultadoReconstrucao.Sucesso -> reconstrucao.sessao
-                // Progresso que não combina mais com o caso não é motivo de
-                // erro para o jogador: a história recomeça do início.
-                is ResultadoReconstrucao.ProgressoIncompativel -> mecanismo.iniciar(caso)
+                is ResultadoReconstrucao.ProgressoIncompativel -> {
+                    sessao = null
+                    _estado.value = EstadoHistoria.AtualizacaoNecessaria(caso.titulo)
+                    return
+                }
             }
         }
 
@@ -220,6 +221,7 @@ class HistoriaViewModel(
                 tituloCaso = casoAtual.titulo,
                 cena = cena,
                 pistas = sessaoAtual.pistas,
+                temInvestigacaoLonga = casoAtual.etapas.isNotEmpty(),
                 escolhasHabilitadas = habilitado,
             )
         }
@@ -232,13 +234,17 @@ class HistoriaViewModel(
     companion object {
         private const val EVENTOS_EM_BUFFER = 4
 
-        fun fabrica(container: ContainerAplicacao): ViewModelProvider.Factory =
+        fun fabrica(
+            repositorioCasos: RepositorioCasos,
+            repositorioProgresso: RepositorioProgresso,
+            criarNarrador: () -> Narrador,
+        ): ViewModelProvider.Factory =
             viewModelFactory {
                 initializer {
                     HistoriaViewModel(
-                        repositorioCasos = container.repositorioCasos,
-                        repositorioProgresso = container.repositorioProgresso,
-                        narrador = container.criarNarrador(),
+                        repositorioCasos = repositorioCasos,
+                        repositorioProgresso = repositorioProgresso,
+                        narrador = criarNarrador(),
                     )
                 }
             }

@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import br.com.avoren.indicio.di.ContainerAplicacao
 import br.com.avoren.indicio.domain.caso.ErroCarga
 import br.com.avoren.indicio.domain.caso.RepositorioCasos
 import br.com.avoren.indicio.domain.caso.ResultadoCarga
@@ -64,9 +63,9 @@ class CatalogoViewModel(
     }
 
     companion object {
-        fun fabrica(container: ContainerAplicacao): ViewModelProvider.Factory =
+        fun fabrica(repositorioCasos: RepositorioCasos): ViewModelProvider.Factory =
             viewModelFactory {
-                initializer { CatalogoViewModel(container.repositorioCasos) }
+                initializer { CatalogoViewModel(repositorioCasos) }
             }
     }
 }

@@ -1,6 +1,7 @@
 package br.com.avoren.indicio.ui.tema
 
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Shapes
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -31,7 +32,7 @@ internal val EsquemaClaro = lightColorScheme(
     onSecondaryContainer = TintaSepia,
     background = PapelCreme,
     onBackground = TintaSepia,
-    surface = PapelCreme,
+    surface = PapelClaro,
     onSurface = TintaSepia,
     surfaceVariant = PapelSepia,
     onSurfaceVariant = TintaSuave,
@@ -61,6 +62,12 @@ fun TemaIndicio(
     CompositionLocalProvider(LocalReducaoDeMovimentos provides preferencias.reduzirMovimentos) {
         MaterialTheme(
             colorScheme = EsquemaClaro,
+            shapes = Shapes(
+                small = FormasIndicio.pequena,
+                medium = FormasIndicio.controle,
+                large = FormasIndicio.cartao,
+                extraLarge = FormasIndicio.pilula,
+            ),
             typography = tipografiaIndicio(preferencias.tamanhoTexto),
             content = content,
         )

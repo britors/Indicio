@@ -50,11 +50,11 @@ class ConteudoPublicadoTest {
     }
 
     @Test
-    fun `cada caso tem entre doze e dezoito cenas`() = runTest {
+    fun `cada caso tem ao menos doze cenas`() = runTest {
         casosPublicados().forEach { caso ->
             assertTrue(
-                "O caso \"${caso.id}\" tem ${caso.cenas.size} cenas; o esperado é de 12 a 18.",
-                caso.cenas.size in 12..18,
+                "O caso \"${caso.id}\" tem ${caso.cenas.size} cenas; o mínimo é 12.",
+                caso.cenas.size >= 12,
             )
         }
     }
@@ -164,7 +164,9 @@ class ConteudoPublicadoTest {
          * linguagem de fracasso, alegações médicas e marcas reais.
          */
         val TERMOS_PROIBIDOS = listOf(
-            "fifa", "copa do mundo", "libertadores", "champions",
+            "fifa", "cbf", "conmebol", "uefa",
+            "copa do mundo", "copa do brasil", "copa américa",
+            "libertadores", "champions", "brasileirão", "mundial de clubes",
             "morte", "morreu", "sangue", "arma", "faca", "tiro",
             "game over", "você perdeu", "derrota", "fracasso", "punição",
             "demência", "alzheimer", "tratamento", "terapia", "cura",

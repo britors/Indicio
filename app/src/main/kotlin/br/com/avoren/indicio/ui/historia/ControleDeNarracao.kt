@@ -1,11 +1,17 @@
 package br.com.avoren.indicio.ui.historia
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.LiveRegionMode
@@ -13,10 +19,11 @@ import androidx.compose.ui.semantics.liveRegion
 import androidx.compose.ui.semantics.onClick
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
-import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
 import br.com.avoren.indicio.R
 import br.com.avoren.indicio.domain.narracao.EstadoNarracao
 import br.com.avoren.indicio.ui.tema.AlturaMinimaBotao
+import br.com.avoren.indicio.ui.tema.EspacamentoIndicio
 
 /**
  * Controle de narração da cena.
@@ -53,8 +60,10 @@ internal fun ControleDeNarracao(
                 if (falando) R.string.historia_narrando else R.string.historia_ouvir,
             )
 
-            OutlinedButton(
+            Surface(
                 onClick = onAlternar,
+                color = MaterialTheme.colorScheme.surface,
+                contentColor = MaterialTheme.colorScheme.primary,
                 modifier = modifier
                     .fillMaxWidth()
                     .heightIn(min = AlturaMinimaBotao)
@@ -64,11 +73,25 @@ internal fun ControleDeNarracao(
                         onClick(label = rotulo, action = null)
                     },
             ) {
-                Text(
-                    text = rotulo,
-                    style = MaterialTheme.typography.labelLarge,
-                    textAlign = TextAlign.Center,
-                )
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(EspacamentoIndicio.medio),
+                ) {
+                    Surface(
+                        shape = CircleShape,
+                        color = MaterialTheme.colorScheme.secondaryContainer,
+                        contentColor = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier.size(40.dp),
+                    ) {
+                        Box(contentAlignment = Alignment.Center) {
+                            Text(
+                                text = if (falando) "■" else "▶",
+                                style = MaterialTheme.typography.bodyMedium,
+                            )
+                        }
+                    }
+                    Text(text = rotulo, style = MaterialTheme.typography.labelLarge)
+                }
             }
         }
     }

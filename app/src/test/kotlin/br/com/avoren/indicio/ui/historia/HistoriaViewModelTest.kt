@@ -144,14 +144,16 @@ class HistoriaViewModelTest {
     }
 
     @Test
-    fun `progresso incompativel recomeca o caso em vez de falhar`() = runTest {
+    fun `progresso incompativel aguarda confirmacao antes de recomecar`() = runTest {
         val vm = viewModel(progresso = progressoSalvo(listOf("escolha-que-sumiu")))
 
         vm.abrir(CasoFixtures.ID)
 
-        val estado = vm.estado.value
-        assertTrue(estado is EstadoHistoria.EmCurso)
-        assertEquals("abertura", (estado as EstadoHistoria.EmCurso).cena.id)
+        assertTrue(vm.estado.value is EstadoHistoria.AtualizacaoNecessaria)
+
+        vm.reiniciar()
+
+        assertEquals("abertura", (vm.estado.value as EstadoHistoria.EmCurso).cena.id)
     }
 
     @Test

@@ -22,9 +22,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.com.avoren.indicio.R
-import br.com.avoren.indicio.ui.comum.BarraDoTopo
 import br.com.avoren.indicio.ui.comum.BotaoPrincipal
 import br.com.avoren.indicio.ui.comum.BotaoSecundario
+import br.com.avoren.indicio.ui.comum.TituloDeTela
+import br.com.avoren.indicio.ui.tema.EspacamentoIndicio
 import br.com.avoren.indicio.ui.tema.TemaIndicio
 
 /**
@@ -41,37 +42,59 @@ fun TelaPausa(
     onReiniciar: () -> Unit,
     onVoltarAoInicio: () -> Unit,
     modifier: Modifier = Modifier,
+    onAbrirEtapas: () -> Unit = {},
+    onAbrirCaderno: () -> Unit = {},
+    temEtapas: Boolean = false,
 ) {
     var confirmandoReinicio by remember { mutableStateOf(false) }
 
     Scaffold(
         modifier = modifier.fillMaxSize(),
-        topBar = { BarraDoTopo(titulo = stringResource(R.string.pausa_titulo)) },
     ) { espacamento ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(espacamento)
                 .verticalScroll(rememberScrollState())
-                .padding(horizontal = 24.dp, vertical = 32.dp),
+                .padding(
+                    horizontal = EspacamentoIndicio.margemDaTela,
+                    vertical = EspacamentoIndicio.grande,
+                ),
         ) {
+            TituloDeTela(texto = stringResource(R.string.pausa_titulo))
+            Spacer(modifier = Modifier.height(EspacamentoIndicio.destaque))
+
             BotaoPrincipal(
                 texto = stringResource(R.string.pausa_continuar),
                 onClick = onContinuar,
             )
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(EspacamentoIndicio.padrao))
+
+            if (temEtapas) {
+                BotaoSecundario(
+                    texto = stringResource(R.string.pausa_etapas),
+                    onClick = onAbrirEtapas,
+                )
+                Spacer(modifier = Modifier.height(EspacamentoIndicio.padrao))
+            }
+
+            BotaoSecundario(
+                texto = stringResource(R.string.pausa_caderno),
+                onClick = onAbrirCaderno,
+            )
+            Spacer(modifier = Modifier.height(EspacamentoIndicio.padrao))
 
             BotaoSecundario(
                 texto = stringResource(R.string.pausa_configuracoes),
                 onClick = onConfiguracoes,
             )
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(EspacamentoIndicio.padrao))
 
             BotaoSecundario(
                 texto = stringResource(R.string.pausa_reiniciar),
                 onClick = { confirmandoReinicio = true },
             )
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(EspacamentoIndicio.padrao))
 
             BotaoSecundario(
                 texto = stringResource(R.string.pausa_voltar_inicio),
@@ -115,6 +138,9 @@ private fun PreviaPausa() {
     TemaIndicio {
         TelaPausa(
             onContinuar = {},
+            onAbrirEtapas = {},
+            onAbrirCaderno = {},
+            temEtapas = true,
             onConfiguracoes = {},
             onReiniciar = {},
             onVoltarAoInicio = {},

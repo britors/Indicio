@@ -1,0 +1,25 @@
+{
+  "versaoCatalogo": 2,
+  "casos": [
+    {
+      "id": "catalogo-fora-de-ordem",
+      "titulo": "O Catálogo Fora de Ordem",
+      "sinopse": "Cartões de uma pequena coleção foram reorganizados durante a noite.",
+      "categoria": "misterios_policiais",
+      "arquivo": "casos/catalogo-fora-de-ordem.json",
+      "disponivel": true,
+      "versaoEsquema": 2,
+      "versaoConteudo": 1
+    },
+    {
+      "id": "transmissao-incompleta",
+      "titulo": "A Transmissão Incompleta",
+      "sinopse": "A gravação final de uma peça radiofônica termina com um trecho inesperadamente vazio.",
+      "categoria": "cultura_popular_antiga",
+      "arquivo": "casos/transmissao-incompleta.json",
+      "disponivel": true,
+      "versaoEsquema": 2,
+      "versaoConteudo": 1
+    }
+  ]
+}

@@ -29,8 +29,13 @@ class MecanismoNarrativo {
     fun iniciar(caso: Caso): SessaoInvestigacao? {
         val inicial = caso.cena(caso.cenaInicial) ?: return null
 
-        return SessaoInvestigacao(casoId = caso.id, cenaAtual = inicial.id)
+        return SessaoInvestigacao(
+            casoId = caso.id,
+            cenaAtual = inicial.id,
+            revisao = caso.revisao,
+        )
             .comPista(inicial.pista)
+            .comRevelacoes(caso, inicial.revelacoes)
             .comDesfechoDe(inicial)
     }
 
@@ -65,7 +70,9 @@ class MecanismoNarrativo {
         val nova = sessao
             .copy(cenaAtual = proxima.id, caminho = sessao.caminho + escolha.id)
             .comPista(escolha.pista)
+            .comRevelacoes(caso, escolha.revelacoes)
             .comPista(proxima.pista)
+            .comRevelacoes(caso, proxima.revelacoes)
             .comDesfechoDe(proxima)
 
         val reveladas = nova.pistas - sessao.pistas.toSet()
@@ -85,6 +92,23 @@ class MecanismoNarrativo {
                 passo = 0,
                 escolhaId = "",
                 motivo = "o progresso é do caso \"${progresso.casoId}\"",
+            )
+        }
+
+        if (progresso.revisao.esquema != caso.revisao.esquema) {
+            return ResultadoReconstrucao.ProgressoIncompativel(
+                passo = 0,
+                escolhaId = "",
+                motivo = "o progresso usa o esquema ${progresso.revisao.esquema}, " +
+                    "mas o caso instalado usa ${caso.revisao.esquema}",
+            )
+        }
+
+        if (progresso.revisao.conteudo > caso.revisao.conteudo) {
+            return ResultadoReconstrucao.ProgressoIncompativel(
+                passo = 0,
+                escolhaId = "",
+                motivo = "o progresso pertence a uma revisão mais nova do caso",
             )
         }
 

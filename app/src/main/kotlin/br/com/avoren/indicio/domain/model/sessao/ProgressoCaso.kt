@@ -1,5 +1,7 @@
 package br.com.avoren.indicio.domain.model.sessao
 
+import br.com.avoren.indicio.domain.model.caso.RevisaoCaso
+
 /**
  * Progresso salvável de um caso.
  *
@@ -11,6 +13,7 @@ package br.com.avoren.indicio.domain.model.sessao
 data class ProgressoCaso(
     val casoId: String,
     val escolhas: List<String> = emptyList(),
+    val revisao: RevisaoCaso = RevisaoCaso.V1,
 ) {
     val iniciado: Boolean get() = escolhas.isNotEmpty()
 }

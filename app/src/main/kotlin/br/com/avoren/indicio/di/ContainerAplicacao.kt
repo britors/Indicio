@@ -15,7 +15,7 @@ import br.com.avoren.indicio.data.narracao.NarradorTextToSpeech
 import br.com.avoren.indicio.data.preferencias.RepositorioPreferenciasDataStore
 import br.com.avoren.indicio.domain.armazenamento.RepositorioPreferencias
 import br.com.avoren.indicio.domain.armazenamento.RepositorioProgresso
-import br.com.avoren.indicio.domain.caso.ObterCasoParaContinuar
+import br.com.avoren.indicio.application.caso.ObterCasoParaContinuar
 import br.com.avoren.indicio.domain.caso.RepositorioCasos
 import br.com.avoren.indicio.domain.narracao.Narrador
 import br.com.avoren.indicio.domain.repositorio.RepositorioIdentidade

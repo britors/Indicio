@@ -2,7 +2,9 @@ package br.com.avoren.indicio.data.caso
 
 import br.com.avoren.indicio.domain.caso.ErroCarga
 import br.com.avoren.indicio.domain.caso.ResultadoCarga
+import br.com.avoren.indicio.domain.model.caso.RevisaoCaso
 import br.com.avoren.indicio.fake.FonteCasosEmMemoria
+import java.io.File
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
@@ -152,6 +154,21 @@ class RepositorioCasosJsonTest {
     }
 
     @Test
+    fun `dois casos disponiveis sao carregados pelo proprio identificador`() = runTest {
+        val repositorio = repositorio(
+            RepositorioCasosJson.CAMINHO_CATALOGO to CATALOGO_COM_DOIS_DISPONIVEIS,
+            CAMINHO_CASO to CASO_VALIDO,
+            CAMINHO_SEGUNDO_CASO to SEGUNDO_CASO_VALIDO,
+        )
+
+        val catalogo = (repositorio.catalogo() as ResultadoCarga.Sucesso).valor
+
+        assertEquals(listOf("segundo-caso", "caso-exemplo"), catalogo.disponiveis().map { it.id })
+        assertTrue(repositorio.caso("caso-exemplo") is ResultadoCarga.Sucesso)
+        assertTrue(repositorio.caso("segundo-caso") is ResultadoCarga.Sucesso)
+    }
+
+    @Test
     fun `identificador divergente entre caso e catalogo e reportado`() = runTest {
         val resultado = repositorio(
             RepositorioCasosJson.CAMINHO_CATALOGO to CATALOGO_VALIDO,
@@ -164,8 +181,69 @@ class RepositorioCasosJsonTest {
         assertTrue(erro.detalhe.contains("difere do catálogo"))
     }
 
+    @Test
+    fun `catalogo v2 carrega casos v1 e v2 simultaneamente`() = runTest {
+        val casoV2 = fixture("catalogo-fora-de-ordem.json")
+        val catalogoMisto = fixture("catalogo.json").replace(
+            "\"casos\": [",
+            "\"casos\": [" +
+                "{\"id\":\"caso-exemplo\",\"titulo\":\"Caso de exemplo\"," +
+                "\"sinopse\":\"Uma sinopse curta.\",\"categoria\":\"misterios_policiais\"," +
+                "\"arquivo\":\"$CAMINHO_CASO\",\"disponivel\":true," +
+                "\"versaoEsquema\":1,\"versaoConteudo\":1},",
+        )
+        val repositorio = repositorio(
+            RepositorioCasosJson.CAMINHO_CATALOGO to catalogoMisto,
+            CAMINHO_CASO to CASO_VALIDO,
+            "casos/catalogo-fora-de-ordem.json" to casoV2,
+            "casos/transmissao-incompleta.json" to fixture("transmissao-incompleta.json"),
+        )
+
+        val catalogo = (repositorio.catalogo() as ResultadoCarga.Sucesso).valor
+        val legado = (repositorio.caso("caso-exemplo") as ResultadoCarga.Sucesso).valor
+        val longo = (repositorio.caso("catalogo-fora-de-ordem") as ResultadoCarga.Sucesso).valor
+
+        assertEquals(3, catalogo.disponiveis().size)
+        assertEquals(RevisaoCaso.V1, legado.revisao)
+        assertEquals(RevisaoCaso(2, 1), longo.revisao)
+        assertEquals(3, longo.etapas.size)
+        assertEquals(4, longo.caderno.pistas.size)
+    }
+
+    @Test
+    fun `os dois fixtures v2 passam pelo carregamento e validacao de dominio`() = runTest {
+        val repositorio = repositorio(
+            RepositorioCasosJson.CAMINHO_CATALOGO to fixture("catalogo.json"),
+            "casos/catalogo-fora-de-ordem.json" to fixture("catalogo-fora-de-ordem.json"),
+            "casos/transmissao-incompleta.json" to fixture("transmissao-incompleta.json"),
+        )
+
+        assertTrue(repositorio.caso("catalogo-fora-de-ordem") is ResultadoCarga.Sucesso)
+        assertTrue(repositorio.caso("transmissao-incompleta") is ResultadoCarga.Sucesso)
+    }
+
+    @Test
+    fun `revisao divergente entre catalogo e caso v2 e rejeitada`() = runTest {
+        val catalogo = fixture("catalogo.json").replace(
+            "\"versaoConteudo\": 1",
+            "\"versaoConteudo\": 2",
+        )
+        val resultado = repositorio(
+            RepositorioCasosJson.CAMINHO_CATALOGO to catalogo,
+            "casos/catalogo-fora-de-ordem.json" to fixture("catalogo-fora-de-ordem.json"),
+            "casos/transmissao-incompleta.json" to fixture("transmissao-incompleta.json"),
+        ).caso("catalogo-fora-de-ordem")
+
+        assertTrue(resultado is ResultadoCarga.Falha)
+        assertTrue((resultado as ResultadoCarga.Falha).erro.detalhe.contains("versões diferem"))
+    }
+
+    private fun fixture(nome: String): String =
+        File("../docs/exemplos/esquema-v2/$nome").readText()
+
     private companion object {
         const val CAMINHO_CASO = "casos/caso-exemplo.json"
+        const val CAMINHO_SEGUNDO_CASO = "casos/segundo-caso.json"
 
         val CATALOGO_VALIDO = """
             {
@@ -187,6 +265,13 @@ class RepositorioCasosJsonTest {
             "\"casos\": [",
             "\"casos\": [ { \"id\": \"caso-futuro\", \"titulo\": \"Ainda em preparação\", " +
                 "\"sinopse\": \"Em breve.\", \"categoria\": \"faroeste\", \"disponivel\": false },",
+        )
+
+        val CATALOGO_COM_DOIS_DISPONIVEIS = CATALOGO_VALIDO.replace(
+            "\"casos\": [",
+            "\"casos\": [ { \"id\": \"segundo-caso\", \"titulo\": \"Segundo caso\", " +
+                "\"sinopse\": \"Outra investigação.\", \"categoria\": \"futebol\", " +
+                "\"arquivo\": \"$CAMINHO_SEGUNDO_CASO\", \"disponivel\": true },",
         )
 
         val CASO_VALIDO = """
@@ -241,5 +326,11 @@ class RepositorioCasosJsonTest {
               ]
             }
         """.trimIndent()
+
+        val SEGUNDO_CASO_VALIDO = CASO_VALIDO
+            .replace("\"id\": \"caso-exemplo\"", "\"id\": \"segundo-caso\"")
+            .replace("\"titulo\": \"Caso de exemplo\"", "\"titulo\": \"Segundo caso\"")
+            .replace("\"sinopse\": \"Uma sinopse curta.\"", "\"sinopse\": \"Outra investigação.\"")
+            .replace("\"categoria\": \"misterios_policiais\"", "\"categoria\": \"futebol\"")
     }
 }

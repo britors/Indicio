@@ -18,10 +18,14 @@ sealed interface EstadoHistoria {
     /** O conteúdo não pôde ser carregado. A tela oferece nova tentativa. */
     data class Falha(val erro: ErroCarga) : EstadoHistoria
 
+    /** O caso mudou e o progresso só pode ser substituído com consentimento. */
+    data class AtualizacaoNecessaria(val tituloCaso: String) : EstadoHistoria
+
     data class EmCurso(
         val tituloCaso: String,
         val cena: Cena,
         val pistas: List<Pista>,
+        val temInvestigacaoLonga: Boolean = false,
         val escolhasHabilitadas: Boolean = true,
     ) : EstadoHistoria
 

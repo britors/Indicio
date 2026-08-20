@@ -21,7 +21,7 @@
     <path android:fillColor="@color/ilustracao_luz" android:fillAlpha="0.45"
         android:pathData="M200,300 m-118,0 a118,110 0 1 0 236,0 a118,110 0 1 0 -236,0" />
 
-    <!-- A Taça das Colinas -->
+    <!-- A taça do caso -->
     <path android:fillColor="@color/ilustracao_prata"
         android:pathData="M156,190 h88 c0,58 -18,86 -44,86 c-26,0 -44,-28 -44,-86 z" />
     <path android:fillColor="@color/ilustracao_luz" android:fillAlpha="0.55"

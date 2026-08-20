@@ -1,0 +1,385 @@
+{
+  "versaoEsquema": 2,
+  "versaoConteudo": 1,
+  "id": "catalogo-fora-de-ordem",
+  "titulo": "O Catálogo Fora de Ordem",
+  "sinopse": "Cartões de uma pequena coleção foram reorganizados durante a noite.",
+  "categoria": "misterios_policiais",
+  "cenaInicial": "chegada",
+  "etapas": [
+    {
+      "id": "observar-colecao",
+      "titulo": "A ordem interrompida",
+      "descricao": "As primeiras etiquetas mostram onde as duas séries se misturaram.",
+      "resumoConclusao": "As séries estavam separadas quando a sala foi fechada.",
+      "resumoRetomada": "Você começou a observar a ordem, as cores e as marcas dos cartões.",
+      "objetivos": [
+        {
+          "id": "entender-organizacao",
+          "texto": "Entender como os cartões estavam organizados",
+          "perguntaEmAberto": "Qual era a ordem original da coleção?"
+        }
+      ]
+    },
+    {
+      "id": "comparar-registros",
+      "titulo": "Listas e etiquetas",
+      "descricao": "Os registros da sala e da oficina contam partes diferentes da mesma manhã.",
+      "resumoConclusao": "Uma oficina usou cartões parecidos sem alterar a coleção original.",
+      "resumoRetomada": "Você começou a comparar a lista de consulta com o material da oficina.",
+      "objetivos": [
+        {
+          "id": "localizar-primeira-troca",
+          "texto": "Localizar o primeiro cartão colocado na série errada",
+          "perguntaEmAberto": "Em que momento as duas sequências se misturaram?"
+        }
+      ]
+    },
+    {
+      "id": "restaurar-sequencia",
+      "titulo": "Cada cartão em seu lugar",
+      "descricao": "As marcas permitem reconstruir a sequência sem descartar nenhum cartão.",
+      "resumoConclusao": "A ordem correta foi restaurada e a oficina ganhou suas próprias cópias.",
+      "resumoRetomada": "Você já sabe por que as séries se misturaram e falta reorganizá-las.",
+      "objetivos": [
+        {
+          "id": "reconstruir-ordem",
+          "texto": "Reconstruir a sequência e separar as cópias da oficina",
+          "perguntaEmAberto": "Qual marca distingue os originais das cópias?"
+        }
+      ]
+    }
+  ],
+  "caderno": {
+    "pistas": [
+      {
+        "id": "etiqueta-azul",
+        "titulo": "Uma etiqueta azul",
+        "descricao": "Uma etiqueta azul aparece entre cartões de uma série identificada em amarelo."
+      },
+      {
+        "id": "faixa-de-papel",
+        "titulo": "A faixa foi retirada",
+        "descricao": "Uma faixa de papel que mantinha a série unida foi dobrada e guardada na gaveta."
+      },
+      {
+        "id": "lista-da-oficina",
+        "titulo": "A lista da oficina",
+        "descricao": "A oficina da manhã pediu cópias de quatro cartões, na mesma ordem encontrada no armário."
+      },
+      {
+        "id": "marca-de-lapis",
+        "titulo": "Pequenas marcas de lápis",
+        "descricao": "As cópias têm um ponto de lápis no verso; os originais não têm marca."
+      }
+    ],
+    "pessoas": [
+      {
+        "id": "bibliotecaria",
+        "nome": "A bibliotecária",
+        "papel": "Organização da coleção",
+        "imagem": {
+          "recurso": "pessoa_catalogo_bibliotecaria",
+          "descricaoAcessivel": "Bibliotecária diante de um armário baixo de fichas."
+        },
+        "anotacoes": [
+          {
+            "id": "bibliotecaria-separou-series",
+            "texto": "Ela deixou as duas séries presas por faixas de papel antes de fechar a sala."
+          }
+        ]
+      },
+      {
+        "id": "orientador-oficina",
+        "nome": "O orientador da oficina",
+        "papel": "Atividade de memória local",
+        "anotacoes": [
+          {
+            "id": "orientador-fez-copias",
+            "texto": "Ele preparou cópias para uma atividade e pretendia devolvê-las a outra caixa."
+          }
+        ]
+      }
+    ],
+    "locais": [
+      {
+        "id": "sala-de-consulta",
+        "nome": "Sala de consulta",
+        "imagem": {
+          "recurso": "local_catalogo_sala_consulta",
+          "descricaoAcessivel": "Sala clara com mesas e um armário baixo de fichas."
+        },
+        "anotacoes": [
+          {
+            "id": "sala-armario-compartilhado",
+            "texto": "O armário é consultado pela manhã e fica ao lado das mesas usadas nas oficinas."
+          }
+        ]
+      },
+      {
+        "id": "mesa-da-oficina",
+        "nome": "Mesa da oficina",
+        "anotacoes": [
+          {
+            "id": "mesa-caixa-de-copias",
+            "texto": "Uma caixa aberta ainda guarda papéis, lápis e cópias que sobraram da atividade."
+          }
+        ]
+      }
+    ],
+    "conversas": [
+      {
+        "id": "conversa-bibliotecaria-etiquetas",
+        "pessoaId": "bibliotecaria",
+        "titulo": "A separação das etiquetas",
+        "texto": "A bibliotecária explica que cada série tinha uma cor e uma faixa própria."
+      },
+      {
+        "id": "conversa-orientador-copias",
+        "pessoaId": "orientador-oficina",
+        "titulo": "As cópias da atividade",
+        "texto": "O orientador conta que marcou discretamente o verso de cada cópia com lápis."
+      }
+    ]
+  },
+  "lembrancas": [
+    {
+      "id": "series-separadas",
+      "texto": "As duas séries estavam separadas quando a sala foi fechada.",
+      "essencial": true
+    },
+    {
+      "id": "oficina-usou-copias",
+      "texto": "A oficina usou cópias dos cartões durante a manhã.",
+      "essencial": true
+    },
+    {
+      "id": "faixa-na-gaveta",
+      "texto": "A faixa que prendia uma série foi guardada na gaveta."
+    },
+    {
+      "id": "copias-marcadas",
+      "texto": "As cópias têm pequenos pontos de lápis no verso.",
+      "essencial": true
+    }
+  ],
+  "cenas": [
+    {
+      "id": "chegada",
+      "etapaId": "observar-colecao",
+      "objetivoId": "entender-organizacao",
+      "texto": "O armário está aberto e os cartões formam uma sequência quase regular. Uma única etiqueta azul interrompe uma longa fileira amarela.",
+      "imagem": {
+        "recurso": "cena_catalogo_chegada",
+        "descricaoAcessivel": "Armário aberto com uma fileira de cartões amarelos interrompida por uma etiqueta azul."
+      },
+      "revelacoes": {
+        "pistas": ["etiqueta-azul"],
+        "anotacoesLocais": ["sala-armario-compartilhado"]
+      },
+      "escolhas": [
+        {
+          "id": "chegada-a",
+          "texto": "Perguntar como as séries eram separadas",
+          "proximaCena": "bibliotecaria"
+        },
+        {
+          "id": "chegada-b",
+          "texto": "Examinar a gaveta sob o armário",
+          "proximaCena": "gaveta"
+        }
+      ]
+    },
+    {
+      "id": "bibliotecaria",
+      "etapaId": "observar-colecao",
+      "objetivoId": "entender-organizacao",
+      "pontoDePausa": true,
+      "texto": "A bibliotecária mostra duas cores no catálogo antigo. Ela se lembra de ter prendido cada série com uma faixa antes de sair.",
+      "imagem": {
+        "recurso": "cena_catalogo_bibliotecaria",
+        "descricaoAcessivel": "Bibliotecária aponta duas colunas coloridas em um catálogo de papel."
+      },
+      "revelacoes": {
+        "anotacoesPessoas": ["bibliotecaria-separou-series"],
+        "conversas": ["conversa-bibliotecaria-etiquetas"],
+        "lembrancas": ["series-separadas"]
+      },
+      "escolhas": [
+        {
+          "id": "bibliotecaria-a",
+          "texto": "Conferir a lista de consulta",
+          "proximaCena": "lista-consulta"
+        },
+        {
+          "id": "bibliotecaria-b",
+          "texto": "Visitar a mesa da oficina",
+          "proximaCena": "oficina"
+        }
+      ]
+    },
+    {
+      "id": "gaveta",
+      "etapaId": "observar-colecao",
+      "objetivoId": "entender-organizacao",
+      "texto": "Na gaveta há uma faixa de papel dobrada. A dobra conserva a largura exata da série amarela.",
+      "imagem": {
+        "recurso": "cena_catalogo_gaveta",
+        "descricaoAcessivel": "Gaveta de madeira aberta com uma faixa de papel amarelo cuidadosamente dobrada."
+      },
+      "revelacoes": {
+        "pistas": ["faixa-de-papel"],
+        "lembrancas": ["faixa-na-gaveta"]
+      },
+      "escolhas": [
+        {
+          "id": "gaveta-a",
+          "texto": "Comparar com a lista de consulta",
+          "proximaCena": "lista-consulta"
+        },
+        {
+          "id": "gaveta-b",
+          "texto": "Procurar materiais parecidos na oficina",
+          "proximaCena": "oficina"
+        }
+      ]
+    },
+    {
+      "id": "lista-consulta",
+      "etapaId": "comparar-registros",
+      "objetivoId": "localizar-primeira-troca",
+      "texto": "A lista da manhã registra quatro cartões emprestados para uma oficina. A ordem anotada coincide com o trecho misturado no armário.",
+      "imagem": {
+        "recurso": "cena_catalogo_lista",
+        "descricaoAcessivel": "Folha pautada com quatro códigos escritos ao lado da palavra oficina."
+      },
+      "revelacoes": {
+        "pistas": ["lista-da-oficina"],
+        "lembrancas": ["oficina-usou-copias"]
+      },
+      "escolhas": [
+        {
+          "id": "lista-a",
+          "texto": "Perguntar ao orientador sobre os códigos",
+          "proximaCena": "orientador"
+        },
+        {
+          "id": "lista-b",
+          "texto": "Examinar diretamente as cópias",
+          "proximaCena": "versos"
+        }
+      ]
+    },
+    {
+      "id": "oficina",
+      "etapaId": "comparar-registros",
+      "objetivoId": "localizar-primeira-troca",
+      "texto": "Na mesa da oficina, uma caixa aberta reúne lápis e cópias de cartões. Algumas cópias parecem ter sido devolvidas ao armário por engano.",
+      "imagem": {
+        "recurso": "cena_catalogo_oficina",
+        "descricaoAcessivel": "Mesa ampla com lápis, papéis recortados e uma caixa aberta cheia de cartões."
+      },
+      "revelacoes": {
+        "anotacoesLocais": ["mesa-caixa-de-copias"],
+        "lembrancas": ["oficina-usou-copias"]
+      },
+      "escolhas": [
+        {
+          "id": "oficina-a",
+          "texto": "Conversar com o orientador",
+          "proximaCena": "orientador"
+        },
+        {
+          "id": "oficina-b",
+          "texto": "Virar os cartões sobre a mesa",
+          "proximaCena": "versos"
+        }
+      ]
+    },
+    {
+      "id": "orientador",
+      "etapaId": "restaurar-sequencia",
+      "objetivoId": "reconstruir-ordem",
+      "pontoDePausa": true,
+      "texto": "O orientador confirma que fez cópias para a atividade. Para reconhecê-las depois, marcou cada verso com um pequeno ponto de lápis.",
+      "imagem": {
+        "recurso": "cena_catalogo_orientador",
+        "descricaoAcessivel": "Orientador segura dois cartões e aponta uma pequena marca no verso de um deles."
+      },
+      "revelacoes": {
+        "pistas": ["marca-de-lapis"],
+        "anotacoesPessoas": ["orientador-fez-copias"],
+        "conversas": ["conversa-orientador-copias"],
+        "lembrancas": ["copias-marcadas"]
+      },
+      "escolhas": [
+        {
+          "id": "orientador-a",
+          "texto": "Separar os cartões pelas marcas",
+          "proximaCena": "final-separado"
+        },
+        {
+          "id": "orientador-b",
+          "texto": "Conferir cada código antes de separar",
+          "proximaCena": "final-conferido"
+        }
+      ]
+    },
+    {
+      "id": "versos",
+      "etapaId": "restaurar-sequencia",
+      "objetivoId": "reconstruir-ordem",
+      "texto": "Quatro cartões têm pontos discretos de lápis no verso. Separados, eles formam exatamente o conjunto usado na oficina.",
+      "imagem": {
+        "recurso": "cena_catalogo_versos",
+        "descricaoAcessivel": "Quatro cartões virados para baixo mostram pequenos pontos de lápis nos cantos."
+      },
+      "revelacoes": {
+        "pistas": ["marca-de-lapis"],
+        "lembrancas": ["copias-marcadas"]
+      },
+      "escolhas": [
+        {
+          "id": "versos-a",
+          "texto": "Reunir as cópias numa caixa própria",
+          "proximaCena": "final-separado"
+        },
+        {
+          "id": "versos-b",
+          "texto": "Reordenar primeiro os cartões originais",
+          "proximaCena": "final-conferido"
+        }
+      ]
+    },
+    {
+      "id": "final-separado",
+      "tipo": "final",
+      "etapaId": "restaurar-sequencia",
+      "texto": "As cópias ganham uma caixa identificada e os originais voltam à sequência correta. A próxima oficina poderá consultar o material sem misturar as séries.",
+      "imagem": {
+        "recurso": "cena_catalogo_final_separado",
+        "descricaoAcessivel": "Duas caixas identificadas recebem cartões separados diante do armário organizado."
+      },
+      "desfecho": {
+        "titulo": "Duas coleções bem cuidadas",
+        "mensagem": "Originais e cópias agora têm lugares próprios e fáceis de reconhecer.",
+        "explicacaoPistas": "A faixa mostrava a separação original, a lista ligava os cartões à oficina e os pontos de lápis distinguiam as cópias."
+      }
+    },
+    {
+      "id": "final-conferido",
+      "tipo": "final",
+      "etapaId": "restaurar-sequencia",
+      "texto": "Código por código, a sequência antiga é restaurada. O grupo registra a ordem num guia simples para as próximas consultas.",
+      "imagem": {
+        "recurso": "cena_catalogo_final_conferido",
+        "descricaoAcessivel": "Cartões ordenados ao lado de um guia recém-escrito com etiquetas coloridas."
+      },
+      "desfecho": {
+        "titulo": "Uma ordem fácil de preservar",
+        "mensagem": "A coleção voltou ao lugar e ganhou um guia claro para uso compartilhado.",
+        "explicacaoPistas": "As cores revelaram a quebra da sequência, a lista explicou a mistura e as marcas no verso permitiram separar cada cópia."
+      }
+    }
+  ]
+}

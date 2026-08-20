@@ -4,7 +4,11 @@ import androidx.compose.ui.test.assertHasClickAction
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.v2.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.onNodeWithContentDescription
+import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performScrollTo
+import androidx.compose.ui.test.performScrollToIndex
 import br.com.avoren.indicio.domain.model.caso.Categoria
 import br.com.avoren.indicio.domain.model.caso.Cena
 import br.com.avoren.indicio.domain.model.caso.Desfecho
@@ -18,6 +22,7 @@ import br.com.avoren.indicio.domain.model.preferencias.TamanhoTexto
 import br.com.avoren.indicio.ui.catalogo.ConteudoCatalogo
 import br.com.avoren.indicio.ui.catalogo.EstadoCatalogo
 import br.com.avoren.indicio.ui.catalogo.GrupoDeCategoria
+import br.com.avoren.indicio.ui.catalogo.TAG_LISTA_CATALOGO
 import br.com.avoren.indicio.ui.configuracoes.ConteudoConfiguracoes
 import br.com.avoren.indicio.ui.historia.ConteudoConclusao
 import br.com.avoren.indicio.ui.historia.ConteudoHistoria
@@ -102,7 +107,9 @@ class TelasEstruturaisTest {
             }
         }
 
-        composeRule.onNodeWithText("Continuar: O Mistério da Taça Desaparecida").performClick()
+        composeRule
+            .onNodeWithContentDescription("Continuar: O Mistério da Taça Desaparecida")
+            .performClick()
 
         assertEquals("taca-desaparecida", abertoCom)
     }
@@ -124,7 +131,6 @@ class TelasEstruturaisTest {
                                         titulo = "Caso disponível",
                                         sinopse = "Pode jogar.",
                                         categoria = Categoria.FUTEBOL,
-                                        arquivo = "casos/x.json",
                                         disponivel = true,
                                     ),
                                     ResumoCaso(
@@ -145,10 +151,11 @@ class TelasEstruturaisTest {
             }
         }
 
-        composeRule.onNodeWithText("Futebol").assertIsDisplayed()
-        composeRule.onNodeWithText("Abrir o caso Caso disponível").assertHasClickAction()
-        composeRule.onNodeWithText("Em preparação").assertIsDisplayed()
-        composeRule.onNodeWithText("Abrir o caso Caso futuro").assertDoesNotExist()
+        composeRule.onNodeWithText("Disponível agora").assertIsDisplayed()
+        composeRule.onNodeWithContentDescription("Abrir o caso Caso disponível").assertHasClickAction()
+        composeRule.onNodeWithTag(TAG_LISTA_CATALOGO).performScrollToIndex(4)
+        composeRule.onNodeWithText("EM PREPARAÇÃO · SEM PREVISÃO").assertIsDisplayed()
+        composeRule.onNodeWithContentDescription("Abrir o caso Caso futuro").assertDoesNotExist()
     }
 
     // ---------- História ----------

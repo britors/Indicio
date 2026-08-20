@@ -9,16 +9,28 @@
     <!-- Início -->
     <string name="inicio_continuar">Continuar</string>
     <string name="inicio_continuar_caso">Continuar: %1$s</string>
+    <string name="inicio_retomada_rotulo">Continuar investigação</string>
+    <string name="inicio_retomada_apoio">Continue de onde você parou.</string>
     <string name="inicio_escolher_caso">Escolher caso</string>
+    <string name="inicio_escolher_outro_caso">Escolher outro caso</string>
     <string name="inicio_configuracoes">Configurações</string>
     <string name="inicio_sobre">Sobre</string>
     <string name="inicio_versao">Versão %1$s</string>
 
     <!-- Catálogo -->
     <string name="catalogo_titulo">Escolher caso</string>
-    <string name="catalogo_em_preparacao">Em preparação</string>
+    <string name="catalogo_chamada">Qual será a próxima investigação?</string>
+    <string name="catalogo_apoio">Histórias para observar, ouvir e decidir com calma.</string>
+    <string name="catalogo_todos">Todos</string>
+    <string name="catalogo_disponivel_agora">Disponível agora</string>
+    <plurals name="catalogo_contagem">
+        <item quantity="one">%1$d caso</item>
+        <item quantity="other">%1$d casos</item>
+    </plurals>
+    <string name="catalogo_em_preparacao_sem_previsao">Em preparação · sem previsão</string>
     <string name="catalogo_categoria_vazia">Nenhum caso desta categoria foi escrito ainda.</string>
     <string name="catalogo_abrir">Abrir o caso %1$s</string>
+    <string name="catalogo_abrir_curto">Abrir caso</string>
 
     <!-- História -->
     <string name="historia_pausar">Pausar</string>
@@ -26,9 +38,16 @@
     <string name="historia_parar_narracao">Parar a narração</string>
     <string name="historia_narrando">Narrando o trecho</string>
     <string name="historia_sem_voz">Este aparelho não tem voz em português instalada. A história continua disponível para leitura.</string>
-    <string name="historia_escolhas">Escolha a próxima carta</string>
-    <string name="historia_pistas">Pistas descobertas</string>
+    <string name="historia_escolhas">Qual caminho seguir?</string>
+    <string name="historia_escolhas_apoio">Escolha uma carta</string>
+    <string name="historia_nova_pista">Nova pista</string>
+    <string name="historia_caderno">Caderno de pistas</string>
     <string name="historia_pistas_nenhuma">Você ainda não anotou nenhuma pista.</string>
+    <string name="historia_abrir_caderno">Abrir caderno</string>
+    <string name="historia_ver_etapas">Ver etapas da investigação</string>
+    <string name="historia_atualizada_titulo">Este caso foi atualizado</string>
+    <string name="historia_atualizada_mensagem">O progresso salvo de “%1$s” pertence a outra versão. Para proteger seu histórico, ele só será substituído se você escolher recomeçar.</string>
+    <string name="historia_atualizada_recomecar">Recomeçar o caso</string>
 
     <!-- Conclusão -->
     <string name="conclusao_titulo">Caso concluído</string>
@@ -40,12 +59,49 @@
     <string name="pausa_titulo">Pausa</string>
     <string name="pausa_continuar">Continuar a história</string>
     <string name="pausa_configuracoes">Configurações</string>
+    <string name="pausa_etapas">Ver etapas da investigação</string>
+    <string name="pausa_caderno">Abrir o caderno</string>
     <string name="pausa_reiniciar">Reiniciar o caso</string>
     <string name="pausa_voltar_inicio">Voltar ao início</string>
     <string name="pausa_reiniciar_confirmar_titulo">Reiniciar o caso?</string>
     <string name="pausa_reiniciar_confirmar_texto">A história volta ao começo e as pistas desta sessão são recolhidas de novo. Os casos que você já concluiu continuam guardados.</string>
     <string name="pausa_reiniciar_confirmar_sim">Reiniciar</string>
     <string name="pausa_cancelar">Cancelar</string>
+
+    <!-- Investigação longa -->
+    <string name="retomada_titulo">Onde você parou</string>
+    <string name="retomada_etapa">Etapa atual</string>
+    <string name="retomada_lembrar">Vale lembrar</string>
+    <string name="retomada_proximo_objetivo">Próximo objetivo</string>
+    <string name="retomada_continuar">Continuar investigação</string>
+    <plurals name="retomada_abrir_caderno">
+        <item quantity="one">Abrir o caderno · %1$d registro</item>
+        <item quantity="other">Abrir o caderno · %1$d registros</item>
+    </plurals>
+    <string name="etapas_titulo">Sua investigação</string>
+    <string name="etapas_reveladas">Etapas reveladas pelo seu caminho</string>
+    <string name="etapas_concluida">Concluída</string>
+    <string name="etapas_atual">Atual</string>
+    <string name="etapas_futura_titulo">Novas perguntas</string>
+    <string name="etapas_futura_descricao">Continue investigando para revelar esta etapa.</string>
+    <string name="etapas_continuar">Retomar etapa atual</string>
+    <string name="etapas_vazio">Este caso não é dividido em etapas.</string>
+    <string name="caderno_titulo">Caderno</string>
+    <string name="caderno_pergunta_aberta">Pergunta em aberto</string>
+    <string name="caderno_aba_pistas">Pistas</string>
+    <string name="caderno_aba_pessoas">Pessoas</string>
+    <string name="caderno_aba_locais">Locais</string>
+    <string name="caderno_aba_conversas">Conversas</string>
+    <string name="caderno_pessoa_numero">Pessoa %1$d</string>
+    <string name="caderno_local_numero">Local %1$d</string>
+    <string name="caderno_conversa_numero">Conversa %1$d</string>
+    <string name="caderno_anotacoes">Anotações</string>
+    <string name="caderno_rever_conversa">Rever conversa</string>
+    <string name="caderno_fechar_conversa">Fechar</string>
+    <string name="caderno_vazio_pistas">Nenhuma pista foi descoberta ainda.</string>
+    <string name="caderno_vazio_pessoas">Nenhuma pessoa foi registrada ainda.</string>
+    <string name="caderno_vazio_locais">Nenhum local foi registrado ainda.</string>
+    <string name="caderno_vazio_conversas">Nenhuma conversa foi registrada ainda.</string>
 
     <!-- Configurações -->
     <string name="configuracoes_titulo">Configurações</string>
@@ -71,6 +127,7 @@
     <string name="sobre_aviso_medico">Indício é uma experiência de entretenimento e estímulo cognitivo. Não substitui avaliação, tratamento ou acompanhamento médico.</string>
 
     <!-- Comuns -->
+    <string name="comum_voltar">Voltar</string>
     <string name="comum_tentar_novamente">Tentar novamente</string>
     <string name="comum_falha_conteudo">Não foi possível abrir este conteúdo agora.</string>
 </resources>

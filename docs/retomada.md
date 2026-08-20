@@ -12,8 +12,11 @@ O aplicativo é **jogável do início ao fim, ilustrado e narrado**. O primeiro
 caso, *O Mistério da Taça Desaparecida*, tem 15 cenas e três finais positivos.
 Tudo funciona sem rede, sem conta e sem permissão nenhuma.
 
-Oito das onze issues do backlog estão prontas e comitadas. Nenhuma foi fechada
-no GitHub — ninguém pediu.
+As onze issues originais foram organizadas nas trilhas `issues/estrutura/` e
+`issues/casos/`. Oito estão prontas; as três de validação final continuam
+parciais. Oito novas issues locais (#012–#019) descrevem a arquitetura de casos
+longos e a transformação da Taça no primeiro caso de produção. Nenhuma issue
+foi fechada ou criada no GitHub — ninguém pediu essa alteração externa.
 
 | Backlog | GitHub | Assunto | Estado |
 |---|---|---|---|
@@ -21,29 +24,112 @@ no GitHub — ninguém pediu.
 | #002 | #3 | Modelo e validação de casos | pronta |
 | #003 | #4 | Mecanismo narrativo | pronta |
 | #004 | #11 | Persistência e preferências | pronta |
-| #005 | #2 | Caso da Taça Desaparecida | pronta |
+| #005 | #2 | Piloto curto da Taça Desaparecida | pronta como piloto |
 | #006 | #6 | Navegação e telas | pronta |
 | #007 | #10 | Experiência jogável e narração | pronta |
 | #008 | #9 | Identidade visual | pronta |
-| #009 | **#7** | **Acessibilidade** | **quase — falta o roteiro TalkBack** |
+| #009 | **#7** | **Acessibilidade** | **parcial — validar TalkBack após as telas finais** |
 | #010 | **#5** | **Testes integrados** | **aberta** |
 | #011 | **#8** | **Documentação e entrega** | **parcial** |
 
 > **A numeração do GitHub não bate com a do backlog local.** Diga sempre "issue
 > #N do GitHub" ou "#00N do backlog"; a tabela acima é a conversão.
 
-## A decisão de produto que não está no backlog
+| Nova issue local | Trilha | Entrega | Estado |
+|---|---|---|---|
+| #012 | Estrutura | Esquema narrativo longo | concluída |
+| #013 | Estrutura | Núcleo de casos longos | concluída |
+| #014 | Estrutura | Retomada, Etapas e Caderno | concluída |
+| #015 | Casos | Versão longa da Taça | pronta para iniciar |
+| #016 | Casos | Artes da versão longa | pendente |
+| #017 | Casos | Integração e publicação | pendente |
+| #018 | Estrutura | Aplicar direção visual contemporânea | concluída |
+| #019 | Estrutura | DDD, Clean Architecture, SOLID e Clean Code | concluída |
+
+A ordem e as dependências completas estão no
+[backlog reorganizado](../issues/README.md).
+
+O formato `2` está especificado em
+[Esquema narrativo v2](esquema-narrativo-v2.md), acompanhado de dois fixtures
+técnicos em `docs/exemplos/esquema-v2/`. O núcleo já lê, valida, percorre e
+persiste casos v1 e v2 simultaneamente. A interface também já oferece Retomada,
+Etapas e Caderno reconstruídos a partir do percurso. Ainda não existe caso v2
+no catálogo de produção; a próxima entrega é escrever a Taça longa (#015) e,
+depois, produzir suas artes (#016).
+
+## A decisão de produto sobre as cartas
 
 Em 20/08/2026 o dono do projeto redirecionou o produto: **o Indício é um jogo de
 cartas.** Cada cena é uma carta distribuída, que chega virada para baixo e é
 revelada; cada escolha é uma carta a jogar. Toda a arte é retrato 2:3.
 
-As issues #007 e #008 do backlog falam em "ilustrações" e "identidade visual" —
-não em baralho. Quem ler só o backlog não descobre isso.
+Essa decisão também está registrada na issue estrutural #008.
 
 A carta é **aparência, nunca mecânica**: não há baralho, mão com limite nem
 combinação de cartas. O motor narrativo, as escolhas e os finais continuam como
 sempre foram, e as escolhas seguem expondo papel de botão.
+
+## Segunda decisão de produto: duração e envolvimento
+
+O Indício **não deve ser um jogo que o usuário conclui em cerca de dez
+minutos**. A intenção é criar investigações que prendam a atenção por bastante
+tempo e possam ser retomadas ao longo de várias sessões.
+
+O caso *O Mistério da Taça Desaparecida*, com 15 cenas, continua válido como
+MVP e prova integral do mecanismo, mas **não é a referência de duração do
+produto final**. O teto editorial de 18 cenas foi removido; os testes agora
+exigem um mínimo de 12 sem impedir investigações longas.
+
+O envolvimento deve vir de conteúdo e progressão:
+
+- mistérios em camadas, com objetivos intermediários claros;
+- personagens e versões que se desenvolvem ao longo da investigação;
+- pistas, locais e linhas de investigação que se abrem gradualmente;
+- pontos naturais de pausa e retomada, sem fazer o jogador se perder;
+- sensação frequente de descoberta, sem alongamento artificial.
+
+Continuam proibidos cronômetros, energia, punição por ausência, recompensas
+diárias obrigatórias, notificações insistentes, finais bloqueados por espera e
+outros mecanismos manipulativos de retenção. A meta é **envolvimento narrativo,
+não dependência**.
+
+## Tom narrativo: leve, seguro e interessante
+
+O jogo deve ser **leve e sem violência**, mas precisa entreter de verdade.
+“Leve” não é sinônimo de história rasa, previsível ou infantil, assim como
+“sem violência” não significa eliminar suspense, surpresa ou conflito.
+
+O interesse deve vir de:
+
+- perguntas fortes que criem curiosidade desde o início;
+- versões incompletas ou aparentemente contraditórias;
+- segredos cotidianos, mal-entendidos e motivos humanos plausíveis;
+- personagens adultos, distintos e agradáveis de acompanhar;
+- pistas com significado que mudem a compreensão do caso;
+- revelações frequentes e conclusões satisfatórias;
+- humor discreto, afeto e alívio quando combinarem com a história.
+
+Não usar agressão, ameaça, morte, susto, crueldade ou sofrimento como atalho
+para criar interesse. A tensão é investigativa: o jogador quer compreender o
+que aconteceu, não escapar de um perigo.
+
+## Segurança jurídica de nomes e referências
+
+Em 20/08/2026 foi definido que o projeto não publicará nomes de entidades,
+eventos, equipes, personagens, símbolos ou marcas sem uma verificação formal.
+Todo nome criado durante roteiro ou desenho de tela é **provisório**.
+
+A busca preliminar encontrou coincidências nos nomes completos de personagens
+e no nome do espaço usado pelo primeiro caso. Por cautela, os sobrenomes e os
+nomes próprios ainda não liberados foram removidos do caso jogável. O nome
+`Indício` continua como nome de trabalho, mas também precisa de busca no INPI e
+revisão profissional antes de ser tratado como marca de lançamento.
+
+O processo obrigatório, o resultado da auditoria inicial e seus limites estão
+em [Revisão jurídica de nomes e conteúdo](revisao-juridica-de-conteudo.md).
+Avisos de ficção e testes de palavras proibidas são apenas barreiras auxiliares;
+não substituem busca de anterioridade, análise de semelhança nem revisão
+jurídica antes de publicar.
 
 ## O que falta, em ordem
 
@@ -74,11 +160,9 @@ inválidas, cenas sem saída e finais inalcançáveis.
 
 ### 3. Documentação e entrega — #8 do GitHub
 
-Adiantado: `docs/como-criar-novos-casos.md`, `docs/recursos-visuais.md`,
-`docs/telas/` e este documento. Falta:
+Adiantado: `docs/arquitetura.md`, `docs/como-criar-novos-casos.md`,
+`docs/recursos-visuais.md`, `docs/telas/` e este documento. Falta:
 
-- documentar a **arquitetura** (MVVM, fluxo unidirecional, DI, armazenamento,
-  onde ficam os assets) — hoje não existe documento disso;
 - registrar **limitações reais** do MVP sem maquiar;
 - revisão final editorial do primeiro caso;
 - gerar o APK e validar em **API 26** e numa API atual — só houve validação em
@@ -99,14 +183,14 @@ O script `scripts/configure-android-dev.sh` grava essa variável em `~/.bashrc` 
 `~/.profile`, mas o shell em uso é **fish** — lá isso não tem efeito.
 
 ```bash
-./gradlew test                      # 91 testes unitários
+./gradlew test                      # 111 testes unitários
 ./gradlew lintDebug                 # 0 erros; 3 avisos NewerVersionAvailable
 ./gradlew assembleDebug
 ./gradlew assembleRelease           # ~1,5 MB
-./gradlew connectedDebugAndroidTest # 43 testes; exige emulador
+./gradlew connectedDebugAndroidTest # 50 testes; exige emulador
 ```
 
-Se o total de unitários não for 91, ou se o lint acusar algo além de
+Se o total de unitários não for 111, ou se o lint acusar algo além de
 `NewerVersionAvailable`, alguma coisa mudou desde 20/08/2026.
 
 Os 3 avisos de lint são **deliberados**: o Kotlin está fixado em 2.3.21 porque o
@@ -170,14 +254,22 @@ ui/carta/                      moldura, verso e a mecânica de distribuir
 ui/tema/                       paleta, tipografia e o esquema de cores
 docs/como-criar-novos-casos.md como escrever um caso novo
 docs/recursos-visuais.md       origem, licença e regras de desenho da arte
-docs/telas/                    maquetes das oito telas, em PNG e HTML
+docs/telas/                    maquetes aprovadas em PNG e seu README
 ```
 
 ## Convenções
 
+- **SOLID é uma regra permanente.** Nenhuma entrega pode quebrar
+  intencionalmente seus cinco princípios; se uma mudança parecer exigir isso,
+  a implementação deve parar e a solução deve ser redesenhada. Nem uma decisão
+  arquitetural autoriza a violação. A regra não justifica interfaces ou camadas
+  cerimoniais sem variação real.
 - Mensagens de commit em **português sem acentos**, no padrão Conventional
   Commits, com corpo em tópicos.
 - **Todo commit vai acompanhado de push** — foi pedido explicitamente.
+- Sempre que houver uma entrega visual ou interativa executável, instalar e
+  deixar o aplicativo aberto no emulador para acompanhamento do responsável
+  pelo projeto.
 - Nada de rede, conta, anúncio, telemetria ou permissão nova sem discussão
   prévia em issue.
 - O aviso médico aparece **uma única vez**, apenas em Sobre — há teste para

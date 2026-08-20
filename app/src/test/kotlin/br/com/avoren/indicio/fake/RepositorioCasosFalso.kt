@@ -12,7 +12,7 @@ import br.com.avoren.indicio.domain.model.caso.Catalogo
 class RepositorioCasosFalso(
     private val casos: Map<String, Caso> = mapOf(CasoFixtures.ID to CasoFixtures.casoValido()),
     private val erro: ErroCarga? = null,
-    private val catalogo: Catalogo = Catalogo(1, emptyList()),
+    private val catalogo: Catalogo = Catalogo(emptyList()),
 ) : RepositorioCasos {
 
     override suspend fun catalogo(): ResultadoCarga<Catalogo> =

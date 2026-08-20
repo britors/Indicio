@@ -40,6 +40,7 @@ import br.com.avoren.indicio.ui.carta.PROPORCAO_DA_CARTA
 internal fun IlustracaoDaCena(
     imagem: Imagem,
     modifier: Modifier = Modifier,
+    proporcao: Float = PROPORCAO_DA_CARTA,
 ) {
     val recursos = LocalResources.current
     val pacote = LocalContext.current.packageName
@@ -60,7 +61,7 @@ internal fun IlustracaoDaCena(
             contentDescription = imagem.descricaoAcessivel,
             contentScale = ContentScale.Crop,
             modifier = modifier
-                .aspectRatio(PROPORCAO_DA_CARTA)
+                .aspectRatio(proporcao)
                 .clip(forma)
                 .border(1.dp, BordaSuave, forma),
         )

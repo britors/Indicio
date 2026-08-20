@@ -13,6 +13,7 @@ internal val DouradoEnvelhecido = Color(0xFF8A6A1F)
 internal val DouradoClaro = Color(0xFFF3E4BE)
 internal val PapelCreme = Color(0xFFFBF6EC)
 internal val PapelSepia = Color(0xFFF1E7D6)
+internal val PapelClaro = Color(0xFFFFFCF7)
 internal val TintaSepia = Color(0xFF2B2118)
 internal val TintaSuave = Color(0xFF544636)
 /**

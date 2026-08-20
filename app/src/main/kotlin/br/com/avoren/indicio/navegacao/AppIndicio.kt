@@ -15,6 +15,9 @@ import br.com.avoren.indicio.ui.catalogo.TelaCatalogo
 import br.com.avoren.indicio.ui.configuracoes.ConfiguracoesViewModel
 import br.com.avoren.indicio.ui.configuracoes.TelaConfiguracoes
 import br.com.avoren.indicio.ui.historia.DestinoHistoria
+import br.com.avoren.indicio.ui.investigacao.DestinoCaderno
+import br.com.avoren.indicio.ui.investigacao.DestinoEtapas
+import br.com.avoren.indicio.ui.investigacao.DestinoRetomada
 import br.com.avoren.indicio.ui.inicio.TelaInicio
 import br.com.avoren.indicio.ui.pausa.TelaPausa
 import br.com.avoren.indicio.ui.sobre.TelaSobre
@@ -29,7 +32,7 @@ import br.com.avoren.indicio.ui.tema.TemaIndicio
 @Composable
 fun AppIndicio(container: ContainerAplicacao) {
     val configuracoesViewModel: ConfiguracoesViewModel = viewModel(
-        factory = ConfiguracoesViewModel.fabrica(container),
+        factory = ConfiguracoesViewModel.fabrica(container.repositorioPreferencias),
     )
     val preferencias by configuracoesViewModel.preferencias.collectAsStateWithLifecycle()
 
@@ -51,9 +54,10 @@ fun AppIndicio(container: ContainerAplicacao) {
 
             composable<Rota.Inicio> {
                 TelaInicio(
-                    container = container,
+                    repositorioIdentidade = container.repositorioIdentidade,
+                    obterCasoParaContinuar = container.obterCasoParaContinuar,
                     onContinuar = { casoId ->
-                        navController.navigate(Rota.Historia(casoId, retomar = true))
+                        navController.navigate(Rota.Retomada(casoId))
                     },
                     onEscolherCaso = { navController.navigate(Rota.Catalogo) },
                     onConfiguracoes = { navController.navigate(Rota.Configuracoes) },
@@ -63,10 +67,11 @@ fun AppIndicio(container: ContainerAplicacao) {
 
             composable<Rota.Catalogo> {
                 TelaCatalogo(
-                    container = container,
+                    repositorioCasos = container.repositorioCasos,
                     onAbrirCaso = { casoId ->
-                        navController.navigate(Rota.Historia(casoId, retomar = true))
+                        navController.navigate(Rota.Retomada(casoId))
                     },
+                    onVoltar = { navController.popBackStack() },
                 )
             }
 
@@ -74,11 +79,54 @@ fun AppIndicio(container: ContainerAplicacao) {
                 val rota = entrada.toRoute<Rota.Historia>()
 
                 DestinoHistoria(
-                    container = container,
+                    repositorioCasos = container.repositorioCasos,
+                    repositorioProgresso = container.repositorioProgresso,
+                    criarNarrador = container::criarNarrador,
                     casoId = rota.casoId,
                     retomar = rota.retomar,
-                    onPausar = { navController.navigate(Rota.Pausa(rota.casoId)) },
+                    onPausar = { temEtapas ->
+                        navController.navigate(Rota.Pausa(rota.casoId, temEtapas))
+                    },
+                    onAbrirEtapas = { navController.navigate(Rota.Etapas(rota.casoId)) },
+                    onAbrirCaderno = { navController.navigate(Rota.Caderno(rota.casoId)) },
                     onVoltarAoCatalogo = { navController.irParaCatalogo() },
+                )
+            }
+
+            composable<Rota.Retomada> { entrada ->
+                val rota = entrada.toRoute<Rota.Retomada>()
+                DestinoRetomada(
+                    casoId = rota.casoId,
+                    repositorioCasos = container.repositorioCasos,
+                    repositorioProgresso = container.repositorioProgresso,
+                    onContinuar = {
+                        navController.navigate(Rota.Historia(rota.casoId, retomar = true)) {
+                            popUpTo(rota) { inclusive = true }
+                        }
+                    },
+                    onAbrirCaderno = { navController.navigate(Rota.Caderno(rota.casoId)) },
+                    onVoltar = { navController.popBackStack() },
+                )
+            }
+
+            composable<Rota.Etapas> { entrada ->
+                val rota = entrada.toRoute<Rota.Etapas>()
+                DestinoEtapas(
+                    casoId = rota.casoId,
+                    repositorioCasos = container.repositorioCasos,
+                    repositorioProgresso = container.repositorioProgresso,
+                    onContinuar = { navController.retomarHistoria(rota.casoId) },
+                    onVoltar = { navController.popBackStack() },
+                )
+            }
+
+            composable<Rota.Caderno> { entrada ->
+                val rota = entrada.toRoute<Rota.Caderno>()
+                DestinoCaderno(
+                    casoId = rota.casoId,
+                    repositorioCasos = container.repositorioCasos,
+                    repositorioProgresso = container.repositorioProgresso,
+                    onVoltar = { navController.popBackStack() },
                 )
             }
 
@@ -87,6 +135,9 @@ fun AppIndicio(container: ContainerAplicacao) {
 
                 TelaPausa(
                     onContinuar = { navController.popBackStack() },
+                    onAbrirEtapas = { navController.navigate(Rota.Etapas(rota.casoId)) },
+                    onAbrirCaderno = { navController.navigate(Rota.Caderno(rota.casoId)) },
+                    temEtapas = rota.temEtapas,
                     onConfiguracoes = { navController.navigate(Rota.Configuracoes) },
                     onReiniciar = {
                         navController.navigate(Rota.Historia(rota.casoId, retomar = false)) {
@@ -124,5 +175,11 @@ private fun NavHostController.irParaCatalogo() {
     navigate(Rota.Catalogo) {
         popUpTo(Rota.Inicio) { inclusive = false }
         launchSingleTop = true
+    }
+}
+
+private fun NavHostController.retomarHistoria(casoId: String) {
+    if (!popBackStack<Rota.Historia>(inclusive = false)) {
+        navigate(Rota.Historia(casoId, retomar = true))
     }
 }

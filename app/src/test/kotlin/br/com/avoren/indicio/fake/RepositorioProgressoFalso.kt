@@ -43,6 +43,7 @@ class RepositorioProgressoFalso(
             pistasDescobertas = sessao.pistas.map(Pista::id),
             desfechoAlcancado = sessao.desfecho?.let { sessao.cenaAtual },
             atualizadoEm = salvamentos.toLong(),
+            revisao = sessao.revisao,
         )
         if (sessao.concluida) {
             conclusoes.value += ConclusaoRegistrada(
@@ -51,6 +52,7 @@ class RepositorioProgressoFalso(
                 tituloDesfecho = tituloDesfecho.orEmpty(),
                 pistas = sessao.pistas.map(Pista::id),
                 concluidoEm = salvamentos.toLong(),
+                revisao = sessao.revisao,
             )
         }
         return ResultadoArmazenamento.Sucesso(Unit)

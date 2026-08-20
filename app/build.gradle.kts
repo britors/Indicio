@@ -58,6 +58,7 @@ android {
     sourceSets {
         getByName("test").kotlin.directories.add("src/fixtures/kotlin")
         getByName("androidTest").kotlin.directories.add("src/fixtures/kotlin")
+        getByName("androidTest").assets.directories.add("schemas")
     }
 
     lint {

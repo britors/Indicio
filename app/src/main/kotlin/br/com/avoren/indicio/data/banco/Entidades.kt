@@ -18,6 +18,8 @@ data class ProgressoEntidade(
     val pistas: List<String>,
     val desfechoAlcancado: String?,
     val atualizadoEm: Long,
+    val versaoEsquema: Int = 1,
+    val versaoConteudo: Int = 1,
 )
 
 /**
@@ -34,4 +36,6 @@ data class ConclusaoEntidade(
     val tituloDesfecho: String,
     val pistas: List<String>,
     val concluidoEm: Long,
+    val versaoEsquema: Int = 1,
+    val versaoConteudo: Int = 1,
 )
