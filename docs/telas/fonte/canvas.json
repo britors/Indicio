@@ -1,0 +1,17 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html",          "x": 0,    "y": 0,   "w": 360, "h": 800, "title": "Historia — a carta da cena" },
+    { "file": "CartaVirando.dc.html",  "x": 440,  "y": 0,   "w": 360, "h": 800, "title": "Historia — carta virando" },
+    { "file": "Inicio.dc.html",        "x": 880,  "y": 0,   "w": 360, "h": 800, "title": "Inicio" },
+    { "file": "Catalogo.dc.html",      "x": 1320, "y": 0,   "w": 360, "h": 800, "title": "Catalogo" },
+    { "file": "Conclusao.dc.html",     "x": 0,    "y": 900, "w": 360, "h": 800, "title": "Conclusao" },
+    { "file": "Pausa.dc.html",         "x": 440,  "y": 900, "w": 360, "h": 800, "title": "Pausa" },
+    { "file": "Configuracoes.dc.html", "x": 880,  "y": 900, "w": 360, "h": 800, "title": "Configuracoes" },
+    { "file": "Sobre.dc.html",         "x": 1320, "y": 900, "w": 360, "h": 800, "title": "Sobre" }
+  ],
+  "annotations": [
+    { "id": "nota-carta", "x": 0, "y": -150, "w": 800, "text": "A carta da cena e a tela principal. Cores, tipos e medidas saem do codigo do app: creme #FBF6EC, sepia #F1E7D6, marinho #1B2A41, dourado #8A6A1F; serifada nos titulos, sem serifa no corpo a 20/30; botoes com 64px de altura minima.\n\nNa carta virando, as escolhas aparecem esmaecidas so para indicar que ficam inertes durante a virada." },
+    { "id": "nota-tamanho", "x": 0, "y": 1760, "w": 800, "text": "A carta da cena tem um controle de Tamanho do texto (Grande / Muito grande) acima do artboard, para conferir se o texto grande cabe sem cortar nada." }
+  ],
+  "launch": { "view": "canvas" }
+}
