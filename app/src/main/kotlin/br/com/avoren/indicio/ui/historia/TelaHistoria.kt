@@ -1,12 +1,14 @@
 package br.com.avoren.indicio.ui.historia
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.HorizontalDivider
@@ -17,6 +19,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.heading
@@ -34,6 +38,7 @@ import br.com.avoren.indicio.domain.narracao.EstadoNarracao
 import br.com.avoren.indicio.ui.carta.Carta
 import br.com.avoren.indicio.ui.carta.CartaDeEscolha
 import br.com.avoren.indicio.ui.carta.CartaDistribuida
+import br.com.avoren.indicio.ui.carta.PROPORCAO_DA_CARTA
 import br.com.avoren.indicio.ui.comum.BarraDoTopo
 import br.com.avoren.indicio.ui.comum.BotaoSecundario
 import br.com.avoren.indicio.ui.tema.TemaIndicio
@@ -76,12 +81,23 @@ internal fun ConteudoHistoria(
             // A identidade da cena é a chave da virada: cena nova, carta nova.
             CartaDistribuida(chave = estado.cena.id, modifier = Modifier.fillMaxWidth()) {
                 Carta {
-                    IlustracaoDaCena(
-                        imagem = estado.cena.imagem,
-                        modifier = Modifier
-                            .align(Alignment.CenterHorizontally)
-                            .fillMaxWidth(FRACAO_DA_ARTE),
-                    )
+                    // A arte é limitada pela largura da carta E pela altura da
+                    // janela. Só pela largura, em paisagem a carta fica larga
+                    // demais e a arte, em retrato, sozinha ocupa mais que a tela
+                    // inteira — o texto e as escolhas somem abaixo da dobra.
+                    val alturaDaJanela = with(LocalDensity.current) {
+                        LocalWindowInfo.current.containerSize.height.toDp()
+                    }
+
+                    BoxWithConstraints(modifier = Modifier.align(Alignment.CenterHorizontally)) {
+                        val pelaLargura = maxWidth * FRACAO_DA_ARTE
+                        val pelaAltura = alturaDaJanela * FRACAO_DA_ALTURA_DA_ARTE * PROPORCAO_DA_CARTA
+
+                        IlustracaoDaCena(
+                            imagem = estado.cena.imagem,
+                            modifier = Modifier.width(minOf(pelaLargura, pelaAltura)),
+                        )
+                    }
 
                     Spacer(modifier = Modifier.height(20.dp))
 
@@ -139,6 +155,15 @@ internal fun ConteudoHistoria(
  * empurre o texto da cena para fora da primeira tela.
  */
 private const val FRACAO_DA_ARTE = 0.62f
+
+/**
+ * Teto da arte em relação à altura da janela.
+ *
+ * Em retrato não chega a valer — a regra de largura é sempre mais apertada. É
+ * em paisagem, e em tela larga, que ele impede a arte de empurrar o texto e as
+ * escolhas para fora da vista.
+ */
+private const val FRACAO_DA_ALTURA_DA_ARTE = 0.5f
 
 /**
  * Pistas acumuladas.
