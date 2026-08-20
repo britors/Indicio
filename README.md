@@ -74,8 +74,15 @@ Prontos:
   carta distribuída, que chega virada para baixo e é revelada, e cada escolha é
   uma carta a jogar. As 15 artes do primeiro caso e o verso comum são vetores
   originais, em 68 KB no total, funcionando sem rede.
+- **Acessibilidade** — contraste conferido contra a WCAG AA e travado por teste,
+  alvo de toque de 64 dp, escolhas com papel de botão, imagens com texto
+  equivalente, texto ampliável em dois tamanhos e uso em pé ou deitado.
 
-O caso é jogável do início ao fim, ilustrado.
+O caso é jogável do início ao fim, ilustrado e narrado.
+
+Falta o roteiro manual com TalkBack, os testes integrados de percurso completo e
+a documentação de arquitetura. O que já está pronto, o que falta e as armadilhas
+conhecidas estão em [Retomada](docs/retomada.md).
 
 ### Compilação e testes
 
