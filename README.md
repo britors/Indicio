@@ -33,7 +33,9 @@ O planejamento está dividido em issues do GitHub. Os textos-fonte do backlog ta
 Casos novos são arquivos JSON locais; não é preciso alterar código Kotlin para
 acrescentar uma história. O formato, as regras do validador e as regras
 editoriais estão em
-[Como criar novos casos](docs/como-criar-novos-casos.md).
+[Como criar novos casos](docs/como-criar-novos-casos.md). A origem, a licença e
+as regras de desenho das artes estão em
+[Recursos visuais](docs/recursos-visuais.md).
 
 ## Desenvolvimento
 
@@ -68,10 +70,12 @@ Prontos:
 - **Experiência jogável e narração** — leitura em voz alta com o TextToSpeech do
   Android em português, com o caso permanecendo utilizável quando não há voz
   instalada no aparelho.
+- **Identidade visual** — a história é jogada como um baralho: cada cena é uma
+  carta distribuída, que chega virada para baixo e é revelada, e cada escolha é
+  uma carta a jogar. As 15 artes do primeiro caso e o verso comum são vetores
+  originais, em 68 KB no total, funcionando sem rede.
 
-O caso é jogável do início ao fim. Faltam as ilustrações das cenas; enquanto
-não existirem, a descrição acessível de cada cena é apresentada como texto no
-lugar da imagem.
+O caso é jogável do início ao fim, ilustrado.
 
 ### Compilação e testes
 

@@ -174,13 +174,23 @@ O mecanismo acumula pistas sem repetição e as preserva até a conclusão.
 
 ## Imagens
 
-`imagem.recurso` é o nome de um drawable do Android, sem extensão e sem prefixo
-(`cena_vitrine` corresponde a `res/drawable/cena_vitrine.xml` ou `.webp`).
+Cada cena é uma **carta**, e `imagem.recurso` é a arte dessa carta: o nome de um
+drawable do Android, sem extensão e sem prefixo (`cena_vitrine` corresponde a
+`res/drawable/cena_vitrine.xml`).
 
-> Nesta versão o campo é apenas transportado e validado como texto não vazio: a
-> tela narrativa que resolve o nome para uma imagem de verdade ainda não existe.
-> Enquanto isso, um recurso inexistente passa na validação e só será notado
-> quando a tela for construída.
+O nome só é resolvido em tempo de execução, então o compilador não acusa um erro
+de digitação. Quem acusa é o teste `ArteDasCartasTest`, que roda em
+`./gradlew test` e falha se alguma cena publicada apontar para uma arte que não
+existe — ou se sobrar arte que nenhuma cena usa.
+
+> **Use sempre o prefixo `cena_`.** O arquivo
+> `app/src/main/res/raw/keep.xml` preserva `@drawable/cena_*` do encolhedor de
+> recursos; uma arte fora desse padrão não tem nenhuma referência estática, é
+> removida do APK de release e o caso cairia no texto de reserva justamente na
+> versão publicada — funcionando em depuração o tempo todo.
+
+O formato, a paleta e as regras de desenho estão em
+[Recursos visuais](recursos-visuais.md).
 
 `imagem.descricaoAcessivel` é obrigatória e é lida por leitores de tela. Descreva
 o que se vê, não o que significa: "vitrine de vidro sobre um pedestal deslocado",
