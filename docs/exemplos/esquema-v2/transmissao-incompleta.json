@@ -196,9 +196,15 @@
         "descricaoAcessivel": "Máquina de rolo sobre uma mesa, ao lado de um roteiro aberto e fones de ouvido."
       },
       "revelacoes": {
-        "anotacoesPessoas": ["locutora-lembra-final"],
-        "conversas": ["conversa-locutora-final"],
-        "anotacoesLocais": ["estudio-dois-reprodutores"]
+        "anotacoesPessoas": [
+          "locutora-lembra-final"
+        ],
+        "conversas": [
+          "conversa-locutora-final"
+        ],
+        "anotacoesLocais": [
+          "estudio-dois-reprodutores"
+        ]
       },
       "escolhas": [
         {
@@ -210,6 +216,11 @@
           "id": "primeira-escuta-b",
           "texto": "Comparar o áudio com o roteiro",
           "proximaCena": "roteiro"
+        },
+        {
+          "id": "primeira-escuta-c",
+          "texto": "Examinar a caixa do rolo",
+          "proximaCena": "caixa-rolo"
         }
       ]
     },
@@ -223,8 +234,12 @@
         "descricaoAcessivel": "Extremidade intacta de uma fita de áudio com identificação manuscrita."
       },
       "revelacoes": {
-        "pistas": ["rolo-sem-corte"],
-        "lembrancas": ["audio-nao-foi-cortado"]
+        "pistas": [
+          "rolo-sem-corte"
+        ],
+        "lembrancas": [
+          "audio-nao-foi-cortado"
+        ]
       },
       "escolhas": [
         {
@@ -236,6 +251,11 @@
           "id": "fim-do-rolo-b",
           "texto": "Procurar gravações do ensaio",
           "proximaCena": "rolo-guia"
+        },
+        {
+          "id": "fim-do-rolo-c",
+          "texto": "Comparar a marca a lápis",
+          "proximaCena": "marca-lapis"
         }
       ]
     },
@@ -250,8 +270,12 @@
         "descricaoAcessivel": "Duas páginas numeradas de roteiro com falas e uma indicação musical no final."
       },
       "revelacoes": {
-        "pistas": ["roteiro-mais-longo"],
-        "lembrancas": ["roteiro-tem-final"]
+        "pistas": [
+          "roteiro-mais-longo"
+        ],
+        "lembrancas": [
+          "roteiro-tem-final"
+        ]
       },
       "escolhas": [
         {
@@ -263,6 +287,46 @@
           "id": "roteiro-b",
           "texto": "Buscar o material do ensaio",
           "proximaCena": "rolo-guia"
+        },
+        {
+          "id": "roteiro-c",
+          "texto": "Comparar a marca a lápis",
+          "proximaCena": "marca-lapis"
+        }
+      ]
+    },
+    {
+      "id": "caixa-rolo",
+      "etapaId": "ouvir-material",
+      "objetivoId": "confirmar-trecho-ausente",
+      "texto": "A caixa do rolo conserva uma anotação curta que separa a cópia de escuta da versão completa.",
+      "imagem": {
+        "recurso": "cena_transmissao_fim_rolo",
+        "descricaoAcessivel": "Caixa de rolo com uma anotação presa à tampa."
+      },
+      "revelacoes": {
+        "pistas": [
+          "rolo-sem-corte"
+        ],
+        "lembrancas": [
+          "audio-nao-foi-cortado"
+        ]
+      },
+      "escolhas": [
+        {
+          "id": "caixa-rolo-a",
+          "texto": "Perguntar ao técnico sobre a sessão",
+          "proximaCena": "tecnico"
+        },
+        {
+          "id": "caixa-rolo-b",
+          "texto": "Procurar gravações do ensaio",
+          "proximaCena": "rolo-guia"
+        },
+        {
+          "id": "caixa-rolo-c",
+          "texto": "Comparar a marca a lápis",
+          "proximaCena": "marca-lapis"
         }
       ]
     },
@@ -276,8 +340,12 @@
         "descricaoAcessivel": "Técnico aponta duas máquinas de fita lado a lado na cabine de som."
       },
       "revelacoes": {
-        "anotacoesPessoas": ["tecnico-usou-dois-rolos"],
-        "conversas": ["conversa-tecnico-rolos"]
+        "anotacoesPessoas": [
+          "tecnico-usou-dois-rolos"
+        ],
+        "conversas": [
+          "conversa-tecnico-rolos"
+        ]
       },
       "escolhas": [
         {
@@ -289,6 +357,11 @@
           "id": "tecnico-b",
           "texto": "Confirmar a passagem com a pianista",
           "proximaCena": "pianista"
+        },
+        {
+          "id": "tecnico-c",
+          "texto": "Consultar o arquivo técnico",
+          "proximaCena": "arquivo-tecnico"
         }
       ]
     },
@@ -303,9 +376,15 @@
         "descricaoAcessivel": "Pequeno rolo de áudio com etiqueta escrita como guia ao lado de uma caixa protetora."
       },
       "revelacoes": {
-        "pistas": ["gravacao-guia"],
-        "anotacoesPessoas": ["locutora-ouviu-guia"],
-        "lembrancas": ["ensaio-foi-gravado"]
+        "pistas": [
+          "gravacao-guia"
+        ],
+        "anotacoesPessoas": [
+          "locutora-ouviu-guia"
+        ],
+        "lembrancas": [
+          "ensaio-foi-gravado"
+        ]
       },
       "escolhas": [
         {
@@ -317,6 +396,46 @@
           "id": "rolo-guia-b",
           "texto": "Ouvir quem tocou a passagem",
           "proximaCena": "pianista"
+        },
+        {
+          "id": "rolo-guia-c",
+          "texto": "Consultar o arquivo técnico",
+          "proximaCena": "arquivo-tecnico"
+        }
+      ]
+    },
+    {
+      "id": "marca-lapis",
+      "etapaId": "comparar-versoes",
+      "objetivoId": "encontrar-versao-guia",
+      "texto": "Uma marca a lápis no roteiro coincide com a pausa percebida na primeira escuta.",
+      "imagem": {
+        "recurso": "cena_transmissao_tecnico",
+        "descricaoAcessivel": "Roteiro e rolo são comparados na mesma marca de pausa."
+      },
+      "revelacoes": {
+        "anotacoesPessoas": [
+          "tecnico-usou-dois-rolos"
+        ],
+        "conversas": [
+          "conversa-tecnico-rolos"
+        ]
+      },
+      "escolhas": [
+        {
+          "id": "marca-lapis-a",
+          "texto": "Examinar as chaves da cabine",
+          "proximaCena": "chave-retorno"
+        },
+        {
+          "id": "marca-lapis-b",
+          "texto": "Confirmar a passagem com a pianista",
+          "proximaCena": "pianista"
+        },
+        {
+          "id": "marca-lapis-c",
+          "texto": "Consultar o arquivo técnico",
+          "proximaCena": "arquivo-tecnico"
         }
       ]
     },
@@ -330,9 +449,15 @@
         "descricaoAcessivel": "Mesa de som com uma chave marcada como ensaio e uma anotação presa ao lado."
       },
       "revelacoes": {
-        "pistas": ["chave-em-ensaio"],
-        "anotacoesLocais": ["cabine-chave-de-retorno"],
-        "lembrancas": ["retorno-ficou-desligado"]
+        "pistas": [
+          "chave-em-ensaio"
+        ],
+        "anotacoesLocais": [
+          "cabine-chave-de-retorno"
+        ],
+        "lembrancas": [
+          "retorno-ficou-desligado"
+        ]
       },
       "escolhas": [
         {
@@ -344,6 +469,11 @@
           "id": "chave-retorno-b",
           "texto": "Preservar os rolos e criar uma cópia de escuta",
           "proximaCena": "final-copia-de-escuta"
+        },
+        {
+          "id": "chave-retorno-c",
+          "texto": "Compartilhar o guia da gravação",
+          "proximaCena": "final-guia-compartilhado"
         }
       ]
     },
@@ -357,10 +487,18 @@
         "descricaoAcessivel": "Pianista ouve fones ao lado de um teclado e acompanha notas em uma partitura."
       },
       "revelacoes": {
-        "pistas": ["gravacao-guia"],
-        "anotacoesPessoas": ["pianista-tocou-duas-vezes"],
-        "conversas": ["conversa-pianista-passagem"],
-        "lembrancas": ["ensaio-foi-gravado"]
+        "pistas": [
+          "gravacao-guia"
+        ],
+        "anotacoesPessoas": [
+          "pianista-tocou-duas-vezes"
+        ],
+        "conversas": [
+          "conversa-pianista-passagem"
+        ],
+        "lembrancas": [
+          "ensaio-foi-gravado"
+        ]
       },
       "escolhas": [
         {
@@ -372,6 +510,49 @@
           "id": "pianista-b",
           "texto": "Criar uma cópia de escuta sem alterar os rolos",
           "proximaCena": "final-copia-de-escuta"
+        },
+        {
+          "id": "pianista-c",
+          "texto": "Compartilhar o guia da gravação",
+          "proximaCena": "final-guia-compartilhado"
+        }
+      ]
+    },
+    {
+      "id": "arquivo-tecnico",
+      "etapaId": "preparar-versao-completa",
+      "objetivoId": "reunir-gravacoes",
+      "texto": "O arquivo técnico reúne chave, guia e data da gravação numa sequência verificável.",
+      "imagem": {
+        "recurso": "cena_transmissao_chave",
+        "descricaoAcessivel": "Ficha técnica organiza chave, guia e data da gravação."
+      },
+      "revelacoes": {
+        "pistas": [
+          "chave-em-ensaio"
+        ],
+        "anotacoesLocais": [
+          "cabine-chave-de-retorno"
+        ],
+        "lembrancas": [
+          "retorno-ficou-desligado"
+        ]
+      },
+      "escolhas": [
+        {
+          "id": "arquivo-tecnico-a",
+          "texto": "Montar uma versão contínua identificada",
+          "proximaCena": "final-versao-completa"
+        },
+        {
+          "id": "arquivo-tecnico-b",
+          "texto": "Preservar os rolos e criar uma cópia de escuta",
+          "proximaCena": "final-copia-de-escuta"
+        },
+        {
+          "id": "arquivo-tecnico-c",
+          "texto": "Compartilhar o guia da gravação",
+          "proximaCena": "final-guia-compartilhado"
         }
       ]
     },
@@ -403,6 +584,21 @@
         "titulo": "Originais preservados, história completa",
         "mensagem": "A gravação pode ser ouvida por inteiro sem apagar a história dos materiais originais.",
         "explicacaoPistas": "O roteiro orientou a montagem, o rolo-guia forneceu o final e os relatos da equipe confirmaram que ambas as gravações faziam parte do mesmo trabalho."
+      }
+    },
+    {
+      "id": "final-guia-compartilhado",
+      "tipo": "final",
+      "etapaId": "preparar-versao-completa",
+      "texto": "A gravação completa retorna ao arquivo acompanhada de um guia que distingue versões e usos futuros.",
+      "imagem": {
+        "recurso": "cena_transmissao_final_completa",
+        "descricaoAcessivel": "Gravação e guia ficam identificados juntos no arquivo."
+      },
+      "desfecho": {
+        "titulo": "Um guia compartilhado",
+        "mensagem": "O público poderá ouvir a versão completa e saber de onde veio cada trecho.",
+        "explicacaoPistas": "O rolo intacto mostrou que nada foi cortado, o roteiro confirmou o trecho ausente e o guia preservou o final que a chave não enviou ao rolo principal."
       }
     }
   ]

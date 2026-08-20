@@ -25,6 +25,6 @@ object FormasIndicio {
 
 /** Elevações discretas; hierarquia vem principalmente de cor e espaço. */
 object ElevacaoIndicio {
-    val cartao = 4.dp
-    val controle = 2.dp
+    val cartao = 1.dp
+    val controle = 0.dp
 }

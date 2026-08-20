@@ -17,6 +17,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -27,6 +28,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
@@ -43,6 +45,7 @@ import br.com.avoren.indicio.domain.model.caso.Categoria
 import br.com.avoren.indicio.domain.model.caso.ResumoCaso
 import br.com.avoren.indicio.ui.comum.BarraDoTopo
 import br.com.avoren.indicio.ui.comum.BotaoPrincipal
+import br.com.avoren.indicio.ui.comum.IconesIndicio
 import br.com.avoren.indicio.ui.comum.ConteudoCarregando
 import br.com.avoren.indicio.ui.comum.ConteudoDeFalha
 import br.com.avoren.indicio.ui.comum.MarcaIndicio
@@ -156,6 +159,7 @@ private fun CatalogoCarregado(
                 item {
                     FiltroCategoria(
                         rotulo = stringResource(R.string.catalogo_todos),
+                        icone = IconesIndicio.lista,
                         selecionado = categoriaSelecionada == null,
                         onClick = { categoriaSelecionada = null },
                     )
@@ -163,6 +167,7 @@ private fun CatalogoCarregado(
                 items(Categoria.entries, key = Categoria::name) { categoria ->
                     FiltroCategoria(
                         rotulo = categoria.rotulo,
+                        icone = categoria.icone,
                         selecionado = categoriaSelecionada == categoria,
                         onClick = { categoriaSelecionada = categoria },
                     )
@@ -229,23 +234,42 @@ private fun CatalogoCarregado(
 @Composable
 private fun FiltroCategoria(
     rotulo: String,
+    icone: ImageVector,
     selecionado: Boolean,
     onClick: () -> Unit,
 ) {
     Surface(
         onClick = onClick,
         shape = FormasIndicio.controle,
-        color = if (selecionado) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surface,
+        color = if (selecionado) {
+            MaterialTheme.colorScheme.primary
+        } else {
+            MaterialTheme.colorScheme.surfaceContainerLow
+        },
         contentColor = if (selecionado) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurfaceVariant,
-        border = if (selecionado) null else BorderStroke(1.dp, MaterialTheme.colorScheme.outline),
     ) {
-        Text(
-            text = rotulo,
-            style = MaterialTheme.typography.labelLarge,
-            modifier = Modifier.padding(horizontal = EspacamentoIndicio.padrao, vertical = EspacamentoIndicio.medio),
-        )
+        Row(
+            modifier = Modifier.padding(
+                horizontal = EspacamentoIndicio.padrao,
+                vertical = EspacamentoIndicio.medio,
+            ),
+            horizontalArrangement = Arrangement.spacedBy(EspacamentoIndicio.pequeno),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Icon(imageVector = icone, contentDescription = null)
+            Text(text = rotulo, style = MaterialTheme.typography.labelLarge)
+        }
     }
 }
+
+private val Categoria.icone: ImageVector
+    get() = when (this) {
+        Categoria.FUTEBOL -> IconesIndicio.futebol
+        Categoria.MISTERIOS_POLICIAIS -> IconesIndicio.pesquisar
+        Categoria.FAROESTE -> IconesIndicio.local
+        Categoria.ROMANCES_CLASSICOS -> IconesIndicio.romance
+        Categoria.CULTURA_POPULAR_ANTIGA -> IconesIndicio.cultura
+    }
 
 @Composable
 private fun CartaoDeCaso(
@@ -257,7 +281,7 @@ private fun CartaoDeCaso(
         modifier = modifier.fillMaxWidth(),
         shape = FormasIndicio.cartao,
         color = MaterialTheme.colorScheme.surface,
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.45f)),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.18f)),
         shadowElevation = ElevacaoIndicio.cartao,
     ) {
         Row(
@@ -293,6 +317,7 @@ private fun CartaoDeCaso(
                 )
                 BotaoPrincipal(
                     texto = stringResource(R.string.catalogo_abrir_curto),
+                    icone = IconesIndicio.continuar,
                     descricaoAcessivel = stringResource(R.string.catalogo_abrir, resumo.titulo),
                     onClick = onAbrir,
                 )

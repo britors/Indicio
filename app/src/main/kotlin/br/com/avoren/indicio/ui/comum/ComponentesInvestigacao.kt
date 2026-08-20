@@ -2,26 +2,32 @@ package br.com.avoren.indicio.ui.comum
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.widthIn
-import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import br.com.avoren.indicio.ui.tema.AlturaMinimaBotao
 import br.com.avoren.indicio.ui.tema.ElevacaoIndicio
 import br.com.avoren.indicio.ui.tema.EspacamentoIndicio
 import br.com.avoren.indicio.ui.tema.FormasIndicio
@@ -30,9 +36,10 @@ import br.com.avoren.indicio.ui.tema.FormasIndicio
 data class AbaDeInvestigacao(
     val id: String,
     val rotulo: String,
+    val icone: ImageVector,
 )
 
-/** Navegação horizontal comum a pistas, pessoas, locais e conversas. */
+/** Navegação responsiva comum a pistas, pessoas, locais e conversas. */
 @Composable
 fun AbasDeInvestigacao(
     abas: List<AbaDeInvestigacao>,
@@ -40,36 +47,91 @@ fun AbasDeInvestigacao(
     onSelecionar: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    LazyRow(
-        modifier = modifier.fillMaxWidth(),
-        contentPadding = PaddingValues(horizontal = EspacamentoIndicio.margemDaTela),
-        horizontalArrangement = Arrangement.spacedBy(EspacamentoIndicio.pequeno),
+    BoxWithConstraints(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(horizontal = EspacamentoIndicio.margemDaTela),
     ) {
-        items(abas, key = AbaDeInvestigacao::id) { aba ->
-            val selecionada = aba.id == selecionadaId
-            Surface(
-                onClick = { onSelecionar(aba.id) },
-                shape = FormasIndicio.controle,
-                color = if (selecionada) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surface,
-                contentColor = if (selecionada) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurfaceVariant,
-                border = if (selecionada) null else BorderStroke(1.dp, MaterialTheme.colorScheme.outline),
-                modifier = Modifier.semantics {
-                    role = Role.Tab
-                    selected = selecionada
-                },
-            ) {
-                Text(
-                    text = aba.rotulo,
-                    style = MaterialTheme.typography.labelLarge,
-                    modifier = Modifier.padding(
-                        horizontal = EspacamentoIndicio.padrao,
-                        vertical = EspacamentoIndicio.medio,
-                    ),
-                )
+        val colunas = if (maxWidth >= LARGURA_PARA_QUATRO_ABAS) 4 else 2
+
+        Column(
+            modifier = Modifier.fillMaxWidth().selectableGroup(),
+            verticalArrangement = Arrangement.spacedBy(EspacamentoIndicio.pequeno),
+        ) {
+            abas.chunked(colunas).forEach { linha ->
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(EspacamentoIndicio.pequeno),
+                ) {
+                    linha.forEach { aba ->
+                        AbaDeInvestigacaoResponsiva(
+                            aba = aba,
+                            selecionada = aba.id == selecionadaId,
+                            onSelecionar = { onSelecionar(aba.id) },
+                            modifier = Modifier.weight(1f),
+                        )
+                    }
+                    repeat(colunas - linha.size) {
+                        Spacer(modifier = Modifier.weight(1f))
+                    }
+                }
             }
         }
     }
 }
+
+@Composable
+private fun AbaDeInvestigacaoResponsiva(
+    aba: AbaDeInvestigacao,
+    selecionada: Boolean,
+    onSelecionar: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    Surface(
+        onClick = onSelecionar,
+        shape = FormasIndicio.controle,
+        color = if (selecionada) {
+            MaterialTheme.colorScheme.primary
+        } else {
+            MaterialTheme.colorScheme.surfaceContainerLow
+        },
+        contentColor = if (selecionada) {
+            MaterialTheme.colorScheme.onPrimary
+        } else {
+            MaterialTheme.colorScheme.onSurfaceVariant
+        },
+        modifier = modifier
+            .heightIn(min = AlturaMinimaBotao)
+            .semantics {
+                role = Role.Tab
+                selected = selecionada
+            },
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(
+                    horizontal = EspacamentoIndicio.pequeno,
+                    vertical = EspacamentoIndicio.medio,
+                ),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Icon(
+                imageVector = aba.icone,
+                contentDescription = null,
+            )
+            Text(
+                text = aba.rotulo,
+                style = MaterialTheme.typography.labelLarge,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.padding(start = EspacamentoIndicio.pequeno),
+            )
+        }
+    }
+}
+
+private val LARGURA_PARA_QUATRO_ABAS = 600.dp
 
 /** Painel curto para o objetivo atual ou para uma pergunta ainda em aberto. */
 @Composable
@@ -117,7 +179,7 @@ fun CartaoDeRegistro(
     val borda = if (estado == EstadoDoRegistro.ATUAL) {
         MaterialTheme.colorScheme.secondary
     } else {
-        MaterialTheme.colorScheme.outline.copy(alpha = 0.45f)
+        MaterialTheme.colorScheme.outline.copy(alpha = 0.18f)
     }
 
     Surface(

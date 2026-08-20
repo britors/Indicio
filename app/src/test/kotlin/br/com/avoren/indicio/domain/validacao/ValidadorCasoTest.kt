@@ -60,7 +60,7 @@ class ValidadorCasoTest {
     }
 
     @Test
-    fun `cena comum sem exatamente duas escolhas e reportada`() {
+    fun `cena legada sem exatamente duas escolhas e reportada`() {
         val cena = CasoFixtures.cenaComum("abertura", "encerramento", "encerramento")
         val caso = CasoFixtures.casoValido(
             cenas = listOf(

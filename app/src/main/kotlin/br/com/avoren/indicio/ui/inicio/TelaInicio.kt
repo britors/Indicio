@@ -1,6 +1,7 @@
 package br.com.avoren.indicio.ui.inicio
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -8,8 +9,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -18,11 +21,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import br.com.avoren.indicio.R
@@ -30,6 +36,7 @@ import br.com.avoren.indicio.application.caso.ObterCasoParaContinuar
 import br.com.avoren.indicio.domain.repositorio.RepositorioIdentidade
 import br.com.avoren.indicio.ui.comum.BotaoPrincipal
 import br.com.avoren.indicio.ui.comum.BotaoSobreDestaque
+import br.com.avoren.indicio.ui.comum.IconesIndicio
 import br.com.avoren.indicio.ui.comum.MarcaIndicio
 import br.com.avoren.indicio.ui.comum.RotuloEditorial
 import br.com.avoren.indicio.ui.tema.EspacamentoIndicio
@@ -124,6 +131,7 @@ internal fun ConteudoInicio(
                     ) {
                         RotuloEditorial(
                             texto = stringResource(R.string.inicio_retomada_rotulo),
+                            cor = MaterialTheme.colorScheme.tertiary,
                         )
                         Text(
                             text = estado.tituloParaContinuar.orEmpty(),
@@ -155,6 +163,7 @@ internal fun ConteudoInicio(
                         R.string.inicio_escolher_caso
                     },
                 ),
+                icone = IconesIndicio.pesquisar,
                 onClick = onEscolherCaso,
                 modifier = Modifier,
             )
@@ -167,13 +176,13 @@ internal fun ConteudoInicio(
             ) {
                 AcaoCompacta(
                     texto = stringResource(R.string.inicio_configuracoes),
-                    prefixo = "Aa",
+                    icone = IconesIndicio.configuracoes,
                     onClick = onConfiguracoes,
                     modifier = Modifier.weight(1f),
                 )
                 AcaoCompacta(
                     texto = stringResource(R.string.inicio_sobre),
-                    prefixo = "ⓘ",
+                    icone = IconesIndicio.informacao,
                     onClick = onSobre,
                     modifier = Modifier.weight(1f),
                 )
@@ -193,7 +202,7 @@ internal fun ConteudoInicio(
 @Composable
 private fun AcaoCompacta(
     texto: String,
-    prefixo: String,
+    icone: ImageVector,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -201,27 +210,38 @@ private fun AcaoCompacta(
         onClick = onClick,
         modifier = modifier.height(AlturaCompacta),
         shape = FormasIndicio.controle,
-        color = MaterialTheme.colorScheme.surface,
-        border = androidx.compose.foundation.BorderStroke(
-            width = androidx.compose.ui.unit.Dp.Hairline,
-            color = MaterialTheme.colorScheme.outline,
-        ),
+        color = Color.Transparent,
     ) {
-        Row(
-            horizontalArrangement = Arrangement.Center,
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            Text(text = prefixo, style = MaterialTheme.typography.labelLarge)
-            Text(
-                text = texto,
-                style = MaterialTheme.typography.labelLarge,
-                modifier = Modifier.padding(start = EspacamentoIndicio.pequeno),
-            )
+        Box(contentAlignment = Alignment.Center) {
+            Surface(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(AlturaVisualAcaoCompacta),
+                shape = FormasIndicio.controle,
+                color = MaterialTheme.colorScheme.surfaceContainerLow,
+            ) {
+                Row(
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Icon(
+                        imageVector = icone,
+                        contentDescription = null,
+                        modifier = Modifier.size(20.dp),
+                    )
+                    Text(
+                        text = texto,
+                        style = MaterialTheme.typography.labelLarge,
+                        modifier = Modifier.padding(start = EspacamentoIndicio.pequeno),
+                    )
+                }
+            }
         }
     }
 }
 
 private val AlturaCompacta = br.com.avoren.indicio.ui.tema.AlturaMinimaBotao
+private val AlturaVisualAcaoCompacta = 52.dp
 
 @Preview(showBackground = true)
 @Composable

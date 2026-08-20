@@ -354,6 +354,28 @@ class TelasEstruturaisTest {
     }
 
     @Test
+    fun sobreExibeCreditosEAbreORepositorio() {
+        var abriuRepositorio = false
+        composeRule.setContent {
+            TemaIndicio {
+                TelaSobre(
+                    versao = "0.1.0",
+                    onAbrirGithub = { abriuRepositorio = true },
+                )
+            }
+        }
+
+        composeRule.onNodeWithText("Criado por Rodrigo Brito")
+            .performScrollTo()
+            .assertIsDisplayed()
+        composeRule.onNodeWithText("GitHub: britors/Indicio")
+            .performScrollTo()
+            .performClick()
+
+        assertTrue(abriuRepositorio)
+    }
+
+    @Test
     fun nenhumaOutraTelaExibeOAvisoMedico() {
         composeRule.setContent {
             TemaIndicio {

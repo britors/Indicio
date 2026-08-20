@@ -2,7 +2,7 @@ package br.com.avoren.indicio.domain.model.caso
 
 /** Natureza da cena dentro do grafo da história. */
 enum class TipoCena {
-    /** Cena narrativa comum: exige exatamente duas escolhas. */
+    /** Cena narrativa comum: a revisão do esquema define sua quantidade de escolhas. */
     COMUM,
 
     /** Cena terminal: exige metadados de conclusão e não tem escolhas. */

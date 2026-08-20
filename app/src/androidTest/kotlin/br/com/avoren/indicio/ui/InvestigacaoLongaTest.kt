@@ -1,12 +1,14 @@
 package br.com.avoren.indicio.ui
 
 import androidx.compose.ui.test.assertHasClickAction
+import androidx.compose.ui.test.assertHeightIsAtLeast
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.v2.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollToIndex
+import br.com.avoren.indicio.domain.model.preferencias.TamanhoTexto
 import br.com.avoren.indicio.ui.investigacao.CadernoUi
 import br.com.avoren.indicio.ui.investigacao.ConteudoCaderno
 import br.com.avoren.indicio.ui.investigacao.ConteudoEtapas
@@ -21,6 +23,7 @@ import br.com.avoren.indicio.ui.investigacao.PistaUi
 import br.com.avoren.indicio.ui.investigacao.RetomadaUi
 import br.com.avoren.indicio.ui.investigacao.SituacaoEtapa
 import br.com.avoren.indicio.ui.investigacao.TAG_LISTA_CADERNO
+import br.com.avoren.indicio.ui.tema.AlturaMinimaBotao
 import br.com.avoren.indicio.ui.tema.TemaIndicio
 import org.junit.Rule
 import org.junit.Test
@@ -38,6 +41,25 @@ class InvestigacaoLongaTest {
         composeRule.onNodeWithText("Nenhuma pista foi descoberta ainda.").assertIsDisplayed()
         composeRule.onNodeWithText("Pessoas").assertHasClickAction().performClick()
         composeRule.onNodeWithText("Nenhuma pessoa foi registrada ainda.").assertIsDisplayed()
+    }
+
+    @Test
+    fun cadernoMantemTodasAsAbasVisiveisComTextoMuitoGrande() {
+        composeRule.setContent {
+            TemaIndicio(TamanhoTexto.MUITO_GRANDE) {
+                ConteudoCaderno(estado = estado(), onVoltar = {})
+            }
+        }
+
+        listOf("Pistas", "Pessoas", "Locais", "Conversas").forEach { rotulo ->
+            composeRule.onNodeWithText(rotulo)
+                .assertIsDisplayed()
+                .assertHasClickAction()
+                .assertHeightIsAtLeast(AlturaMinimaBotao)
+        }
+
+        composeRule.onNodeWithText("Conversas").performClick()
+        composeRule.onNodeWithText("Nenhuma conversa foi registrada ainda.").assertIsDisplayed()
     }
 
     @Test

@@ -18,6 +18,7 @@ import br.com.avoren.indicio.R
 import br.com.avoren.indicio.ui.comum.BarraDoTopo
 import br.com.avoren.indicio.ui.comum.BotaoPrincipal
 import br.com.avoren.indicio.ui.comum.CartaoDeRegistro
+import br.com.avoren.indicio.ui.comum.IconesIndicio
 import br.com.avoren.indicio.ui.comum.EstadoDoRegistro
 import br.com.avoren.indicio.ui.tema.EspacamentoIndicio
 
@@ -85,6 +86,7 @@ internal fun ConteudoEtapas(
                 item {
                     BotaoPrincipal(
                         texto = stringResource(R.string.etapas_continuar),
+                        icone = IconesIndicio.continuar,
                         onClick = onContinuar,
                     )
                 }

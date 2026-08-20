@@ -4,12 +4,14 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -34,6 +36,7 @@ import br.com.avoren.indicio.ui.comum.BarraDoTopo
 import br.com.avoren.indicio.ui.comum.BotaoSecundario
 import br.com.avoren.indicio.ui.comum.CartaoDeRegistro
 import br.com.avoren.indicio.ui.comum.EstadoDoRegistro
+import br.com.avoren.indicio.ui.comum.IconesIndicio
 import br.com.avoren.indicio.ui.comum.PainelDeObjetivo
 import br.com.avoren.indicio.ui.comum.RotuloEditorial
 import br.com.avoren.indicio.ui.tema.ElevacaoIndicio
@@ -67,17 +70,33 @@ internal fun ConteudoCaderno(
         },
     ) { espacamento ->
         Column(
-            modifier = Modifier.fillMaxSize().padding(espacamento),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(espacamento)
+                .padding(top = EspacamentoIndicio.padrao),
             verticalArrangement = Arrangement.spacedBy(EspacamentoIndicio.medio),
         ) {
             AbasDeInvestigacao(
                 abas = listOf(
-                    AbaDeInvestigacao(AbaCaderno.PISTAS.id, stringResource(R.string.caderno_aba_pistas)),
-                    AbaDeInvestigacao(AbaCaderno.PESSOAS.id, stringResource(R.string.caderno_aba_pessoas)),
-                    AbaDeInvestigacao(AbaCaderno.LOCAIS.id, stringResource(R.string.caderno_aba_locais)),
+                    AbaDeInvestigacao(
+                        AbaCaderno.PISTAS.id,
+                        stringResource(R.string.caderno_aba_pistas),
+                        IconesIndicio.pesquisar,
+                    ),
+                    AbaDeInvestigacao(
+                        AbaCaderno.PESSOAS.id,
+                        stringResource(R.string.caderno_aba_pessoas),
+                        IconesIndicio.pessoa,
+                    ),
+                    AbaDeInvestigacao(
+                        AbaCaderno.LOCAIS.id,
+                        stringResource(R.string.caderno_aba_locais),
+                        IconesIndicio.local,
+                    ),
                     AbaDeInvestigacao(
                         AbaCaderno.CONVERSAS.id,
                         stringResource(R.string.caderno_aba_conversas),
+                        IconesIndicio.conversa,
                     ),
                 ),
                 selecionadaId = abaId,
@@ -181,7 +200,11 @@ internal fun ConteudoCaderno(
             },
             confirmButton = {
                 TextButton(onClick = { conversaAbertaId = null }) {
-                    Text(stringResource(R.string.caderno_fechar_conversa))
+                    Icon(imageVector = IconesIndicio.fechar, contentDescription = null)
+                    Text(
+                        text = stringResource(R.string.caderno_fechar_conversa),
+                        modifier = Modifier.padding(start = EspacamentoIndicio.pequeno),
+                    )
                 }
             },
         )
@@ -200,7 +223,7 @@ private fun CartaoPessoa(
         modifier = Modifier.fillMaxWidth(),
         shape = FormasIndicio.cartao,
         color = MaterialTheme.colorScheme.surface,
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.45f)),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.18f)),
         shadowElevation = ElevacaoIndicio.controle,
     ) {
         Column(
@@ -223,6 +246,7 @@ private fun CartaoPessoa(
             pessoa.conversas.forEach { conversa ->
                 BotaoSecundario(
                     texto = stringResource(R.string.caderno_rever_conversa),
+                    icone = IconesIndicio.conversa,
                     onClick = { onAbrirConversa(conversa.id) },
                 )
             }
@@ -236,7 +260,7 @@ private fun CartaoAnotado(marcador: String, titulo: String, anotacoes: List<Stri
         modifier = Modifier.fillMaxWidth(),
         shape = FormasIndicio.cartao,
         color = MaterialTheme.colorScheme.surface,
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.45f)),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.18f)),
         shadowElevation = ElevacaoIndicio.controle,
     ) {
         Column(
@@ -272,7 +296,7 @@ private fun CartaoConversa(numero: Int, conversa: ConversaUi, onAbrir: () -> Uni
         modifier = Modifier.fillMaxWidth(),
         shape = FormasIndicio.cartao,
         color = MaterialTheme.colorScheme.surface,
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.45f)),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.18f)),
         shadowElevation = ElevacaoIndicio.controle,
     ) {
         Column(
@@ -292,11 +316,21 @@ private fun CartaoConversa(numero: Int, conversa: ConversaUi, onAbrir: () -> Uni
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
             }
-            Text(
-                text = stringResource(R.string.caderno_rever_conversa),
-                style = MaterialTheme.typography.labelLarge,
-                color = MaterialTheme.colorScheme.primary,
-            )
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(EspacamentoIndicio.pequeno),
+                verticalAlignment = androidx.compose.ui.Alignment.CenterVertically,
+            ) {
+                Icon(
+                    imageVector = IconesIndicio.conversa,
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.primary,
+                )
+                Text(
+                    text = stringResource(R.string.caderno_rever_conversa),
+                    style = MaterialTheme.typography.labelLarge,
+                    color = MaterialTheme.colorScheme.primary,
+                )
+            }
         }
     }
 }

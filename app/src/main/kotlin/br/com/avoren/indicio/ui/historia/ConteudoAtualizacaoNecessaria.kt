@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import br.com.avoren.indicio.R
 import br.com.avoren.indicio.ui.comum.BotaoPrincipal
 import br.com.avoren.indicio.ui.comum.BotaoSecundario
+import br.com.avoren.indicio.ui.comum.IconesIndicio
 
 /** Confirma antes de substituir um progresso que não combina mais com o caso. */
 @Composable
@@ -43,10 +44,12 @@ internal fun ConteudoAtualizacaoNecessaria(
         )
         BotaoPrincipal(
             texto = stringResource(R.string.historia_atualizada_recomecar),
+            icone = IconesIndicio.reiniciar,
             onClick = onReiniciar,
         )
         BotaoSecundario(
             texto = stringResource(R.string.conclusao_voltar_catalogo),
+            icone = IconesIndicio.lista,
             onClick = onVoltarAoCatalogo,
             modifier = Modifier.padding(top = 12.dp),
         )

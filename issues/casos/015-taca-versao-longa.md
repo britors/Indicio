@@ -1,7 +1,7 @@
 # #015 — Projetar e escrever a versão longa da Taça Desaparecida
 
 **Trilha:** Casos
-**Estado:** Pronta para iniciar
+**Estado:** Concluída
 **Depende de:** #012 e piloto #005
 
 ## Objetivo
@@ -52,5 +52,22 @@ leve, sem violência, envolvente e adequado a várias sessões.
 
 ## Verificação da etapa
 
-- Percorrer todos os caminhos por teste e realizar leituras completas com ao
-  menos duas pessoas que não participaram da escrita.
+- Todos os caminhos e comprimentos são percorridos por teste automatizado.
+- Em 20/08/2026, o responsável pelo projeto informou ter jogado o build
+  expandido durante o desenvolvimento e aprovou explicitamente o encerramento
+  desta issue.
+- Não foi informado um tempo cronometrado. O aceite é qualitativo e não deve ser
+  citado como medição comprovada de 60 minutos.
+
+## Resultado
+
+- Bíblia, mapa de seis etapas e grafo em camadas integrados.
+- JSON v2 publicado no catálogo de desenvolvimento.
+- 124 cenas comuns possíveis, 42 por percurso e três finais positivos.
+- Etapas, objetivos, Retomada e Caderno preenchidos.
+- Estrutura, alcance e comprimento protegidos por teste automatizado.
+- Conteúdo `4` com 5.799–6.068 palavras de cena por percurso, antes de escolhas,
+  resumos e consultas ao Caderno.
+- O aceite do responsável após jogar o build refere-se ao conteúdo `3`; a
+  terceira linha investigativa do conteúdo `4` foi integrada depois.
+- Artes atuais reutilizadas como substitutas até a #016.

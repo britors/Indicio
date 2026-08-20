@@ -106,6 +106,29 @@ class ConteudoPublicadoTest {
     }
 
     @Test
+    fun `a taca longa mantem duracao editorial equilibrada em todo percurso`() = runTest {
+        val caso = casosPublicados().single { it.id == "taca-desaparecida" }
+        val comprimentos = comprimentosAteFinal(caso, caso.cenaInicial)
+        val palavras = palavrasAteFinal(caso, caso.cenaInicial)
+
+        assertEquals(2, caso.revisao.esquema)
+        assertEquals(4, caso.revisao.conteudo)
+        assertEquals(6, caso.etapas.size)
+        assertEquals(124, caso.cenas.count { it.tipo == TipoCena.COMUM })
+        assertEquals(3, caso.cenas.count { it.tipo == TipoCena.FINAL })
+        assertTrue(caso.cenas.filter { it.tipo == TipoCena.COMUM }.all { it.escolhas.size == 3 })
+        assertEquals(42..42, comprimentos)
+        assertTrue(
+            "O menor percurso tem apenas ${palavras.first} palavras.",
+            palavras.first >= 5_500,
+        )
+        assertTrue(
+            "A diferença entre percursos é de ${palavras.last - palavras.first} palavras.",
+            palavras.last - palavras.first <= 300,
+        )
+    }
+
+    @Test
     fun `nenhum termo de violencia, punicao ou marca real aparece no conteudo`() = runTest {
         casosPublicados().forEach { caso ->
             val texto = textoCompleto(caso).lowercase()
@@ -142,6 +165,46 @@ class ConteudoPublicadoTest {
             }
         }
         return vistas
+    }
+
+    private fun comprimentosAteFinal(
+        caso: Caso,
+        cenaInicial: String,
+    ): IntRange {
+        val memo = mutableMapOf<String, IntRange>()
+
+        fun calcular(cenaId: String): IntRange = memo.getOrPut(cenaId) {
+            val cena = requireNotNull(caso.cena(cenaId))
+            if (cena.tipo == TipoCena.FINAL) {
+                0..0
+            } else {
+                val destinos = cena.escolhas.map { escolha -> calcular(escolha.proximaCena) }
+                (1 + destinos.minOf(IntRange::first))..(1 + destinos.maxOf(IntRange::last))
+            }
+        }
+
+        return calcular(cenaInicial)
+    }
+
+    private fun palavrasAteFinal(
+        caso: Caso,
+        cenaInicial: String,
+    ): IntRange {
+        val memo = mutableMapOf<String, IntRange>()
+
+        fun calcular(cenaId: String): IntRange = memo.getOrPut(cenaId) {
+            val cena = requireNotNull(caso.cena(cenaId))
+            val palavrasDaCena = cena.texto.trim().split(Regex("\\s+")).size
+            if (cena.tipo == TipoCena.FINAL) {
+                palavrasDaCena..palavrasDaCena
+            } else {
+                val destinos = cena.escolhas.map { escolha -> calcular(escolha.proximaCena) }
+                (palavrasDaCena + destinos.minOf(IntRange::first))..
+                    (palavrasDaCena + destinos.maxOf(IntRange::last))
+            }
+        }
+
+        return calcular(cenaInicial)
     }
 
     private fun textoCompleto(caso: Caso): String = buildString {

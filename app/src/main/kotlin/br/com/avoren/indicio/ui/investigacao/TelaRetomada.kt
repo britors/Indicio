@@ -20,6 +20,7 @@ import br.com.avoren.indicio.R
 import br.com.avoren.indicio.ui.comum.BarraDoTopo
 import br.com.avoren.indicio.ui.comum.BotaoPrincipal
 import br.com.avoren.indicio.ui.comum.BotaoSecundario
+import br.com.avoren.indicio.ui.comum.IconesIndicio
 import br.com.avoren.indicio.ui.comum.PainelDeObjetivo
 import br.com.avoren.indicio.ui.comum.RotuloEditorial
 import br.com.avoren.indicio.ui.tema.EspacamentoIndicio
@@ -65,7 +66,10 @@ internal fun ConteudoRetomada(
                         modifier = Modifier.padding(EspacamentoIndicio.grande),
                         verticalArrangement = Arrangement.spacedBy(EspacamentoIndicio.medio),
                     ) {
-                        RotuloEditorial(texto = stringResource(R.string.retomada_etapa))
+                        RotuloEditorial(
+                            texto = stringResource(R.string.retomada_etapa),
+                            cor = MaterialTheme.colorScheme.onPrimary,
+                        )
                         Text(
                             text = retomada.etapa,
                             style = MaterialTheme.typography.headlineSmall,
@@ -98,6 +102,7 @@ internal fun ConteudoRetomada(
             item {
                 BotaoPrincipal(
                     texto = stringResource(R.string.retomada_continuar),
+                    icone = IconesIndicio.continuar,
                     onClick = onContinuar,
                 )
             }
@@ -108,6 +113,7 @@ internal fun ConteudoRetomada(
                         estado.caderno.totalRegistros,
                         estado.caderno.totalRegistros,
                     ),
+                    icone = IconesIndicio.pesquisar,
                     onClick = onAbrirCaderno,
                 )
             }

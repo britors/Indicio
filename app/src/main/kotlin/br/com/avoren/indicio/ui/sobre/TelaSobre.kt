@@ -16,15 +16,20 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.com.avoren.indicio.R
+import br.com.avoren.indicio.ui.comum.BotaoSecundario
+import br.com.avoren.indicio.ui.comum.IconesIndicio
 import br.com.avoren.indicio.ui.comum.TituloDeTela
 import br.com.avoren.indicio.ui.tema.EspacamentoIndicio
 import br.com.avoren.indicio.ui.tema.TemaIndicio
+
+private const val URL_REPOSITORIO = "https://github.com/britors/Indicio"
 
 /**
  * Tela Sobre.
@@ -36,7 +41,10 @@ import br.com.avoren.indicio.ui.tema.TemaIndicio
 fun TelaSobre(
     versao: String,
     modifier: Modifier = Modifier,
+    onAbrirGithub: (() -> Unit)? = null,
 ) {
+    val uriHandler = LocalUriHandler.current
+
     Scaffold(
         modifier = modifier.fillMaxSize(),
     ) { espacamento ->
@@ -86,6 +94,18 @@ fun TelaSobre(
                 text = stringResource(R.string.sobre_licenca),
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+
+            Text(
+                text = stringResource(R.string.sobre_criador),
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+
+            BotaoSecundario(
+                texto = stringResource(R.string.sobre_github),
+                icone = IconesIndicio.compartilhar,
+                onClick = onAbrirGithub ?: { uriHandler.openUri(URL_REPOSITORIO) },
             )
 
             Text(

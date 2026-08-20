@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -22,6 +23,7 @@ import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.unit.dp
 import br.com.avoren.indicio.R
 import br.com.avoren.indicio.domain.narracao.EstadoNarracao
+import br.com.avoren.indicio.ui.comum.IconesIndicio
 import br.com.avoren.indicio.ui.tema.AlturaMinimaBotao
 import br.com.avoren.indicio.ui.tema.EspacamentoIndicio
 
@@ -84,9 +86,13 @@ internal fun ControleDeNarracao(
                         modifier = Modifier.size(40.dp),
                     ) {
                         Box(contentAlignment = Alignment.Center) {
-                            Text(
-                                text = if (falando) "■" else "▶",
-                                style = MaterialTheme.typography.bodyMedium,
+                            Icon(
+                                imageVector = if (falando) {
+                                    IconesIndicio.fechar
+                                } else {
+                                    IconesIndicio.continuar
+                                },
+                                contentDescription = null,
                             )
                         }
                     }

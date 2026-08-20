@@ -291,6 +291,11 @@ recentes, sempre preservando a ordem em que foram descobertas.
       "id": "armario-b",
       "texto": "Conferir a lista de consulta",
       "proximaCena": "lista"
+    },
+    {
+      "id": "armario-c",
+      "texto": "Mapear as etiquetas visuais",
+      "proximaCena": "catalogo-visual"
     }
   ]
 }
@@ -309,7 +314,7 @@ recentes, sempre preservando a ordem em que foram descobertas.
 | `imagem` | sim | Recurso e descrição acessível. |
 | `narracao` | não | Usa `texto`. |
 | `revelacoes` | não | Todas as listas usam padrão vazio. |
-| `escolhas` | sim | Exatamente duas. |
+| `escolhas` | sim | Exatamente três. |
 | `desfecho` | proibido | Exclusivo de cena final. |
 
 ### Escolha
@@ -321,7 +326,7 @@ Ao escolher, o domínio aplica primeiro as revelações da escolha e depois as d
 cena de destino. Repetições são eliminadas pelo id, preservando a primeira ordem
 de descoberta.
 
-As duas escolhas precisam ter texto e destino distintos. Isso protege uma
+As três escolhas precisam ter texto e destino distintos. Isso protege uma
 decisão real de apresentação, mesmo quando os caminhos convergem mais adiante.
 
 ### Revelações
@@ -357,7 +362,7 @@ Além das regras do esquema `1`, o formato `2` exige:
 - nenhuma transição volta para uma etapa anterior ou salta uma etapa;
 - cenas finais somente na última etapa;
 - grafo acíclico, com todos os caminhos terminando em final positivo;
-- exatamente duas escolhas distintas em cada cena comum;
+- exatamente três escolhas distintas em cada cena comum;
 - toda referência em `revelacoes` existente;
 - conversa vinculada a pessoa existente;
 - em todo caminho que revela uma conversa, sua pessoa também fica visível no

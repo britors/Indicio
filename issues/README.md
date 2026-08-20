@@ -41,7 +41,7 @@ precisam ser criadas ou vinculadas no GitHub quando o trabalho começar.
 | Issue | Entrega | Estado | Depende de |
 |---|---|---|---|
 | [#005 — Piloto da Taça Desaparecida](casos/005-caso-taca-desaparecida.md) | Prova curta do esquema `1` | Concluída como piloto | #002, #003 |
-| [#015 — Taça: versão longa](casos/015-taca-versao-longa.md) | Primeiro roteiro de produção | Pronta para iniciar | #012, #005 |
+| [#015 — Taça: versão longa](casos/015-taca-versao-longa.md) | Primeiro roteiro de produção | Concluída | #012, #005 |
 | [#016 — Artes da Taça longa](casos/016-artes-taca-versao-longa.md) | Recursos finais do caso | Pendente | #008, #015 |
 | [#017 — Publicar a Taça](casos/017-integrar-publicar-taca.md) | Primeiro caso público validado | Pendente | #009–#016 e #018 aplicáveis |
 
@@ -56,9 +56,9 @@ Validação final:              #014 + #018 → #009 → #010 → #011
 ```
 
 Com a especificação #012, o núcleo #013, a interface #014 e a direção visual
-#018 concluídos, a próxima entrega de produto é o desenho narrativo #015. As
-artes #016 só começam quando locais, personagens e cenas da #015 estiverem
-estáveis.
+#018 concluídos, a #015 entrega um roteiro expandido no JSON v2. O conteúdo `4`
+agora oferece três escolhas por cena e precisa de uma inspeção final dessa nova
+linha antes da #016 produzir as artes definitivas.
 A validação manual de acessibilidade #009 e o fechamento de qualidade #010/#011
 acontecem sobre as telas finais, evitando repetir uma certificação do leiaute
 antigo.

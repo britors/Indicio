@@ -4,40 +4,40 @@
 
     Vive em recursos, e não em ui/tema/Cores.kt, porque quem consome são os
     vector drawables em res/drawable. Os tons derivam da mesma identidade de
-    papel/sépia, azul-marinho e dourado envelhecido do tema.
+    galeria contemporânea do tema; o dourado aparece apenas como material.
 -->
 <resources>
     <!-- Ambiente -->
-    <color name="ilustracao_parede">#E6D8BE</color>
-    <color name="ilustracao_parede_alta">#EFE3CD</color>
-    <color name="ilustracao_piso">#C6AF8C</color>
-    <color name="ilustracao_rodape">#A98F6B</color>
-    <color name="ilustracao_luz">#F8F1DE</color>
-    <color name="ilustracao_sombra">#B49A76</color>
+    <color name="ilustracao_parede">#DDE8E5</color>
+    <color name="ilustracao_parede_alta">#EDF3F1</color>
+    <color name="ilustracao_piso">#AEBFBA</color>
+    <color name="ilustracao_rodape">#7F9790</color>
+    <color name="ilustracao_luz">#F7FBFA</color>
+    <color name="ilustracao_sombra">#91A8A1</color>
 
-    <!-- Madeira e mobiliário -->
-    <color name="ilustracao_madeira">#7A5A3A</color>
-    <color name="ilustracao_madeira_clara">#9C7A50</color>
-    <color name="ilustracao_feltro">#3D5A50</color>
+    <!-- Mobiliário da exposição -->
+    <color name="ilustracao_madeira">#4D6670</color>
+    <color name="ilustracao_madeira_clara">#708A92</color>
+    <color name="ilustracao_feltro">#2E6A5F</color>
 
     <!-- Identidade -->
-    <color name="ilustracao_marinho">#1B2A41</color>
-    <color name="ilustracao_marinho_claro">#2E4665</color>
-    <color name="ilustracao_dourado">#8A6A1F</color>
-    <color name="ilustracao_dourado_claro">#D9BE72</color>
+    <color name="ilustracao_marinho">#183B4E</color>
+    <color name="ilustracao_marinho_claro">#315B70</color>
+    <color name="ilustracao_dourado">#A77A16</color>
+    <color name="ilustracao_dourado_claro">#E6CF88</color>
 
     <!-- Materiais -->
-    <color name="ilustracao_vidro">#C3D7E0</color>
-    <color name="ilustracao_papel">#FCF8EE</color>
-    <color name="ilustracao_prata">#BFC5CC</color>
-    <color name="ilustracao_prata_escura">#8A929B</color>
-    <color name="ilustracao_tinta">#2B2118</color>
+    <color name="ilustracao_vidro">#BBD8DB</color>
+    <color name="ilustracao_papel">#F9FBFA</color>
+    <color name="ilustracao_prata">#C6D0D2</color>
+    <color name="ilustracao_prata_escura">#7D8E92</color>
+    <color name="ilustracao_tinta">#17211F</color>
     <!-- Figuras: as três personagens do primeiro caso são distintas entre si -->
     <color name="ilustracao_pele_clara">#DDB48D</color>
     <color name="ilustracao_pele_media">#B07E52</color>
     <color name="ilustracao_pele_escura">#7A4E2E</color>
     <color name="ilustracao_cabelo">#3A2A1E</color>
     <color name="ilustracao_cabelo_grisalho">#8E8377</color>
-    <color name="ilustracao_uniforme">#3F5A78</color>
-    <color name="ilustracao_macacao">#5B6E4A</color>
+    <color name="ilustracao_uniforme">#42697C</color>
+    <color name="ilustracao_macacao">#47776B</color>
 </resources>

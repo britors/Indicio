@@ -4,5 +4,5 @@
     interface vive em ui/tema/Cores.kt.
 -->
 <resources>
-    <color name="papel_creme">#FBF6EC</color>
+    <color name="fundo_galeria">#F3F6F4</color>
 </resources>

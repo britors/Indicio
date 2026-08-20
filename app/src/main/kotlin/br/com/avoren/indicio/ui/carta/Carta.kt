@@ -45,7 +45,7 @@ internal fun Carta(
     Surface(
         shape = FormaDaCarta,
         color = MaterialTheme.colorScheme.surface,
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.4f)),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.18f)),
         shadowElevation = ElevacaoIndicio.cartao,
         modifier = modifier,
     ) {

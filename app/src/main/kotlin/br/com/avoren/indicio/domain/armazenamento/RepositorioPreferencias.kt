@@ -12,4 +12,5 @@ interface RepositorioPreferencias {
     suspend fun definirTamanhoTexto(tamanho: TamanhoTexto): ResultadoArmazenamento<Unit>
 
     suspend fun definirReducaoDeMovimentos(reduzir: Boolean): ResultadoArmazenamento<Unit>
+
 }

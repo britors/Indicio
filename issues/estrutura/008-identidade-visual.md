@@ -6,6 +6,10 @@
 > Esta issue governa a linguagem visual comum. A produção de artes específicas
 > para a versão longa da Taça pertence à trilha Casos, na #016.
 
+> A direção cromática evoluiu depois do MVP para uma galeria contemporânea,
+> com esquemas claro e escuro em neutros frios, azul e verde. O registro abaixo
+> preserva o escopo original; a paleta vigente está em `ui/tema/Cores.kt`.
+
 ## Objetivo
 
 Criar uma apresentação elegante de romance policial clássico, legível e adulta.

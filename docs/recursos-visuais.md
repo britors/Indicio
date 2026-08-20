@@ -74,8 +74,11 @@ prefixo já está coberta.
 
 Os tokens vivem em `app/src/main/res/values/cores_ilustracao.xml`, separados da
 paleta da interface (`ui/tema/Cores.kt`) porque quem os consome são os vetores.
-Ambas derivam da mesma identidade: papel e sépia, azul-marinho e dourado
-envelhecido.
+Ambas derivam da mesma identidade de uma galeria contemporânea. A interface tem
+esquemas claro e escuro em neutros frios, azul institucional e verde de
+conservação, escolhidos conforme o modo do sistema; as ilustrações mantêm
+iluminação própria nos dois modos. O dourado aparece somente onde há metal ou
+um detalhe diretamente ligado à taça.
 
 | Grupo | Tokens |
 |---|---|
@@ -90,7 +93,8 @@ Todos com o prefixo `ilustracao_`.
 ## Regras de desenho
 
 - **Sem estética sombria, assustadora, infantil ou hospitalar.** O tom é o de
-  romance policial clássico: luz quente, ambiente doméstico, nada de ameaça.
+  uma investigação serena em uma exposição contemporânea: luz limpa, ambiente
+  acolhedor, nada de ameaça.
 - **Figuras sem traços de rosto.** As personagens são construídas com formas
   simples. Isso evita tanto o caricato quanto o inquietante, e mantém o desenho
   no registro adulto e sóbrio do produto.
@@ -108,7 +112,7 @@ Todos com o prefixo `ilustracao_`.
 
 | Recurso | O que é |
 |---|---|
-| `carta_verso` | Verso comum das cartas: lupa sobre a pista iluminada, em azul-marinho e dourado |
+| `carta_verso` | Verso comum das cartas: lupa sobre a pista iluminada, em azul, verde e dourado pontual |
 | `ic_launcher_foreground` / `ic_launcher_background` | Ícone adaptativo, mesmo motivo da lupa |
 
 ### Cartas de "O Mistério da Taça Desaparecida"

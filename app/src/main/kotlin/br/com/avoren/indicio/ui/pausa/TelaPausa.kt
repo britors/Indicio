@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -24,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import br.com.avoren.indicio.R
 import br.com.avoren.indicio.ui.comum.BotaoPrincipal
 import br.com.avoren.indicio.ui.comum.BotaoSecundario
+import br.com.avoren.indicio.ui.comum.IconesIndicio
 import br.com.avoren.indicio.ui.comum.TituloDeTela
 import br.com.avoren.indicio.ui.tema.EspacamentoIndicio
 import br.com.avoren.indicio.ui.tema.TemaIndicio
@@ -66,6 +68,7 @@ fun TelaPausa(
 
             BotaoPrincipal(
                 texto = stringResource(R.string.pausa_continuar),
+                icone = IconesIndicio.continuar,
                 onClick = onContinuar,
             )
             Spacer(modifier = Modifier.height(EspacamentoIndicio.padrao))
@@ -73,6 +76,7 @@ fun TelaPausa(
             if (temEtapas) {
                 BotaoSecundario(
                     texto = stringResource(R.string.pausa_etapas),
+                    icone = IconesIndicio.lista,
                     onClick = onAbrirEtapas,
                 )
                 Spacer(modifier = Modifier.height(EspacamentoIndicio.padrao))
@@ -80,24 +84,28 @@ fun TelaPausa(
 
             BotaoSecundario(
                 texto = stringResource(R.string.pausa_caderno),
+                icone = IconesIndicio.pesquisar,
                 onClick = onAbrirCaderno,
             )
             Spacer(modifier = Modifier.height(EspacamentoIndicio.padrao))
 
             BotaoSecundario(
                 texto = stringResource(R.string.pausa_configuracoes),
+                icone = IconesIndicio.configuracoes,
                 onClick = onConfiguracoes,
             )
             Spacer(modifier = Modifier.height(EspacamentoIndicio.padrao))
 
             BotaoSecundario(
                 texto = stringResource(R.string.pausa_reiniciar),
+                icone = IconesIndicio.reiniciar,
                 onClick = { confirmandoReinicio = true },
             )
             Spacer(modifier = Modifier.height(EspacamentoIndicio.padrao))
 
             BotaoSecundario(
                 texto = stringResource(R.string.pausa_voltar_inicio),
+                icone = IconesIndicio.inicio,
                 onClick = onVoltarAoInicio,
             )
         }
@@ -120,12 +128,20 @@ fun TelaPausa(
                         onReiniciar()
                     },
                 ) {
-                    Text(stringResource(R.string.pausa_reiniciar_confirmar_sim))
+                    Icon(imageVector = IconesIndicio.reiniciar, contentDescription = null)
+                    Text(
+                        text = stringResource(R.string.pausa_reiniciar_confirmar_sim),
+                        modifier = Modifier.padding(start = EspacamentoIndicio.pequeno),
+                    )
                 }
             },
             dismissButton = {
                 TextButton(onClick = { confirmandoReinicio = false }) {
-                    Text(stringResource(R.string.pausa_cancelar))
+                    Icon(imageVector = IconesIndicio.fechar, contentDescription = null)
+                    Text(
+                        text = stringResource(R.string.pausa_cancelar),
+                        modifier = Modifier.padding(start = EspacamentoIndicio.pequeno),
+                    )
                 }
             },
         )

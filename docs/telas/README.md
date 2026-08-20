@@ -8,11 +8,11 @@ no código. Esta pasta guarda somente as imagens finais e este índice.
 > liberado como marca ou nome definitivo. Consulte a
 > [revisão jurídica de conteúdo](../revisao-juridica-de-conteudo.md).
 
-Não são capturas do aplicativo: são desenhos. Mas as cores, os tipos e as
-medidas foram lidos do código, não de memória — creme `#FBF6EC`, sépia
-`#F1E7D6`, marinho `#1B2A41`, dourado `#8A6A1F`, serifada nos títulos, corpo
-sem serifa em 20/30, botões com 64 dp de altura mínima. A arte da vitrine e o
-verso da carta usam os mesmos caminhos vetoriais dos drawables.
+Não são capturas do aplicativo: são desenhos da direção visual original. A
+paleta atual evoluiu para esquemas claro e escuro baseados em neutros frios,
+verde e azul; por isso, as imagens desta pasta preservam a composição e as
+medidas, mas não são mais referência de cor. A tipografia segue serifada nos
+títulos, com corpo sem serifa em 20/30 e botões com 64 dp de altura mínima.
 
 A direção foi implementada no Compose pela issue estrutural #018. As imagens
 continuam sendo a referência visual; diferenças de conteúdo e métrica de fonte

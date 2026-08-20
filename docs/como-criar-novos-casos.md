@@ -9,7 +9,8 @@ regras que o validador exige e o caminho completo para publicar um caso novo.
 O contrato `2`, destinado a investigações longas com etapas, objetivos,
 retomada e caderno, está implementado e documentado em
 [Esquema narrativo v2](esquema-narrativo-v2.md). Este guia detalha o formato `1`;
-para um caso longo, a especificação v2 é a fonte normativa.
+para um caso longo, a especificação v2 é a fonte normativa e exige três
+escolhas distintas por cena comum.
 
 ## Onde os arquivos ficam
 

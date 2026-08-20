@@ -40,7 +40,7 @@ foi fechada ou criada no GitHub — ninguém pediu essa alteração externa.
 | #012 | Estrutura | Esquema narrativo longo | concluída |
 | #013 | Estrutura | Núcleo de casos longos | concluída |
 | #014 | Estrutura | Retomada, Etapas e Caderno | concluída |
-| #015 | Casos | Versão longa da Taça | pronta para iniciar |
+| #015 | Casos | Versão longa da Taça | concluída |
 | #016 | Casos | Artes da versão longa | pendente |
 | #017 | Casos | Integração e publicação | pendente |
 | #018 | Estrutura | Aplicar direção visual contemporânea | concluída |
@@ -53,9 +53,15 @@ O formato `2` está especificado em
 [Esquema narrativo v2](esquema-narrativo-v2.md), acompanhado de dois fixtures
 técnicos em `docs/exemplos/esquema-v2/`. O núcleo já lê, valida, percorre e
 persiste casos v1 e v2 simultaneamente. A interface também já oferece Retomada,
-Etapas e Caderno reconstruídos a partir do percurso. Ainda não existe caso v2
-no catálogo de produção; a próxima entrega é escrever a Taça longa (#015) e,
-depois, produzir suas artes (#016).
+Etapas e Caderno reconstruídos a partir do percurso. A Taça longa é agora o
+primeiro caso v2 no catálogo de desenvolvimento. A bíblia, o mapa de seis
+etapas e o grafo estão em
+`docs/casos/taca-desaparecida/`. O conteúdo `4` oferece três escolhas por cena,
+124 cenas comuns, três finais e 5.799–6.068 palavras de cena por percurso. O
+responsável aceitou o conteúdo `3`; a terceira linha foi integrada depois desse
+aceite e ainda requer inspeção no fluxo final. Não foi informado tempo
+cronometrado. A próxima entrega, depois dessa conferência, é a produção das
+artes (#016).
 
 ## A decisão de produto sobre as cartas
 
@@ -183,14 +189,14 @@ O script `scripts/configure-android-dev.sh` grava essa variável em `~/.bashrc` 
 `~/.profile`, mas o shell em uso é **fish** — lá isso não tem efeito.
 
 ```bash
-./gradlew test                      # 111 testes unitários
+./gradlew test                      # 113 testes unitários
 ./gradlew lintDebug                 # 0 erros; 3 avisos NewerVersionAvailable
 ./gradlew assembleDebug
 ./gradlew assembleRelease           # ~1,5 MB
 ./gradlew connectedDebugAndroidTest # 50 testes; exige emulador
 ```
 
-Se o total de unitários não for 111, ou se o lint acusar algo além de
+Se o total de unitários não for 113, ou se o lint acusar algo além de
 `NewerVersionAvailable`, alguma coisa mudou desde 20/08/2026.
 
 Os 3 avisos de lint são **deliberados**: o Kotlin está fixado em 2.3.21 porque o

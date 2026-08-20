@@ -9,6 +9,11 @@
 Criar o conjunto visual original e offline necessário à versão longa do primeiro
 caso, sem copiar identidade de clubes, competições ou pessoas reais.
 
+O conteúdo `4` possui 127 cenas: 124 comuns distribuídas em três caminhos por
+camada e três finais positivos. A direção de arte deve planejar reutilização
+intencional por local e momento, sem pressupor 127 composições inteiramente
+diferentes.
+
 ## Escopo
 
 - Definir a lista de cenas que exigem arte própria e onde a reutilização de um

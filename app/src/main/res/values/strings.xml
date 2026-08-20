@@ -115,10 +115,12 @@
 
     <!-- Sobre -->
     <string name="sobre_titulo">Sobre</string>
-    <string name="sobre_descricao">Indício é um RPG narrativo leve de investigação. Em histórias curtas, você observa cenários, conversa com personagens, reúne pistas e decide entre dois caminhos.</string>
+    <string name="sobre_descricao">Indício é um RPG narrativo leve de investigação. Em histórias curtas, você observa cenários, conversa com personagens, reúne pistas e decide qual caminho seguir.</string>
     <string name="sobre_offline">O aplicativo funciona inteiramente offline. Não pede conta, não usa internet, não exibe anúncios e não coleta dados sobre você.</string>
     <string name="sobre_ficcao">Todos os times, campeonatos, personagens e símbolos das histórias são fictícios.</string>
     <string name="sobre_licenca">Software livre, licenciado sob a GNU General Public License versão 3.</string>
+    <string name="sobre_criador">Criado por Rodrigo Brito</string>
+    <string name="sobre_github">GitHub: britors/Indicio</string>
     <string name="sobre_versao">Versão %1$s</string>
     <!--
         Aviso definido pelo produto. Deve aparecer exatamente uma vez no

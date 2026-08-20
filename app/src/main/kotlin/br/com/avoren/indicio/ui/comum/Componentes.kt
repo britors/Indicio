@@ -1,6 +1,5 @@
 package br.com.avoren.indicio.ui.comum
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -17,9 +16,10 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -30,7 +30,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
@@ -42,7 +44,6 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import br.com.avoren.indicio.R
 import br.com.avoren.indicio.ui.tema.AlturaMinimaBotao
-import br.com.avoren.indicio.ui.tema.BordaSuave
 import br.com.avoren.indicio.ui.tema.EspacamentoIndicio
 import br.com.avoren.indicio.ui.tema.FormasIndicio
 
@@ -55,6 +56,7 @@ import br.com.avoren.indicio.ui.tema.FormasIndicio
 @Composable
 fun BotaoPrincipal(
     texto: String,
+    icone: ImageVector,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     habilitado: Boolean = true,
@@ -72,10 +74,16 @@ fun BotaoPrincipal(
         shape = FormasIndicio.pilula,
         contentPadding = ButtonDefaults.ContentPadding,
     ) {
+        Icon(
+            imageVector = icone,
+            contentDescription = null,
+            modifier = Modifier.size(22.dp),
+        )
         Text(
             text = texto,
             style = MaterialTheme.typography.labelLarge,
             textAlign = TextAlign.Center,
+            modifier = Modifier.padding(start = EspacamentoIndicio.medio),
         )
     }
 }
@@ -84,23 +92,33 @@ fun BotaoPrincipal(
 @Composable
 fun BotaoSecundario(
     texto: String,
+    icone: ImageVector,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     habilitado: Boolean = true,
 ) {
-    OutlinedButton(
+    FilledTonalButton(
         onClick = onClick,
         enabled = habilitado,
         modifier = modifier
             .fillMaxWidth()
             .heightIn(min = AlturaMinimaBotao),
         shape = FormasIndicio.pilula,
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline),
+        colors = ButtonDefaults.filledTonalButtonColors(
+            containerColor = MaterialTheme.colorScheme.surfaceContainerHigh,
+            contentColor = MaterialTheme.colorScheme.onSurface,
+        ),
     ) {
+        Icon(
+            imageVector = icone,
+            contentDescription = null,
+            modifier = Modifier.size(20.dp),
+        )
         Text(
             text = texto,
             style = MaterialTheme.typography.labelLarge,
             textAlign = TextAlign.Center,
+            modifier = Modifier.padding(start = EspacamentoIndicio.medio),
         )
     }
 }
@@ -122,7 +140,10 @@ fun BarraDoTopo(
                         onClick = it,
                         modifier = Modifier.padding(start = EspacamentoIndicio.minimo),
                     ) {
-                        Text(text = "←", style = MaterialTheme.typography.titleMedium)
+                        Icon(
+                            imageVector = IconesIndicio.voltar,
+                            contentDescription = null,
+                        )
                     }
                 }
             },
@@ -142,11 +163,11 @@ fun BarraDoTopo(
             ),
             modifier = modifier,
         )
-        HorizontalDivider(color = BordaSuave)
+        HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.14f))
     }
 }
 
-/** Ação quadrada usada nas barras, com alvo de toque confortável. */
+/** Ação compacta usada nas barras, com alvo de toque confortável. */
 @Composable
 fun BotaoIcone(
     textoAcessivel: String,
@@ -157,11 +178,11 @@ fun BotaoIcone(
     Surface(
         onClick = onClick,
         shape = FormasIndicio.controle,
-        color = MaterialTheme.colorScheme.surface,
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline),
+        color = Color.Transparent,
         modifier = modifier
             .size(AlturaMinimaBotao)
             .semantics(mergeDescendants = true) { contentDescription = textoAcessivel },
+        contentColor = MaterialTheme.colorScheme.primary,
     ) {
         Box(contentAlignment = Alignment.Center) { conteudo() }
     }
@@ -170,23 +191,23 @@ fun BotaoIcone(
 /** Marca gráfica do Indício, desenhada localmente e sem dependência de ícones. */
 @Composable
 fun MarcaIndicio(modifier: Modifier = Modifier) {
-    val dourado = MaterialTheme.colorScheme.secondary
+    val acento = MaterialTheme.colorScheme.tertiary
     Box(
         modifier = modifier
             .size(58.dp)
             .clip(FormasIndicio.controle)
-            .background(MaterialTheme.colorScheme.primary),
+            .background(MaterialTheme.colorScheme.primaryContainer),
         contentAlignment = Alignment.Center,
     ) {
         Canvas(modifier = Modifier.size(36.dp)) {
             drawCircle(
-                color = dourado,
+                color = acento,
                 radius = size.minDimension * 0.31f,
                 center = Offset(size.width * 0.45f, size.height * 0.42f),
                 style = Stroke(width = size.minDimension * 0.13f),
             )
             drawLine(
-                color = dourado,
+                color = acento,
                 start = Offset(size.width * 0.64f, size.height * 0.61f),
                 end = Offset(size.width * 0.86f, size.height * 0.84f),
                 strokeWidth = size.minDimension * 0.13f,
@@ -238,7 +259,10 @@ fun BotaoSobreDestaque(
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(text = texto, style = MaterialTheme.typography.labelLarge)
-            Text(text = "→", style = MaterialTheme.typography.labelLarge)
+            Icon(
+                imageVector = IconesIndicio.avancar,
+                contentDescription = null,
+            )
         }
     }
 }
@@ -248,6 +272,7 @@ fun BotaoSobreDestaque(
 fun RotuloEditorial(
     texto: String,
     modifier: Modifier = Modifier,
+    cor: Color = MaterialTheme.colorScheme.secondary,
 ) {
     Text(
         text = texto.uppercase(),
@@ -255,7 +280,7 @@ fun RotuloEditorial(
             fontWeight = FontWeight.Bold,
             fontSize = MaterialTheme.typography.bodyMedium.fontSize * 0.72f,
         ),
-        color = MaterialTheme.colorScheme.secondary,
+        color = cor,
         modifier = modifier,
     )
 }
@@ -296,6 +321,7 @@ fun ConteudoDeFalha(
         )
         BotaoPrincipal(
             texto = stringResource(R.string.comum_tentar_novamente),
+            icone = IconesIndicio.reiniciar,
             onClick = onTentarNovamente,
             modifier = Modifier.padding(top = EspacamentoIndicio.extraGrande),
         )

@@ -1,12 +1,12 @@
 package br.com.avoren.indicio.ui.carta
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -15,9 +15,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.unit.dp
 import br.com.avoren.indicio.ui.tema.AlturaMinimaBotao
-import br.com.avoren.indicio.ui.tema.ElevacaoIndicio
+import br.com.avoren.indicio.ui.comum.IconesIndicio
 import br.com.avoren.indicio.ui.tema.EspacamentoIndicio
 import br.com.avoren.indicio.ui.tema.FormasIndicio
 
@@ -36,20 +35,12 @@ internal fun CartaDeEscolha(
     modifier: Modifier = Modifier,
     habilitado: Boolean = true,
 ) {
-    val corDaBorda = if (habilitado) {
-        MaterialTheme.colorScheme.secondary
-    } else {
-        MaterialTheme.colorScheme.outline
-    }
-
     Surface(
         onClick = onClick,
         enabled = habilitado,
         shape = FormasIndicio.controle,
-        color = MaterialTheme.colorScheme.surface,
+        color = MaterialTheme.colorScheme.surfaceContainerLow,
         contentColor = MaterialTheme.colorScheme.onSurface,
-        border = BorderStroke(2.dp, corDaBorda),
-        shadowElevation = if (habilitado) ElevacaoIndicio.controle else 0.dp,
         modifier = modifier
             .fillMaxWidth()
             .heightIn(min = AlturaMinimaBotao)
@@ -84,7 +75,10 @@ internal fun CartaDeEscolha(
                 modifier = Modifier.weight(1f),
             )
 
-            Text(text = "→", style = MaterialTheme.typography.labelLarge)
+            Icon(
+                imageVector = IconesIndicio.avancar,
+                contentDescription = null,
+            )
         }
     }
 }

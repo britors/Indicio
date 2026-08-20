@@ -278,7 +278,8 @@ banco guarda versões, escolhas e índices mínimos para retomada.
 
 Room guarda progresso e histórico porque esses dados são relacionais e precisam
 de consulta por caso e por recência. DataStore guarda somente preferências
-globais de leitura e movimento.
+globais de leitura e movimento. A aparência segue o modo claro ou escuro do
+sistema e não é persistida separadamente pelo aplicativo.
 
 O banco não armazena o texto da história. O JSON empacotado é a fonte da verdade
 do conteúdo; o banco armazena referências estáveis e escolhas do jogador. Isso
@@ -327,7 +328,8 @@ editorial sobre o conteúdo empacotado pertence aos testes de publicação.
 - Categorias formam um vocabulário controlado. Acrescentar uma categoria é uma
   mudança de produto e de código; acrescentar um caso a uma categoria existente
   não é.
-- O motor oferece exatamente duas escolhas em cenas comuns por decisão de
+- O esquema `1` preserva exatamente duas escolhas por compatibilidade. O
+  esquema `2` exige três escolhas distintas em cada cena comum por decisão de
   experiência, não por limitação do JSON.
 - O esquema `1` continua executando o piloto curto, mas Retomada, Etapas,
   Pessoas, Locais e Conversas só existem no esquema `2`.

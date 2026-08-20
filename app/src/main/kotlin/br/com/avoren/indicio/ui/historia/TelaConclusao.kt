@@ -25,8 +25,8 @@ import br.com.avoren.indicio.domain.model.caso.Pista
 import br.com.avoren.indicio.domain.model.caso.TipoCena
 import br.com.avoren.indicio.ui.comum.BotaoPrincipal
 import br.com.avoren.indicio.ui.comum.BotaoSecundario
+import br.com.avoren.indicio.ui.comum.IconesIndicio
 import br.com.avoren.indicio.ui.comum.TituloDeTela
-import br.com.avoren.indicio.ui.tema.BordaSuave
 import br.com.avoren.indicio.ui.tema.EspacamentoIndicio
 import br.com.avoren.indicio.ui.tema.TemaIndicio
 
@@ -78,7 +78,9 @@ internal fun ConteudoConclusao(
                 style = MaterialTheme.typography.bodyLarge,
             )
 
-            androidx.compose.material3.HorizontalDivider(color = BordaSuave)
+            androidx.compose.material3.HorizontalDivider(
+                color = MaterialTheme.colorScheme.outline.copy(alpha = 0.14f),
+            )
 
             Spacer(modifier = Modifier.height(EspacamentoIndicio.grande))
 
@@ -104,6 +106,7 @@ internal fun ConteudoConclusao(
 
             BotaoPrincipal(
                 texto = stringResource(R.string.conclusao_jogar_novamente),
+                icone = IconesIndicio.reiniciar,
                 onClick = onJogarNovamente,
             )
 
@@ -111,6 +114,7 @@ internal fun ConteudoConclusao(
 
             BotaoSecundario(
                 texto = stringResource(R.string.conclusao_voltar_catalogo),
+                icone = IconesIndicio.lista,
                 onClick = onVoltarAoCatalogo,
             )
         }

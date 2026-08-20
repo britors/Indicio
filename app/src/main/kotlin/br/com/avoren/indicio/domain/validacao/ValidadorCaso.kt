@@ -126,19 +126,24 @@ class ValidadorCaso {
         idsDeCena: Set<String>,
         problemas: MutableList<ProblemaValidacao>,
     ) {
+        val escolhasEsperadas = if (caso.revisao.esquema == 2) {
+            ESCOLHAS_POR_CENA_LONGA
+        } else {
+            ESCOLHAS_POR_CENA_LEGADA
+        }
         if (cena.escolhas.isEmpty()) {
             problemas += problema(
                 caso,
                 cena.id,
                 "escolhas",
-                "cena comum sem saída: são necessárias exatamente duas escolhas",
+                "cena comum sem saída: são necessárias exatamente $escolhasEsperadas escolhas",
             )
-        } else if (cena.escolhas.size != ESCOLHAS_POR_CENA) {
+        } else if (cena.escolhas.size != escolhasEsperadas) {
             problemas += problema(
                 caso,
                 cena.id,
                 "escolhas",
-                "a cena tem ${cena.escolhas.size} escolha(s); são necessárias exatamente $ESCOLHAS_POR_CENA",
+                "a cena tem ${cena.escolhas.size} escolha(s); são necessárias exatamente $escolhasEsperadas",
             )
         }
 
@@ -293,6 +298,7 @@ class ValidadorCaso {
     ) = ProblemaValidacao(casoId = caso.id, cenaId = cenaId, campo = campo, mensagem = mensagem)
 
     private companion object {
-        const val ESCOLHAS_POR_CENA = 2
+        const val ESCOLHAS_POR_CENA_LEGADA = 2
+        const val ESCOLHAS_POR_CENA_LONGA = 3
     }
 }

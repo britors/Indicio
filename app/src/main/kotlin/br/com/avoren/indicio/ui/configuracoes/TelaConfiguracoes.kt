@@ -30,7 +30,6 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import br.com.avoren.indicio.ui.tema.BordaSuave
 import br.com.avoren.indicio.R
 import br.com.avoren.indicio.domain.model.preferencias.Preferencias
 import br.com.avoren.indicio.domain.model.preferencias.TamanhoTexto
@@ -116,7 +115,7 @@ internal fun ConteudoConfiguracoes(
             )
 
             Spacer(modifier = Modifier.height(EspacamentoIndicio.extraGrande))
-            HorizontalDivider(color = BordaSuave)
+            HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.14f))
             Spacer(modifier = Modifier.height(EspacamentoIndicio.extraGrande))
 
             Text(

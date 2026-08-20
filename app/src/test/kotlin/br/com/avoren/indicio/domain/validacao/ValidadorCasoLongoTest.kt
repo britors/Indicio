@@ -16,6 +16,21 @@ class ValidadorCasoLongoTest {
     private val validador = ValidadorCaso()
 
     @Test
+    fun `cena longa sem exatamente tres escolhas e reportada`() = runTest {
+        val caso = carregarValido()
+        val primeira = caso.cenas.first()
+        val invalido = substituir(caso, primeira.copy(escolhas = primeira.escolhas.take(2)))
+
+        assertTrue(
+            validador.validar(invalido).any {
+                it.cenaId == primeira.id &&
+                    it.campo == "escolhas" &&
+                    it.mensagem.contains("exatamente 3")
+            },
+        )
+    }
+
+    @Test
     fun `referencia de caderno inexistente e reportada`() = runTest {
         val caso = carregarValido()
         val primeira = caso.cenas.first()

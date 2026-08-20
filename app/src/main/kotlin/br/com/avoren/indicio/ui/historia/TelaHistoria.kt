@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -44,6 +45,7 @@ import br.com.avoren.indicio.ui.carta.CartaDistribuida
 import br.com.avoren.indicio.ui.comum.BarraDoTopo
 import br.com.avoren.indicio.ui.comum.BotaoIcone
 import br.com.avoren.indicio.ui.comum.BotaoSecundario
+import br.com.avoren.indicio.ui.comum.IconesIndicio
 import br.com.avoren.indicio.ui.comum.RotuloEditorial
 import br.com.avoren.indicio.ui.tema.ElevacaoIndicio
 import br.com.avoren.indicio.ui.tema.EspacamentoIndicio
@@ -77,7 +79,10 @@ internal fun ConteudoHistoria(
                         onClick = onPausar,
                         modifier = Modifier.padding(end = EspacamentoIndicio.minimo),
                     ) {
-                        Text(text = "Ⅱ", style = MaterialTheme.typography.titleMedium)
+                        Icon(
+                            imageVector = IconesIndicio.menu,
+                            contentDescription = null,
+                        )
                     }
                 },
             )
@@ -140,6 +145,7 @@ internal fun ConteudoHistoria(
             if (estado.temInvestigacaoLonga) {
                 BotaoSecundario(
                     texto = stringResource(R.string.historia_ver_etapas),
+                    icone = IconesIndicio.lista,
                     onClick = onAbrirEtapas,
                 )
                 Spacer(modifier = Modifier.height(EspacamentoIndicio.padrao))
@@ -227,7 +233,7 @@ internal fun PainelDePistas(
         modifier = modifier.fillMaxWidth(),
         shape = FormasIndicio.controle,
         color = MaterialTheme.colorScheme.surfaceVariant,
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.35f)),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.16f)),
         shadowElevation = ElevacaoIndicio.controle,
     ) {
         Column(
@@ -245,11 +251,21 @@ internal fun PainelDePistas(
                     color = MaterialTheme.colorScheme.primary,
                     modifier = Modifier.semantics { heading() },
                 )
-                Text(
-                    text = stringResource(R.string.historia_abrir_caderno),
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.primary,
-                )
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(EspacamentoIndicio.pequeno),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Icon(
+                        imageVector = IconesIndicio.pesquisar,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.primary,
+                    )
+                    Text(
+                        text = stringResource(R.string.historia_abrir_caderno),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.primary,
+                    )
+                }
             }
 
             if (pistas.isEmpty()) {
@@ -292,6 +308,7 @@ private fun PreviaHistoria() {
                     escolhas = listOf(
                         Escolha("a", "Examinar o chão em volta do pedestal", "po"),
                         Escolha("b", "Olhar para o forro, acima da vitrine", "forro"),
+                        Escolha("c", "Registrar a disposição completa da sala", "inventario"),
                     ),
                 ),
                 pistas = listOf(
