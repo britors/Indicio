@@ -7,6 +7,7 @@ build/
 # Ambiente local
 local.properties
 .cxx/
+replay_pid*.log
 
 # Android Studio / IntelliJ
 .idea/
