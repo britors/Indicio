@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Arte de carta original do projeto Indício, licenciada sob a GPLv3.
+    Cena "vitrine": vitrine fechada sobre pedestal deslocado, marca no piso.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="132dp"
+    android:height="198dp"
+    android:viewportWidth="400"
+    android:viewportHeight="600">
+
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_parede_alta" android:pathData="M0,0h400v300h-400z" />
+
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,470h400v130h-400z" />
+    <path android:fillColor="@color/ilustracao_rodape" android:pathData="M0,460h400v12h-400z" />
+
+    <!-- Marca mais escura: a antiga posição do pedestal -->
+    <path android:fillColor="@color/ilustracao_sombra" android:fillAlpha="0.8"
+        android:pathData="M112,506 L196,498 L206,548 L122,556 Z" />
+
+    <!-- Pedestal, deslocado para a direita -->
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M180,460 h72 v78 h-72 z" />
+    <path android:fillColor="@color/ilustracao_madeira_clara" android:pathData="M170,448 h92 v14 h-92 z" />
+
+    <!-- Vitrine fechada, alta -->
+    <path android:fillColor="@color/ilustracao_vidro" android:fillAlpha="0.45"
+        android:pathData="M182,240 h68 v208 h-68 z" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="4"
+        android:pathData="M182,240 h68 v208 h-68 z" />
+    <path android:fillColor="@color/ilustracao_dourado" android:pathData="M174,228 h84 v14 h-84 z" />
+    <path android:strokeColor="@color/ilustracao_luz" android:strokeWidth="4" android:strokeAlpha="0.85"
+        android:pathData="M196,256 L196,432" />
+</vector>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Arte de carta original do projeto Indício, licenciada sob a GPLv3.
+    Cena "livro": a página de horários, com a última linha interrompida.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="132dp"
+    android:height="198dp"
+    android:viewportWidth="400"
+    android:viewportHeight="600">
+
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M0,0h400v600h-400z" />
+
+    <!-- Página pautada -->
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M34,30 h332 v540 h-332 z" />
+    <path android:strokeColor="@color/ilustracao_vidro" android:strokeWidth="2"
+        android:pathData="M34,110 h332 M34,166 h332 M34,222 h332 M34,278 h332 M34,334 h332 M34,390 h332 M34,446 h332 M34,502 h332" />
+    <!-- Margem -->
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="2" android:strokeAlpha="0.6"
+        android:pathData="M84,30 L84,570" />
+
+    <!-- Anotações de horários, letra firme -->
+    <path android:fillColor="@color/ilustracao_tinta" android:fillAlpha="0.8"
+        android:pathData="M98,148 h44 v8 h-44 z M158,148 h176 v8 h-176 z
+                          M98,204 h44 v8 h-44 z M158,204 h150 v8 h-150 z
+                          M98,260 h44 v8 h-44 z M158,260 h182 v8 h-182 z
+                          M98,316 h44 v8 h-44 z M158,316 h132 v8 h-132 z
+                          M98,372 h44 v8 h-44 z M158,372 h166 v8 h-166 z" />
+
+    <!-- A última linha: letra diferente, mais fina e inclinada, interrompida -->
+    <path android:strokeColor="@color/ilustracao_marinho_claro" android:strokeWidth="5"
+        android:strokeLineCap="round" android:strokeAlpha="0.9"
+        android:pathData="M98,432 l40,-6 M152,430 c14,-8 28,4 42,-4 c14,-8 26,6 40,-2 c12,-7 22,3 32,-3" />
+    <!-- O traço para no meio da linha -->
+    <path android:strokeColor="@color/ilustracao_marinho_claro" android:strokeWidth="5"
+        android:strokeLineCap="round" android:strokeAlpha="0.55"
+        android:pathData="M262,428 l16,-2" />
+</vector>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Arte de carta original do projeto Indício, licenciada sob a GPLv3.
+    Cena "final-taca-em-seguranca": as três pessoas à porta da sala de restauro.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="132dp"
+    android:height="198dp"
+    android:viewportWidth="400"
+    android:viewportHeight="600">
+
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M0,0h400v600h-400z" />
+
+    <!-- A sala de restauro, iluminada, vista pela porta -->
+    <path android:fillColor="@color/ilustracao_parede_alta" android:pathData="M56,40 h288 v560 h-288 z" />
+    <path android:fillColor="@color/ilustracao_luz" android:fillAlpha="0.5" android:pathData="M56,40 h288 v300 h-288 z" />
+    <path android:fillColor="@color/ilustracao_dourado" android:pathData="M44,28 h312 v14 h-312 z" />
+    <path android:fillColor="@color/ilustracao_dourado" android:pathData="M44,28 h14 v572 h-14 z M342,28 h14 v572 h-14 z" />
+
+    <!-- Bancada e a taça ao fundo -->
+    <path android:fillColor="@color/ilustracao_feltro" android:pathData="M76,300 h248 v26 h-248 z" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M76,326 h248 v40 h-248 z" />
+    <path android:fillColor="@color/ilustracao_prata"
+        android:pathData="M176,208 h48 c0,32 -10,48 -24,48 c-14,0 -24,-16 -24,-48 z" />
+    <path android:fillColor="@color/ilustracao_prata_escura" android:pathData="M170,202 h60 v8 h-60 z" />
+    <path android:fillColor="@color/ilustracao_prata" android:pathData="M194,256 h12 v30 h-12 z" />
+    <path android:fillColor="@color/ilustracao_prata"
+        android:pathData="M200,292 m-28,0 a28,9 0 1 0 56,0 a28,9 0 1 0 -56,0" />
+    <path android:strokeColor="@color/ilustracao_prata" android:strokeWidth="6"
+        android:pathData="M176,216 c-18,3 -20,26 -5,33 M224,216 c18,3 20,26 5,33" />
+
+    <!-- As três pessoas, de costas, na soleira -->
+    <path android:fillColor="@color/ilustracao_marinho"
+        android:pathData="M120,600 L120,470 c0,-24 18,-36 42,-36 c24,0 42,12 42,36 L204,600 Z" />
+    <path android:fillColor="@color/ilustracao_marinho"
+        android:pathData="M162,424 m-30,0 a30,33 0 1 0 60,0 a30,33 0 1 0 -60,0" />
+    <path android:fillColor="@color/ilustracao_uniforme"
+        android:pathData="M196,600 L196,496 c0,-22 16,-33 38,-33 c22,0 38,11 38,33 L272,600 Z" />
+    <path android:fillColor="@color/ilustracao_uniforme"
+        android:pathData="M234,454 m-27,0 a27,30 0 1 0 54,0 a27,30 0 1 0 -54,0" />
+    <path android:fillColor="@color/ilustracao_macacao"
+        android:pathData="M262,600 L262,510 c0,-21 15,-31 36,-31 c21,0 36,10 36,31 L334,600 Z" />
+    <path android:fillColor="@color/ilustracao_macacao"
+        android:pathData="M298,470 m-26,0 a26,28 0 1 0 52,0 a26,28 0 1 0 -52,0" />
+</vector>

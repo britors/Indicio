@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Arte de carta original do projeto Indício, licenciada sob a GPLv3.
+    Cena "chegada": entrada do museu, sala iluminada ao fundo, vitrine vazia.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="132dp"
+    android:height="198dp"
+    android:viewportWidth="400"
+    android:viewportHeight="600">
+
+    <!-- Vão de entrada, em contraluz -->
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M0,0h400v600h-400z" />
+
+    <!-- Sala iluminada além do arco -->
+    <path android:fillColor="@color/ilustracao_parede_alta"
+        android:pathData="M60,600 L60,250 A140,170 0 0 1 340,250 L340,600 Z" />
+    <path android:fillColor="@color/ilustracao_luz" android:fillAlpha="0.55"
+        android:pathData="M140,258 h120 v212 h-120 z" />
+
+    <!-- Piso e o facho de luz -->
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M60,470 h280 v130 h-280 z" />
+    <path android:fillColor="@color/ilustracao_luz" android:fillAlpha="0.4"
+        android:pathData="M200,506 m-108,0 a108,26 0 1 0 216,0 a108,26 0 1 0 -216,0" />
+
+    <!-- Pedestal -->
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M170,402 h60 v68 h-60 z" />
+    <path android:fillColor="@color/ilustracao_madeira_clara" android:pathData="M161,390 h78 v14 h-78 z" />
+
+    <!-- Vitrine de vidro, vazia -->
+    <path android:fillColor="@color/ilustracao_vidro" android:fillAlpha="0.45"
+        android:pathData="M178,300 h44 v90 h-44 z" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="3"
+        android:pathData="M178,300 h44 v90 h-44 z" />
+    <path android:strokeColor="@color/ilustracao_luz" android:strokeWidth="3" android:strokeAlpha="0.8"
+        android:pathData="M187,312 L187,378" />
+</vector>

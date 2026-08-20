@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Arte de carta original do projeto Indício, licenciada sob a GPLv3.
+    Cena "comparar": caderno, bilhete e folha de horários, lado a lado na mesa.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="132dp"
+    android:height="198dp"
+    android:viewportWidth="400"
+    android:viewportHeight="600">
+
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_madeira_clara" android:fillAlpha="0.35"
+        android:pathData="M0,0h400v40h-400z M0,180h400v30h-400z M0,400h400v30h-400z" />
+
+    <!-- Caderno de ocorrências, aberto no alto -->
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M40,52 h320 v150 h-320 z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M50,62 h140 v130 h-140 z M210,62 h140 v130 h-140 z" />
+    <path android:strokeColor="@color/ilustracao_marinho" android:strokeWidth="3" android:strokeAlpha="0.6"
+        android:pathData="M200,52 L200,202" />
+    <path android:fillColor="@color/ilustracao_tinta" android:fillAlpha="0.4"
+        android:pathData="M62,84 h116 v6 h-116 z M62,104 h116 v6 h-116 z M62,124 h84 v6 h-84 z
+                          M222,84 h116 v6 h-116 z M222,104 h92 v6 h-92 z" />
+
+    <!-- Bilhete dobrado, no meio -->
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M52,244 h150 v150 h-150 z" />
+    <path android:fillColor="@color/ilustracao_parede_alta" android:pathData="M52,244 h150 v42 h-150 z" />
+    <path android:strokeColor="@color/ilustracao_sombra" android:strokeWidth="2" android:strokeAlpha="0.6"
+        android:pathData="M52,244 h150 v150 h-150 z M52,286 h150" />
+    <path android:strokeColor="@color/ilustracao_tinta" android:strokeWidth="4" android:strokeAlpha="0.45"
+        android:strokeLineCap="round" android:pathData="M70,318 L184,318 M70,344 L156,344" />
+
+    <!-- Folha de horários da exposição -->
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M226,244 h122 v304 h-122 z" />
+    <path android:strokeColor="@color/ilustracao_sombra" android:strokeWidth="2" android:strokeAlpha="0.5"
+        android:pathData="M226,244 h122 v304 h-122 z" />
+    <path android:fillColor="@color/ilustracao_dourado" android:fillAlpha="0.5"
+        android:pathData="M240,264 h94 v12 h-94 z" />
+    <path android:fillColor="@color/ilustracao_tinta" android:fillAlpha="0.35"
+        android:pathData="M240,300 h32 v6 h-32 z M286,300 h48 v6 h-48 z
+                          M240,326 h32 v6 h-32 z M286,326 h48 v6 h-48 z
+                          M240,352 h32 v6 h-32 z M286,352 h36 v6 h-36 z
+                          M240,378 h32 v6 h-32 z M286,378 h48 v6 h-48 z
+                          M240,404 h32 v6 h-32 z M286,404 h40 v6 h-40 z" />
+</vector>

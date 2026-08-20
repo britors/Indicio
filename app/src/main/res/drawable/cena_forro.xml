@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Arte de carta original do projeto Indício, licenciada sob a GPLv3.
+    Cena "forro": mancha de umidade no forro e a gota prestes a cair.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="132dp"
+    android:height="198dp"
+    android:viewportWidth="400"
+    android:viewportHeight="600">
+
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+
+    <!-- Forro branco, com as juntas das placas -->
+    <path android:fillColor="@color/ilustracao_luz" android:pathData="M0,0h400v300h-400z" />
+    <path android:strokeColor="@color/ilustracao_sombra" android:strokeWidth="2" android:strokeAlpha="0.4"
+        android:pathData="M0,150 h400 M133,0 L133,300 M266,0 L266,300" />
+    <path android:fillColor="@color/ilustracao_rodape" android:pathData="M0,300h400v10h-400z" />
+
+    <!-- Mancha de umidade, em halos -->
+    <path android:fillColor="@color/ilustracao_madeira_clara" android:fillAlpha="0.26"
+        android:pathData="M200,150 m-84,0 a84,72 0 1 0 168,0 a84,72 0 1 0 -168,0" />
+    <path android:fillColor="@color/ilustracao_madeira" android:fillAlpha="0.32"
+        android:pathData="M200,154 m-50,0 a50,42 0 1 0 100,0 a50,42 0 1 0 -100,0" />
+    <path android:fillColor="@color/ilustracao_madeira" android:fillAlpha="0.5"
+        android:pathData="M200,158 m-20,0 a20,17 0 1 0 40,0 a20,17 0 1 0 -40,0" />
+
+    <!-- A gota, ainda presa ao forro -->
+    <path android:fillColor="@color/ilustracao_vidro"
+        android:pathData="M200,318 c-13,20 -18,28 -18,36 a18,18 0 1 0 36,0 c0,-8 -5,-16 -18,-36 z" />
+
+    <!-- Tampo da vitrine, logo abaixo -->
+    <path android:fillColor="@color/ilustracao_vidro" android:fillAlpha="0.45"
+        android:pathData="M92,470 h216 v130 h-216 z" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="4"
+        android:pathData="M92,470 h216 v130 h-216 z" />
+    <path android:fillColor="@color/ilustracao_dourado" android:pathData="M84,458 h232 v14 h-232 z" />
+</vector>

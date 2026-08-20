@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Arte de carta original do projeto Indício, licenciada sob a GPLv3.
+    Cena "zilda": a manutenção no corredor, de luvas, ao lado da escada dobrável.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="132dp"
+    android:height="198dp"
+    android:viewportWidth="400"
+    android:viewportHeight="600">
+
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_parede_alta" android:pathData="M0,0h400v340h-400z" />
+
+    <!-- Corredor em fuga -->
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,470h400v130h-400z" />
+    <path android:fillColor="@color/ilustracao_rodape" android:pathData="M0,462h400v10h-400z" />
+    <path android:fillColor="@color/ilustracao_sombra" android:fillAlpha="0.35"
+        android:pathData="M0,470 L150,470 L60,600 L0,600 Z" />
+    <path android:fillColor="@color/ilustracao_luz" android:fillAlpha="0.4"
+        android:pathData="M304,120 h56 v342 h-56 z" />
+
+    <!-- Escada dobrável, encostada na parede -->
+    <path android:strokeColor="@color/ilustracao_prata_escura" android:strokeWidth="8"
+        android:pathData="M76,468 L104,150 M132,468 L152,150" />
+    <path android:strokeColor="@color/ilustracao_prata" android:strokeWidth="6"
+        android:pathData="M84,410 L138,410 M90,344 L142,344 M96,278 L146,278 M102,212 L150,212" />
+
+    <!-- A figura, de macacão -->
+    <path android:fillColor="@color/ilustracao_pele_media" android:pathData="M244,264 h34 v44 h-34 z" />
+    <path android:fillColor="@color/ilustracao_macacao"
+        android:pathData="M204,470 L204,340 c0,-28 25,-42 57,-42 c32,0 57,14 57,42 L318,470 Z" />
+    <path android:fillColor="@color/ilustracao_pele_media"
+        android:pathData="M261,232 m-38,0 a38,42 0 1 0 76,0 a38,42 0 1 0 -76,0" />
+    <path android:fillColor="@color/ilustracao_cabelo"
+        android:pathData="M261,232 m-40,0 a40,44 0 0 1 80,0 c0,-31 -18,-45 -40,-45 c-22,0 -40,14 -40,45 z" />
+    <!-- Alças do macacão -->
+    <path android:strokeColor="@color/ilustracao_macacao" android:strokeWidth="10"
+        android:pathData="M238,306 L232,360 M284,306 L290,360" />
+    <!-- Luvas de algodão brancas -->
+    <path android:fillColor="@color/ilustracao_papel"
+        android:pathData="M212,404 m-17,0 a17,21 0 1 0 34,0 a17,21 0 1 0 -34,0 M310,404 m-17,0 a17,21 0 1 0 34,0 a17,21 0 1 0 -34,0" />
+    <path android:strokeColor="@color/ilustracao_sombra" android:strokeWidth="2" android:strokeAlpha="0.5"
+        android:pathData="M212,404 m-17,0 a17,21 0 1 0 34,0 a17,21 0 1 0 -34,0 M310,404 m-17,0 a17,21 0 1 0 34,0 a17,21 0 1 0 -34,0" />
+</vector>

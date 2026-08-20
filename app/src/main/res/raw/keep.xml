@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Arte referenciada só por nome, a partir do JSON dos casos.
+
+    `IlustracaoDaCena` resolve o recurso com `getIdentifier`, então não existe
+    referência estática: sem este arquivo o encolhedor de recursos removeria
+    todas as artes do APK de release, e o aplicativo cairia no texto de reserva
+    justamente na versão publicada.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@drawable/cena_*,@drawable/carta_verso" />

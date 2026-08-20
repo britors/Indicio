@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Arte de carta original do projeto Indício, licenciada sob a GPLv3.
+    Cena "final-combinado": o quadro de avisos novo, com a primeira anotação.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="132dp"
+    android:height="198dp"
+    android:viewportWidth="400"
+    android:viewportHeight="600">
+
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_parede_alta" android:pathData="M0,0h400v320h-400z" />
+
+    <!-- Quadro de avisos, ainda novo -->
+    <path android:fillColor="@color/ilustracao_dourado" android:pathData="M48,60 h304 v380 h-304 z" />
+    <path android:fillColor="@color/ilustracao_madeira_clara" android:pathData="M62,74 h276 v352 h-276 z" />
+    <path android:fillColor="@color/ilustracao_madeira" android:fillAlpha="0.25"
+        android:pathData="M62,74 h276 v352 h-276 z" />
+
+    <!-- A primeira anotação, presa por um alfinete -->
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M124,124 h152 v168 h-152 z" />
+    <path android:strokeColor="@color/ilustracao_sombra" android:strokeWidth="2" android:strokeAlpha="0.45"
+        android:pathData="M124,124 h152 v168 h-152 z" />
+    <path android:strokeColor="@color/ilustracao_tinta" android:strokeWidth="5" android:strokeAlpha="0.5"
+        android:strokeLineCap="round"
+        android:pathData="M146,166 L254,166 M146,196 L236,196 M146,226 L254,226 M146,256 L198,256" />
+    <path android:fillColor="@color/ilustracao_marinho"
+        android:pathData="M200,124 m-11,0 a11,11 0 1 0 22,0 a11,11 0 1 0 -22,0" />
+
+    <!-- O resto do quadro, ainda vazio -->
+    <path android:strokeColor="@color/ilustracao_madeira" android:strokeWidth="2" android:strokeAlpha="0.3"
+        android:pathData="M96,330 h208 M96,364 h208 M96,398 h146" />
+
+    <!-- Caneta pendurada por um cordão -->
+    <path android:strokeColor="@color/ilustracao_tinta" android:strokeWidth="3" android:strokeAlpha="0.7"
+        android:pathData="M330,440 c6,40 -4,64 -14,92" />
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M304,532 h24 v70 h-24 z" />
+    <path android:fillColor="@color/ilustracao_dourado" android:pathData="M304,532 h24 v14 h-24 z" />
+</vector>

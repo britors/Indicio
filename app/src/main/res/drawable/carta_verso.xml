@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Arte original do projeto Indício, licenciada sob a GPLv3.
+    Verso comum das cartas: a lupa sobre a pista iluminada, o mesmo motivo do
+    ícone do aplicativo, sobre azul-marinho.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="132dp"
+    android:height="198dp"
+    android:viewportWidth="400"
+    android:viewportHeight="600">
+
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M0,0h400v600h-400z" />
+
+    <!-- Cercadura dourada dupla -->
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="6"
+        android:pathData="M24,24 h352 v552 h-352 z" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="2" android:strokeAlpha="0.7"
+        android:pathData="M40,40 h320 v520 h-320 z" />
+
+    <!-- Losangos nos cantos -->
+    <path android:fillColor="@color/ilustracao_dourado_claro" android:fillAlpha="0.8"
+        android:pathData="M56,56 l12,12 l-12,12 l-12,-12 z M344,56 l12,12 l-12,12 l-12,-12 z
+                          M56,544 l12,12 l-12,12 l-12,-12 z M344,544 l12,12 l-12,12 l-12,-12 z" />
+
+    <!-- Halo da pista -->
+    <path android:fillColor="@color/ilustracao_dourado_claro" android:fillAlpha="0.16"
+        android:pathData="M186,268 m-96,0 a96,96 0 1 0 192,0 a96,96 0 1 0 -192,0" />
+
+    <!-- Lente da lupa -->
+    <path android:fillColor="@color/ilustracao_dourado_claro" android:fillAlpha="0.28"
+        android:pathData="M186,268 m-64,0 a64,64 0 1 0 128,0 a64,64 0 1 0 -128,0" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="14"
+        android:pathData="M186,268 m-64,0 a64,64 0 1 0 128,0 a64,64 0 1 0 -128,0" />
+
+    <!-- A pista sob a lente -->
+    <path android:fillColor="@color/ilustracao_dourado_claro"
+        android:pathData="M186,268 m-17,0 a17,17 0 1 0 34,0 a17,17 0 1 0 -34,0" />
+
+    <!-- Cabo -->
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="18"
+        android:strokeLineCap="round" android:pathData="M232,314 L292,374" />
+</vector>

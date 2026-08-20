@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Arte de carta original do projeto Indício, licenciada sob a GPLv3.
+    Cena "nivaldo": o porteiro com o caderno de ocorrências, junto ao balcão.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="132dp"
+    android:height="198dp"
+    android:viewportWidth="400"
+    android:viewportHeight="600">
+
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_parede_alta" android:pathData="M0,0h400v300h-400z" />
+
+    <!-- Figura de uniforme -->
+    <path android:fillColor="@color/ilustracao_pele_escura" android:pathData="M182,208 h36 v46 h-36 z" />
+    <path android:fillColor="@color/ilustracao_uniforme"
+        android:pathData="M132,470 L132,288 c0,-30 30,-46 68,-46 c38,0 68,16 68,46 L268,470 Z" />
+    <path android:fillColor="@color/ilustracao_pele_escura"
+        android:pathData="M200,176 m-40,0 a40,44 0 1 0 80,0 a40,44 0 1 0 -80,0" />
+    <path android:fillColor="@color/ilustracao_cabelo"
+        android:pathData="M200,176 m-42,0 a42,46 0 0 1 84,0 c0,-32 -19,-46 -42,-46 c-23,0 -42,14 -42,46 z" />
+    <!-- Distintivo e costura do uniforme -->
+    <path android:fillColor="@color/ilustracao_dourado_claro" android:pathData="M240,306 h20 v26 h-20 z" />
+    <path android:strokeColor="@color/ilustracao_marinho" android:strokeWidth="3" android:strokeAlpha="0.5"
+        android:pathData="M200,254 L200,470" />
+
+    <!-- Caderno de capa dura, seguro à frente -->
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M144,368 h112 v78 h-112 z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M152,376 h96 v62 h-96 z" />
+    <path android:fillColor="@color/ilustracao_tinta" android:fillAlpha="0.4"
+        android:pathData="M162,390 h76 v5 h-76 z M162,404 h76 v5 h-76 z M162,418 h50 v5 h-50 z" />
+    <!-- Mãos sobre o caderno -->
+    <path android:fillColor="@color/ilustracao_pele_escura"
+        android:pathData="M156,446 m-16,0 a16,12 0 1 0 32,0 a16,12 0 1 0 -32,0 M244,446 m-16,0 a16,12 0 1 0 32,0 a16,12 0 1 0 -32,0" />
+
+    <!-- Balcão da portaria -->
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M0,470h400v130h-400z" />
+    <path android:fillColor="@color/ilustracao_madeira_clara" android:pathData="M0,470h400v18h-400z" />
+</vector>

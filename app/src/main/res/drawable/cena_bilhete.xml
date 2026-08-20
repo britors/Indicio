@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Arte de carta original do projeto Indício, licenciada sob a GPLv3.
+    Cena "atras-do-pedestal": o bilhete dobrado, caído no vão do rodapé.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="132dp"
+    android:height="198dp"
+    android:viewportWidth="400"
+    android:viewportHeight="600">
+
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,0h400v600h-400z" />
+
+    <!-- Parede e rodapé, vistos de perto e de cima -->
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v120h-400z" />
+    <path android:fillColor="@color/ilustracao_rodape" android:pathData="M0,120h400v54h-400z" />
+    <path android:fillColor="@color/ilustracao_madeira_clara" android:pathData="M0,174h400v10h-400z" />
+
+    <!-- Sombra funda do vão: é ela que escondeu o bilhete -->
+    <path android:fillColor="@color/ilustracao_sombra" android:fillAlpha="0.55"
+        android:pathData="M0,184h400v78h-400z" />
+
+    <!-- Parte de trás do pedestal, entrando pela esquerda -->
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M0,96 h168 v504 h-168 z" />
+    <path android:fillColor="@color/ilustracao_madeira_clara" android:pathData="M168,96 h22 v504 h-22 z" />
+    <path android:fillColor="@color/ilustracao_sombra" android:fillAlpha="0.5"
+        android:pathData="M190,96 h64 v504 h-64 z" />
+
+    <!-- Brilho do piso encerado, à direita -->
+    <path android:fillColor="@color/ilustracao_luz" android:fillAlpha="0.22"
+        android:pathData="M300,262 h100 v338 h-100 z" />
+
+    <!-- O bilhete dobrado, grande no primeiro plano -->
+    <path android:fillColor="@color/ilustracao_papel"
+        android:pathData="M212,300 L368,262 L396,432 L240,472 Z" />
+    <path android:fillColor="@color/ilustracao_parede_alta"
+        android:pathData="M212,300 L368,262 L379,330 L223,368 Z" />
+    <path android:strokeColor="@color/ilustracao_sombra" android:strokeWidth="3" android:strokeAlpha="0.65"
+        android:pathData="M212,300 L368,262 L396,432 L240,472 Z M223,368 L379,330" />
+
+    <!-- Escrita à mão, interrompida como a do caderno -->
+    <path android:strokeColor="@color/ilustracao_tinta" android:strokeWidth="6" android:strokeAlpha="0.5"
+        android:strokeLineCap="round"
+        android:pathData="M240,392 L360,362 M246,422 L336,398 M252,450 L300,438" />
+</vector>

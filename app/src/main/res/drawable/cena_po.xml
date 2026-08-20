@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Arte de carta original do projeto Indício, licenciada sob a GPLv3.
+    Cena "po": piso encerado com duas faixas contínuas de poeira deslocada.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="132dp"
+    android:height="198dp"
+    android:viewportWidth="400"
+    android:viewportHeight="600">
+
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,0h400v600h-400z" />
+
+    <!-- Base do pedestal, vista de perto -->
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M96,0 h208 v128 h-208 z" />
+    <path android:fillColor="@color/ilustracao_madeira_clara" android:pathData="M84,128 h232 v20 h-232 z" />
+
+    <!-- Brilho do encerado -->
+    <path android:fillColor="@color/ilustracao_luz" android:fillAlpha="0.26"
+        android:pathData="M0,240 h400 v34 h-400 z" />
+    <path android:fillColor="@color/ilustracao_luz" android:fillAlpha="0.16"
+        android:pathData="M0,392 h400 v22 h-400 z" />
+
+    <!-- As duas faixas de poeira deslocada, contínuas até a borda -->
+    <path android:fillColor="@color/ilustracao_luz" android:fillAlpha="0.92"
+        android:pathData="M132,148 L166,148 L206,600 L158,600 Z" />
+    <path android:fillColor="@color/ilustracao_luz" android:fillAlpha="0.92"
+        android:pathData="M234,148 L268,148 L302,600 L254,600 Z" />
+
+    <path android:strokeColor="@color/ilustracao_sombra" android:strokeWidth="2" android:strokeAlpha="0.5"
+        android:pathData="M132,148 L158,600 M166,148 L206,600 M234,148 L254,600 M268,148 L302,600" />
+</vector>

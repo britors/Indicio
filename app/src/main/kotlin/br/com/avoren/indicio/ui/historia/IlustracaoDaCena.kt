@@ -6,7 +6,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
@@ -25,9 +25,10 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import br.com.avoren.indicio.domain.model.caso.Imagem
+import br.com.avoren.indicio.ui.carta.PROPORCAO_DA_CARTA
 
 /**
- * Ilustração da cena.
+ * Arte da carta da cena, em retrato.
  *
  * O nome do recurso vem do JSON do caso, então precisa ser resolvido em tempo
  * de execução. Enquanto a arte de um caso não existir, a descrição acessível é
@@ -50,7 +51,7 @@ internal fun IlustracaoDaCena(
         recursos.getIdentifier(imagem.recurso, "drawable", pacote)
     }
 
-    val forma = RoundedCornerShape(12.dp)
+    val forma = RoundedCornerShape(10.dp)
 
     if (idDoRecurso != 0) {
         Image(
@@ -58,15 +59,17 @@ internal fun IlustracaoDaCena(
             contentDescription = imagem.descricaoAcessivel,
             contentScale = ContentScale.Crop,
             modifier = modifier
-                .fillMaxWidth()
-                .aspectRatio(PROPORCAO)
+                .aspectRatio(PROPORCAO_DA_CARTA)
                 .clip(forma)
                 .border(1.dp, MaterialTheme.colorScheme.outline, forma),
         )
     } else {
+        // Sem proporção fixa: com texto "muito grande" a descrição precisa
+        // caber, e cortar a única informação da cena seria pior que uma carta
+        // mais alta.
         Box(
             modifier = modifier
-                .fillMaxWidth()
+                .heightIn(min = ALTURA_MINIMA_SEM_ARTE)
                 .clip(forma)
                 .background(MaterialTheme.colorScheme.surfaceVariant)
                 .border(1.dp, MaterialTheme.colorScheme.outline, forma)
@@ -78,10 +81,10 @@ internal fun IlustracaoDaCena(
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 textAlign = TextAlign.Center,
-                modifier = Modifier.padding(20.dp),
+                modifier = Modifier.padding(16.dp),
             )
         }
     }
 }
 
-private const val PROPORCAO = 4f / 3f
+private val ALTURA_MINIMA_SEM_ARTE = 180.dp

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Arte de carta original do projeto Indício, licenciada sob a GPLv3.
+    Cena "restauro": a taça sobre a bancada forrada, ao lado das luvas e do pano.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="132dp"
+    android:height="198dp"
+    android:viewportWidth="400"
+    android:viewportHeight="600">
+
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_parede_alta" android:pathData="M0,0h400v380h-400z" />
+
+    <!-- Bancada forrada de feltro -->
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M0,430h400v170h-400z" />
+    <path android:fillColor="@color/ilustracao_feltro" android:pathData="M0,414h400v42h-400z" />
+    <path android:fillColor="@color/ilustracao_feltro" android:fillAlpha="0.7" android:pathData="M0,456h400v58h-400z" />
+
+    <!-- Luz sobre a peça -->
+    <path android:fillColor="@color/ilustracao_luz" android:fillAlpha="0.45"
+        android:pathData="M200,300 m-118,0 a118,110 0 1 0 236,0 a118,110 0 1 0 -236,0" />
+
+    <!-- A Taça das Colinas -->
+    <path android:fillColor="@color/ilustracao_prata"
+        android:pathData="M156,190 h88 c0,58 -18,86 -44,86 c-26,0 -44,-28 -44,-86 z" />
+    <path android:fillColor="@color/ilustracao_luz" android:fillAlpha="0.55"
+        android:pathData="M172,200 h16 c0,40 -2,54 -8,58 c-6,-4 -8,-18 -8,-58 z" />
+    <path android:fillColor="@color/ilustracao_prata_escura" android:pathData="M148,182 h104 v14 h-104 z" />
+    <path android:fillColor="@color/ilustracao_prata" android:pathData="M192,276 h16 v56 h-16 z" />
+    <path android:fillColor="@color/ilustracao_prata_escura" android:pathData="M186,300 h28 v10 h-28 z" />
+    <path android:fillColor="@color/ilustracao_prata"
+        android:pathData="M200,340 m-46,0 a46,14 0 1 0 92,0 a46,14 0 1 0 -92,0" />
+    <path android:fillColor="@color/ilustracao_prata_escura"
+        android:pathData="M200,348 m-46,0 a46,12 0 1 0 92,0 a46,12 0 1 0 -92,0" />
+    <!-- Asas -->
+    <path android:strokeColor="@color/ilustracao_prata" android:strokeWidth="10"
+        android:pathData="M156,206 c-30,4 -34,44 -8,56 M244,206 c30,4 34,44 8,56" />
+
+    <!-- Luvas de algodão e pano dobrado -->
+    <path android:fillColor="@color/ilustracao_papel"
+        android:pathData="M74,414 m-32,0 a32,20 0 1 0 64,0 a32,20 0 1 0 -64,0" />
+    <path android:strokeColor="@color/ilustracao_sombra" android:strokeWidth="2" android:strokeAlpha="0.45"
+        android:pathData="M74,414 m-32,0 a32,20 0 1 0 64,0 a32,20 0 1 0 -64,0 M56,404 L92,404" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M292,392 h84 v44 h-84 z" />
+    <path android:strokeColor="@color/ilustracao_sombra" android:strokeWidth="2" android:strokeAlpha="0.45"
+        android:pathData="M292,392 h84 v44 h-84 z M292,414 h84" />
+</vector>

@@ -26,6 +26,7 @@
     <string name="historia_parar_narracao">Parar a narração</string>
     <string name="historia_narrando">Narrando o trecho</string>
     <string name="historia_sem_voz">Este aparelho não tem voz em português instalada. A história continua disponível para leitura.</string>
+    <string name="historia_escolhas">Escolha a próxima carta</string>
     <string name="historia_pistas">Pistas descobertas</string>
     <string name="historia_pistas_nenhuma">Você ainda não anotou nenhuma pista.</string>
 

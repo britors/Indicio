@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Arte de carta original do projeto Indício, licenciada sob a GPLv3.
+    Cena "chaves": quadro de chaves da portaria, com etiquetas escritas à mão.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="132dp"
+    android:height="198dp"
+    android:viewportWidth="400"
+    android:viewportHeight="600">
+
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_parede_alta" android:pathData="M0,0h400v300h-400z" />
+
+    <!-- Quadro de chaves -->
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M46,70 h308 v460 h-308 z" />
+    <path android:fillColor="@color/ilustracao_madeira_clara" android:pathData="M64,88 h272 v424 h-272 z" />
+    <path android:fillColor="@color/ilustracao_parede_alta" android:fillAlpha="0.5"
+        android:pathData="M78,102 h244 v396 h-244 z" />
+
+    <!-- Três fileiras de ganchos com molhos de chaves -->
+    <group android:name="fileira1">
+        <path android:fillColor="@color/ilustracao_dourado"
+            android:pathData="M120,140 m-7,0 a7,7 0 1 0 14,0 a7,7 0 1 0 -14,0 M200,140 m-7,0 a7,7 0 1 0 14,0 a7,7 0 1 0 -14,0 M280,140 m-7,0 a7,7 0 1 0 14,0 a7,7 0 1 0 -14,0" />
+        <path android:strokeColor="@color/ilustracao_prata_escura" android:strokeWidth="3"
+            android:pathData="M120,147 L120,168 M200,147 L200,168 M280,147 L280,168" />
+        <path android:strokeColor="@color/ilustracao_prata" android:strokeWidth="5"
+            android:pathData="M120,182 m-14,0 a14,14 0 1 0 28,0 a14,14 0 1 0 -28,0 M200,182 m-14,0 a14,14 0 1 0 28,0 a14,14 0 1 0 -28,0 M280,182 m-14,0 a14,14 0 1 0 28,0 a14,14 0 1 0 -28,0" />
+        <path android:fillColor="@color/ilustracao_papel" android:pathData="M104,206 h32 v22 h-32 z M184,206 h32 v22 h-32 z M264,206 h32 v22 h-32 z" />
+        <path android:fillColor="@color/ilustracao_tinta" android:fillAlpha="0.55"
+            android:pathData="M110,214 h20 v5 h-20 z M190,214 h20 v5 h-20 z M270,214 h20 v5 h-20 z" />
+    </group>
+    <group android:name="fileira2">
+        <path android:fillColor="@color/ilustracao_dourado"
+            android:pathData="M120,280 m-7,0 a7,7 0 1 0 14,0 a7,7 0 1 0 -14,0 M200,280 m-7,0 a7,7 0 1 0 14,0 a7,7 0 1 0 -14,0 M280,280 m-7,0 a7,7 0 1 0 14,0 a7,7 0 1 0 -14,0" />
+        <path android:strokeColor="@color/ilustracao_prata_escura" android:strokeWidth="3"
+            android:pathData="M120,287 L120,308 M200,287 L200,308 M280,287 L280,308" />
+        <path android:strokeColor="@color/ilustracao_prata" android:strokeWidth="5"
+            android:pathData="M120,322 m-14,0 a14,14 0 1 0 28,0 a14,14 0 1 0 -28,0 M200,322 m-14,0 a14,14 0 1 0 28,0 a14,14 0 1 0 -28,0" />
+        <path android:fillColor="@color/ilustracao_papel" android:pathData="M104,346 h32 v22 h-32 z M184,346 h32 v22 h-32 z M264,346 h32 v22 h-32 z" />
+        <path android:fillColor="@color/ilustracao_tinta" android:fillAlpha="0.55"
+            android:pathData="M110,354 h20 v5 h-20 z M190,354 h20 v5 h-20 z M270,354 h14 v5 h-14 z" />
+    </group>
+    <group android:name="fileira3">
+        <path android:fillColor="@color/ilustracao_dourado"
+            android:pathData="M120,420 m-7,0 a7,7 0 1 0 14,0 a7,7 0 1 0 -14,0 M200,420 m-7,0 a7,7 0 1 0 14,0 a7,7 0 1 0 -14,0 M280,420 m-7,0 a7,7 0 1 0 14,0 a7,7 0 1 0 -14,0" />
+        <path android:strokeColor="@color/ilustracao_prata_escura" android:strokeWidth="3"
+            android:pathData="M120,427 L120,448 M280,427 L280,448" />
+        <path android:strokeColor="@color/ilustracao_prata" android:strokeWidth="5"
+            android:pathData="M120,462 m-14,0 a14,14 0 1 0 28,0 a14,14 0 1 0 -28,0 M280,462 m-14,0 a14,14 0 1 0 28,0 a14,14 0 1 0 -28,0" />
+        <path android:fillColor="@color/ilustracao_papel" android:pathData="M104,486 h32 v22 h-32 z M264,486 h32 v22 h-32 z" />
+        <path android:fillColor="@color/ilustracao_tinta" android:fillAlpha="0.55"
+            android:pathData="M110,494 h20 v5 h-20 z M270,494 h18 v5 h-18 z" />
+    </group>
+</vector>
