@@ -24,6 +24,7 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import br.com.avoren.indicio.ui.tema.BordaSuave
 import br.com.avoren.indicio.domain.model.caso.Imagem
 import br.com.avoren.indicio.ui.carta.PROPORCAO_DA_CARTA
 
@@ -61,7 +62,7 @@ internal fun IlustracaoDaCena(
             modifier = modifier
                 .aspectRatio(PROPORCAO_DA_CARTA)
                 .clip(forma)
-                .border(1.dp, MaterialTheme.colorScheme.outline, forma),
+                .border(1.dp, BordaSuave, forma),
         )
     } else {
         // Sem proporção fixa: com texto "muito grande" a descrição precisa
@@ -72,7 +73,7 @@ internal fun IlustracaoDaCena(
                 .heightIn(min = ALTURA_MINIMA_SEM_ARTE)
                 .clip(forma)
                 .background(MaterialTheme.colorScheme.surfaceVariant)
-                .border(1.dp, MaterialTheme.colorScheme.outline, forma)
+                .border(1.dp, BordaSuave, forma)
                 .semantics { contentDescription = imagem.descricaoAcessivel },
             contentAlignment = Alignment.Center,
         ) {

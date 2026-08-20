@@ -27,6 +27,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.unit.dp
+import br.com.avoren.indicio.ui.tema.BordaSuave
 import br.com.avoren.indicio.R
 import br.com.avoren.indicio.ui.tema.LocalReducaoDeMovimentos
 
@@ -59,7 +60,7 @@ internal fun Carta(
         Column(
             modifier = Modifier
                 .padding(6.dp)
-                .border(1.dp, MaterialTheme.colorScheme.outline, FormaInterna)
+                .border(1.dp, BordaSuave, FormaInterna)
                 .padding(horizontal = 16.dp, vertical = 18.dp),
             content = conteudo,
         )

@@ -20,7 +20,7 @@ val AlturaMinimaBotao = 64.dp
  */
 val LocalReducaoDeMovimentos = staticCompositionLocalOf { false }
 
-private val EsquemaClaro = lightColorScheme(
+internal val EsquemaClaro = lightColorScheme(
     primary = AzulMarinho,
     onPrimary = Branco,
     primaryContainer = AzulMarinhoClaro,
@@ -35,7 +35,13 @@ private val EsquemaClaro = lightColorScheme(
     onSurface = TintaSepia,
     surfaceVariant = PapelSepia,
     onSurfaceVariant = TintaSuave,
+    // Os dois contornos usam o tom acessível: `OutlinedButton` desta versão do
+    // Material tira a borda de `outlineVariant`, e não de `outline`. Deixar
+    // `outlineVariant` sem definir fazia o padrão do Material (#CAC4D0) vazar
+    // para a borda dos botões, a 1,58:1 — contorno de controle praticamente
+    // invisível. Filetes decorativos usam `BordaSuave` explicitamente.
     outline = BordaSepia,
+    outlineVariant = BordaSepia,
     error = VermelhoDiscreto,
     onError = Branco,
 )

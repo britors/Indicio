@@ -15,6 +15,17 @@ internal val PapelCreme = Color(0xFFFBF6EC)
 internal val PapelSepia = Color(0xFFF1E7D6)
 internal val TintaSepia = Color(0xFF2B2118)
 internal val TintaSuave = Color(0xFF544636)
-internal val BordaSepia = Color(0xFFCBB99B)
+/**
+ * Contorno de controle: a borda que identifica um botão delineado.
+ *
+ * Escuro o bastante para atender o mínimo de 3:1 da WCAG 1.4.11 tanto sobre
+ * [PapelCreme] (3,8:1) quanto sobre [PapelSepia] (3,4:1). O tom anterior,
+ * mais claro, ficava em 1,8:1 e 1,6:1 — o contorno do botão praticamente não
+ * existia para quem enxerga pouco.
+ */
+internal val BordaSepia = Color(0xFF8F7A5B)
+
+/** Contorno decorativo: divisórias e filetes que não delimitam controle. */
+internal val BordaSuave = Color(0xFFCBB99B)
 internal val Branco = Color(0xFFFFFFFF)
 internal val VermelhoDiscreto = Color(0xFF7A2E22)

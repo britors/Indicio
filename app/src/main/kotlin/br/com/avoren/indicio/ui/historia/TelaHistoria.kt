@@ -24,6 +24,7 @@ import androidx.compose.ui.semantics.liveRegion
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import br.com.avoren.indicio.ui.tema.BordaSuave
 import br.com.avoren.indicio.R
 import br.com.avoren.indicio.domain.model.caso.Cena
 import br.com.avoren.indicio.domain.model.caso.Escolha
@@ -150,7 +151,7 @@ internal fun PainelDePistas(
     modifier: Modifier = Modifier,
 ) {
     Column(modifier = modifier, verticalArrangement = Arrangement.spacedBy(12.dp)) {
-        HorizontalDivider(color = MaterialTheme.colorScheme.outline)
+        HorizontalDivider(color = BordaSuave)
 
         Text(
             text = stringResource(R.string.historia_pistas),
