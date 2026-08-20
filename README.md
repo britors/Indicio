@@ -65,10 +65,13 @@ Prontos:
 - **Navegação e telas** — apresentação, início, catálogo, história, pausa,
   conclusão, configurações e sobre, com progresso e preferências restaurados ao
   reabrir o aplicativo.
+- **Experiência jogável e narração** — leitura em voz alta com o TextToSpeech do
+  Android em português, com o caso permanecendo utilizável quando não há voz
+  instalada no aparelho.
 
-O caso já é jogável do início ao fim. Faltam as ilustrações das cenas e a
-narração por voz; por enquanto a descrição acessível de cada cena é apresentada
-como texto.
+O caso é jogável do início ao fim. Faltam as ilustrações das cenas; enquanto
+não existirem, a descrição acessível de cada cena é apresentada como texto no
+lugar da imagem.
 
 ### Compilação e testes
 

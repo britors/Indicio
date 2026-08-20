@@ -2,9 +2,13 @@ package br.com.avoren.indicio.ui.historia
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import br.com.avoren.indicio.di.ContainerAplicacao
@@ -33,6 +37,21 @@ fun DestinoHistoria(
     }
 
     val estado by viewModel.estado.collectAsStateWithLifecycle()
+    val estadoNarracao by viewModel.estadoNarracao.collectAsStateWithLifecycle()
+
+    // Sair da tela ou levá-la a segundo plano interrompe a fala; o mecanismo em
+    // si só é liberado quando o ViewModel morre.
+    val proprietario = LocalLifecycleOwner.current
+    DisposableEffect(proprietario) {
+        val observador = LifecycleEventObserver { _, evento ->
+            if (evento == Lifecycle.Event.ON_PAUSE) viewModel.silenciar()
+        }
+        proprietario.lifecycle.addObserver(observador)
+        onDispose {
+            proprietario.lifecycle.removeObserver(observador)
+            viewModel.silenciar()
+        }
+    }
 
     // O botão do sistema abre a pausa em vez de sair da história sem aviso.
     BackHandler(enabled = estado is EstadoHistoria.EmCurso, onBack = onPausar)
@@ -47,7 +66,9 @@ fun DestinoHistoria(
 
         is EstadoHistoria.EmCurso -> ConteudoHistoria(
             estado = atual,
+            estadoNarracao = estadoNarracao,
             onEscolher = viewModel::escolher,
+            onAlternarNarracao = viewModel::alternarNarracao,
             onPausar = onPausar,
             modifier = modifier,
         )

@@ -11,11 +11,13 @@ import br.com.avoren.indicio.data.caso.FonteCasos
 import br.com.avoren.indicio.data.caso.FonteCasosAssets
 import br.com.avoren.indicio.data.caso.RepositorioCasosJson
 import br.com.avoren.indicio.data.local.RepositorioIdentidadeLocal
+import br.com.avoren.indicio.data.narracao.NarradorTextToSpeech
 import br.com.avoren.indicio.data.preferencias.RepositorioPreferenciasDataStore
 import br.com.avoren.indicio.domain.armazenamento.RepositorioPreferencias
 import br.com.avoren.indicio.domain.armazenamento.RepositorioProgresso
 import br.com.avoren.indicio.domain.caso.ObterCasoParaContinuar
 import br.com.avoren.indicio.domain.caso.RepositorioCasos
+import br.com.avoren.indicio.domain.narracao.Narrador
 import br.com.avoren.indicio.domain.repositorio.RepositorioIdentidade
 import br.com.avoren.indicio.domain.validacao.ValidadorCaso
 
@@ -31,6 +33,14 @@ interface ContainerAplicacao {
     val repositorioProgresso: RepositorioProgresso
     val repositorioPreferencias: RepositorioPreferencias
     val obterCasoParaContinuar: ObterCasoParaContinuar
+
+    /**
+     * Cria um narrador novo.
+     *
+     * Não é propriedade: o mecanismo de voz tem ciclo de vida próprio e precisa
+     * ser encerrado junto com quem o usa, e não junto com o aplicativo.
+     */
+    fun criarNarrador(): Narrador
 }
 
 /**
@@ -73,6 +83,8 @@ class ContainerAplicacaoPadrao(
     override val obterCasoParaContinuar: ObterCasoParaContinuar by lazy {
         ObterCasoParaContinuar(repositorioCasos, repositorioProgresso)
     }
+
+    override fun criarNarrador(): Narrador = NarradorTextToSpeech(context)
 
     private companion object {
         const val ARQUIVO_PREFERENCIAS = "preferencias"

@@ -13,6 +13,8 @@ import br.com.avoren.indicio.domain.caso.ResultadoCarga
 import br.com.avoren.indicio.domain.model.caso.Caso
 import br.com.avoren.indicio.domain.model.sessao.ProgressoCaso
 import br.com.avoren.indicio.domain.model.sessao.SessaoInvestigacao
+import br.com.avoren.indicio.domain.narracao.EstadoNarracao
+import br.com.avoren.indicio.domain.narracao.Narrador
 import br.com.avoren.indicio.domain.narrativa.MecanismoNarrativo
 import br.com.avoren.indicio.domain.narrativa.ResultadoEscolha
 import br.com.avoren.indicio.domain.narrativa.ResultadoReconstrucao
@@ -35,8 +37,18 @@ import kotlinx.coroutines.launch
 class HistoriaViewModel(
     private val repositorioCasos: RepositorioCasos,
     private val repositorioProgresso: RepositorioProgresso,
+    private val narrador: Narrador? = null,
     private val mecanismo: MecanismoNarrativo = MecanismoNarrativo(),
 ) : ViewModel() {
+
+    /**
+     * Situação da narração.
+     *
+     * Quando não há narrador, o estado é [EstadoNarracao.INDISPONIVEL] — a
+     * interface esconde o controle de voz e nada mais muda.
+     */
+    val estadoNarracao: StateFlow<EstadoNarracao> = narrador?.estado
+        ?: MutableStateFlow(EstadoNarracao.INDISPONIVEL).asStateFlow()
 
     private val _estado = MutableStateFlow<EstadoHistoria>(EstadoHistoria.Carregando)
     val estado: StateFlow<EstadoHistoria> = _estado.asStateFlow()
@@ -104,6 +116,9 @@ class HistoriaViewModel(
                     is ResultadoEscolha.Recusada -> emitir(EventoHistoria.EscolhaIgnorada)
 
                     is ResultadoEscolha.Aplicada -> {
+                        // A fala da cena anterior não pode continuar sobre o
+                        // texto novo.
+                        narrador?.parar()
                         sessao = resultado.sessao
                         if (resultado.pistasReveladas.isNotEmpty()) {
                             emitir(EventoHistoria.PistasReveladas(resultado.pistasReveladas))
@@ -132,6 +147,28 @@ class HistoriaViewModel(
             }
             atualizarEstado(habilitado = true)
         }
+    }
+
+    /** Lê em voz alta o trecho da cena atual, ou interrompe a leitura em curso. */
+    fun alternarNarracao() {
+        val narrador = narrador ?: return
+
+        if (narrador.estado.value == EstadoNarracao.FALANDO) {
+            narrador.parar()
+            return
+        }
+
+        val cena = caso?.cena(sessao?.cenaAtual.orEmpty()) ?: return
+        narrador.falar(cena.textoNarrado)
+    }
+
+    /** Interrompe a fala sem encerrar o mecanismo, ao pausar ou sair da tela. */
+    fun silenciar() {
+        narrador?.parar()
+    }
+
+    override fun onCleared() {
+        narrador?.encerrar()
     }
 
     /**
@@ -198,7 +235,11 @@ class HistoriaViewModel(
         fun fabrica(container: ContainerAplicacao): ViewModelProvider.Factory =
             viewModelFactory {
                 initializer {
-                    HistoriaViewModel(container.repositorioCasos, container.repositorioProgresso)
+                    HistoriaViewModel(
+                        repositorioCasos = container.repositorioCasos,
+                        repositorioProgresso = container.repositorioProgresso,
+                        narrador = container.criarNarrador(),
+                    )
                 }
             }
     }

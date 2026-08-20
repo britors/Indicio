@@ -1,5 +1,10 @@
 package br.com.avoren.indicio.ui.historia
 
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -15,82 +20,102 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.liveRegion
-import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.com.avoren.indicio.R
 import br.com.avoren.indicio.domain.model.caso.Cena
+import br.com.avoren.indicio.domain.model.caso.Escolha
 import br.com.avoren.indicio.domain.model.caso.Imagem
 import br.com.avoren.indicio.domain.model.caso.Pista
+import br.com.avoren.indicio.domain.narracao.EstadoNarracao
 import br.com.avoren.indicio.ui.comum.BarraDoTopo
 import br.com.avoren.indicio.ui.comum.BotaoPrincipal
 import br.com.avoren.indicio.ui.comum.BotaoSecundario
+import br.com.avoren.indicio.ui.tema.LocalReducaoDeMovimentos
 import br.com.avoren.indicio.ui.tema.TemaIndicio
 
 /**
- * Tela narrativa: o trecho da história e as duas escolhas.
- *
- * A ilustração da cena e a narração por voz chegam com a issue da experiência
- * jogável; por ora a descrição acessível da imagem é apresentada como texto,
- * o que mantém o caso inteiramente jogável e não esconde o que falta.
+ * Tela narrativa: ilustração, trecho curto, controle de narração e as duas
+ * escolhas grandes.
  */
 @Composable
 internal fun ConteudoHistoria(
     estado: EstadoHistoria.EmCurso,
+    estadoNarracao: EstadoNarracao,
     onEscolher: (String) -> Unit,
+    onAlternarNarracao: () -> Unit,
     onPausar: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val semMovimento = LocalReducaoDeMovimentos.current
+
     Scaffold(
         modifier = modifier.fillMaxSize(),
         topBar = { BarraDoTopo(titulo = estado.tituloCaso) },
     ) { espacamento ->
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(espacamento)
-                .verticalScroll(rememberScrollState())
-                .padding(horizontal = 24.dp, vertical = 24.dp),
-        ) {
-            Text(
-                text = estado.cena.imagem.descricaoAcessivel,
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
+        // A transição entre cenas é um esmaecimento curto, sem deslocamento.
+        // Com redução de movimentos, a troca é imediata.
+        AnimatedContent(
+            targetState = estado,
+            transitionSpec = {
+                val duracao = if (semMovimento) 0 else DURACAO_DA_TRANSICAO
+                fadeIn(tween(duracao)) togetherWith fadeOut(tween(duracao))
+            },
+            label = "cena",
+        ) { atual ->
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(espacamento)
+                    .verticalScroll(rememberScrollState())
+                    .padding(horizontal = 24.dp, vertical = 24.dp),
+            ) {
+                IlustracaoDaCena(imagem = atual.cena.imagem)
 
-            Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(24.dp))
 
-            Text(
-                text = estado.cena.texto,
-                style = MaterialTheme.typography.bodyLarge,
-                modifier = Modifier.semantics { liveRegion = LiveRegionMode.Polite },
-            )
-
-            Spacer(modifier = Modifier.height(32.dp))
-
-            estado.cena.escolhas.forEach { escolha ->
-                BotaoPrincipal(
-                    texto = escolha.texto,
-                    onClick = { onEscolher(escolha.id) },
-                    habilitado = estado.escolhasHabilitadas,
+                Text(
+                    text = atual.cena.texto,
+                    style = MaterialTheme.typography.bodyLarge,
+                    modifier = Modifier.semantics { liveRegion = LiveRegionMode.Polite },
                 )
+
+                Spacer(modifier = Modifier.height(24.dp))
+
+                ControleDeNarracao(
+                    estado = estadoNarracao,
+                    onAlternar = onAlternarNarracao,
+                )
+
+                Spacer(modifier = Modifier.height(32.dp))
+
+                atual.cena.escolhas.forEach { escolha ->
+                    BotaoPrincipal(
+                        texto = escolha.texto,
+                        onClick = { onEscolher(escolha.id) },
+                        habilitado = atual.escolhasHabilitadas,
+                    )
+                    Spacer(modifier = Modifier.height(16.dp))
+                }
+
                 Spacer(modifier = Modifier.height(16.dp))
+                PainelDePistas(pistas = atual.pistas)
+                Spacer(modifier = Modifier.height(24.dp))
+
+                BotaoSecundario(
+                    texto = stringResource(R.string.historia_pausar),
+                    onClick = onPausar,
+                )
             }
-
-            Spacer(modifier = Modifier.height(16.dp))
-            PainelDePistas(pistas = estado.pistas)
-            Spacer(modifier = Modifier.height(24.dp))
-
-            BotaoSecundario(
-                texto = stringResource(R.string.historia_pausar),
-                onClick = onPausar,
-            )
         }
     }
 }
+
+private const val DURACAO_DA_TRANSICAO = 220
 
 /**
  * Pistas acumuladas.
@@ -144,13 +169,18 @@ private fun PreviaHistoria() {
                     id = "vitrine",
                     texto = "A vitrine está intacta. O pedestal, porém, não está centralizado.",
                     imagem = Imagem("cena_vitrine", "Vitrine de vidro sobre um pedestal deslocado."),
-                    escolhas = emptyList(),
+                    escolhas = listOf(
+                        Escolha("a", "Examinar o chão", "po"),
+                        Escolha("b", "Olhar o forro", "forro"),
+                    ),
                 ),
                 pistas = listOf(
                     Pista("pedestal", "O pedestal fora do lugar", "Está à esquerda da marca no piso."),
                 ),
             ),
+            estadoNarracao = EstadoNarracao.PRONTO,
             onEscolher = {},
+            onAlternarNarracao = {},
             onPausar = {},
         )
     }

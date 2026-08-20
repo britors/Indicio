@@ -13,6 +13,7 @@ import br.com.avoren.indicio.domain.model.caso.Pista
 import br.com.avoren.indicio.domain.model.caso.ResumoCaso
 import br.com.avoren.indicio.domain.model.caso.TipoCena
 import br.com.avoren.indicio.domain.model.preferencias.Preferencias
+import br.com.avoren.indicio.domain.narracao.EstadoNarracao
 import br.com.avoren.indicio.domain.model.preferencias.TamanhoTexto
 import br.com.avoren.indicio.ui.catalogo.ConteudoCatalogo
 import br.com.avoren.indicio.ui.catalogo.EstadoCatalogo
@@ -163,7 +164,9 @@ class TelasEstruturaisTest {
                         cena = cenaComDuasEscolhas(),
                         pistas = emptyList(),
                     ),
+                    estadoNarracao = EstadoNarracao.INDISPONIVEL,
                     onEscolher = { escolhida = it },
+                    onAlternarNarracao = {},
                     onPausar = {},
                 )
             }
@@ -188,7 +191,9 @@ class TelasEstruturaisTest {
                         pistas = emptyList(),
                         escolhasHabilitadas = false,
                     ),
+                    estadoNarracao = EstadoNarracao.INDISPONIVEL,
                     onEscolher = { cliques++ },
+                    onAlternarNarracao = {},
                     onPausar = {},
                 )
             }
@@ -209,7 +214,9 @@ class TelasEstruturaisTest {
                         cena = cenaComDuasEscolhas(),
                         pistas = listOf(Pista("p1", "Pista encontrada", "Descrição da pista.")),
                     ),
+                    estadoNarracao = EstadoNarracao.INDISPONIVEL,
                     onEscolher = {},
+                    onAlternarNarracao = {},
                     onPausar = {},
                 )
             }
