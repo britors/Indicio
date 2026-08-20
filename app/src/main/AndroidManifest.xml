@@ -6,6 +6,17 @@
         Qualquer permissão nova precisa de discussão prévia em issue.
     -->
 
+    <!--
+        Android 11+ exige que aplicativos que usam TextToSpeech tornem a
+        consulta ao serviço explícita. Isto permite descobrir a voz instalada
+        no aparelho sem conceder permissão ou acesso à rede.
+    -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+    </queries>
+
     <application
         android:name=".IndicioApplication"
         android:allowBackup="true"
