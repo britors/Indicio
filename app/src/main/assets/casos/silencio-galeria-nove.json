@@ -1,0 +1,666 @@
+{
+  "versaoEsquema": 2,
+  "versaoConteudo": 1,
+  "id": "silencio-galeria-nove",
+  "titulo": "O Silêncio da Galeria Nove",
+  "sinopse": "Após um apagão de 83 segundos, um relógio celeste desaparece de uma vitrine ainda trancada. Antes do amanhecer, registros, passagens de serviço e versões incompletas precisam ser colocados sob a mesma luz.",
+  "categoria": "misterios_policiais",
+  "cenaInicial": "s1-chegada",
+  "etapas": [
+    {
+      "id": "oitenta-e-tres-segundos",
+      "titulo": "Oitenta e três segundos",
+      "descricao": "O apagão parece explicar o desaparecimento, mas a vitrine conta uma história mais lenta.",
+      "resumoConclusao": "O apagão foi um teste previsto, e a vitrine foi aberta com acesso autorizado antes daquela noite.",
+      "resumoRetomada": "Você descobriu que os 83 segundos desviaram a atenção de uma retirada anterior.",
+      "objetivos": [
+        {
+          "id": "registrar-apagao",
+          "texto": "Separar o que ocorreu durante o apagão do que já estava preparado",
+          "perguntaEmAberto": "O relógio realmente saiu da vitrine durante os 83 segundos?"
+        },
+        {
+          "id": "entender-vitrine",
+          "texto": "Descobrir quando e como a vitrine foi aberta",
+          "perguntaEmAberto": "Que acesso deixou a vitrine intacta?"
+        }
+      ]
+    },
+    {
+      "id": "rota-que-nao-consta",
+      "titulo": "A rota que não consta",
+      "descricao": "Portas técnicas e uma planta desatualizada revelam outro modo de atravessar o museu.",
+      "resumoConclusao": "Uma passagem de serviço liga a galeria ao laboratório e à ala fechada sem cruzar o saguão.",
+      "resumoRetomada": "Você encontrou uma rota interna ausente dos mapas entregues à equipe da exposição.",
+      "objetivos": [
+        {
+          "id": "reconstruir-rota",
+          "texto": "Reconstruir o caminho possível fora das áreas públicas",
+          "perguntaEmAberto": "Por onde uma peça poderia circular sem aparecer nas câmeras do saguão?"
+        },
+        {
+          "id": "comparar-plantas",
+          "texto": "Comparar o uso atual do prédio com sua planta antiga",
+          "perguntaEmAberto": "Qual porta deixou de existir apenas no papel?"
+        }
+      ]
+    },
+    {
+      "id": "peca-que-ja-faltava",
+      "titulo": "A peça que já faltava",
+      "descricao": "Peso, tecido e etiquetas mostram que a substituição começou bem antes da pré-estreia.",
+      "resumoConclusao": "O objeto retirado da vitrine era uma réplica recente; o original já estava fora da galeria havia semanas.",
+      "resumoRetomada": "Você distinguiu a réplica desaparecida do relógio original e procura a data da troca.",
+      "objetivos": [
+        {
+          "id": "distinguir-pecas",
+          "texto": "Distinguir o objeto da vitrine da peça original",
+          "perguntaEmAberto": "Que detalhe material denuncia a réplica?"
+        },
+        {
+          "id": "encontrar-substituicao",
+          "texto": "Determinar quando a réplica ocupou a vitrine",
+          "perguntaEmAberto": "A troca foi um cuidado técnico ou uma tentativa de ocultação?"
+        }
+      ]
+    },
+    {
+      "id": "versoes-sob-a-luz",
+      "titulo": "Versões sob a mesma luz",
+      "descricao": "Laudos e conversas revelam alertas verdadeiros escondidos por decisões apressadas.",
+      "resumoConclusao": "A equipe técnica avisou sobre a origem incerta, e a direção manteve a abertura enquanto buscava uma resposta conveniente.",
+      "resumoRetomada": "Você reuniu os avisos ignorados e precisa descobrir quem encenou o desaparecimento.",
+      "objetivos": [
+        {
+          "id": "comparar-versoes",
+          "texto": "Comparar o laudo técnico com a comunicação oficial",
+          "perguntaEmAberto": "Quem sabia que a autenticação ainda estava em aberto?"
+        },
+        {
+          "id": "ouvir-alertas",
+          "texto": "Ouvir quem tentou interromper a abertura da exposição",
+          "perguntaEmAberto": "Por que o desaparecimento foi encenado justamente nesta noite?"
+        }
+      ]
+    },
+    {
+      "id": "o-que-devolver",
+      "titulo": "O que o museu deve devolver",
+      "descricao": "A procedência do relógio exige uma decisão que vai além de encontrar o objeto.",
+      "resumoConclusao": "A microgravação e os registros de transporte esclareceram a origem e permitiram uma decisão transparente.",
+      "resumoRetomada": "Você localizou o relógio original e precisa escolher como apresentar a verdade e iniciar sua devolução responsável.",
+      "objetivos": [
+        {
+          "id": "confirmar-origem",
+          "texto": "Confirmar a procedência registrada no próprio mecanismo",
+          "perguntaEmAberto": "Que história o relógio preserva além da versão do doador?"
+        },
+        {
+          "id": "decidir-destino",
+          "texto": "Construir uma saída que preserve a prova e reconheça os legítimos interessados",
+          "perguntaEmAberto": "Como devolver uma peça sem apagar novamente sua história?"
+        }
+      ]
+    }
+  ],
+  "caderno": {
+    "pistas": [
+      {
+        "id": "vitrine-intacta",
+        "titulo": "Uma vitrine intacta demais",
+        "descricao": "Fechadura, dobradiças e vidro não apresentam marcas recentes, e o lacre está acomodado pelo lado interno.",
+        "relevancia": "A ausência de força sugere acesso autorizado e enfraquece a ideia de uma retirada improvisada durante o apagão."
+      },
+      {
+        "id": "apagao-previsto",
+        "titulo": "Um teste de 83 segundos",
+        "descricao": "A duração do apagão coincide com um teste técnico programado e registrado antes da pré-estreia.",
+        "relevancia": "O intervalo exato pode ter servido como distração, mas não prova que o relógio ainda estivesse na galeria naquela hora."
+      },
+      {
+        "id": "lacre-recolocado",
+        "titulo": "O lacre recolocado por dentro",
+        "descricao": "A fibra do lacre se dobra para o interior da vitrine, como acontece quando a porta é fechada com cuidado.",
+        "relevancia": "O detalhe aponta para alguém com chave e tempo, não para uma passagem rápida favorecida pela falta de luz."
+      },
+      {
+        "id": "reinicio-cameras",
+        "titulo": "Câmeras reiniciadas antes da queda",
+        "descricao": "O sistema de vídeo começou a reiniciar quatro minutos antes do apagão e voltou depois das luzes.",
+        "relevancia": "A lacuna das imagens foi preparada pelo próprio procedimento técnico, criando uma janela conhecida por quem leu a agenda."
+      },
+      {
+        "id": "trilho-com-po",
+        "titulo": "Um trilho marcado pela poeira",
+        "descricao": "Duas linhas limpas atravessam o pó junto a um painel discreto no corredor de serviço.",
+        "relevancia": "As marcas registram a passagem de um carrinho por uma rota que não aparece nas áreas abertas ao público."
+      },
+      {
+        "id": "planta-incompleta",
+        "titulo": "Uma porta apagada da planta",
+        "descricao": "A planta atual cobre com uma legenda o vão de uma antiga porta entre o laboratório e a galeria.",
+        "relevancia": "O prédio conservou uma ligação que os mapas operacionais deixaram de mostrar, explicando um trajeto sem câmeras."
+      },
+      {
+        "id": "etiqueta-tres-semanas",
+        "titulo": "Uma etiqueta de três semanas atrás",
+        "descricao": "A embalagem de conservação registra uma retirada técnica realizada vinte e dois dias antes da pré-estreia.",
+        "relevancia": "A data desloca o mistério para semanas antes do apagão e separa o sumiço encenado da saída do relógio original."
+      },
+      {
+        "id": "caixa-leve",
+        "titulo": "Uma caixa leve demais",
+        "descricao": "O registro da balança mostra menos da metade do peso indicado na ficha histórica do relógio.",
+        "relevancia": "A diferença confirma que a caixa usada na galeria transportava outro objeto, embora tivesse as mesmas dimensões externas."
+      },
+      {
+        "id": "tecido-recente",
+        "titulo": "Tecido sem a marca do tempo",
+        "descricao": "O forro retirado da vitrine não tem o vinco profundo que a base metálica do original deixaria em poucas semanas.",
+        "relevancia": "O apoio quase novo combina com uma réplica mais leve e revela que a montagem oficial não continha a peça histórica."
+      },
+      {
+        "id": "sensor-peso",
+        "titulo": "Um sensor ajustado para outro peso",
+        "descricao": "O alarme da base foi calibrado para um objeto muito mais leve que o descrito no inventário antigo.",
+        "relevancia": "A calibração prova que a substituição foi conhecida por alguém da montagem, mesmo que sua razão não tenha sido compartilhada."
+      },
+      {
+        "id": "laudo-interrompido",
+        "titulo": "Um laudo sem conclusão",
+        "descricao": "A última página do laudo traz dúvidas sobre a liga metálica e recomenda suspender a apresentação como peça autenticada.",
+        "relevancia": "A recomendação técnica existia antes do evento e contradiz a certeza exibida nos textos preparados para a imprensa."
+      },
+      {
+        "id": "anexo-removido",
+        "titulo": "O anexo retirado da pasta",
+        "descricao": "A numeração salta uma página justamente onde o termo de doação deveria explicar a procedência anterior.",
+        "relevancia": "O documento ausente liga a dúvida científica a uma decisão administrativa de manter a origem fora da narrativa pública."
+      },
+      {
+        "id": "microgravacao",
+        "titulo": "Uma gravação escondida no mecanismo",
+        "descricao": "Sob uma engrenagem há uma inscrição de oficina e um número de inventário diferentes dos apresentados pelo doador.",
+        "relevancia": "A marca preserva uma cadeia de origem verificável e permite consultar a instituição que registrou a peça anteriormente."
+      },
+      {
+        "id": "recibo-transporte",
+        "titulo": "O recibo da reserva climatizada",
+        "descricao": "O relógio original foi levado para uma reserva segura com autorização técnica, mas sem registro no quadro da exposição.",
+        "relevancia": "O objeto está protegido e disponível para exame, enquanto o silêncio sobre seu destino explica por que a encenação pareceu necessária."
+      }
+    ],
+    "pessoas": [
+      {
+        "id": "diretora",
+        "nome": "A diretora",
+        "papel": "Responsável pela abertura da exposição",
+        "anotacoes": [
+          { "id": "diretora-pediu-discricao", "texto": "Pediu discrição até que a vitrine e o cronograma fossem examinados." },
+          { "id": "diretora-leu-laudo", "texto": "Recebeu o laudo inconclusivo antes de aprovar os textos para a imprensa." },
+          { "id": "diretora-aceita-revisao", "texto": "Aceitou suspender a apresentação e abrir os registros à revisão independente." }
+        ]
+      },
+      {
+        "id": "seguranca",
+        "nome": "O segurança noturno",
+        "papel": "Acompanhamento das rotinas técnicas",
+        "anotacoes": [
+          { "id": "seguranca-anotou-tempo", "texto": "Cronometrou 83 segundos porque acompanhava um teste previsto na agenda." },
+          { "id": "seguranca-conhece-painel", "texto": "Conhece o painel móvel e a rota usada por carrinhos de conservação." }
+        ]
+      },
+      {
+        "id": "restaurador",
+        "nome": "O restaurador",
+        "papel": "Conservação e montagem técnica",
+        "anotacoes": [
+          { "id": "restaurador-retirou-original", "texto": "Retirou o relógio original da montagem após detectar instabilidade na base." },
+          { "id": "restaurador-montou-replica", "texto": "Instalou uma réplica para testar luz e suporte enquanto aguardava decisão da direção." },
+          { "id": "restaurador-encenou-sumico", "texto": "Removeu a réplica durante o reinício das câmeras para impedir uma abertura sem resposta." }
+        ]
+      },
+      {
+        "id": "pesquisadora",
+        "nome": "A pesquisadora",
+        "papel": "Estudo de procedência do acervo",
+        "anotacoes": [
+          { "id": "pesquisadora-questionou-origem", "texto": "Encontrou incompatibilidades entre a liga metálica e a data atribuída à peça." },
+          { "id": "pesquisadora-guardou-copia", "texto": "Guardou uma cópia numerada do anexo ausente no arquivo administrativo." },
+          { "id": "pesquisadora-propos-contato", "texto": "Propôs consultar a instituição indicada pela microgravação antes de qualquer anúncio definitivo." }
+        ]
+      },
+      {
+        "id": "representante-doacao",
+        "nome": "A representante da doação",
+        "papel": "Interlocução com a família doadora",
+        "anotacoes": [
+          { "id": "representante-desconhecia-anexo", "texto": "Conhecia a história familiar, mas nunca havia visto o anexo retirado da pasta." },
+          { "id": "representante-aceita-dialogo", "texto": "Concordou em participar da verificação de procedência e de uma eventual devolução." }
+        ]
+      }
+    ],
+    "locais": [
+      {
+        "id": "galeria-nove",
+        "nome": "Galeria Nove",
+        "anotacoes": [
+          { "id": "galeria-vitrine-fechada", "texto": "A vitrine permaneceu fechada e o sistema registrou o apagão de 83 segundos." },
+          { "id": "galeria-painel-movel", "texto": "Um painel cenográfico esconde uma porta técnica ainda utilizada." }
+        ]
+      },
+      {
+        "id": "central-seguranca",
+        "nome": "Central de segurança",
+        "anotacoes": [
+          { "id": "central-reinicio-programado", "texto": "Câmeras e iluminação reiniciaram em sequência conforme uma ordem de serviço." }
+        ]
+      },
+      {
+        "id": "corredor-servico",
+        "nome": "Corredor de serviço",
+        "anotacoes": [
+          { "id": "corredor-trilhos", "texto": "Marcas de rodas seguem da galeria até o laboratório, longe do saguão." },
+          { "id": "corredor-porta-antiga", "texto": "Uma porta funcional foi omitida na atualização mais recente da planta." }
+        ]
+      },
+      {
+        "id": "laboratorio",
+        "nome": "Laboratório de conservação",
+        "anotacoes": [
+          { "id": "laboratorio-duas-embalagens", "texto": "Duas embalagens iguais foram usadas em momentos diferentes para o original e para a réplica." }
+        ]
+      },
+      {
+        "id": "ala-fechada",
+        "nome": "Ala fechada",
+        "anotacoes": [
+          { "id": "ala-sensor-isolado", "texto": "Um sensor de peso da montagem foi guardado junto a painéis ainda sem exposição." }
+        ]
+      },
+      {
+        "id": "arquivo-administrativo",
+        "nome": "Arquivo administrativo",
+        "anotacoes": [
+          { "id": "arquivo-pasta-incompleta", "texto": "A pasta de doação está completa na lista, mas falta um anexo numerado no conteúdo." }
+        ]
+      },
+      {
+        "id": "reserva-climatizada",
+        "nome": "Reserva climatizada",
+        "anotacoes": [
+          { "id": "reserva-original-seguro", "texto": "O relógio original está acondicionado, identificado e disponível para verificação técnica." }
+        ]
+      }
+    ],
+    "conversas": [
+      { "id": "diretora-primeiro-relato", "pessoaId": "diretora", "titulo": "A abertura ao amanhecer", "texto": "A diretora relata o apagão, a vitrine fechada e a pressão para receber a imprensa em poucas horas." },
+      { "id": "seguranca-teste", "pessoaId": "seguranca", "titulo": "O teste previsto", "texto": "O segurança explica por que cronometrou a queda de energia e quem tinha acesso à agenda técnica." },
+      { "id": "seguranca-rota", "pessoaId": "seguranca", "titulo": "A porta atrás do painel", "texto": "O segurança descreve a rota discreta usada pela conservação para evitar cruzar áreas com visitantes." },
+      { "id": "restaurador-primeira-retirada", "pessoaId": "restaurador", "titulo": "A retirada de três semanas atrás", "texto": "O restaurador conta que levou o original à reserva após notar instabilidade e dúvidas na ficha técnica." },
+      { "id": "pesquisadora-laudo", "pessoaId": "pesquisadora", "titulo": "O laudo sem conclusão", "texto": "A pesquisadora explica que seus alertas tratavam tanto da autenticidade quanto da origem anterior da peça." },
+      { "id": "diretora-decisao", "pessoaId": "diretora", "titulo": "A decisão de manter a data", "texto": "A diretora admite que esperava resolver as dúvidas depois da abertura e que não informou toda a equipe." },
+      { "id": "restaurador-encenacao", "pessoaId": "restaurador", "titulo": "A réplica que desapareceu", "texto": "O restaurador reconhece que escondeu a réplica para impedir que ela fosse apresentada ao público como original." },
+      { "id": "representante-procedencia", "pessoaId": "representante-doacao", "titulo": "Uma história familiar incompleta", "texto": "A representante aceita comparar a memória da família com os registros preservados no mecanismo." }
+    ]
+  },
+  "lembrancas": [
+    { "id": "apagao-nao-basta", "texto": "Os 83 segundos explicam a distração, não a retirada do original.", "essencial": true },
+    { "id": "acesso-autorizado", "texto": "A vitrine foi aberta com cuidado e acesso autorizado." },
+    { "id": "rota-interna", "texto": "Uma passagem de serviço liga a galeria ao laboratório.", "essencial": true },
+    { "id": "planta-omitiu-porta", "texto": "A planta atual omite uma porta que ainda funciona." },
+    { "id": "original-saiu-antes", "texto": "O relógio original deixou a montagem vinte e dois dias antes.", "essencial": true },
+    { "id": "replica-na-vitrine", "texto": "Uma réplica leve ocupava a vitrine da pré-estreia." },
+    { "id": "laudo-recomendou-pausa", "texto": "O laudo recomendava suspender a apresentação como peça autenticada.", "essencial": true },
+    { "id": "anexo-estava-ausente", "texto": "Um anexo sobre procedência foi retirado da pasta administrativa." },
+    { "id": "gravacao-indica-origem", "texto": "A microgravação aponta para um registro anterior verificável.", "essencial": true },
+    { "id": "original-esta-seguro", "texto": "O relógio original está protegido na reserva climatizada." }
+  ],
+  "cenas": [
+    {
+      "id": "s1-chegada",
+      "etapaId": "oitenta-e-tres-segundos",
+      "objetivoId": "registrar-apagao",
+      "texto": "Pouco depois da meia-noite, a Galeria Nove parece respirar por conta própria. As luzes de presença acendem em sequência, o sistema de climatização muda de tom e sombras de esculturas atravessam as paredes quando você caminha. Nada ali se move sozinho; é o prédio trabalhando enquanto o público está longe. No centro da sala, porém, uma ausência é incontestável: a vitrine do relógio celeste está vazia.\n\nA diretora espera ao lado do segurança noturno. Ela explica que a energia caiu por 83 segundos durante a pré-estreia interna. Quando a iluminação voltou, o objeto não estava mais no pedestal, embora a fechadura permanecesse fechada. A imprensa chega ao amanhecer. Você pede que ninguém reorganize a sala e começa pelo que o museu ainda consegue contar sem completar lacunas com pressa.",
+      "imagem": { "recurso": "cena_galeria_nove_chegada", "descricaoAcessivel": "Galeria iluminada apenas por luzes de presença, com uma vitrine vazia no centro e duas pessoas ao lado." },
+      "revelacoes": {
+        "anotacoesPessoas": ["diretora-pediu-discricao"],
+        "anotacoesLocais": ["galeria-vitrine-fechada"],
+        "conversas": ["diretora-primeiro-relato"]
+      },
+      "escolhas": [
+        { "id": "s1-chegada-vitrine", "texto": "Examinar a vitrine", "proximaCena": "s1-vitrine", "dica": "Uma superfície que reflete a sala também revela como foi tocada por último." },
+        { "id": "s1-chegada-central", "texto": "Conferir os 83 segundos", "proximaCena": "s1-central", "dica": "Relógios muito precisos costumam ter sido consultados antes que alguém precise deles." }
+      ]
+    },
+    {
+      "id": "s1-vitrine",
+      "etapaId": "oitenta-e-tres-segundos",
+      "objetivoId": "registrar-apagao",
+      "texto": "A vitrine devolve a imagem invertida da galeria: arcos, bancos e a linha azul das luzes de emergência. O vidro está limpo, sem riscos ou pressão nos encaixes. A fechadura gira apenas alguns milímetros quando testada, exatamente como deveria fazer estando trancada. Próximo à base, o lacre de fibra parece inteiro à primeira vista.\n\nUma ampliação feita com a câmera do aparelho mostra que a ponta do lacre está acomodada para dentro. Se alguém tivesse puxado a porta fechada, a fibra apontaria na direção oposta. O pedestal também não traz o círculo de poeira esperado sob uma peça antiga e pesada. A vitrine não confirma um gesto durante o escuro; ela preserva sinais de uma abertura cuidadosa, feita com luz e tempo suficientes para recolocar cada elemento.",
+      "imagem": { "recurso": "cena_galeria_nove_vitrine", "descricaoAcessivel": "Vitrine alta de vidro com pedestal vazio, fechadura intacta e um lacre de fibra junto à base." },
+      "revelacoes": {
+        "pistas": ["vitrine-intacta"],
+        "lembrancas": ["acesso-autorizado"]
+      },
+      "escolhas": [
+        { "id": "s1-vitrine-lacre", "texto": "Observar o lacre", "proximaCena": "s1-lacre", "dica": "Fibras finas guardam a direção do último movimento melhor do que uma fechadura polida." },
+        { "id": "s1-vitrine-apagao", "texto": "Comparar com o apagão", "proximaCena": "s1-apagao", "dica": "Talvez a escuridão tenha começado alguns minutos antes das lâmpadas se apagarem." }
+      ]
+    },
+    {
+      "id": "s1-central",
+      "etapaId": "oitenta-e-tres-segundos",
+      "objetivoId": "registrar-apagao",
+      "texto": "Na central de segurança, quatro monitores mostram corredores vazios em tons azulados. O segurança abre o livro técnico e aponta uma ordem de serviço: às 23h40, iluminação e câmeras fariam um reinício conjunto. Ele cronometrou o intervalo porque precisava confirmar o tempo de recuperação do sistema. O número anotado, 83 segundos, aparece antes de qualquer registro sobre a vitrine.\n\nA lista de pessoas autorizadas a consultar a agenda é curta, mas não secreta: direção, conservação, segurança e empresa de manutenção receberam uma cópia. O reinício das câmeras começou quatro minutos antes da queda das luzes, como parte da mesma rotina. Isso criou uma lacuna maior que o apagão percebido na galeria. Ainda assim, carregar um objeto pesado da vitrine ao saguão nesse período exigiria pressa e deixaria marcas que a sala não apresenta.",
+      "imagem": { "recurso": "cena_galeria_nove_central", "descricaoAcessivel": "Central de segurança com quatro monitores, livro técnico aberto e um relógio digital marcando oitenta e três segundos." },
+      "revelacoes": {
+        "pistas": ["apagao-previsto"],
+        "anotacoesPessoas": ["seguranca-anotou-tempo"],
+        "anotacoesLocais": ["central-reinicio-programado"],
+        "conversas": ["seguranca-teste"],
+        "lembrancas": ["apagao-nao-basta"]
+      },
+      "escolhas": [
+        { "id": "s1-central-lacre", "texto": "Voltar ao acesso físico", "proximaCena": "s1-lacre", "dica": "Se a câmera esqueceu alguns minutos, o lacre talvez ainda se lembre de quem fechou a porta." },
+        { "id": "s1-central-reinicio", "texto": "Seguir o reinício das câmeras", "proximaCena": "s1-apagao", "dica": "Uma tela preta nem sempre começa quando as luzes da sala se apagam." }
+      ]
+    },
+    {
+      "id": "s1-lacre",
+      "etapaId": "oitenta-e-tres-segundos",
+      "objetivoId": "entender-vitrine",
+      "pontoDePausa": true,
+      "texto": "Sob uma lupa emprestada pelo laboratório, a fibra do lacre mostra duas dobras. A mais antiga segue a direção de abertura da porta; a recente curva para dentro e termina comprimida pelo encaixe. Não houve ruptura. Alguém abriu a vitrine com a chave correta, reposicionou o lacre e fechou a porta devagar.\n\nO registro eletrônico da fechadura guarda apenas a última inspeção formal, realizada três semanas antes. A ausência de um evento naquela noite deixa de ser estranha: a vitrine já poderia estar vazia antes de o sistema começar a registrar a pré-estreia. Atrás do pedestal, um painel cenográfico encosta na parede com uma folga estreita. O ar que passa por ela é mais frio. A sala pública talvez tenha uma saída que o mapa entregue à equipe não menciona.",
+      "imagem": { "recurso": "cena_galeria_nove_vitrine", "descricaoAcessivel": "Lupa sobre um lacre de fibra dobrado para dentro, ao lado da fechadura preservada da vitrine." },
+      "revelacoes": { "pistas": ["lacre-recolocado"] },
+      "escolhas": [
+        { "id": "s1-lacre-corredor", "texto": "Examinar o painel", "proximaCena": "s2-corredor", "dica": "Uma corrente de ar costuma conhecer passagens que os mapas preferiram esquecer." },
+        { "id": "s1-lacre-seguranca", "texto": "Perguntar sobre rotas internas", "proximaCena": "s2-seguranca", "dica": "Quem fecha o prédio à noite aprende a diferença entre uma parede e um painel." }
+      ]
+    },
+    {
+      "id": "s1-apagao",
+      "etapaId": "oitenta-e-tres-segundos",
+      "objetivoId": "entender-vitrine",
+      "pontoDePausa": true,
+      "texto": "Os arquivos do sistema formam uma sequência precisa. Primeiro, as câmeras entram em reinício. Quatro minutos depois, as luzes se apagam. Em seguida, a climatização reduz a potência e volta gradualmente. A ordem foi programada de manhã e poderia ser consultada por qualquer responsável técnico. A escuridão mais lembrada foi apenas o trecho visível de uma janela maior.\n\nVocê compara o horário com uma fotografia da montagem feita no fim da tarde. A vitrine aparece fechada, mas o reflexo impede ver o objeto com clareza. Atrás dela, o painel decorativo está alguns centímetros fora da linha marcada no piso. Duas rodas estreitas deixaram marcas próximas ao rodapé. Em vez de olhar para o saguão, a investigação passa a olhar para dentro do próprio prédio.",
+      "imagem": { "recurso": "cena_galeria_nove_central", "descricaoAcessivel": "Linha do tempo em um monitor mostra câmeras reiniciando antes da queda das luzes e da climatização." },
+      "revelacoes": { "pistas": ["reinicio-cameras"] },
+      "escolhas": [
+        { "id": "s1-apagao-corredor", "texto": "Seguir as marcas de rodas", "proximaCena": "s2-corredor", "dica": "Rodas estreitas preferem pisos técnicos a tapetes preparados para visitantes." },
+        { "id": "s1-apagao-seguranca", "texto": "Rever a ronda noturna", "proximaCena": "s2-seguranca", "dica": "Uma ronda anota portas abertas, mas também revela quais portas ninguém considera especiais." }
+      ]
+    },
+    {
+      "id": "s2-corredor",
+      "etapaId": "rota-que-nao-consta",
+      "objetivoId": "reconstruir-rota",
+      "texto": "O painel se move com um toque no ponto certo e revela uma porta estreita, pintada da mesma cor da parede. Além dela, o museu muda de linguagem: tubulações ficam aparentes, etiquetas substituem legendas e a luz branca não tenta criar atmosfera. No piso, duas faixas limpas atravessam a poeira em direção ao laboratório.\n\nAs rodas têm a largura de um carrinho de conservação. O trajeto não passa pelo saguão nem pelas câmeras voltadas ao público. Uma curva leva à ala fechada; a outra, a uma bancada de embalagem. O silêncio da galeria deixa de parecer sobrenatural e se torna arquitetônico: sistemas e pessoas continuam trabalhando atrás das superfícies que o visitante vê.",
+      "imagem": { "recurso": "cena_galeria_nove_corredor", "descricaoAcessivel": "Corredor técnico claro atrás de um painel móvel, com duas marcas de rodas atravessando a poeira do piso." },
+      "revelacoes": {
+        "pistas": ["trilho-com-po"],
+        "anotacoesLocais": ["galeria-painel-movel", "corredor-trilhos"],
+        "lembrancas": ["rota-interna"]
+      },
+      "escolhas": [
+        { "id": "s2-corredor-laboratorio", "texto": "Seguir até o laboratório", "proximaCena": "s2-laboratorio", "dica": "Onde há rodas limpas, talvez exista uma bancada preparada para receber o que elas carregaram." },
+        { "id": "s2-corredor-planta", "texto": "Comparar o corredor com a planta", "proximaCena": "s2-planta", "dica": "Paredes antigas raramente obedecem por completo a desenhos atualizados." }
+      ]
+    },
+    {
+      "id": "s2-seguranca",
+      "etapaId": "rota-que-nao-consta",
+      "objetivoId": "reconstruir-rota",
+      "texto": "O segurança refaz a ronda sem transformar a conversa numa defesa. Às 23h20, verificou a Galeria Nove pelo saguão. Às 23h32, acompanhou o técnico na central. Durante o reinício, permaneceu diante dos monitores. Ele não viu ninguém cruzar a área pública — e agora entende por que isso não elimina uma rota interna.\n\nQuestionado sobre o painel, ele mostra uma pequena chave quadrada usada pela conservação. A passagem serve para mover obras sem expô-las à entrada principal. O segurança já acompanhou esse trajeto muitas vezes, mas a porta não aparece nos mapas distribuídos para eventos. Sua anotação mais útil não é quem entrou; é a observação de que um carrinho voltou do laboratório no fim da tarde com uma capa cinza, aparentemente vazio.",
+      "imagem": { "recurso": "cena_galeria_nove_central", "descricaoAcessivel": "Segurança noturno aponta horários em um livro de ronda ao lado de uma pequena chave quadrada." },
+      "revelacoes": {
+        "anotacoesPessoas": ["seguranca-conhece-painel"],
+        "conversas": ["seguranca-rota"]
+      },
+      "escolhas": [
+        { "id": "s2-seguranca-laboratorio", "texto": "Examinar a capa do carrinho", "proximaCena": "s2-laboratorio", "dica": "Uma capa que parece vazia ainda pode conservar poeira, fibras e o formato do que protegeu." },
+        { "id": "s2-seguranca-planta", "texto": "Localizar a porta omitida", "proximaCena": "s2-planta", "dica": "Talvez a rota mais usada seja justamente a que deixou de receber um nome no mapa." }
+      ]
+    },
+    {
+      "id": "s2-laboratorio",
+      "etapaId": "rota-que-nao-consta",
+      "objetivoId": "comparar-plantas",
+      "texto": "O laboratório está organizado para o turno seguinte. Pincéis repousam em bandejas, pesos cobrem papéis de seda e duas capas cinzentas ocupam a prateleira inferior. O restaurador confirma que o relógio passou ali três semanas antes. A base metálica apresentava uma oscilação mínima, suficiente para suspender a montagem até uma avaliação segura.\n\nUma etiqueta presa à capa registra a data e o destino: reserva climatizada. Ao lado, outra embalagem do mesmo tamanho traz apenas a palavra ‘modelo’. O restaurador explica que uma réplica leve foi usada para testar iluminação, altura e alarme. Ele acreditava que a exposição seria identificada como montagem técnica até a conclusão do laudo. A diretoria, diz ele, decidiu manter a data enquanto discutia o texto final.",
+      "imagem": { "recurso": "cena_galeria_nove_laboratorio", "descricaoAcessivel": "Laboratório de conservação com duas capas cinzentas, etiquetas de datas diferentes e ferramentas alinhadas." },
+      "revelacoes": {
+        "pistas": ["etiqueta-tres-semanas"],
+        "anotacoesPessoas": ["restaurador-retirou-original"],
+        "anotacoesLocais": ["laboratorio-duas-embalagens"],
+        "conversas": ["restaurador-primeira-retirada"],
+        "lembrancas": ["original-saiu-antes"]
+      },
+      "escolhas": [
+        { "id": "s2-laboratorio-deposito", "texto": "Comparar as embalagens", "proximaCena": "s3-deposito", "dica": "Caixas gêmeas deixam de ser iguais quando a balança participa da conversa." },
+        { "id": "s2-laboratorio-ala", "texto": "Seguir a etiqueta do modelo", "proximaCena": "s3-ala", "dica": "A palavra mais discreta numa etiqueta pode explicar por que um alarme aceitou o peso errado." }
+      ]
+    },
+    {
+      "id": "s2-planta",
+      "etapaId": "rota-que-nao-consta",
+      "objetivoId": "comparar-plantas",
+      "texto": "Duas plantas do museu ocupam a mesa de projetos. Na versão antiga, uma porta liga a galeria diretamente ao corredor técnico. Na atual, uma legenda sobre climatização cobre exatamente aquele vão. A parede nunca foi fechada; apenas desapareceu do desenho usado pelas equipes temporárias.\n\nA atualização foi feita durante uma reforma que mudou o fluxo de visitantes, não o de conservação. Ninguém tentou criar uma passagem secreta. O problema nasceu quando um mapa destinado ao público passou a orientar também a segurança de eventos. Ao alinhar as folhas contra a luz, você vê a rota completa: galeria, laboratório, ala fechada e arquivo. É um caminho discreto, funcional e conhecido por poucas funções, sem depender do apagão.",
+      "imagem": { "recurso": "cena_galeria_nove_planta", "descricaoAcessivel": "Duas plantas arquitetônicas sobrepostas mostram uma porta antiga escondida sob uma legenda da versão atual." },
+      "revelacoes": {
+        "pistas": ["planta-incompleta"],
+        "anotacoesLocais": ["corredor-porta-antiga"],
+        "lembrancas": ["planta-omitiu-porta"]
+      },
+      "escolhas": [
+        { "id": "s2-planta-deposito", "texto": "Procurar registros de transporte", "proximaCena": "s3-deposito", "dica": "Uma porta sem nome ainda deixa recibos quando algo pesado a atravessa." },
+        { "id": "s2-planta-ala", "texto": "Examinar a ala fechada", "proximaCena": "s3-ala", "dica": "Salas fora da exposição costumam guardar os ajustes que desapareceram da narrativa oficial." }
+      ]
+    },
+    {
+      "id": "s3-deposito",
+      "etapaId": "peca-que-ja-faltava",
+      "objetivoId": "distinguir-pecas",
+      "texto": "No depósito temporário, uma balança industrial conserva o histórico das últimas pesagens. Duas entradas usam a mesma descrição abreviada do relógio. A primeira, de vinte e dois dias atrás, corresponde ao peso da ficha antiga. A segunda, registrada na tarde da pré-estreia, não chega à metade.\n\nAs caixas externas têm dimensões idênticas para caber no carrinho e evitar que a equipe precise reajustar os apoios. Por dentro, uma delas traz espuma recortada para um modelo oco. O desaparecimento daquela noite envolveu a caixa leve. O relógio original já havia seguido outro caminho. Essa diferença não inocenta o silêncio de ninguém, mas muda a pergunta: o que se tentou esconder não foi apenas a localização de uma peça, e sim a condição do objeto apresentado ao público.",
+      "imagem": { "recurso": "cena_galeria_nove_deposito", "descricaoAcessivel": "Duas caixas cinzentas iguais diante de uma balança, com registros mostrando pesos bastante diferentes." },
+      "revelacoes": { "pistas": ["caixa-leve"] },
+      "escolhas": [
+        { "id": "s3-deposito-embalagem", "texto": "Examinar o apoio da vitrine", "proximaCena": "s3-embalagem", "dica": "Materiais macios guardam a memória do peso sem precisar de números." },
+        { "id": "s3-deposito-arquivo", "texto": "Conferir a ficha histórica", "proximaCena": "s3-arquivo", "dica": "Quando duas caixas têm o mesmo nome, uma ficha antiga pode devolver a diferença entre elas." }
+      ]
+    },
+    {
+      "id": "s3-ala",
+      "etapaId": "peca-que-ja-faltava",
+      "objetivoId": "distinguir-pecas",
+      "texto": "A ala fechada contém painéis ainda sem texto, suportes cobertos e o sensor retirado da Galeria Nove. A etiqueta de calibração registra um peso compatível com o modelo leve, não com o relógio histórico. O sistema não foi enganado durante o apagão; ele foi preparado para outro objeto desde a montagem.\n\nUma caixa baixa guarda fotografias do teste de luz. Em uma delas, o restaurador segura uma estrutura clara, sem mecanismo interno. A imagem foi feita semanas depois da retirada do original. Não há tentativa de imitar detalhes diante da câmera; tratava-se de um gabarito técnico. O conflito surgiu quando essa condição temporária deixou de aparecer no texto da exposição. A réplica não nasceu como fraude, mas passou a sustentar uma certeza que a equipe já não tinha.",
+      "imagem": { "recurso": "cena_galeria_nove_ala", "descricaoAcessivel": "Ala fechada com painéis cobertos, um sensor de peso etiquetado e fotografias de um modelo técnico claro." },
+      "revelacoes": {
+        "pistas": ["sensor-peso"],
+        "anotacoesLocais": ["ala-sensor-isolado"]
+      },
+      "escolhas": [
+        { "id": "s3-ala-embalagem", "texto": "Comparar o modelo com o forro", "proximaCena": "s3-embalagem", "dica": "Um objeto pesado ensina o tecido a lembrar dele; um modelo leve quase não deixa biografia." },
+        { "id": "s3-ala-arquivo", "texto": "Buscar a autorização da montagem", "proximaCena": "s3-arquivo", "dica": "Uma condição temporária muda de sentido quando alguém assina um texto definitivo." }
+      ]
+    },
+    {
+      "id": "s3-embalagem",
+      "etapaId": "peca-que-ja-faltava",
+      "objetivoId": "encontrar-substituicao",
+      "texto": "O tecido retirado do pedestal está dobrado dentro de um envelope. A base do relógio original, descrita na ficha, teria deixado um círculo fundo e quatro pequenas marcas de apoio. O forro mostra apenas uma depressão rasa, uniforme, recente. Uma fibra dourada do modelo de teste ainda permanece presa à costura.\n\nO restaurador confirma que montou a réplica para avaliar reflexos e alcance dos sensores. A solução deveria durar dois dias. Quando o laudo levantou uma dúvida sobre a origem, a direção pediu que o modelo permanecesse enquanto decidia como comunicar o atraso. Na noite da pré-estreia, ele percebeu que as placas já tratavam o objeto como autêntico. O tecido revela quando a substituição aconteceu; a decisão de fazê-la parecer definitiva ainda precisa ser explicada.",
+      "imagem": { "recurso": "cena_galeria_nove_laboratorio", "descricaoAcessivel": "Tecido claro sobre uma bancada mostra apenas uma depressão rasa e uma pequena fibra dourada presa à costura." },
+      "revelacoes": {
+        "pistas": ["tecido-recente"],
+        "anotacoesPessoas": ["restaurador-montou-replica"],
+        "lembrancas": ["replica-na-vitrine"]
+      },
+      "escolhas": [
+        { "id": "s3-embalagem-laudo", "texto": "Ler o laudo completo", "proximaCena": "s4-laudo", "dica": "Conclusões importantes costumam morar na página que ninguém citou no resumo." },
+        { "id": "s3-embalagem-diretoria", "texto": "Conferir quem aprovou as placas", "proximaCena": "s4-diretoria", "dica": "Textos impressos carregam pequenas datas que antecedem as versões contadas em voz alta." }
+      ]
+    },
+    {
+      "id": "s3-arquivo",
+      "etapaId": "peca-que-ja-faltava",
+      "objetivoId": "encontrar-substituicao",
+      "texto": "No arquivo administrativo, a pasta da doação está numerada e organizada, mas a sequência salta do anexo quatro para o seis. O índice menciona um histórico de procedência no espaço ausente. A pesquisadora, chamada para acompanhar a consulta, reconhece a falha e abre sua própria caixa de trabalho. Ela guardou uma cópia identificada quando percebeu que o original deixara a pasta.\n\nO anexo não prova sozinho uma retirada indevida no passado, mas registra proprietários e datas diferentes da versão familiar usada na exposição. A pesquisadora também encontrou incompatibilidades na liga metálica. Por isso recomendou suspender tanto a autenticação quanto a narrativa de origem. A cópia não resolve o caso; ela impede que uma pergunta legítima seja apagada pela falta de uma página.",
+      "imagem": { "recurso": "cena_galeria_nove_arquivo", "descricaoAcessivel": "Pasta numerada aberta em uma mesa de arquivo, com um espaço entre os anexos quatro e seis e uma cópia ao lado." },
+      "revelacoes": {
+        "pistas": ["anexo-removido"],
+        "anotacoesPessoas": ["pesquisadora-questionou-origem", "pesquisadora-guardou-copia"],
+        "anotacoesLocais": ["arquivo-pasta-incompleta"],
+        "lembrancas": ["anexo-estava-ausente"]
+      },
+      "escolhas": [
+        { "id": "s3-arquivo-laudo", "texto": "Comparar a cópia com o laudo", "proximaCena": "s4-laudo", "dica": "Duas dúvidas independentes ficam mais claras quando suas datas são colocadas lado a lado." },
+        { "id": "s3-arquivo-diretoria", "texto": "Perguntar pelo anexo original", "proximaCena": "s4-diretoria", "dica": "Uma página não some sozinha, mas às vezes é o circuito de aprovações que revela quem a viu por último." }
+      ]
+    },
+    {
+      "id": "s4-laudo",
+      "etapaId": "versoes-sob-a-luz",
+      "objetivoId": "comparar-versoes",
+      "texto": "O laudo técnico é cuidadoso onde as placas da exposição são categóricas. Ele registra que a data atribuída ao relógio ainda não pode ser confirmada, recomenda análise adicional da liga e pede verificação da procedência antes de apresentá-lo como peça autenticada. A última página recebeu um risco diagonal, mas continua legível contra a luz.\n\nO envio eletrônico mostra que direção, conservação e pesquisa receberam o documento. A pesquisadora não exigiu que o museu anunciasse uma conclusão negativa; pediu apenas que não anunciasse uma certeza inexistente. A diferença importa. O relatório não acusa ninguém, mas estabelece que a dúvida estava formalizada antes de as placas definitivas serem impressas.",
+      "imagem": { "recurso": "cena_galeria_nove_arquivo", "descricaoAcessivel": "Laudo técnico aberto sob uma luminária, com a última página riscada mas ainda legível contra a luz." },
+      "revelacoes": {
+        "pistas": ["laudo-interrompido"],
+        "anotacoesPessoas": ["pesquisadora-questionou-origem"],
+        "conversas": ["pesquisadora-laudo"],
+        "lembrancas": ["laudo-recomendou-pausa"]
+      },
+      "escolhas": [
+        { "id": "s4-laudo-pesquisadora", "texto": "Ouvir a pesquisadora", "proximaCena": "s4-pesquisadora", "dica": "Quem escreveu com cautela talvez explique melhor aquilo que o resumo transformou em silêncio." },
+        { "id": "s4-laudo-restaurador", "texto": "Perguntar pela réplica", "proximaCena": "s4-restaurador", "dica": "Um objeto temporário só vira segredo quando chega a hora de removê-lo e ninguém decide como." }
+      ]
+    },
+    {
+      "id": "s4-diretoria",
+      "etapaId": "versoes-sob-a-luz",
+      "objetivoId": "comparar-versoes",
+      "texto": "A sala da diretoria tem uma vista ampla da galeria e uma mesa coberta por versões do mesmo texto. Nas primeiras, o relógio aparece como ‘peça em estudo’. Na última, a expressão foi substituída por uma data precisa e uma história familiar sem ressalvas. A mudança ocorreu depois da chegada do laudo.\n\nA diretora admite que leu a recomendação. Temia cancelar uma exposição financiada e esperava receber uma confirmação antes da abertura pública. Mandou guardar o anexo para evitar que uma informação incompleta circulasse sem contexto. Ao tentar ganhar tempo, produziu o efeito oposto: transformou dúvidas técnicas legítimas em algo que parecia precisar ser escondido. Ela não sabe ainda quem removeu a réplica, mas entende por que alguém quis tornar impossível seguir adiante como se nada estivesse em aberto.",
+      "imagem": { "recurso": "cena_galeria_nove_confronto", "descricaoAcessivel": "Mesa de diretoria diante da galeria, coberta por várias versões impressas do texto da exposição." },
+      "revelacoes": {
+        "anotacoesPessoas": ["diretora-leu-laudo"],
+        "conversas": ["diretora-decisao"]
+      },
+      "escolhas": [
+        { "id": "s4-diretoria-pesquisadora", "texto": "Reconstruir os alertas", "proximaCena": "s4-pesquisadora", "dica": "Uma cópia numerada costuma sobreviver justamente para devolver contexto a uma decisão apressada." },
+        { "id": "s4-diretoria-restaurador", "texto": "Reconstruir a encenação", "proximaCena": "s4-restaurador", "dica": "Quem conhecia o reinício, a rota e o peso da réplica não precisava correr no escuro." }
+      ]
+    },
+    {
+      "id": "s4-pesquisadora",
+      "etapaId": "versoes-sob-a-luz",
+      "objetivoId": "ouvir-alertas",
+      "texto": "A pesquisadora organiza datas em cartões, sem tentar ocupar o lugar das provas. Primeiro veio a dúvida sobre a liga metálica. Depois, a ausência do anexo. Por fim, a decisão de manter uma narrativa fechada. Ela procurou a diretoria três vezes e recebeu o pedido de aguardar até depois da pré-estreia.\n\nNa última consulta ao relógio original, notou uma marca minúscula sob a tampa traseira, mas não teve autorização para desmontar o mecanismo. A marca parecia um número de inventário. Se puder ser lida por completo, talvez indique outra instituição e uma história anterior à doação. A pesquisadora não removeu a réplica. Ao perceber o sumiço, porém, foi a primeira a pedir que a investigação não se limitasse a encontrá-la.",
+      "imagem": { "recurso": "cena_galeria_nove_arquivo", "descricaoAcessivel": "Pesquisadora organiza cartões com datas ao lado de uma fotografia ampliada da tampa traseira do relógio." },
+      "revelacoes": { "anotacoesPessoas": ["pesquisadora-propos-contato"] },
+      "escolhas": [
+        { "id": "s4-pesquisadora-gravacao", "texto": "Ampliar a marca do mecanismo", "proximaCena": "s5-gravacao", "dica": "Engrenagens antigas às vezes carregam um endereço menor que a história escrita na placa." },
+        { "id": "s4-pesquisadora-original", "texto": "Localizar o relógio original", "proximaCena": "s5-original", "dica": "Uma etiqueta de conservação costuma dizer a verdade mais simples sobre onde algo foi guardado." }
+      ]
+    },
+    {
+      "id": "s4-restaurador",
+      "etapaId": "versoes-sob-a-luz",
+      "objetivoId": "ouvir-alertas",
+      "texto": "Diante das etiquetas, do reinício programado e da rota interna, o restaurador deixa de falar apenas sobre procedimentos. Ele retirou a réplica da vitrine pouco antes do teste. Não precisou agir no escuro: abriu com a chave de conservação, levou o modelo pelo corredor e recolocou o lacre. O apagão faria todos perceberem a ausência ao mesmo tempo.\n\nEle não queria ficar com o objeto nem acusar uma pessoa. Escondeu a réplica na ala fechada para impedir que a pré-estreia produzisse fotografias de uma peça apresentada como autêntica. Foi uma escolha solitária, que também criou confusão para colegas. Você registra a responsabilidade sem transformar a conversa em humilhação. A encenação explica o sumiço visível; o relógio original e sua origem ainda exigem uma solução compartilhada.",
+      "imagem": { "recurso": "cena_galeria_nove_laboratorio", "descricaoAcessivel": "Restaurador diante de duas etiquetas e uma réplica leve apoiada sobre a bancada de conservação." },
+      "revelacoes": {
+        "anotacoesPessoas": ["restaurador-encenou-sumico"],
+        "conversas": ["restaurador-encenacao"]
+      },
+      "escolhas": [
+        { "id": "s4-restaurador-gravacao", "texto": "Examinar a origem registrada", "proximaCena": "s5-gravacao", "dica": "O motivo da encenação pode estar gravado onde uma placa de exposição não alcança." },
+        { "id": "s4-restaurador-original", "texto": "Conferir a reserva climatizada", "proximaCena": "s5-original", "dica": "Antes de decidir o destino de uma história, vale confirmar se seu objeto está seguro e inteiro." }
+      ]
+    },
+    {
+      "id": "s5-gravacao",
+      "etapaId": "o-que-devolver",
+      "objetivoId": "confirmar-origem",
+      "texto": "Com autorização conjunta, o relógio é examinado na reserva. Sob uma engrenagem removível, a equipe encontra a inscrição vista pela pesquisadora: uma oficina, um ano e um número de inventário. O conjunto não coincide com o histórico entregue na doação. Uma consulta ao catálogo impresso mantido no próprio arquivo do museu confirma que a numeração pertenceu a uma coleção pública estrangeira reorganizada décadas atrás.\n\nO registro não decide sozinho quem deve receber a peça hoje, mas muda a responsabilidade do museu. Já existe uma instituição com a qual iniciar a verificação, além da família doadora e dos especialistas. A microgravação devolve uma voz documental ao objeto. Em vez de anunciar uma solução rápida, a equipe pode preservar a peça, compartilhar os dados e permitir que a procedência seja reconstruída por todos os interessados.",
+      "imagem": { "recurso": "cena_galeria_nove_gravacao", "descricaoAcessivel": "Mecanismo aberto do relógio sob uma lente, revelando uma pequena inscrição e um número de inventário." },
+      "revelacoes": {
+        "pistas": ["microgravacao"],
+        "lembrancas": ["gravacao-indica-origem"]
+      },
+      "escolhas": [
+        { "id": "s5-gravacao-mesa", "texto": "Reunir os interessados", "proximaCena": "s5-mesa", "dica": "Uma inscrição ganha contexto quando todas as pessoas afetadas podem olhar para ela na mesma mesa." },
+        { "id": "s5-gravacao-preservar", "texto": "Organizar primeiro as provas", "proximaCena": "s5-preservar", "dica": "Antes de uma conversa difícil, cópias numeradas e uma cronologia comum evitam que a pressa volte a apagar páginas." }
+      ]
+    },
+    {
+      "id": "s5-original",
+      "etapaId": "o-que-devolver",
+      "objetivoId": "confirmar-origem",
+      "texto": "A reserva climatizada fica em outro setor do edifício, atrás de duas portas registradas. O recibo de transporte confirma que o relógio chegou ali vinte e dois dias antes, acompanhado pelo restaurador e por uma técnica de acervo. A caixa está identificada, sem sinais de abertura posterior. O original nunca esteve em risco durante a pré-estreia.\n\nAo lado da caixa, a ficha de inspeção menciona a pequena gravação sob o mecanismo e recomenda pesquisa de procedência. Essa observação não foi copiada para o quadro da exposição. A segurança física da peça contrasta com a fragilidade de sua história administrativa. Encontrar o relógio resolve a urgência material; reconhecer os registros omitidos abre um trabalho mais importante, que não precisa ser concluído numa única madrugada para começar corretamente.",
+      "imagem": { "recurso": "cena_galeria_nove_deposito", "descricaoAcessivel": "Caixa identificada em uma estante climatizada, com lacre preservado e recibo de transporte preso à prateleira." },
+      "revelacoes": {
+        "pistas": ["recibo-transporte"],
+        "anotacoesLocais": ["reserva-original-seguro"],
+        "lembrancas": ["original-esta-seguro"]
+      },
+      "escolhas": [
+        { "id": "s5-original-mesa", "texto": "Abrir uma conversa conjunta", "proximaCena": "s5-mesa", "dica": "Uma caixa segura permite trocar a urgência por uma conversa em que ninguém precise defender uma versão sozinho." },
+        { "id": "s5-original-preservar", "texto": "Registrar toda a cadeia", "proximaCena": "s5-preservar", "dica": "Recibos, fotografias e lacres ficam mais fortes quando contam a mesma sequência sem saltos." }
+      ]
+    },
+    {
+      "id": "s5-mesa",
+      "etapaId": "o-que-devolver",
+      "objetivoId": "decidir-destino",
+      "pontoDePausa": true,
+      "texto": "Antes do amanhecer, direção, pesquisa, conservação e a representante da doação se reúnem na sala de consulta. A réplica permanece sobre a mesa, identificada como modelo. Fotografias da microgravação e cópias do anexo circulam sem que ninguém precise disputar o objeto original.\n\nA representante explica que a família conhecia apenas uma narrativa transmitida oralmente. Ela nunca tinha visto o anexo removido e aceita participar de uma pesquisa conjunta. A diretora propõe suspender a abertura, publicar uma nota sobre a investigação de procedência e convidar a instituição indicada pelo número de inventário. O restaurador reconhece que deveria ter buscado apoio antes da encenação. A mesa não apaga os erros, mas transforma versões isoladas em compromissos verificáveis.",
+      "imagem": { "recurso": "cena_galeria_nove_confronto", "descricaoAcessivel": "Quatro pessoas reunidas em uma mesa com a réplica identificada, cópias de documentos e fotografias ampliadas." },
+      "revelacoes": {
+        "anotacoesPessoas": ["representante-desconhecia-anexo"],
+        "conversas": ["representante-procedencia"]
+      },
+      "escolhas": [
+        { "id": "s5-mesa-transparencia", "texto": "Apresentar a investigação ao público", "proximaCena": "final-transparencia", "dica": "Às vezes uma exposição mais honesta começa admitindo qual pergunta ainda está aberta." },
+        { "id": "s5-mesa-restituicao", "texto": "Iniciar a verificação para devolução", "proximaCena": "final-restituicao", "dica": "Um número de inventário pode ser o primeiro endereço de uma conversa que atravessa fronteiras." }
+      ]
+    },
+    {
+      "id": "s5-preservar",
+      "etapaId": "o-que-devolver",
+      "objetivoId": "decidir-destino",
+      "pontoDePausa": true,
+      "texto": "Você organiza uma cronologia única: retirada técnica, montagem da réplica, chegada do laudo, remoção do anexo, encenação e descoberta. Cada documento recebe uma cópia numerada. A peça original permanece na reserva, disponível para uma análise independente. A réplica é identificada para que jamais volte a ocupar o lugar de evidência.\n\nCom os fatos separados das interpretações, as conversas ficam menos defensivas. A diretora aceita uma revisão externa dos procedimentos. A pesquisadora prepara o contato com a instituição indicada pela gravação. A representante da doação concorda que a história familiar deve ser comparada aos registros. Há dois modos responsáveis de seguir: abrir ao público o processo de investigação ou priorizar o diálogo formal que pode levar à devolução. Ambos começam pela mesma escolha — não esconder mais a incerteza.",
+      "imagem": { "recurso": "cena_galeria_nove_confronto", "descricaoAcessivel": "Mesa organizada com cronologia, documentos numerados, fotografia da gravação e etiqueta clara para a réplica." },
+      "revelacoes": {
+        "anotacoesPessoas": ["diretora-aceita-revisao", "representante-aceita-dialogo"]
+      },
+      "escolhas": [
+        { "id": "s5-preservar-restituicao", "texto": "Priorizar o diálogo de devolução", "proximaCena": "final-restituicao", "dica": "Documentos organizados permitem que uma conversa sobre pertencimento comece sem pressa e sem apagamentos." },
+        { "id": "s5-preservar-transparencia", "texto": "Transformar a dúvida em exposição", "proximaCena": "final-transparencia", "dica": "Uma galeria vazia pode mostrar mais verdade que uma vitrine ocupada pela certeza errada." }
+      ]
+    },
+    {
+      "id": "final-transparencia",
+      "tipo": "final",
+      "etapaId": "o-que-devolver",
+      "texto": "Ao amanhecer, a Galeria Nove não abre como planejado. No lugar da apresentação triunfal, recebe uma pequena mostra sobre como um museu pesquisa, duvida e corrige suas próprias narrativas. A réplica aparece claramente identificada, ao lado da cronologia e de uma explicação sobre a investigação de procedência em andamento.\n\nO relógio original permanece protegido enquanto as instituições e a família analisam os registros. O restaurador participa da revisão dos procedimentos; a diretora assume publicamente as decisões apressadas; a pesquisadora conduz o contato documental. Os visitantes não recebem uma solução inventada, mas uma pergunta tratada com respeito. O silêncio da galeria deixa de esconder uma ausência e passa a oferecer espaço para uma história mais completa.",
+      "imagem": { "recurso": "cena_galeria_nove_final_transparencia", "descricaoAcessivel": "Galeria aberta com a réplica identificada, uma cronologia acessível e visitantes lendo sobre a pesquisa em andamento." },
+      "desfecho": {
+        "titulo": "A galeria das perguntas",
+        "mensagem": "O museu escolheu mostrar como a verdade é construída, inclusive quando ainda está incompleta.",
+        "explicacaoPistas": "A vitrine intacta e o lacre provaram uma abertura autorizada; o reinício e a rota interna explicaram a encenação; peso, tecido e sensor distinguiram a réplica; etiqueta, laudo e anexo levaram às decisões anteriores; a gravação e o recibo permitiram proteger o original e tornar pública a pesquisa de procedência."
+      }
+    },
+    {
+      "id": "final-restituicao",
+      "tipo": "final",
+      "etapaId": "o-que-devolver",
+      "texto": "A abertura é adiada e o museu envia um dossiê conjunto à instituição indicada pela microgravação. A família doadora participa do contato sem ser tratada como adversária; sua memória passa a ser uma fonte entre outras, não a única versão possível. O relógio continua na reserva, com acesso documentado para análise independente.\n\nNas semanas seguintes, começa um processo de verificação que poderá levar à devolução responsável ou a um acordo de guarda temporária. A réplica permanece como material educativo, claramente identificada. O desaparecimento encenado não é celebrado, mas ajuda a instituição a criar canais seguros para alertas técnicos. A Galeria Nove reabre mais tarde com menos certezas decorativas e mais compromisso com as histórias que os objetos carregam.",
+      "imagem": { "recurso": "cena_galeria_nove_final_restituicao", "descricaoAcessivel": "Relógio protegido em caixa climatizada enquanto pessoas assinam um dossiê de procedência ao redor de uma mesa." },
+      "desfecho": {
+        "titulo": "Uma devolução responsável",
+        "mensagem": "A procedência passou a ser investigada com todas as partes, sem transformar pressa em nova injustiça.",
+        "explicacaoPistas": "Os 83 segundos foram apenas uma distração prevista; a passagem e as etiquetas reconstruíram a rota; a caixa leve e o tecido mostraram a réplica; o laudo e o anexo revelaram dúvidas conhecidas; a microgravação identificou outra cadeia de origem e o recibo confirmou que o original podia permanecer seguro durante o diálogo de devolução."
+      }
+    }
+  ]
+}

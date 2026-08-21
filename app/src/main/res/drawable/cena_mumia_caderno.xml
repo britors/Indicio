@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte original do projeto Indício, GPLv3. Caderno de campo e correspondência. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M42,76h150v412h-150z M208,76h150v412h-150z" />
+    <path android:fillColor="@color/ilustracao_sombra" android:pathData="M192,76h16v412h-16z" />
+    <path android:strokeColor="@color/ilustracao_marinho" android:strokeWidth="4" android:pathData="M64,116h106 M64,150h106 M64,184h82 M64,218h106 M230,116h106 M230,150h106 M230,184h80 M230,218h106" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="5" android:pathData="M70,280 C104,250 138,320 168,286 M232,286 C270,250 296,320 334,280" />
+    <path android:strokeColor="@color/ilustracao_tinta" android:strokeWidth="5" android:pathData="M78,362h84 M238,362h86 M78,402h66 M238,402h66" />
+</vector>

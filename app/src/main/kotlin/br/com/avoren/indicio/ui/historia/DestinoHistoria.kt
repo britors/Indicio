@@ -1,11 +1,22 @@
 package br.com.avoren.indicio.ui.historia
 
 import androidx.activity.compose.BackHandler
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.Alignment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
@@ -14,6 +25,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import br.com.avoren.indicio.domain.armazenamento.RepositorioProgresso
 import br.com.avoren.indicio.domain.caso.RepositorioCasos
 import br.com.avoren.indicio.domain.dica.RepositorioDicas
+import br.com.avoren.indicio.domain.model.caso.Pista
 import br.com.avoren.indicio.domain.narracao.Narrador
 import br.com.avoren.indicio.ui.comum.ConteudoCarregando
 import br.com.avoren.indicio.ui.comum.ConteudoDeFalha
@@ -39,6 +51,9 @@ fun DestinoHistoria(
     onAbrirCaderno: () -> Unit,
     onConfiguracoes: () -> Unit,
     onVoltarAoCatalogo: () -> Unit,
+    pistasNaoLidas: Int = 0,
+    onPistasReveladas: (List<Pista>) -> Unit = {},
+    onReiniciarCaso: () -> Unit = {},
     emDescanso: Boolean = false,
     modifier: Modifier = Modifier,
     viewModel: HistoriaViewModel = viewModel(
@@ -50,6 +65,18 @@ fun DestinoHistoria(
     ),
     dicaViewModel: DicaViewModel = viewModel(factory = DicaViewModel.fabrica(repositorioDicas)),
 ) {
+    val descobertasPendentes = remember { mutableStateListOf<Pista>() }
+    val aoRevelarPistas by rememberUpdatedState(onPistasReveladas)
+
+    LaunchedEffect(viewModel) {
+        viewModel.eventos.collect { evento ->
+            if (evento is EventoHistoria.PistasReveladas) {
+                descobertasPendentes.addAll(evento.pistas)
+                aoRevelarPistas(evento.pistas)
+            }
+        }
+    }
+
     LaunchedEffect(casoId, retomar) {
         viewModel.abrir(casoId, retomar = retomar)
     }
@@ -94,41 +121,67 @@ fun DestinoHistoria(
         onPausar(emCurso?.temInvestigacaoLonga == true)
     }
 
-    when (val atual = estado) {
-        is EstadoHistoria.Carregando -> ConteudoCarregando(modifier)
+    Box(modifier = modifier.fillMaxSize()) {
+        when (val atual = estado) {
+            is EstadoHistoria.Carregando -> ConteudoCarregando(Modifier.fillMaxSize())
 
-        is EstadoHistoria.Falha -> ConteudoDeFalha(
-            onTentarNovamente = { viewModel.abrir(casoId, retomar = retomar) },
-            modifier = modifier,
-        )
+            is EstadoHistoria.Falha -> ConteudoDeFalha(
+                onTentarNovamente = { viewModel.abrir(casoId, retomar = retomar) },
+                modifier = Modifier.fillMaxSize(),
+            )
 
-        is EstadoHistoria.AtualizacaoNecessaria -> ConteudoAtualizacaoNecessaria(
-            tituloCaso = atual.tituloCaso,
-            onReiniciar = viewModel::reiniciar,
-            onVoltarAoCatalogo = onVoltarAoCatalogo,
-            modifier = modifier,
-        )
+            is EstadoHistoria.AtualizacaoNecessaria -> ConteudoAtualizacaoNecessaria(
+                tituloCaso = atual.tituloCaso,
+                onReiniciar = {
+                    onReiniciarCaso()
+                    viewModel.reiniciar()
+                },
+                onVoltarAoCatalogo = onVoltarAoCatalogo,
+                modifier = Modifier.fillMaxSize(),
+            )
 
-        is EstadoHistoria.EmCurso -> ConteudoHistoria(
-            estado = atual,
-            estadoNarracao = estadoNarracao,
-            onEscolher = viewModel::escolher,
-            onAlternarNarracao = viewModel::alternarNarracao,
-            onConfiguracoes = onConfiguracoes,
-            onAbrirEtapas = onAbrirEtapas,
-            onAbrirCaderno = onAbrirCaderno,
-            bloquearMenu = emDescanso,
-            estadoDica = estadoDica,
-            onRevelarDica = dicaViewModel::revelar,
-            onRecarregarDica = dicaViewModel::recarregar,
-            modifier = modifier,
-        )
+            is EstadoHistoria.EmCurso -> ConteudoHistoria(
+                estado = atual,
+                estadoNarracao = estadoNarracao,
+                onEscolher = viewModel::escolher,
+                onAlternarNarracao = viewModel::alternarNarracao,
+                onConfiguracoes = onConfiguracoes,
+                onAbrirEtapas = onAbrirEtapas,
+                onAbrirCaderno = onAbrirCaderno,
+                pistasNaoLidas = pistasNaoLidas,
+                bloquearMenu = emDescanso,
+                estadoDica = estadoDica,
+                onRevelarDica = dicaViewModel::revelar,
+                onRecarregarDica = dicaViewModel::recarregar,
+                modifier = Modifier.fillMaxSize(),
+            )
 
-        is EstadoHistoria.Concluida -> ConteudoConclusao(
-            estado = atual,
-            onJogarNovamente = viewModel::reiniciar,
-            onVoltarAoCatalogo = onVoltarAoCatalogo,
-            modifier = modifier,
-        )
+            is EstadoHistoria.Concluida -> ConteudoConclusao(
+                estado = atual,
+                onJogarNovamente = {
+                    onReiniciarCaso()
+                    viewModel.reiniciar()
+                },
+                onVoltarAoCatalogo = onVoltarAoCatalogo,
+                modifier = Modifier.fillMaxSize(),
+            )
+        }
+
+        val descobertaAtual = descobertasPendentes.firstOrNull()
+        AnimatedVisibility(
+            visible = descobertaAtual != null,
+            modifier = Modifier.align(Alignment.BottomCenter),
+            enter = fadeIn() + slideInVertically { altura -> altura / 2 },
+            exit = fadeOut() + slideOutVertically { altura -> altura / 2 },
+        ) {
+            descobertaAtual?.let { pista ->
+                MomentoDeDescoberta(
+                    pista = pista,
+                    onDispensar = {
+                        if (descobertasPendentes.isNotEmpty()) descobertasPendentes.removeAt(0)
+                    },
+                )
+            }
+        }
     }
 }

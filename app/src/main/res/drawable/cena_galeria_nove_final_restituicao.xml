@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte original do projeto Indício, GPLv3. Peça protegida e dossiê conjunto. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M26,50h348v360h-348z" />
+    <path android:fillColor="@color/ilustracao_vidro" android:fillAlpha="0.45" android:pathData="M72,86h256v278h-256z" />
+    <path android:strokeColor="@color/ilustracao_luz" android:strokeWidth="5" android:pathData="M72,86h256v278h-256z" />
+    <path android:fillColor="@color/ilustracao_feltro" android:pathData="M122,204h156v130h-156z" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="8" android:pathData="M158,242 C158,188 242,188 242,242 L242,306 L158,306 Z" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M20,410h360v190h-360z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M68,434 L330,422 L344,558 L82,570 Z" />
+    <path android:strokeColor="@color/ilustracao_tinta" android:strokeWidth="4" android:pathData="M104,462h196 M104,494h196 M104,526h112" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="5" android:pathData="M244,528 C260,510 278,510 298,534" />
+</vector>

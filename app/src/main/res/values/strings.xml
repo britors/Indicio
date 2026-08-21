@@ -82,8 +82,19 @@
     <string name="historia_dialogo_dica_falha_titulo">O bilhete não chegou</string>
     <string name="historia_dialogo_dica_falha_mensagem">Não foi possível consultar o Anônimo agora. Nenhuma dica foi consumida.</string>
     <string name="historia_dialogo_dica_tentar_novamente">Tentar novamente</string>
+    <string name="historia_descoberta_rotulo">Nova pista no caderno</string>
+    <string name="historia_descoberta_relevancia">Por que importa</string>
+    <string name="historia_descoberta_relevancia_generica">Este detalhe pode se conectar a outras descobertas mais adiante.</string>
+    <string name="historia_descoberta_continuar">Continuar investigando</string>
+    <plurals name="historia_pistas_novas">
+        <item quantity="one">%1$d nova pista</item>
+        <item quantity="other">%1$d novas pistas</item>
+    </plurals>
 
     <!-- Descanso -->
+    <string name="descanso_lembrete_titulo">Descanse os olhos por 20 segundos</string>
+    <string name="descanso_lembrete_mensagem">Olhe para algo distante e pisque com calma. Você pode continuar quando quiser.</string>
+    <string name="descanso_lembrete_entendi">Entendi</string>
     <string name="descanso_rotulo">Pausa da investigação</string>
     <string name="descanso_titulo">Descanse um pouco</string>
     <string name="descanso_mensagem">Afaste os olhos da tela e aproveite estes minutos com calma. Sua investigação está guardada.</string>

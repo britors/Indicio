@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte original do projeto Indício, GPLv3. Corredor técnico e marcas de rodas. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_parede_alta" android:pathData="M0,0h400v420h-400z" />
+    <path android:fillColor="@color/ilustracao_sombra" android:pathData="M122,72h156v350h-156z" />
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M138,88h124v334h-124z" />
+    <path android:fillColor="@color/ilustracao_luz" android:fillAlpha="0.38" android:pathData="M164,112h72v280h-72z" />
+    <path android:strokeColor="@color/ilustracao_tinta" android:strokeWidth="7" android:pathData="M36,132h86 M278,132h86 M36,216h86 M278,216h86" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,420h400v180h-400z" />
+    <path android:strokeColor="@color/ilustracao_sombra" android:strokeWidth="10" android:strokeAlpha="0.7" android:pathData="M150,600 L184,422 M250,600 L216,422" />
+    <path android:strokeColor="@color/ilustracao_luz" android:strokeWidth="3" android:pathData="M160,600 L190,422 M240,600 L210,422" />
+</vector>

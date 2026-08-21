@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte original do projeto Indício, GPLv3. Conselho e plano de proteção. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_luz" android:pathData="M48,52h304v202h-304z" />
+    <path android:fillColor="@color/ilustracao_marinho_claro" android:pathData="M64,68h272v170h-272z" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M22,336 L378,336 L340,520 L60,520 Z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M70,360 L170,350 L180,442 L80,452 Z M214,354 L328,368 L316,464 L202,450 Z" />
+    <path android:strokeColor="@color/ilustracao_tinta" android:strokeWidth="4" android:pathData="M92,386h60 M92,414h60 M226,388h78 M226,416h54" />
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M160,272h80v92h-80z" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="6" android:pathData="M174,290h52v56h-52z" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,520h400v80h-400z" />
+</vector>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte original do projeto Indício, GPLv3. Mesa de versões e conversa conjunta. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_parede_alta" android:pathData="M0,0h400v330h-400z" />
+    <path android:fillColor="@color/ilustracao_marinho_claro" android:pathData="M66,62h268v188h-268z" />
+    <path android:strokeColor="@color/ilustracao_luz" android:strokeWidth="5" android:pathData="M82,78h236v156h-236z M200,78v156" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M20,370 L380,370 L340,520 L60,520 Z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M82,392 L170,382 L182,448 L94,458 Z M212,390 L304,402 L292,466 L200,454 Z" />
+    <path android:fillColor="@color/ilustracao_feltro" android:pathData="M164,330h72v98h-72z" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="4" android:pathData="M176,344h48v70h-48z" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,520h400v80h-400z" />
+</vector>

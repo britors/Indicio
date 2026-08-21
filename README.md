@@ -17,7 +17,7 @@ cotidianos, de personagens marcantes e da satisfação de compreender o caso.
 
 O projeto prioriza uma experiência adulta, tranquila e acessível, especialmente confortável para idosos e pessoas com dificuldades cognitivas leves. Não haverá limite de tempo, pontuação negativa, morte, “game over”, anúncios ou exigência de conta e conexão com a internet.
 
-## Primeiro caso
+## Casos jogáveis
 
 ### O Mistério da Taça Desaparecida
 
@@ -27,6 +27,20 @@ Todos os nomes, equipes, campeonatos e símbolos serão fictícios.
 Os nomes usados nos protótipos são provisórios e não estão liberados como
 marcas. O processo obrigatório de pesquisa e aprovação está em
 [Revisão jurídica de nomes e conteúdo](docs/revisao-juridica-de-conteudo.md).
+
+### O Silêncio da Galeria Nove
+
+Após um apagão de 83 segundos, um relógio celeste desaparece de uma vitrine
+ainda trancada. A investigação percorre passagens de serviço, registros de
+conservação e versões conflitantes até revelar uma réplica, uma procedência
+incerta e dois modos responsáveis de devolver a verdade ao público.
+
+### O Sumiço da Múmia
+
+Uma caixa registrada na capital em 1938 chegou com placas fotográficas, enquanto
+o volume funerário associado ao mesmo número desapareceu dos arquivos. A
+investigação reorganiza negativos, mapas e livros suplementares para recuperar
+a história sem abrir a câmara protegida.
 
 ## MVP planejado
 
@@ -56,8 +70,7 @@ As camadas, os fluxos, os contratos de identificadores e a evolução para vári
 casos estão descritos em [Arquitetura](docs/arquitetura.md).
 O contrato aprovado para investigações longas está em
 [Esquema narrativo v2](docs/esquema-narrativo-v2.md). O motor já lê e valida
-casos v1 e v2 simultaneamente; o catálogo público ainda contém apenas o piloto
-v1 enquanto o primeiro caso longo é produzido.
+casos v1 e v2 simultaneamente; os três casos jogáveis atuais usam o formato v2.
 
 ## Desenvolvimento
 
@@ -94,25 +107,33 @@ Prontos:
   estado em memória.
 - **Primeiro caso** — *O Mistério da Taça Desaparecida*, 85 cenas e dois finais
   positivos, escrito inteiramente em JSON.
+- **Segundo caso** — *O Silêncio da Galeria Nove*, 23 cenas, cinco etapas,
+  caderno com 14 pistas e dois finais positivos, também acrescentado somente
+  por conteúdo JSON e artes locais.
+- **Terceiro caso** — *O Sumiço da Múmia*, 23 cenas, cinco etapas, 14 pistas e
+  dois finais que resolvem a investigação histórica sem abrir a câmara nem
+  representar restos humanos como recompensa visual.
 - **Navegação e telas** — apresentação, início, catálogo, história, pausa,
   conclusão, configurações e sobre, com progresso e preferências restaurados ao
   reabrir o aplicativo.
 - **Experiência jogável e narração** — leitura em voz alta com o TextToSpeech do
   Android em português, com o caso permanecendo utilizável quando não há voz
-  instalada no aparelho; após 45 minutos de uso em primeiro plano, uma pausa de
-  descanso de cinco minutos protege o bem-estar sem alterar escolhas ou
-  progresso. O Anônimo também pode recomendar um dos dois caminhos mais
-  promissores da cena, com limite de duas novas dicas por semana.
+  instalada no aparelho; após 20 minutos há um lembrete visual discreto e, aos
+  30 minutos de uso em primeiro plano, uma pausa de três minutos protege o
+  bem-estar sem alterar escolhas ou progresso. O Anônimo também pode recomendar
+  um dos dois caminhos mais promissores da cena, com limite de duas novas dicas
+  por semana. Novas pistas recebem um momento breve de descoberta, contexto
+  sobre sua relevância e um indicador no Caderno até a primeira leitura.
 - **Identidade visual** — a história é jogada como um baralho: cada cena é uma
   carta distribuída, que chega virada para baixo e é revelada, e cada escolha é
   uma carta a jogar. A direção contemporânea das maquetes já está aplicada ao
-  sistema Compose reutilizável. As 15 artes do primeiro caso e o verso comum
-  são vetores originais, em 68 KB no total, funcionando sem rede.
+  sistema Compose reutilizável. As 42 artes dos casos e o verso comum são
+  vetores originais, funcionando sem rede.
 - **Acessibilidade** — contraste conferido contra a WCAG AA e travado por teste,
   alvo de toque de 64 dp, escolhas com papel de botão, imagens com texto
   equivalente, texto ampliável em dois tamanhos e uso em pé ou deitado.
 
-O caso é jogável do início ao fim, ilustrado e narrado.
+Os três casos são jogáveis do início ao fim, ilustrados e narrados.
 
 Faltam o roteiro manual com TalkBack e os testes integrados de percurso completo.
 O que já está pronto, o que falta e as armadilhas

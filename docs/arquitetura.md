@@ -164,6 +164,8 @@ O catálogo é o único índice conhecido pelo aplicativo:
 app/src/main/assets/casos/
 ├── catalogo.json
 ├── taca-desaparecida.json
+├── silencio-galeria-nove.json
+├── sumico-da-mumia.json
 └── <novo-caso>.json
 ```
 
@@ -241,6 +243,19 @@ essa sessão em Retomada, Etapas e Caderno sem entregar à interface textos de
 etapas futuras ou registros ainda ocultos. A projeção é somente leitura: rever
 uma conversa não executa escolha nem cria caminho paralelo no grafo.
 
+### Momento de descoberta
+
+`MecanismoNarrativo` devolve as pistas que entraram na sessão após cada
+escolha. `HistoriaViewModel` as publica como `EventoHistoria`, separado do
+estado durável da cena, e `DestinoHistoria` mantém uma fila visual para que duas
+descobertas simultâneas não se sobreponham. A frase `relevancia` pertence ao
+conteúdo da pista; a interface apenas a apresenta.
+
+A contagem de pistas ainda não lidas é estado efêmero do coordenador de
+navegação, não do domínio nem do progresso investigativo. Isso permite limpar o
+indicador ao abrir o Caderno pela História, Retomada ou Pausa sem transformar
+“leitura” em regra narrativa ou criar uma nova tabela local.
+
 `DecidirExibicaoDaRetomada` é a política temporal da aplicação. O intervalo
 atual é de 30 minutos desde `atualizadoEm`: abaixo disso o jogador volta direto
 à história; a partir disso recebe etapa, resumo, até três lembranças e objetivo.
@@ -248,8 +263,9 @@ O relógio e o limite são substituíveis em teste e não pertencem ao conteúdo
 caso.
 
 `CicloDeDescanso` é outra política temporal da aplicação. Ele acumula somente o
-uso do aplicativo em primeiro plano e, a cada 45 minutos, inicia um descanso de
-cinco minutos. O relógio monotônico do Android entra pelo `DescansoViewModel`;
+uso do aplicativo em primeiro plano, mostra um lembrete visual não bloqueante
+aos 20 minutos e, aos 30 minutos, inicia um descanso de três minutos. O relógio
+monotônico do Android entra pelo `DescansoViewModel`;
 assim a política continua independente da plataforma e pode ser validada com
 tempo controlado. Depois de iniciado, o descanso continua correndo em segundo
 plano e a interface interrompe a narração, bloqueia a investigação e retorna
@@ -266,7 +282,10 @@ O contrato para casos longos foi aprovado como
 objetivos, personagens, locais, conversas, lembranças e `versaoConteudo` sem
 alterar incrementalmente o formato `1`. A #013 implementou leitura simultânea,
 validação, reconstrução e persistência dos dois formatos. O catálogo de
-produção permanece só com o piloto v1 até o primeiro caso longo estar revisado.
+produção contém três casos longos no esquema `2`. As inclusões de *O Silêncio
+da Galeria Nove* e *O Sumiço da Múmia* confirmaram que casos novos entram apenas
+por JSON e artes locais, sem condicionais de enredo no motor, na navegação ou
+na interface.
 
 O processo de evolução de qualquer versão continua sendo:
 

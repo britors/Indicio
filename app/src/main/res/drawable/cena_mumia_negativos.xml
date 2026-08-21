@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte original do projeto Indício, GPLv3. Negativos e mesa de luz. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_luz" android:pathData="M32,58h336v472h-336z" />
+    <path android:fillColor="@color/ilustracao_marinho_claro" android:pathData="M58,88h126v128h-126z M216,88h126v128h-126z M58,246h126v128h-126z M216,246h126v128h-126z" />
+    <path android:strokeColor="@color/ilustracao_papel" android:strokeWidth="6" android:pathData="M58,88h126v128h-126z M216,88h126v128h-126z M58,246h126v128h-126z M216,246h126v128h-126z" />
+    <path android:fillColor="@color/ilustracao_sombra" android:pathData="M76,170 L102,116 L126,170 Z M112,170 L146,104 L172,170 Z M234,170 L262,112 L286,170 Z M270,170 L310,98 L330,170 Z" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="8" android:pathData="M218,88 L340,214 M340,88 L218,214" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M102,408h196v84h-196z" />
+    <path android:strokeColor="@color/ilustracao_tinta" android:strokeWidth="4" android:pathData="M124,434h152 M124,460h104" />
+</vector>

@@ -13,11 +13,14 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Badge
+import androidx.compose.material3.BadgedBox
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -45,6 +48,7 @@ import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.liveRegion
+import androidx.compose.ui.semantics.paneTitle
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
@@ -83,6 +87,7 @@ internal fun ConteudoHistoria(
     modifier: Modifier = Modifier,
     onAbrirEtapas: () -> Unit = {},
     onAbrirCaderno: () -> Unit = {},
+    pistasNaoLidas: Int = 0,
     bloquearMenu: Boolean = false,
     estadoDica: EstadoDica = EstadoDica.Oculta,
     onRevelarDica: () -> Unit = {},
@@ -103,6 +108,7 @@ internal fun ConteudoHistoria(
                         temEtapas = estado.temInvestigacaoLonga,
                         onAbrirEtapas = onAbrirEtapas,
                         onAbrirCaderno = onAbrirCaderno,
+                        pistasNaoLidas = pistasNaoLidas,
                         onConfiguracoes = onConfiguracoes,
                         estadoDica = estadoDica,
                         onRevelarDica = onRevelarDica,
@@ -191,6 +197,7 @@ private fun MenuDaInvestigacao(
     temEtapas: Boolean,
     onAbrirEtapas: () -> Unit,
     onAbrirCaderno: () -> Unit,
+    pistasNaoLidas: Int,
     onConfiguracoes: () -> Unit,
     estadoDica: EstadoDica,
     onRevelarDica: () -> Unit,
@@ -238,13 +245,35 @@ private fun MenuDaInvestigacao(
                 )
             }
             DropdownMenuItem(
-                text = { Text(stringResource(R.string.historia_caderno)) },
+                text = {
+                    Column {
+                        Text(stringResource(R.string.historia_caderno))
+                        if (pistasNaoLidas > 0) {
+                            Text(
+                                text = pluralStringResource(
+                                    R.plurals.historia_pistas_novas,
+                                    pistasNaoLidas,
+                                    pistasNaoLidas,
+                                ),
+                                style = MaterialTheme.typography.bodySmall,
+                            )
+                        }
+                    }
+                },
                 onClick = {
                     aberto = false
                     onAbrirCaderno()
                 },
                 leadingIcon = {
-                    Icon(imageVector = IconesIndicio.pesquisar, contentDescription = null)
+                    BadgedBox(
+                        badge = {
+                            if (pistasNaoLidas > 0) {
+                                Badge { Text(pistasNaoLidas.toString()) }
+                            }
+                        },
+                    ) {
+                        Icon(imageVector = IconesIndicio.pesquisar, contentDescription = null)
+                    }
                 },
                 modifier = Modifier.heightIn(min = AlturaMinimaBotao),
             )
@@ -280,6 +309,61 @@ private fun MenuDaInvestigacao(
             onTentarNovamente = onRecarregarDica,
             onFechar = { bilheteAberto = false },
         )
+    }
+}
+
+/** Celebra uma descoberta sem interromper a interação com a cena. */
+@Composable
+internal fun MomentoDeDescoberta(
+    pista: Pista,
+    onDispensar: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val rotulo = stringResource(R.string.historia_descoberta_rotulo)
+
+    Surface(
+        modifier = modifier
+            .navigationBarsPadding()
+            .padding(EspacamentoIndicio.padrao)
+            .widthIn(max = LARGURA_MAXIMA_DESCOBERTA)
+            .semantics {
+                paneTitle = rotulo
+                liveRegion = LiveRegionMode.Assertive
+            },
+        shape = FormasIndicio.cartao,
+        color = MaterialTheme.colorScheme.primaryContainer,
+        contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary.copy(alpha = 0.35f)),
+        shadowElevation = ElevacaoIndicio.cartao,
+    ) {
+        Column(
+            modifier = Modifier
+                .verticalScroll(rememberScrollState())
+                .padding(EspacamentoIndicio.grande),
+            verticalArrangement = Arrangement.spacedBy(EspacamentoIndicio.medio),
+        ) {
+            RotuloEditorial(texto = rotulo)
+            Text(text = pista.titulo, style = MaterialTheme.typography.titleLarge)
+            Column(verticalArrangement = Arrangement.spacedBy(EspacamentoIndicio.minimo)) {
+                Text(
+                    text = stringResource(R.string.historia_descoberta_relevancia),
+                    style = MaterialTheme.typography.labelLarge,
+                )
+                Text(
+                    text = pista.relevancia
+                        ?: stringResource(R.string.historia_descoberta_relevancia_generica),
+                    style = MaterialTheme.typography.bodyLarge,
+                )
+            }
+            TextButton(
+                onClick = onDispensar,
+                modifier = Modifier
+                    .align(Alignment.End)
+                    .heightIn(min = AlturaMinimaBotao),
+            ) {
+                Text(stringResource(R.string.historia_descoberta_continuar))
+            }
+        }
     }
 }
 
@@ -671,6 +755,7 @@ private const val PROPORCAO_ARTE_CENA = 16f / 9f
 private const val FRACAO_DA_ALTURA_DA_ARTE = 0.46f
 private const val DUAS_LINHAS = 2
 private val LARGURA_MINIMA_MENU = 280.dp
+private val LARGURA_MAXIMA_DESCOBERTA = 560.dp
 
 @Preview(showBackground = true)
 @Composable

@@ -9,7 +9,27 @@
       "arquivo": "casos/taca-desaparecida.json",
       "disponivel": true,
       "versaoEsquema": 2,
-      "versaoConteudo": 5
+      "versaoConteudo": 6
+    },
+    {
+      "id": "silencio-galeria-nove",
+      "titulo": "O Silêncio da Galeria Nove",
+      "sinopse": "Após um apagão de 83 segundos, um relógio celeste desaparece de uma vitrine ainda trancada. Antes do amanhecer, registros, passagens de serviço e versões incompletas precisam ser colocados sob a mesma luz.",
+      "categoria": "misterios_policiais",
+      "arquivo": "casos/silencio-galeria-nove.json",
+      "disponivel": true,
+      "versaoEsquema": 2,
+      "versaoConteudo": 1
+    },
+    {
+      "id": "sumico-da-mumia",
+      "titulo": "O Sumiço da Múmia",
+      "sinopse": "Uma caixa registrada na capital em 1938 chegou vazia, e a múmia que deveria estar nela desapareceu também dos arquivos. Fotografias, mapas divididos e anotações prudentes podem devolver a história sem perturbar seu repouso.",
+      "categoria": "misterios_policiais",
+      "arquivo": "casos/sumico-da-mumia.json",
+      "disponivel": true,
+      "versaoEsquema": 2,
+      "versaoConteudo": 2
     }
   ]
 }

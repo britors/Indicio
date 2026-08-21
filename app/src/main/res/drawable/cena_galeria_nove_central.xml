@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte original do projeto Indício, GPLv3. Central de segurança e cronômetro. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_parede_alta" android:pathData="M24,44h352v360h-352z" />
+    <path android:fillColor="@color/ilustracao_vidro" android:pathData="M48,76h136v112h-136z M216,76h136v112h-136z M48,218h136v112h-136z M216,218h136v112h-136z" />
+    <path android:fillColor="@color/ilustracao_marinho_claro" android:pathData="M62,90h108v84h-108z M230,90h108v84h-108z M62,232h108v84h-108z M230,232h108v84h-108z" />
+    <path android:strokeColor="@color/ilustracao_luz" android:strokeWidth="4" android:pathData="M74,150 L106,124 L132,144 L160,108 M242,282 L268,252 L294,272 L326,242" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M20,404h360v72h-360z" />
+    <path android:fillColor="@color/ilustracao_tinta" android:pathData="M122,424h156v78h-156z" />
+    <path android:fillColor="@color/ilustracao_luz" android:pathData="M144,442h112v42h-112z" />
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M158,452h84v22h-84z" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,476h400v124h-400z" />
+</vector>

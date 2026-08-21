@@ -99,6 +99,8 @@ análise jurídica foi concluída.
 | `Ercília Mourão` | Não houve conflito evidente na busca aberta, mas isso não é liberação. | **Sobrenome removido**; a personagem é tratada apenas como “Dona Ercília”. |
 | `Taça das Colinas` | Não houve conflito evidente na busca aberta, mas falta busca de marca. | **Substituído no caso jogável** por “a taça” ou “campeonato regional”. |
 | `Clube Atlético Farol` | Não houve correspondência exata evidente, mas existem entidades esportivas com “Farol”. | **Substituído no caso jogável** por “o time da cidade”. |
+| `O Silêncio da Galeria Nove` | Título e enredo foram criados para o projeto a partir da premissa genérica de uma investigação noturna em museu; não houve busca preliminar ou de marca. O caso não usa personagens, nomes, eventos, cenas ou objetos distintivos de obra existente. | **Provisório e bloqueado para lançamento público** até busca, revisão editorial por segunda pessoa e análise jurídica. Pode permanecer no catálogo de desenvolvimento. |
+| `O Sumiço da Múmia` | Título e enredo documental foram criados para o projeto; não houve busca preliminar ou de marca. Capital, planalto, necrópole do sul, pirâmides, escavação, Setor 47, arquivo e personagens pertencem a uma geografia inteiramente fictícia. A cronologia foi deslocada para 1938. | **Provisório e bloqueado para lançamento público** até busca, revisão cultural por especialista, revisão editorial por segunda pessoa e análise jurídica. Pode permanecer no catálogo de desenvolvimento. |
 
 As substituições não significam que as expressões genéricas possam virar a
 marca do produto. Elas apenas evitam apresentar nomes não liberados como parte

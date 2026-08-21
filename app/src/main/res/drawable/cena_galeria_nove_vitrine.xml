@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte original do projeto Indício, GPLv3. Detalhe da vitrine e do lacre. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_parede_alta" android:pathData="M0,0h400v330h-400z" />
+    <path android:fillColor="@color/ilustracao_vidro" android:fillAlpha="0.48" android:pathData="M72,72h256v382h-256z" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="7" android:pathData="M72,72h256v382h-256z" />
+    <path android:strokeColor="@color/ilustracao_luz" android:strokeWidth="6" android:strokeAlpha="0.8" android:pathData="M106,96v318 M130,96v214" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M132,376h136v142h-136z" />
+    <path android:fillColor="@color/ilustracao_madeira_clara" android:pathData="M116,354h168v28h-168z" />
+    <path android:fillColor="@color/ilustracao_dourado" android:pathData="M294,254h32v46h-32z" />
+    <path android:strokeColor="@color/ilustracao_tinta" android:strokeWidth="5" android:pathData="M310,300 C310,338 276,330 282,362 C286,382 316,376 312,408" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,518h400v82h-400z" />
+</vector>

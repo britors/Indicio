@@ -14,8 +14,10 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Snackbar
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -25,6 +27,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.LiveRegionMode
+import androidx.compose.ui.semantics.liveRegion
 import androidx.compose.ui.semantics.paneTitle
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
@@ -38,7 +42,7 @@ import kotlin.math.ceil
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.minutes
 
-/** Tela modal que protege os cinco minutos de descanso da investigação. */
+/** Tela modal que protege os três minutos de descanso da investigação. */
 @Composable
 fun TelaDescanso(
     tempoRestante: Duration,
@@ -132,6 +136,36 @@ fun TelaDescanso(
     }
 }
 
+/** Lembrete breve que não bloqueia escolhas, leitura nem navegação. */
+@Composable
+fun LembreteDescanso(
+    onDispensar: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    Snackbar(
+        modifier = modifier
+            .padding(EspacamentoIndicio.padrao)
+            .semantics { liveRegion = LiveRegionMode.Polite },
+        actionOnNewLine = true,
+        action = {
+            TextButton(onClick = onDispensar) {
+                Text(stringResource(R.string.descanso_lembrete_entendi))
+            }
+        },
+    ) {
+        Column(verticalArrangement = Arrangement.spacedBy(EspacamentoIndicio.minimo)) {
+            Text(
+                text = stringResource(R.string.descanso_lembrete_titulo),
+                style = MaterialTheme.typography.titleMedium,
+            )
+            Text(
+                text = stringResource(R.string.descanso_lembrete_mensagem),
+                style = MaterialTheme.typography.bodyMedium,
+            )
+        }
+    }
+}
+
 private const val SEGUNDOS_POR_MINUTO = 60
 private val TAMANHO_RELOGIO = 220.dp
 
@@ -140,8 +174,8 @@ private val TAMANHO_RELOGIO = 220.dp
 private fun PreviaDescanso() {
     TemaIndicio {
         TelaDescanso(
-            tempoRestante = 4.minutes,
-            duracaoTotal = 5.minutes,
+            tempoRestante = 2.minutes,
+            duracaoTotal = 3.minutes,
         )
     }
 }

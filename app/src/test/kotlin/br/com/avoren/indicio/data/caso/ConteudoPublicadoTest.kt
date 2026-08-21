@@ -112,7 +112,7 @@ class ConteudoPublicadoTest {
         val palavras = palavrasAteFinal(caso, caso.cenaInicial)
 
         assertEquals(2, caso.revisao.esquema)
-        assertEquals(5, caso.revisao.conteudo)
+        assertEquals(6, caso.revisao.conteudo)
         assertEquals(6, caso.etapas.size)
         assertEquals(83, caso.cenas.count { it.tipo == TipoCena.COMUM })
         assertEquals(2, caso.cenas.count { it.tipo == TipoCena.FINAL })
@@ -156,16 +156,90 @@ class ConteudoPublicadoTest {
     }
 
     @Test
-    fun `dicas da taca insinuam sem entregar o texto da escolha`() = runTest {
-        val caso = casosPublicados().single { it.id == "taca-desaparecida" }
+    fun `dicas dos casos longos insinuam sem entregar o texto da escolha`() = runTest {
+        casosPublicados().filter { it.revisao.esquema == 2 }.forEach { caso ->
+            caso.cenas.flatMap(Cena::escolhas).forEach { escolha ->
+                val dica = escolha.dica.orEmpty()
+                assertTrue("A escolha \"${escolha.id}\" não possui dica narrativa.", dica.isNotBlank())
+                assertTrue(
+                    "A dica da escolha \"${escolha.id}\" entrega diretamente o caminho.",
+                    !dica.contains(escolha.texto, ignoreCase = true) &&
+                        !dica.contains("siga por", ignoreCase = true),
+                )
+            }
+        }
+    }
 
-        caso.cenas.flatMap(Cena::escolhas).forEach { escolha ->
-            val dica = escolha.dica.orEmpty()
-            assertTrue("A escolha \"${escolha.id}\" não possui dica narrativa.", dica.isNotBlank())
+    @Test
+    fun `pistas dos casos longos explicam por que cada descoberta importa`() = runTest {
+        casosPublicados().filter { it.revisao.esquema == 2 }.forEach { caso ->
+            caso.caderno.pistas.forEach { pista ->
+                assertTrue(
+                    "A pista \"${pista.id}\" não explica sua relevância.",
+                    pista.relevancia.orEmpty().length >= 40,
+                )
+            }
+        }
+    }
+
+    @Test
+    fun `galeria nove mantem uma investigacao equilibrada em todo percurso`() = runTest {
+        val caso = casosPublicados().single { it.id == "silencio-galeria-nove" }
+        val comprimentos = comprimentosAteFinal(caso, caso.cenaInicial)
+        val palavras = palavrasAteFinal(caso, caso.cenaInicial)
+
+        assertEquals(2, caso.revisao.esquema)
+        assertEquals(1, caso.revisao.conteudo)
+        assertEquals(5, caso.etapas.size)
+        assertEquals(21, caso.cenas.count { it.tipo == TipoCena.COMUM })
+        assertEquals(2, caso.cenas.count { it.tipo == TipoCena.FINAL })
+        assertTrue(caso.cenas.filter { it.tipo == TipoCena.COMUM }.all { it.escolhas.size == 2 })
+        assertEquals(11..11, comprimentos)
+        assertTrue(
+            "O menor percurso da Galeria Nove tem apenas ${palavras.first} palavras.",
+            palavras.first >= 1_200,
+        )
+        assertTrue(
+            "A diferença entre percursos da Galeria Nove é de ${palavras.last - palavras.first} palavras.",
+            palavras.last - palavras.first <= 450,
+        )
+    }
+
+    @Test
+    fun `sumico da mumia mantem uma investigacao documental em todo percurso`() = runTest {
+        val caso = casosPublicados().single { it.id == "sumico-da-mumia" }
+        val comprimentos = comprimentosAteFinal(caso, caso.cenaInicial)
+        val palavras = palavrasAteFinal(caso, caso.cenaInicial)
+        val texto = textoCompleto(caso).lowercase()
+
+        assertEquals(2, caso.revisao.esquema)
+        assertEquals(2, caso.revisao.conteudo)
+        assertEquals(5, caso.etapas.size)
+        assertEquals(21, caso.cenas.count { it.tipo == TipoCena.COMUM })
+        assertEquals(2, caso.cenas.count { it.tipo == TipoCena.FINAL })
+        assertTrue(caso.cenas.filter { it.tipo == TipoCena.COMUM }.all { it.escolhas.size == 2 })
+        assertEquals(11..11, comprimentos)
+        assertTrue(
+            "O menor percurso do Sumiço da Múmia tem apenas ${palavras.first} palavras.",
+            palavras.first >= 1_200,
+        )
+        assertTrue(
+            "A diferença entre percursos do Sumiço da Múmia é de ${palavras.last - palavras.first} palavras.",
+            palavras.last - palavras.first <= 450,
+        )
+        listOf("maldição", "múmia viva", "ganha vida", "uma noite no museu").forEach { termo ->
             assertTrue(
-                "A dica da escolha \"${escolha.id}\" entrega diretamente o caminho.",
-                !dica.contains(escolha.texto, ignoreCase = true) &&
-                    !dica.contains("siga por", ignoreCase = true),
+                "O caso documental contém a expressão fantástica ou distintiva \"$termo\".",
+                termo !in texto,
+            )
+        }
+        listOf(
+            "cairo", "gizé", "saqqara", "quéops", "quéfren", "miquerinos", "djoser",
+            "egito", "egípc", "1926",
+        ).forEach { termo ->
+            assertTrue(
+                "O caso inteiramente fictício contém a referência real ou data substituída \"$termo\".",
+                termo !in texto,
             )
         }
     }
@@ -236,6 +310,27 @@ class ConteudoPublicadoTest {
                 append(it.titulo).append(' ').append(it.mensagem).append(' ').append(it.explicacaoPistas)
             }
         }
+        caso.caderno.pistas.forEach { pista -> append(pista.relevancia.orEmpty()).append(' ') }
+        caso.etapas.forEach { etapa ->
+            append(etapa.titulo).append(' ').append(etapa.descricao).append(' ')
+            append(etapa.resumoConclusao).append(' ').append(etapa.resumoRetomada).append(' ')
+            etapa.objetivos.forEach { objetivo ->
+                append(objetivo.texto).append(' ').append(objetivo.perguntaEmAberto).append(' ')
+            }
+        }
+        caso.caderno.pessoas.forEach { pessoa ->
+            append(pessoa.nome).append(' ').append(pessoa.papel).append(' ')
+            pessoa.anotacoes.forEach { anotacao -> append(anotacao.texto).append(' ') }
+        }
+        caso.caderno.locais.forEach { local ->
+            append(local.nome).append(' ')
+            local.anotacoes.forEach { anotacao -> append(anotacao.texto).append(' ') }
+        }
+        caso.caderno.conversas.forEach { conversa ->
+            append(conversa.titulo).append(' ').append(conversa.texto).append(' ')
+            append(conversa.narracao.orEmpty()).append(' ')
+        }
+        caso.lembrancas.forEach { lembranca -> append(lembranca.texto).append(' ') }
     }
 
     private companion object {

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte original do projeto Indício, GPLv3. Plantas arquitetônicas sobrepostas. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M44,62 L346,92 L324,514 L22,484 Z" />
+    <path android:fillColor="@color/ilustracao_luz" android:fillAlpha="0.72" android:pathData="M70,96 L370,70 L390,480 L88,510 Z" />
+    <path android:strokeColor="@color/ilustracao_marinho" android:strokeWidth="6" android:pathData="M100,132h98v104h-98z M218,132h114v104h-114z M100,260h232v116h-232z M100,400h92v62h-92z M216,400h116v62h-116z" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="9" android:pathData="M198,174v48 M206,174v48" />
+    <path android:fillColor="@color/ilustracao_marinho_claro" android:pathData="M164,188h78v28h-78z" />
+    <path android:strokeColor="@color/ilustracao_tinta" android:strokeWidth="4" android:pathData="M116,286h188 M116,310h126 M116,334h158" />
+</vector>

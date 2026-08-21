@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte original do projeto Indício, GPLv3. Leitura de superfície não invasiva. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_luz" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_dourado_claro" android:pathData="M0,330h400v270h-400z" />
+    <path android:fillColor="@color/ilustracao_dourado" android:fillAlpha="0.5" android:pathData="M0,430 C80,374 140,412 214,374 C292,334 348,384 400,352 L400,600 L0,600 Z" />
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M52,72h296v260h-296z" />
+    <path android:fillColor="@color/ilustracao_marinho_claro" android:pathData="M72,92h256v220h-256z" />
+    <path android:strokeColor="@color/ilustracao_luz" android:strokeWidth="5" android:pathData="M90,248 C126,216 152,250 184,204 C220,152 258,226 312,160" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="7" android:pathData="M92,276h216" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M174,332h52v124h-52z" />
+    <path android:fillColor="@color/ilustracao_piso" android:fillAlpha="0.24" android:pathData="M0,520h400v80h-400z" />
+</vector>

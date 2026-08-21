@@ -138,6 +138,51 @@ Todos com o prefixo `ilustracao_`.
 `cena_bilhete` é a única cujo nome não coincide com o da cena: ela ilustra
 `atras-do-pedestal`.
 
+### Cartas de "O Silêncio da Galeria Nove"
+
+As artes deste caso foram desenhadas como vetores originais para o Indício. As
+cenas que retornam ao mesmo local reutilizam a arte correspondente, sem fazer
+qualquer pista depender somente da ilustração.
+
+| Arte | Uso principal | O que mostra |
+|---|---|---|
+| `cena_galeria_nove_chegada` | Chegada | Galeria noturna e vitrine vazia sob luzes de presença |
+| `cena_galeria_nove_vitrine` | Vitrine e lacre | Fechadura intacta, pedestal e fibra recolocada |
+| `cena_galeria_nove_central` | Central e ronda | Monitores, cronômetro e registros técnicos |
+| `cena_galeria_nove_corredor` | Rota interna | Painel móvel, corredor técnico e marcas de rodas |
+| `cena_galeria_nove_laboratorio` | Conservação | Duas embalagens, etiquetas e bancada organizada |
+| `cena_galeria_nove_planta` | Planta antiga | Mapas sobrepostos com uma porta omitida |
+| `cena_galeria_nove_deposito` | Depósito e reserva | Caixas semelhantes, balança e acondicionamento |
+| `cena_galeria_nove_ala` | Ala fechada | Painéis cobertos, fotografias e sensor de peso |
+| `cena_galeria_nove_arquivo` | Arquivo e laudo | Pasta numerada, anexo ausente e documentos técnicos |
+| `cena_galeria_nove_confronto` | Diretoria e mesa conjunta | Versões impressas e documentos reunidos |
+| `cena_galeria_nove_gravacao` | Microgravação | Mecanismo aberto com inscrição sob a lente |
+| `cena_galeria_nove_final_transparencia` | Final da transparência | Galeria aberta sobre o processo de pesquisa |
+| `cena_galeria_nove_final_restituicao` | Final da restituição | Peça protegida e dossiê de procedência |
+
+### Cartas de "O Sumiço da Múmia"
+
+Este caso evita representar restos humanos. As cartas mostram somente
+documentos, materiais de arquivo, paisagem, instrumentos e áreas protegidas.
+Todas foram desenhadas como vetores originais para o Indício.
+
+| Arte | Uso principal | O que mostra |
+|---|---|---|
+| `cena_mumia_arquivo` | Chegada ao arquivo | Arquivo claro da capital fictícia, caixas e fichas sobre a mesa |
+| `cena_mumia_caixa` | Caixa e selo | Divisórias de placas fotográficas numa caixa histórica |
+| `cena_mumia_inventario` | Fichas e suplemento | Registros com números repetidos e livro suplementar |
+| `cena_mumia_negativos` | Acervo fotográfico | Negativos sobre mesa de luz, um deles invertido |
+| `cena_mumia_caderno` | Caderno e cartas | Duas tintas, horários e correspondência de cautela |
+| `cena_mumia_horizonte` | Fotografias e superfície | Horizonte desértico fictício, carrinho e área protegida |
+| `cena_mumia_mapa` | Rotas e cronologia | Duas metades de mapa com coordenadas cobertas |
+| `cena_mumia_etiqueta` | Identificação provisória | Etiqueta a lápis com ponto de interrogação |
+| `cena_mumia_amuleto` | Revisão do contexto | Bandeja de triagem com objetos separados |
+| `cena_mumia_laudo` | Exame de 1938 | Laudo com identidade mantida em aberto |
+| `cena_mumia_medidas` | Câmara documentada | Planta, cotas e orientação do espaço protegido |
+| `cena_mumia_mesa` | Conselho e proteção | Documentos e limites de pesquisa sobre a mesa |
+| `cena_mumia_final_historia` | Final documental | Exposição de arquivo sem restos humanos ou coordenadas |
+| `cena_mumia_final_pesquisa` | Final não invasivo | Leitura de superfície limitada à proteção do terreno |
+
 ## Verificação
 
 `ArteDasCartasTest`, em `./gradlew test`, falha se uma cena publicada apontar

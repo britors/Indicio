@@ -7,6 +7,9 @@ import kotlin.time.Duration.Companion.minutes
 sealed interface EstadoCicloDeDescanso {
     data object EmUso : EstadoCicloDeDescanso
 
+    /** Aviso não bloqueante para uma breve mudança de foco visual. */
+    data object LembreteVisual : EstadoCicloDeDescanso
+
     data class EmDescanso(
         val tempoRestante: Duration,
         val duracaoTotal: Duration,
@@ -16,11 +19,13 @@ sealed interface EstadoCicloDeDescanso {
 /**
  * Política temporal do lembrete de descanso.
  *
- * Somente o uso em primeiro plano conta para os 45 minutos. Depois que a pausa
- * começa, seus cinco minutos continuam correndo mesmo com o aplicativo em
- * segundo plano, pois esse tempo já constitui descanso da tela.
+ * Somente o uso em primeiro plano conta para os intervalos. Aos 20 minutos há
+ * um lembrete não bloqueante; aos 30 começa a pausa de três minutos. Depois que
+ * a pausa começa, sua contagem continua mesmo com o aplicativo em segundo
+ * plano, pois esse tempo já constitui descanso da tela.
  */
 class CicloDeDescanso(
+    private val intervaloDoLembrete: Duration = INTERVALO_DO_LEMBRETE_PADRAO,
     private val intervaloDeUso: Duration = INTERVALO_DE_USO_PADRAO,
     private val duracaoDoDescanso: Duration = DURACAO_DO_DESCANSO_PADRAO,
 ) {
@@ -31,9 +36,14 @@ class CicloDeDescanso(
     private var usoAcumulado = Duration.ZERO
     private var inicioDoUso = Duration.ZERO
     private var fimDoDescanso = Duration.ZERO
+    private var lembreteExibidoNesteCiclo = false
 
     init {
+        require(intervaloDoLembrete.isPositive()) { "o intervalo do lembrete precisa ser positivo" }
         require(intervaloDeUso.isPositive()) { "o intervalo de uso precisa ser positivo" }
+        require(intervaloDoLembrete < intervaloDeUso) {
+            "o lembrete precisa acontecer antes do descanso"
+        }
         require(duracaoDoDescanso.isPositive()) { "a duração do descanso precisa ser positiva" }
     }
 
@@ -41,7 +51,7 @@ class CicloDeDescanso(
         if (emPrimeiroPlano) return atualizar(agora)
 
         emPrimeiroPlano = true
-        if (estado is EstadoCicloDeDescanso.EmUso) inicioDoUso = agora
+        if (estado !is EstadoCicloDeDescanso.EmDescanso) inicioDoUso = agora
         return atualizar(agora)
     }
 
@@ -49,7 +59,7 @@ class CicloDeDescanso(
         if (!emPrimeiroPlano) return atualizar(agora)
 
         atualizar(agora)
-        if (estado is EstadoCicloDeDescanso.EmUso) {
+        if (estado !is EstadoCicloDeDescanso.EmDescanso) {
             usoAcumulado += agora - inicioDoUso
         }
         emPrimeiroPlano = false
@@ -58,7 +68,9 @@ class CicloDeDescanso(
 
     fun atualizar(agora: Duration): EstadoCicloDeDescanso {
         when (estado) {
-            EstadoCicloDeDescanso.EmUso -> atualizarUso(agora)
+            EstadoCicloDeDescanso.EmUso,
+            EstadoCicloDeDescanso.LembreteVisual,
+            -> atualizarUso(agora)
             is EstadoCicloDeDescanso.EmDescanso -> atualizarDescanso(agora)
         }
         return estado
@@ -75,7 +87,17 @@ class CicloDeDescanso(
                 tempoRestante = duracaoDoDescanso,
                 duracaoTotal = duracaoDoDescanso,
             )
+        } else if (usoTotal >= intervaloDoLembrete && !lembreteExibidoNesteCiclo) {
+            lembreteExibidoNesteCiclo = true
+            estado = EstadoCicloDeDescanso.LembreteVisual
         }
+    }
+
+    fun dispensarLembrete(): EstadoCicloDeDescanso {
+        if (estado == EstadoCicloDeDescanso.LembreteVisual) {
+            estado = EstadoCicloDeDescanso.EmUso
+        }
+        return estado
     }
 
     private fun atualizarDescanso(agora: Duration) {
@@ -88,12 +110,14 @@ class CicloDeDescanso(
         } else {
             estado = EstadoCicloDeDescanso.EmUso
             usoAcumulado = Duration.ZERO
+            lembreteExibidoNesteCiclo = false
             if (emPrimeiroPlano) inicioDoUso = agora
         }
     }
 
     companion object {
-        val INTERVALO_DE_USO_PADRAO = 45.minutes
-        val DURACAO_DO_DESCANSO_PADRAO = 5.minutes
+        val INTERVALO_DO_LEMBRETE_PADRAO = 20.minutes
+        val INTERVALO_DE_USO_PADRAO = 30.minutes
+        val DURACAO_DO_DESCANSO_PADRAO = 3.minutes
     }
 }

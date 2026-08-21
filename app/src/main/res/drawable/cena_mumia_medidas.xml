@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte original do projeto Indício, GPLv3. Medidas documentais da câmara. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M46,58h308v484h-308z" />
+    <path android:strokeColor="@color/ilustracao_marinho" android:strokeWidth="7" android:pathData="M104,164h192v230h-192z" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="5" android:pathData="M104,126h192 M104,114v24 M296,114v24 M66,164v230 M54,164h24 M54,394h24" />
+    <path android:strokeColor="@color/ilustracao_tinta" android:strokeWidth="4" android:pathData="M132,204h136 M132,242h136 M132,280h92 M132,332h136" />
+    <path android:fillColor="@color/ilustracao_marinho_claro" android:pathData="M164,408h72v60h-72z" />
+    <path android:fillColor="@color/ilustracao_dourado" android:pathData="M184,424h32v28h-32z" />
+</vector>

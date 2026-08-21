@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte original do projeto Indício, GPLv3. Horizonte desértico e setor fictício. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_luz" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_dourado_claro" android:pathData="M0,310h400v290h-400z" />
+    <path android:fillColor="@color/ilustracao_dourado" android:fillAlpha="0.55" android:pathData="M0,414 C82,350 142,390 214,350 C292,308 338,356 400,326 L400,600 L0,600 Z" />
+    <path android:fillColor="@color/ilustracao_sombra" android:pathData="M42,318 L102,206 L162,318 Z M120,318 L206,154 L292,318 Z M246,318 L310,220 L374,318 Z" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M120,432h160v72h-160z" />
+    <path android:strokeColor="@color/ilustracao_tinta" android:strokeWidth="7" android:pathData="M96,504h208 M132,504v44 M268,504v44" />
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M150,408h100v48h-100z" />
+    <path android:fillColor="@color/ilustracao_luz" android:fillAlpha="0.4" android:pathData="M0,0 L160,0 L310,600 L220,600 Z" />
+</vector>

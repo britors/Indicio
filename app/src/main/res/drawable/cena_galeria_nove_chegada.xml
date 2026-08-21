@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte original do projeto Indício, GPLv3. Galeria noturna e vitrine vazia. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_parede_alta" android:pathData="M24,52h352v404h-352z" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,456h400v144h-400z" />
+    <path android:fillColor="@color/ilustracao_luz" android:fillAlpha="0.16" android:pathData="M62,54 L168,54 L224,456 L18,456 Z" />
+    <path android:fillColor="@color/ilustracao_luz" android:fillAlpha="0.12" android:pathData="M240,54 L338,54 L392,456 L190,456 Z" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M164,392h78v110h-78z" />
+    <path android:fillColor="@color/ilustracao_vidro" android:fillAlpha="0.42" android:pathData="M151,176h104v216h-104z" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="5" android:pathData="M151,176h104v216h-104z" />
+    <path android:strokeColor="@color/ilustracao_luz" android:strokeWidth="4" android:strokeAlpha="0.8" android:pathData="M170,196v174" />
+    <path android:fillColor="@color/ilustracao_sombra" android:fillAlpha="0.45" android:pathData="M104,520 L298,520 L342,566 L60,566 Z" />
+</vector>

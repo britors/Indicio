@@ -158,7 +158,8 @@ e `conversas`. Elas são obrigatórias, podem estar vazias e não aceitam `null`
     {
       "id": "etiqueta-azul",
       "titulo": "Uma etiqueta azul",
-      "descricao": "A etiqueta azul aparece entre duas séries que deveriam estar separadas."
+      "descricao": "A etiqueta azul aparece entre duas séries que deveriam estar separadas.",
+      "relevancia": "A cor permite identificar onde as duas sequências começaram a se misturar."
     }
   ],
   "pessoas": [
@@ -208,8 +209,10 @@ e `conversas`. Elas são obrigatórias, podem estar vazias e não aceitam `null`
 
 ### Pista
 
-`id`, `titulo` e `descricao` são obrigatórios. Uma pista é imutável e aparece
-uma única vez na definição; diferentes caminhos revelam o mesmo id.
+`id`, `titulo` e `descricao` são obrigatórios. `relevancia` é a frase curta
+mostrada no momento da descoberta para explicar, sem antecipar a solução, por
+que o detalhe merece ser guardado. Uma pista é imutável e aparece uma única vez
+na definição; diferentes caminhos revelam o mesmo id.
 
 ### Pessoa
 
@@ -483,6 +486,7 @@ reais e sem introduzir regra específica no motor.
 - compatibilidade v1/v2: `RepositorioCasosJson`;
 - versões persistidas e migração 1→2: `data/banco/`.
 
-O catálogo de produção ainda contém somente o piloto v1. Isso é uma decisão de
-conteúdo, não uma limitação do motor: o primeiro caso v2 será integrado após o
-roteiro, as artes, as telas longas e as revisões correspondentes.
+O catálogo de produção contém casos no formato `2`, incluindo *O Silêncio da
+Galeria Nove* e *O Sumiço da Múmia*. Eles foram integrados somente por JSON e
+artes locais, confirmando que roteiro, etapas, caderno e finais não exigem
+condicionais específicas no motor.

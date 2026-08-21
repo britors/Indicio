@@ -1,6 +1,6 @@
 {
   "versaoEsquema": 2,
-  "versaoConteudo": 5,
+  "versaoConteudo": 6,
   "id": "taca-desaparecida",
   "titulo": "O Mistério da Taça Desaparecida",
   "sinopse": "Uma taça desaparece de uma vitrine fechada na manhã de uma exposição. Entre marcas no piso, registros incompletos e caixas muito parecidas, cada cuidado parece ter deixado uma nova pergunta.",
@@ -132,117 +132,140 @@
       {
         "id": "vitrine-intacta",
         "titulo": "A vitrine sem sinais de força",
-        "descricao": "Vidro, fechadura e encaixes permanecem intactos."
+        "descricao": "Vidro, fechadura e encaixes permanecem intactos.",
+        "relevancia": "Isso enfraquece a hipótese de uma retirada apressada e desloca a atenção para a rotina da sala."
       },
       {
         "id": "marcas-antigas-piso",
         "titulo": "Marcas anteriores ao desaparecimento",
-        "descricao": "Poeira contínua mostra que o pedestal foi movido com cuidado antes daquela manhã."
+        "descricao": "Poeira contínua mostra que o pedestal foi movido com cuidado antes daquela manhã.",
+        "relevancia": "A posição do pedestal pode ser uma mudança planejada, não uma consequência do desaparecimento."
       },
       {
         "id": "turno-terminou-seis",
         "titulo": "O limite do turno noturno",
-        "descricao": "O porteiro encerrou o turno às seis; seu relato não cobria os minutos seguintes."
+        "descricao": "O porteiro encerrou o turno às seis; seu relato não cobria os minutos seguintes.",
+        "relevancia": "A investigação ganha um intervalo preciso em que outra rotina assumiu o controle da sala."
       },
       {
         "id": "mancha-umidade",
         "titulo": "A infiltração sobre a vitrine",
-        "descricao": "Uma gota se formava exatamente acima do lugar reservado à taça."
+        "descricao": "Uma gota se formava exatamente acima do lugar reservado à taça.",
+        "relevancia": "A umidade oferece um motivo de cuidado para retirar a peça sem que houvesse ameaça ou furto."
       },
       {
         "id": "registro-0610",
         "titulo": "A linha interrompida às 6h10",
-        "descricao": "Outra letra iniciou um registro de retirada e não terminou a frase."
+        "descricao": "Outra letra iniciou um registro de retirada e não terminou a frase.",
+        "relevancia": "O horário conecta a mudança de turno ao começo de uma ação técnica ainda incompleta."
       },
       {
         "id": "bilhete-caido",
         "titulo": "Um destino verdadeiro, mas incompleto",
-        "descricao": "O aviso dizia conservação, porém havia caído atrás do pedestal."
+        "descricao": "O aviso dizia conservação, porém havia caído atrás do pedestal.",
+        "relevancia": "O primeiro destino da taça estava informado, mas a mensagem não acompanhou o restante do percurso."
       },
       {
         "id": "base-na-bancada",
         "titulo": "A base permaneceu na conservação",
-        "descricao": "A base de madeira confirma a chegada da peça, mas a parte metálica seguiu adiante."
+        "descricao": "A base de madeira confirma a chegada da peça, mas a parte metálica seguiu adiante.",
+        "relevancia": "A separação prova que a conservação foi apenas uma etapa, não o destino final da peça inteira."
       },
       {
         "id": "fecho-em-reparo",
         "titulo": "A caixa de emergência indisponível",
-        "descricao": "O fecho da caixa prevista pelo protocolo estava desmontado para reparo."
+        "descricao": "O fecho da caixa prevista pelo protocolo estava desmontado para reparo.",
+        "relevancia": "Uma embalagem alternativa precisou ser usada, abrindo espaço para um engano de identificação."
       },
       {
         "id": "feltro-azul",
         "titulo": "A proteção da parte metálica",
-        "descricao": "Dobras e fibras azuis mostram como a taça foi protegida."
+        "descricao": "Dobras e fibras azuis mostram como a taça foi protegida.",
+        "relevancia": "O material azul pode ligar a preparação técnica ao recipiente encontrado mais adiante."
       },
       {
         "id": "espaco-caixa-tatil",
         "titulo": "O lugar vazio da caixa cinza",
-        "descricao": "O compartimento habitual dos materiais táteis estava sem sua caixa."
+        "descricao": "O compartimento habitual dos materiais táteis estava sem sua caixa.",
+        "relevancia": "A ausência revela qual embalagem familiar poderia ter sido confundida com material da atividade."
       },
       {
         "id": "etiqueta-provisoria",
         "titulo": "Uma identificação ainda sem fecho",
-        "descricao": "A etiqueta foi escrita, mas a interrupção impediu sua fixação definitiva."
+        "descricao": "A etiqueta foi escrita, mas a interrupção impediu sua fixação definitiva.",
+        "relevancia": "Sem identificação presa à caixa, cada pessoa passou a reconhecê-la apenas pelo hábito."
       },
       {
         "id": "roda-irregular",
         "titulo": "A marca do carrinho",
-        "descricao": "Uma roda deixa um traço reconhecível entre a conservação e a montagem."
+        "descricao": "Uma roda deixa um traço reconhecível entre a conservação e a montagem.",
+        "relevancia": "A marca transforma um relato de transporte em um percurso físico que pode ser seguido."
       },
       {
         "id": "etiqueta-na-prancheta",
         "titulo": "A etiqueta foi preservada",
-        "descricao": "O montador guardou a etiqueta solta para recolocá-la depois."
+        "descricao": "O montador guardou a etiqueta solta para recolocá-la depois.",
+        "relevancia": "A caixa continuou sem nome, mas o papel preservado permite reconstruir sua identidade."
       },
       {
         "id": "planta-antiga",
         "titulo": "O caminho antes da mudança",
-        "descricao": "A primeira planta registra o arranjo anterior da exposição."
+        "descricao": "A primeira planta registra o arranjo anterior da exposição.",
+        "relevancia": "Ela explica lembranças honestas que parecem contradizer o caminho usado naquela manhã."
       },
       {
         "id": "planta-atual",
         "titulo": "A rota usada naquela manhã",
-        "descricao": "A planta atual mantém livre a passagem e leva os materiais à mediação."
+        "descricao": "A planta atual mantém livre a passagem e leva os materiais à mediação.",
+        "relevancia": "A rota confirma que o carrinho seguiu um plano anterior ao desaparecimento."
       },
       {
         "id": "lista-volumes",
         "titulo": "Os materiais da atividade",
-        "descricao": "A lista prevê suportes e a reprodução, mas nenhuma segunda caixa."
+        "descricao": "A lista prevê suportes e a reprodução, mas nenhuma segunda caixa.",
+        "relevancia": "Quem recebeu a caixa esperava encontrar nela um material tátil, não uma peça da exposição."
       },
       {
         "id": "reproducao-fora-caixa",
         "titulo": "A reprodução já estava sobre a mesa",
-        "descricao": "A peça tátil havia saído da caixa no dia anterior."
+        "descricao": "A peça tátil havia saído da caixa no dia anterior.",
+        "relevancia": "A caixa parecia cumprir sua função habitual embora já estivesse vazia quando foi reutilizada."
       },
       {
         "id": "armario-mais-pesado",
         "titulo": "Um peso inesperado",
-        "descricao": "A mediadora percebeu que o armário exigiu mais esforço que o habitual."
+        "descricao": "A mediadora percebeu que o armário exigiu mais esforço que o habitual.",
+        "relevancia": "O peso inesperado sugere que algo além dos materiais previstos viajou no compartimento."
       },
       {
         "id": "destino-sala-atividades",
         "titulo": "O recuo indicado na montagem",
-        "descricao": "A rota atual termina no compartimento de materiais da sala de atividades."
+        "descricao": "A rota atual termina no compartimento de materiais da sala de atividades.",
+        "relevancia": "O mapa reduz os destinos possíveis e aponta para um local interno ainda preservado."
       },
       {
         "id": "fibra-no-armario",
         "titulo": "Fibra azul no compartimento",
-        "descricao": "Uma fibra igual ao feltro da conservação ficou junto à caixa."
+        "descricao": "Uma fibra igual ao feltro da conservação ficou junto à caixa.",
+        "relevancia": "O mesmo material aparece no começo e no fim do percurso, aproximando a caixa da taça protegida."
       },
       {
         "id": "peso-compativel",
         "titulo": "O peso coincide com o inventário",
-        "descricao": "A diferença registrada é compatível com a parte metálica da taça."
+        "descricao": "A diferença registrada é compatível com a parte metálica da taça.",
+        "relevancia": "A balança oferece uma confirmação independente antes que o compartimento seja aberto."
       },
       {
         "id": "encaixe-da-base",
         "titulo": "Base e parte metálica correspondem",
-        "descricao": "Medidas e apoios confirmam que as duas partes formam a mesma peça."
+        "descricao": "Medidas e apoios confirmam que as duas partes formam a mesma peça.",
+        "relevancia": "O encaixe verifica a identidade da parte metálica sem depender apenas da aparência."
       },
       {
         "id": "linha-do-tempo-completa",
         "titulo": "Três destinos, uma peça",
-        "descricao": "Exposição, conservação, montagem e mediação se encaixam sem lacuna."
+        "descricao": "Exposição, conservação, montagem e mediação se encaixam sem lacuna.",
+        "relevancia": "A sequência completa mostra uma cadeia de cuidados e enganos, sem exigir uma ação escondida."
       }
     ],
     "pessoas": [

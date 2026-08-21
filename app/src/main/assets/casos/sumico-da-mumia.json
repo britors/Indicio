@@ -1,0 +1,665 @@
+{
+  "versaoEsquema": 2,
+  "versaoConteudo": 2,
+  "id": "sumico-da-mumia",
+  "titulo": "O Sumiço da Múmia",
+  "sinopse": "Uma caixa registrada na capital em 1938 chegou vazia, e a múmia que deveria estar nela desapareceu também dos arquivos. Fotografias, mapas divididos e anotações prudentes podem devolver a história sem perturbar seu repouso.",
+  "categoria": "misterios_policiais",
+  "cenaInicial": "s1-chegada",
+  "etapas": [
+    {
+      "id": "caixa-que-chegou-vazia",
+      "titulo": "A caixa que chegou vazia",
+      "descricao": "Um recebimento de 1938 registra uma caixa lacrada, mas nenhum sinal de que ela tenha transportado restos humanos.",
+      "resumoConclusao": "A caixa chegou vazia porque o conteúdo previsto nunca deixou o local da escavação, e o número do inventário foi usado por dois volumes diferentes.",
+      "resumoRetomada": "Você separou a caixa recebida na capital do volume fotografado no campo e procura o ponto em que os registros se dividiram.",
+      "objetivos": [
+        {
+          "id": "examinar-caixa",
+          "texto": "Verificar o que a caixa realmente transportou",
+          "perguntaEmAberto": "A múmia chegou a sair do local da escavação?"
+        },
+        {
+          "id": "separar-registros",
+          "texto": "Separar os dois volumes registrados com o mesmo número",
+          "perguntaEmAberto": "Quando uma única ficha passou a representar duas caixas?"
+        }
+      ]
+    },
+    {
+      "id": "fotografias-contra-a-luz",
+      "titulo": "Fotografias contra a luz",
+      "descricao": "Negativos invertidos e sombras no horizonte reorganizam a sequência do último dia de escavação.",
+      "resumoConclusao": "As fotografias publicadas estavam invertidas e fora de ordem; a múmia permaneceu no Setor 47 depois que o caminhão partiu para a capital.",
+      "resumoRetomada": "Você corrigiu a sequência das fotografias e agora acompanha uma segunda rota anotada em direção à necrópole do sul.",
+      "objetivos": [
+        {
+          "id": "ordenar-negativos",
+          "texto": "Ordenar os negativos pela luz, pelas legendas e pelo horizonte",
+          "perguntaEmAberto": "Qual fotografia foi feita depois da partida do caminhão?"
+        },
+        {
+          "id": "reconstruir-rota-antiga",
+          "texto": "Reconstruir o trajeto registrado no último caderno de campo",
+          "perguntaEmAberto": "Por que a equipe fez uma parada não mencionada perto da necrópole do sul?"
+        }
+      ]
+    },
+    {
+      "id": "nome-que-nao-existia",
+      "titulo": "O nome que não existia",
+      "descricao": "Uma atribuição à realeza nasceu de uma etiqueta provisória, não das evidências registradas pela equipe.",
+      "resumoConclusao": "O título atribuído à múmia não tinha base no contexto da descoberta; um amuleto deslocado e um laudo cauteloso foram usados como certeza pública.",
+      "resumoRetomada": "Você desfez a atribuição real e procura saber por que a responsável pelo registro pediu que o transporte fosse interrompido.",
+      "objetivos": [
+        {
+          "id": "revisar-atribuicao",
+          "texto": "Revisar a origem do título usado nos jornais de 1938",
+          "perguntaEmAberto": "Que evidência sustentava a ideia de uma origem real?"
+        },
+        {
+          "id": "ler-alertas",
+          "texto": "Ler as ressalvas que desapareceram do resumo oficial",
+          "perguntaEmAberto": "Quem tentou impedir que uma hipótese virasse identidade?"
+        }
+      ]
+    },
+    {
+      "id": "mapa-dividido",
+      "titulo": "O mapa dividido",
+      "descricao": "Duas metades guardadas em arquivos diferentes revelam uma câmara secundária e a decisão tomada em 1938.",
+      "resumoConclusao": "A responsável pelo registro documentou um novo sepultamento autorizado, mas a ligação entre mapa e livro suplementar se perdeu na reorganização do arquivo.",
+      "resumoRetomada": "Você reuniu as duas metades do mapa e encontrou as medidas de uma câmara preservada no Setor 47.",
+      "objetivos": [
+        {
+          "id": "reunir-mapa",
+          "texto": "Reunir as metades do mapa sem antecipar o local ao público",
+          "perguntaEmAberto": "O que a linha interrompida protege dentro do Setor 47?"
+        },
+        {
+          "id": "confirmar-decisao",
+          "texto": "Confirmar a decisão registrada no livro suplementar",
+          "perguntaEmAberto": "O desaparecimento foi uma ocultação ou um sepultamento documentado?"
+        }
+      ]
+    },
+    {
+      "id": "resposta-sem-abrir",
+      "titulo": "Uma resposta sem abrir",
+      "descricao": "O arquivo pode ser corrigido e a área protegida sem transformar a câmara em espetáculo.",
+      "resumoConclusao": "Documentos, medidas e levantamento de superfície confirmaram a história sem abrir a câmara secundária.",
+      "resumoRetomada": "Você sabe por que a múmia sumiu dos registros e precisa decidir como devolver essa história com respeito.",
+      "objetivos": [
+        {
+          "id": "confirmar-sem-perturbar",
+          "texto": "Confirmar a correspondência do local por métodos não invasivos",
+          "perguntaEmAberto": "Quanto é possível conhecer sem abrir a câmara?"
+        },
+        {
+          "id": "devolver-historia",
+          "texto": "Corrigir o arquivo e reconhecer quem preservou o contexto",
+          "perguntaEmAberto": "Como contar o caso sem transformar repouso em recompensa?"
+        }
+      ]
+    }
+  ],
+  "caderno": {
+    "pistas": [
+      {
+        "id": "caixa-sem-residuos",
+        "titulo": "Uma caixa sem vestígios de linho",
+        "descricao": "O interior conserva poeira mineral e marcas de placas fotográficas, mas nenhuma fibra ou apoio compatível com o transporte descrito.",
+        "relevancia": "A caixa recebida na capital transportou outro material e não pode provar que a múmia tenha deixado a escavação."
+      },
+      {
+        "id": "numero-repetido",
+        "titulo": "O número usado duas vezes",
+        "descricao": "A ficha 47-14 identifica tanto uma caixa de placas quanto o volume funerário registrado no caderno de campo.",
+        "relevancia": "A duplicação explica como dois objetos diferentes foram reunidos numa única história durante a reorganização do arquivo."
+      },
+      {
+        "id": "selo-posterior",
+        "titulo": "Um selo aplicado depois da fotografia",
+        "descricao": "A posição do barbante na fotografia não corresponde ao selo preservado na caixa que chegou à reserva.",
+        "relevancia": "A caixa fotografada no campo e a caixa lacrada para a capital não são o mesmo volume, apesar do número idêntico."
+      },
+      {
+        "id": "negativo-invertido",
+        "titulo": "Um negativo publicado ao contrário",
+        "descricao": "A maior das três pirâmides do planalto aparece no lado oposto do horizonte quando a chapa é vista como foi publicada.",
+        "relevancia": "Corrigir a orientação devolve a posição da câmera e permite ordenar as imagens sem depender das legendas posteriores."
+      },
+      {
+        "id": "horizonte-reordenado",
+        "titulo": "Sombras de dois horários diferentes",
+        "descricao": "O carrinho aparece antes e depois da partida do caminhão quando as sombras e o horizonte do planalto são comparados.",
+        "relevancia": "A sequência mostra que o volume funerário permaneceu no Setor 47 depois do transporte registrado para a capital."
+      },
+      {
+        "id": "parada-oficina-sul",
+        "titulo": "Uma parada anotada ao sul",
+        "descricao": "O caderno registra uma consulta técnica durante o retorno, usando uma pirâmide em degraus como referência de percurso.",
+        "relevancia": "A parada liga a equipe a uma orientação sobre preservação, não a uma rota clandestina de retirada."
+      },
+      {
+        "id": "etiqueta-provisoria",
+        "titulo": "Uma etiqueta escrita a lápis",
+        "descricao": "A expressão que sugeria origem real aparece somente numa etiqueta provisória, acompanhada por um ponto de interrogação apagado.",
+        "relevancia": "O título divulgado nasceu como hipótese de campo e nunca recebeu confirmação nos documentos técnicos."
+      },
+      {
+        "id": "amuleto-fora-contexto",
+        "titulo": "Um amuleto vindo de outra camada",
+        "descricao": "A fotografia de descoberta mostra o amuleto numa bandeja de materiais misturados, distante do volume funerário.",
+        "relevancia": "O objeto não sustenta uma identidade real porque perdeu a relação direta com o contexto usado para atribuí-la."
+      },
+      {
+        "id": "laudo-identidade-aberta",
+        "titulo": "Um laudo que preservou a dúvida",
+        "descricao": "O exame descreve uma pessoa adulta de identidade desconhecida e recomenda que nenhum título seja atribuído.",
+        "relevancia": "A linguagem cautelosa contradiz a certeza dos jornais e mostra que a equipe técnica não confirmou a narrativa pública."
+      },
+      {
+        "id": "carta-pedido-cautela",
+        "titulo": "O pedido para interromper o transporte",
+        "descricao": "Uma cópia em papel fino pede tempo para estabilizar os tecidos, revisar o contexto e consultar responsáveis locais.",
+        "relevancia": "A decisão de não transportar reuniu conservação e respeito ao contexto, em vez de tentar esconder uma descoberta."
+      },
+      {
+        "id": "mapa-dividido",
+        "titulo": "Duas metades do mesmo mapa",
+        "descricao": "As margens rasgadas coincidem e formam um percurso curto entre a área de trabalho e uma câmara secundária.",
+        "relevancia": "O mapa foi separado para controlar o acesso ao local, mas dependia de uma referência cruzada que depois se perdeu."
+      },
+      {
+        "id": "medidas-camara",
+        "titulo": "Medidas que não pertencem ao depósito",
+        "descricao": "As dimensões anotadas correspondem a uma pequena câmara no Setor 47, e não às prateleiras da reserva na capital.",
+        "relevancia": "As medidas indicam onde a equipe preparou um espaço de repouso sem exigir que a câmara seja aberta novamente."
+      },
+      {
+        "id": "registro-novo-sepultamento",
+        "titulo": "O registro suplementar de 1938",
+        "descricao": "Uma página confirma que os restos foram acondicionados novamente, com testemunhas e materiais de conservação descritos.",
+        "relevancia": "O documento transforma o suposto sumiço em uma decisão registrada cuja ligação com o catálogo principal foi perdida."
+      },
+      {
+        "id": "superficie-preservada",
+        "titulo": "Uma superfície sem perturbação recente",
+        "descricao": "Fotografias atuais e leitura remota mostram que a área indicada permanece estável e sem abertura recente.",
+        "relevancia": "A preservação permite corrigir a história e planejar proteção sem converter a abertura da câmara em objetivo do caso."
+      }
+    ],
+    "pessoas": [
+      {
+        "id": "arquivista",
+        "nome": "A arquivista",
+        "papel": "Digitalização e organização do acervo na capital",
+        "anotacoes": [
+          { "id": "arquivista-encontrou-ficha", "texto": "Encontrou duas descrições diferentes ligadas ao número 47-14." },
+          { "id": "arquivista-localizou-suplemento", "texto": "Reconheceu a antiga referência usada para livros suplementares." },
+          { "id": "arquivista-corrige-catalogo", "texto": "Preparou a correção pública sem divulgar as coordenadas protegidas." }
+        ]
+      },
+      {
+        "id": "conservadora",
+        "nome": "A conservadora",
+        "papel": "Análise dos materiais de acondicionamento",
+        "anotacoes": [
+          { "id": "conservadora-examinou-caixa", "texto": "Identificou vestígios de placas fotográficas no lugar de fibras têxteis." },
+          { "id": "conservadora-leu-laudo", "texto": "Confirmou que o exame de 1938 manteve a identidade em aberto." }
+        ]
+      },
+      {
+        "id": "pesquisador-mapas",
+        "nome": "O pesquisador de mapas",
+        "papel": "Cartografia histórica da capital, do planalto e da necrópole do sul",
+        "anotacoes": [
+          { "id": "pesquisador-corrigiu-negativo", "texto": "Usou o horizonte das três pirâmides para identificar uma chapa invertida." },
+          { "id": "pesquisador-reuniu-mapa", "texto": "Alinhou duas metades guardadas em coleções diferentes." },
+          { "id": "pesquisador-propos-leitura-remota", "texto": "Propôs confirmar a área por levantamento não invasivo." }
+        ]
+      },
+      {
+        "id": "responsavel-registro",
+        "nome": "A responsável pelo registro de 1938",
+        "papel": "Documentação da equipe de campo",
+        "anotacoes": [
+          { "id": "registro-manteve-duvida", "texto": "Manteve o ponto de interrogação na atribuição provisória." },
+          { "id": "registro-pediu-pausa", "texto": "Pediu que o transporte fosse interrompido até a revisão do contexto." },
+          { "id": "registro-documentou-decisao", "texto": "Registrou o novo sepultamento num livro suplementar e dividiu o mapa de acesso." }
+        ]
+      },
+      {
+        "id": "fotografo-campo",
+        "nome": "O fotógrafo da equipe de 1938",
+        "papel": "Registro visual da escavação fictícia",
+        "anotacoes": [
+          { "id": "fotografo-numerou-chapas", "texto": "Numerou as chapas pela ordem de revelação, não pela ordem das fotografias." },
+          { "id": "fotografo-registrou-retorno", "texto": "Fotografou o carrinho retornando ao Setor 47 depois da partida do caminhão." }
+        ]
+      }
+    ],
+    "locais": [
+      {
+        "id": "arquivo-capital",
+        "nome": "Arquivo arqueológico da capital",
+        "anotacoes": [
+          { "id": "arquivo-duas-fichas", "texto": "Duas fichas incompatíveis compartilham o número 47-14 desde uma reorganização antiga." },
+          { "id": "arquivo-livros-separados", "texto": "Livros principais e suplementares foram guardados em alas diferentes." }
+        ]
+      },
+      {
+        "id": "reserva-caixas",
+        "nome": "Reserva de caixas históricas",
+        "anotacoes": [
+          { "id": "reserva-caixa-placas", "texto": "A caixa 47-14 preservada na capital foi adaptada para placas fotográficas." }
+        ]
+      },
+      {
+        "id": "acervo-fotografico",
+        "nome": "Acervo fotográfico",
+        "anotacoes": [
+          { "id": "acervo-negativos-fora-ordem", "texto": "Negativos foram catalogados pela revelação e alguns receberam orientação invertida." }
+        ]
+      },
+      {
+        "id": "laboratorio-conservacao",
+        "nome": "Laboratório de conservação",
+        "anotacoes": [
+          { "id": "laboratorio-tecidos-ausentes", "texto": "A análise da caixa não encontrou materiais compatíveis com o volume funerário." }
+        ]
+      },
+      {
+        "id": "sala-cartografia",
+        "nome": "Sala de cartografia",
+        "anotacoes": [
+          { "id": "cartografia-metades-reunidas", "texto": "Duas folhas de proveniências diferentes formam o mesmo mapa do Setor 47." }
+        ]
+      },
+      {
+        "id": "setor-quarenta-sete",
+        "nome": "Setor 47",
+        "anotacoes": [
+          { "id": "setor-local-ficticio", "texto": "O Setor 47, o planalto e a necrópole do sul pertencem à geografia inteiramente fictícia do caso." },
+          { "id": "setor-superficie-estavel", "texto": "A superfície indicada permanece estável e sem intervenção recente." }
+        ]
+      },
+      {
+        "id": "camara-secundaria",
+        "nome": "Câmara secundária protegida",
+        "anotacoes": [
+          { "id": "camara-medidas-compativeis", "texto": "As medidas documentais são compatíveis com o levantamento externo, sem necessidade de abertura." }
+        ]
+      }
+    ],
+    "conversas": [
+      { "id": "arquivista-numero-duplicado", "pessoaId": "arquivista", "titulo": "Duas fichas, um número", "texto": "A arquivista explica como a reorganização reuniu descrições de caixas que nunca deveriam ter compartilhado uma ficha." },
+      { "id": "conservadora-interior-caixa", "pessoaId": "conservadora", "titulo": "O interior da caixa", "texto": "A conservadora descreve os vestígios de placas fotográficas e a ausência de materiais usados para apoiar tecidos antigos." },
+      { "id": "fotografo-legendas", "pessoaId": "fotografo-campo", "titulo": "A ordem das chapas", "texto": "As legendas do fotógrafo registram que a numeração seguiu a revelação no laboratório, não a sequência do dia." },
+      { "id": "pesquisador-horizonte", "pessoaId": "pesquisador-mapas", "titulo": "O horizonte das três pirâmides", "texto": "O pesquisador usa as posições relativas das pirâmides fictícias para corrigir a orientação das imagens." },
+      { "id": "registro-etiqueta", "pessoaId": "responsavel-registro", "titulo": "Uma hipótese a lápis", "texto": "A anotação de 1938 insiste que o título atribuído ao volume era provisório e dependia de revisão." },
+      { "id": "registro-carta-cautela", "pessoaId": "responsavel-registro", "titulo": "O pedido de cautela", "texto": "A carta pede estabilização dos tecidos, revisão do contexto e uma decisão compartilhada antes de qualquer transporte." },
+      { "id": "pesquisador-mapa-dividido", "pessoaId": "pesquisador-mapas", "titulo": "As duas metades", "texto": "O pesquisador demonstra que as linhas e fibras das folhas coincidem sem divulgar as coordenadas completas." },
+      { "id": "arquivista-livro-suplementar", "pessoaId": "arquivista", "titulo": "A referência esquecida", "texto": "A arquivista encontra o código que liga o catálogo principal ao livro onde o novo sepultamento foi registrado." }
+    ]
+  },
+  "lembrancas": [
+    { "id": "caixa-nao-levou-mumia", "texto": "A caixa recebida na capital transportou placas fotográficas, não a múmia.", "essencial": true },
+    { "id": "ficha-reuniu-volumes", "texto": "O número 47-14 foi usado por dois volumes diferentes." },
+    { "id": "negativos-estavam-invertidos", "texto": "A orientação de alguns negativos alterou a sequência aparente." },
+    { "id": "volume-ficou-no-setor", "texto": "O volume funerário permaneceu no Setor 47 depois da partida do caminhão.", "essencial": true },
+    { "id": "titulo-era-hipotese", "texto": "A atribuição real era uma hipótese provisória escrita a lápis." },
+    { "id": "laudo-manteve-identidade-aberta", "texto": "O laudo de 1938 não confirmou identidade ou posição social.", "essencial": true },
+    { "id": "mapa-foi-separado", "texto": "O mapa de acesso foi dividido e perdeu sua referência cruzada." },
+    { "id": "decisao-foi-documentada", "texto": "O novo sepultamento foi registrado num livro suplementar.", "essencial": true },
+    { "id": "local-permanece-estavel", "texto": "A área indicada permanece estável e sem abertura recente." },
+    { "id": "resposta-nao-exige-abertura", "texto": "Documentos e leitura de superfície podem confirmar a história sem abrir a câmara.", "essencial": true }
+  ],
+  "cenas": [
+    {
+      "id": "s1-chegada",
+      "etapaId": "caixa-que-chegou-vazia",
+      "objetivoId": "examinar-caixa",
+      "texto": "A capital já está acordada quando você entra no arquivo arqueológico. A claridade atravessa os painéis altos, alcança caixas de madeira e faz a poeira parecer uma segunda forma de catalogação. Na mesa central, a arquivista mantém abertas duas fichas com o mesmo número: 47-14. Uma descreve placas fotográficas. A outra, uma múmia retirada de uma escavação fictícia em 1938.\n\nO recibo informa que a caixa chegou lacrada à reserva da capital. O registro seguinte diz apenas ‘volume ausente’. Durante quase nove décadas, essa frase sustentou versões de extravio e retirada indevida. Agora uma exposição sobre a história do arquivo está sendo preparada. Antes de repetir o mistério, a arquivista quer saber o que a própria documentação permite afirmar. Você começa pela caixa preservada e pela sequência que transformou uma dúvida num desaparecimento.",
+      "imagem": { "recurso": "cena_mumia_arquivo", "descricaoAcessivel": "Arquivo claro da capital fictícia com caixas de madeira, fichas abertas e luz entrando por painéis altos." },
+      "revelacoes": {
+        "anotacoesPessoas": ["arquivista-encontrou-ficha"],
+        "anotacoesLocais": ["arquivo-duas-fichas"],
+        "conversas": ["arquivista-numero-duplicado"]
+      },
+      "escolhas": [
+        { "id": "s1-chegada-caixa", "texto": "Examinar a caixa 47-14", "proximaCena": "s1-caixa", "dica": "Madeira antiga conserva melhor o formato do que carregou do que a história escrita do lado de fora." },
+        { "id": "s1-chegada-inventario", "texto": "Comparar as duas fichas", "proximaCena": "s1-inventario", "dica": "Quando um número conta duas histórias, as medidas costumam decidir qual delas cabe na mesma caixa." }
+      ]
+    },
+    {
+      "id": "s1-caixa",
+      "etapaId": "caixa-que-chegou-vazia",
+      "objetivoId": "examinar-caixa",
+      "texto": "A caixa é aberta no laboratório com a conservadora ao lado. Sob luz inclinada, o fundo revela seis retângulos onde pequenas divisórias permaneceram por muitos anos. Há poeira mineral fina, fragmentos de papel escuro e resíduos usados no acondicionamento de placas fotográficas. Não aparecem fibras de linho, moldes de apoio ou marcas do volume descrito na ficha funerária.\n\nOs pregos também contam duas etapas. A estrutura foi fechada no campo, reaberta e adaptada antes de receber o selo preservado. Nada indica violação depois da chegada à capital. A conclusão é simples, mas muda o mistério: a caixa não chegou vazia; chegou com fotografias. Foi chamada de vazia apenas porque alguém esperava encontrar nela outro conteúdo. A pergunta passa do transporte para o momento em que duas descrições receberam o mesmo número.",
+      "imagem": { "recurso": "cena_mumia_caixa", "descricaoAcessivel": "Caixa de madeira aberta sob luz inclinada, com divisórias retangulares e resíduos de papel fotográfico no fundo." },
+      "revelacoes": {
+        "pistas": ["caixa-sem-residuos"],
+        "anotacoesPessoas": ["conservadora-examinou-caixa"],
+        "anotacoesLocais": ["reserva-caixa-placas", "laboratorio-tecidos-ausentes"],
+        "conversas": ["conservadora-interior-caixa"],
+        "lembrancas": ["caixa-nao-levou-mumia"]
+      },
+      "escolhas": [
+        { "id": "s1-caixa-selo", "texto": "Reconstruir o fechamento", "proximaCena": "s1-selo", "dica": "Barbante e pregos podem mostrar quantas vezes uma caixa mudou de função antes de ganhar um selo." },
+        { "id": "s1-caixa-fotografia", "texto": "Localizar as placas transportadas", "proximaCena": "s1-fotografia", "dica": "Seis marcas no fundo talvez correspondam a seis imagens que chegaram sem o assunto esperado." }
+      ]
+    },
+    {
+      "id": "s1-inventario",
+      "etapaId": "caixa-que-chegou-vazia",
+      "objetivoId": "examinar-caixa",
+      "texto": "As fichas foram produzidas em momentos diferentes. A primeira, escrita no campo, usa 47 para o setor e 14 para o achado. A segunda, feita no recebimento, usa 47 para o lote fotográfico e 14 para a caixa. Décadas depois, uma reorganização interpretou os códigos como um único número de inventário. As medidas incompatíveis não foram copiadas para o novo cartão.\n\nA ficha funerária descreve um volume longo demais para as divisórias da caixa preservada. A ficha fotográfica, ao contrário, coincide com cada encaixe. Uma anotação lateral aponta para ‘chapas do último dia’, mas não informa onde foram guardadas. A arquivista localiza a antiga classificação do acervo fotográfico. Se as imagens estiverem lá, talvez mostrem quando o volume e a caixa seguiram caminhos diferentes.",
+      "imagem": { "recurso": "cena_mumia_inventario", "descricaoAcessivel": "Duas fichas antigas com o número quarenta e sete hífen quatorze, medidas diferentes e anotações em tintas distintas." },
+      "revelacoes": {
+        "pistas": ["numero-repetido"],
+        "lembrancas": ["ficha-reuniu-volumes"]
+      },
+      "escolhas": [
+        { "id": "s1-inventario-selo", "texto": "Comparar selos e barbantes", "proximaCena": "s1-selo", "dica": "O mesmo número pode ser copiado; a posição de um nó costuma ser menos obediente." },
+        { "id": "s1-inventario-fotografia", "texto": "Abrir o lote fotográfico", "proximaCena": "s1-fotografia", "dica": "Talvez o conteúdo da caixa ainda esteja inteiro, apenas catalogado pelo dia em vez do achado." }
+      ]
+    },
+    {
+      "id": "s1-selo",
+      "etapaId": "caixa-que-chegou-vazia",
+      "objetivoId": "separar-registros",
+      "pontoDePausa": true,
+      "texto": "Uma fotografia da área de trabalho mostra uma caixa longa sobre o carrinho. O barbante cruza a tampa perto do canto esquerdo e não há selo. Na caixa da capital, o barbante passa pelo centro e o selo cobre um nó feito depois que as divisórias fotográficas foram instaladas. As tábuas têm larguras diferentes. Só a tinta do número aproxima os dois volumes.\n\nA duplicação não parece uma tentativa elaborada de enganar. Naquele dia, equipes distintas numeraram achados e transporte com sistemas locais. A confusão surgiu quando os arquivos foram reunidos sem as colunas que explicavam cada código. Ainda assim, uma pergunta permanece: por que o volume funerário aparece preparado para transporte e não acompanha as placas? A resposta pode estar nas imagens feitas depois da fotografia mais conhecida.",
+      "imagem": { "recurso": "cena_mumia_caixa", "descricaoAcessivel": "Barbantes de duas caixas são comparados, mostrando nós, posições e larguras de tábuas diferentes." },
+      "revelacoes": { "pistas": ["selo-posterior"] },
+      "escolhas": [
+        { "id": "s1-selo-negativos", "texto": "Ordenar as fotografias", "proximaCena": "s2-negativos", "dica": "A última imagem de um álbum nem sempre foi a última a ser feita." },
+        { "id": "s1-selo-caderno", "texto": "Buscar o caderno do último dia", "proximaCena": "s2-caderno", "dica": "Códigos confusos ficam menos opacos quando voltam à página onde foram escritos pela primeira vez." }
+      ]
+    },
+    {
+      "id": "s1-fotografia",
+      "etapaId": "caixa-que-chegou-vazia",
+      "objetivoId": "separar-registros",
+      "pontoDePausa": true,
+      "texto": "O lote fotográfico contém exatamente seis negativos. Quatro registram a preparação do volume; dois mostram apenas a área de trabalho e o horizonte. As legendas foram acrescentadas quando as chapas já estavam na capital. A numeração segue a ordem de revelação, não o momento de cada fotografia. Uma das imagens está montada ao contrário.\n\nNo verso do envelope, o fotógrafo anotou condições de luz e uma frase curta: ‘carrinho de volta antes do fechamento’. A frase nunca entrou no catálogo. Se o carrinho voltou, o volume talvez não tenha partido. Para saber qual fotografia registra esse retorno, será preciso corrigir a orientação e observar referências que não mudaram de lugar: as linhas do terreno e as três pirâmides fictícias visíveis ao longe.",
+      "imagem": { "recurso": "cena_mumia_negativos", "descricaoAcessivel": "Seis negativos sobre uma mesa iluminada, um deles invertido e um envelope com anotação no verso." },
+      "revelacoes": {
+        "anotacoesPessoas": ["fotografo-numerou-chapas"],
+        "anotacoesLocais": ["acervo-negativos-fora-ordem"],
+        "conversas": ["fotografo-legendas"]
+      },
+      "escolhas": [
+        { "id": "s1-fotografia-negativos", "texto": "Comparar o horizonte", "proximaCena": "s2-negativos", "dica": "Uma pirâmide no lado impossível da paisagem talvez esteja avisando que a imagem precisa ser virada." },
+        { "id": "s1-fotografia-caderno", "texto": "Conferir a frase no caderno", "proximaCena": "s2-caderno", "dica": "Uma anotação curta costuma ganhar direção quando encontra o horário escrito por outra pessoa." }
+      ]
+    },
+    {
+      "id": "s2-negativos",
+      "etapaId": "fotografias-contra-a-luz",
+      "objetivoId": "ordenar-negativos",
+      "texto": "Na sala de cartografia, o pesquisador compara as chapas com fotografias históricas do planalto fictício. As três grandes pirâmides formam uma sequência reconhecível a partir do ponto de trabalho. Em uma chapa, essa ordem aparece invertida. Virar o negativo posiciona novamente o carrinho à direita da área de triagem.\n\nAs sombras completam a sequência sem prometer uma precisão impossível. Uma imagem pertence ao começo da manhã; outra, ao fim da tarde. Na segunda, o caminhão já não está presente e o carrinho retorna em direção ao Setor 47. O volume coberto continua sobre ele. A fotografia que parecia registrar a partida mostra, na verdade, um retorno posterior.",
+      "imagem": { "recurso": "cena_mumia_negativos", "descricaoAcessivel": "Negativo corrigido diante de fotografias do planalto fictício, com três pirâmides alinhadas na orientação esperada." },
+      "revelacoes": {
+        "pistas": ["negativo-invertido"],
+        "anotacoesPessoas": ["pesquisador-corrigiu-negativo"],
+        "conversas": ["pesquisador-horizonte"],
+        "lembrancas": ["negativos-estavam-invertidos"]
+      },
+      "escolhas": [
+        { "id": "s2-negativos-horizonte", "texto": "Ordenar pelas sombras", "proximaCena": "s2-horizonte", "dica": "O caminhão pode sair da fotografia, mas a direção da luz continua registrando antes e depois." },
+        { "id": "s2-negativos-rota", "texto": "Seguir a anotação do carrinho", "proximaCena": "s2-rota", "dica": "Um retorno ao setor talvez tenha deixado uma segunda linha no percurso do caderno." }
+      ]
+    },
+    {
+      "id": "s2-caderno",
+      "etapaId": "fotografias-contra-a-luz",
+      "objetivoId": "ordenar-negativos",
+      "texto": "O caderno do último dia alterna duas tintas. O fotógrafo registra chapas e luz; a responsável pelo registro anota volumes, condições e decisões. Às 10h20, a caixa de fotografias é fechada para a capital. Às 11h05, a linha sobre o volume funerário recebe uma seta de retorno ao Setor 47. No fim da tarde, há uma consulta técnica marcada perto da necrópole fictícia do sul.\n\nA ordem posterior do catálogo juntou essas ações como se descrevessem um único transporte. No caderno, são movimentos separados. A responsável pelo registro também circulou o título provisório da múmia e escreveu ‘não confirmado’. O sinal foi raspado numa cópia usada pelos jornais, mas permanece na página original. A rota e a cautela parecem partes da mesma decisão.",
+      "imagem": { "recurso": "cena_mumia_caderno", "descricaoAcessivel": "Caderno de campo aberto com duas tintas, horários distintos e uma seta levando o volume de volta ao Setor quarenta e sete." },
+      "revelacoes": {
+        "anotacoesPessoas": ["registro-manteve-duvida"],
+        "anotacoesLocais": ["setor-local-ficticio"]
+      },
+      "escolhas": [
+        { "id": "s2-caderno-horizonte", "texto": "Conferir o retorno nas imagens", "proximaCena": "s2-horizonte", "dica": "Uma seta escrita ganha peso quando o carrinho reaparece sob a luz da tarde." },
+        { "id": "s2-caderno-rota", "texto": "Reconstruir a consulta ao sul", "proximaCena": "s2-rota", "dica": "Uma pirâmide citada como referência de estrada pode levar a uma conversa técnica, não a um esconderijo." }
+      ]
+    },
+    {
+      "id": "s2-horizonte",
+      "etapaId": "fotografias-contra-a-luz",
+      "objetivoId": "reconstruir-rota-antiga",
+      "texto": "As seis imagens formam enfim uma sequência coerente. Pela manhã, o volume é preparado ao lado da caixa longa. Pouco depois, as placas são acondicionadas numa caixa menor. O caminhão parte levando registros e materiais. À tarde, o volume coberto aparece novamente no carrinho, voltando da área de embarque para o Setor 47.\n\nNenhuma imagem mostra a múmia cruzando o portão. A legenda ‘partida’ foi acrescentada décadas mais tarde a uma fotografia anterior ao retorno. O fotógrafo havia registrado o movimento correto, mas seu sistema de numeração foi interpretado ao contrário. A ausência na capital deixa de exigir um extravio no caminho. A equipe decidiu não enviar o volume, e a razão deve estar nos documentos produzidos durante a parada técnica.",
+      "imagem": { "recurso": "cena_mumia_horizonte", "descricaoAcessivel": "Sequência de fotografias mostra um carrinho retornando ao setor de escavação sob a luz baixa da tarde." },
+      "revelacoes": {
+        "pistas": ["horizonte-reordenado"],
+        "anotacoesPessoas": ["fotografo-registrou-retorno"],
+        "lembrancas": ["volume-ficou-no-setor"]
+      },
+      "escolhas": [
+        { "id": "s2-horizonte-etiqueta", "texto": "Rever a identificação provisória", "proximaCena": "s3-etiqueta", "dica": "Talvez a viagem tenha parado quando um ponto de interrogação voltou a aparecer." },
+        { "id": "s2-horizonte-amuleto", "texto": "Reexaminar a evidência real", "proximaCena": "s3-amuleto", "dica": "Um objeto brilhante só identifica alguém quando o registro mostra exatamente onde foi encontrado." }
+      ]
+    },
+    {
+      "id": "s2-rota",
+      "etapaId": "fotografias-contra-a-luz",
+      "objetivoId": "reconstruir-rota-antiga",
+      "texto": "O pesquisador traça o percurso descrito no caderno sobre um mapa histórico. A equipe saiu do Setor 47, fez uma consulta próxima à necrópole fictícia do sul e retornou antes do anoitecer. Uma pirâmide em degraus aparece apenas como referência visual de estrada, não como local do caso. O destino da consulta era uma oficina de conservação temporária registrada em outro livro.\n\nUma nota da oficina recomenda não transportar tecidos fragilizados antes de estabilização e pede revisão da atribuição baseada num amuleto sem contexto claro. A parada não desviou uma carga; interrompeu um procedimento. Quando o caminhão seguiu para a capital, levava as placas e os documentos. O volume voltou ao setor para uma decisão compartilhada.",
+      "imagem": { "recurso": "cena_mumia_mapa", "descricaoAcessivel": "Mapa histórico da geografia fictícia mostra a rota até uma oficina ao sul e o retorno ao ponto inicial." },
+      "revelacoes": {
+        "pistas": ["parada-oficina-sul"],
+        "lembrancas": ["volume-ficou-no-setor"]
+      },
+      "escolhas": [
+        { "id": "s2-rota-etiqueta", "texto": "Ler a etiqueta original", "proximaCena": "s3-etiqueta", "dica": "O lápis costuma preservar hesitações que a tinta de uma manchete prefere apagar." },
+        { "id": "s2-rota-amuleto", "texto": "Localizar o contexto do amuleto", "proximaCena": "s3-amuleto", "dica": "Bandejas de triagem podem contar se um objeto veio do mesmo lugar ou apenas do mesmo dia." }
+      ]
+    },
+    {
+      "id": "s3-etiqueta",
+      "etapaId": "nome-que-nao-existia",
+      "objetivoId": "revisar-atribuicao",
+      "texto": "A etiqueta original sobrevive dentro de um envelope. A lápis, alguém escreveu uma atribuição à realeza seguida por um ponto de interrogação. A responsável pelo registro acrescentou abaixo: ‘nome de trabalho; não publicar antes da revisão’. Na reprodução enviada aos jornais, o ponto e a observação desapareceram com o corte da fotografia.\n\nA expressão atraente ganhou vida própria. Foi repetida em listas, artigos e, por fim, na ficha moderna. Nenhum cartucho, inscrição ou objeto diretamente associado sustentava o título. A conservadora lembra que uma etiqueta provisória serve para orientar trabalho, não para substituir conclusão. Desfazer o nome inventado não reduz a importância da pessoa preservada; devolve a ela o direito de não receber uma identidade fabricada por conveniência.",
+      "imagem": { "recurso": "cena_mumia_etiqueta", "descricaoAcessivel": "Etiqueta antiga escrita a lápis mostra um título provisório, um ponto de interrogação e uma nota pedindo revisão." },
+      "revelacoes": {
+        "pistas": ["etiqueta-provisoria"],
+        "anotacoesPessoas": ["registro-manteve-duvida"],
+        "conversas": ["registro-etiqueta"],
+        "lembrancas": ["titulo-era-hipotese"]
+      },
+      "escolhas": [
+        { "id": "s3-etiqueta-laudo", "texto": "Consultar o exame técnico", "proximaCena": "s3-laudo", "dica": "Um laudo cuidadoso pode devolver a dúvida que uma etiqueta perdeu na reprodução." },
+        { "id": "s3-etiqueta-cartas", "texto": "Buscar quem contestou a publicação", "proximaCena": "s3-cartas", "dica": "Cópias em papel fino costumam sobreviver quando uma carta importante foi enviada para outra mesa." }
+      ]
+    },
+    {
+      "id": "s3-amuleto",
+      "etapaId": "nome-que-nao-existia",
+      "objetivoId": "revisar-atribuicao",
+      "texto": "A fotografia da descoberta não mostra o amuleto junto ao volume funerário. Ele aparece numa bandeja com fragmentos recolhidos de uma camada revolvida, misturados durante a limpeza de uma área maior. A legenda posterior aproximou os dois achados porque receberam números consecutivos. No caderno original, a responsável pelo registro traçou uma linha separando os contextos.\n\nSem proveniência direta, o amuleto não identifica a pessoa nem sua posição social. Pode continuar sendo estudado como objeto, mas não sustenta o título divulgado. A interpretação pública nasceu do desejo de apresentar uma descoberta excepcional antes que a documentação estivesse pronta. A revisão do laudo e das cartas dirá se alguém percebeu o problema a tempo de interromper o transporte.",
+      "imagem": { "recurso": "cena_mumia_amuleto", "descricaoAcessivel": "Fotografia de uma bandeja com fragmentos misturados mostra um amuleto separado do volume funerário ao fundo." },
+      "revelacoes": { "pistas": ["amuleto-fora-contexto"] },
+      "escolhas": [
+        { "id": "s3-amuleto-laudo", "texto": "Comparar com o laudo", "proximaCena": "s3-laudo", "dica": "Se o objeto perdeu o contexto, talvez o exame tenha evitado transformar aparência em identidade." },
+        { "id": "s3-amuleto-cartas", "texto": "Procurar a ressalva escrita", "proximaCena": "s3-cartas", "dica": "Quem desenhou uma linha entre contextos pode ter explicado a mesma cautela numa correspondência." }
+      ]
+    },
+    {
+      "id": "s3-laudo",
+      "etapaId": "nome-que-nao-existia",
+      "objetivoId": "ler-alertas",
+      "texto": "O laudo de 1938 evita afirmar mais do que o exame permitia. Descreve uma pessoa adulta, técnicas de preparação e tecidos frágeis. Nos campos de identidade e posição social, registra ‘não determinadas’. Uma nota final recomenda não associar o amuleto sem comprovação do contexto. A conservadora confirma que essa linguagem é deliberada e responsável.\n\nA cópia usada no resumo público preservou as descrições materiais, mas omitiu as conclusões abertas. A responsável pelo registro anotou na margem: ‘o cuidado com a pessoa vem antes do anúncio’. Não se trata de uma pista para descobrir um nome secreto; é um limite documental. A decisão de interromper a viagem passa a ter dois fundamentos: fragilidade física e uma narrativa que corria mais rápido que a evidência.",
+      "imagem": { "recurso": "cena_mumia_laudo", "descricaoAcessivel": "Laudo de 1938 aberto em uma mesa, com campos de identidade não determinada e uma anotação cuidadosa na margem." },
+      "revelacoes": {
+        "pistas": ["laudo-identidade-aberta"],
+        "anotacoesPessoas": ["conservadora-leu-laudo"],
+        "lembrancas": ["laudo-manteve-identidade-aberta"]
+      },
+      "escolhas": [
+        { "id": "s3-laudo-mapa", "texto": "Seguir a referência cartográfica", "proximaCena": "s4-mapa", "dica": "Uma margem com letras e números pode apontar para outra folha, não para uma conclusão escondida." },
+        { "id": "s3-laudo-registradora", "texto": "Reconstruir a decisão da equipe", "proximaCena": "s4-registradora", "dica": "Depois de pedir cautela, alguém precisou registrar onde o volume ficaria e por quê." }
+      ]
+    },
+    {
+      "id": "s3-cartas",
+      "etapaId": "nome-que-nao-existia",
+      "objetivoId": "ler-alertas",
+      "texto": "Entre cópias em papel fino, uma carta da responsável pelo registro reúne as peças. Ela pede que o volume não seja transportado enquanto os tecidos são estabilizados, que a atribuição real seja retirada e que a decisão sobre o local seja compartilhada com responsáveis locais pelo setor. A resposta concorda com a pausa e autoriza um novo acondicionamento próximo ao ponto de descoberta.\n\nA carta nunca foi secreta. Foi arquivada como correspondência de conservação, enquanto o catálogo principal guardou apenas objetos enviados à capital. Quando os arquivos foram reorganizados, ninguém refez a ligação. A mesma folha cita um mapa dividido em duas cópias controladas e um livro suplementar. Encontrar esses registros pode distinguir uma ocultação pessoal de uma decisão documentada pela equipe.",
+      "imagem": { "recurso": "cena_mumia_caderno", "descricaoAcessivel": "Cartas em papel fino trazem pedido de cautela, resposta autorizando novo acondicionamento e referências a mapa e livro." },
+      "revelacoes": {
+        "pistas": ["carta-pedido-cautela"],
+        "anotacoesPessoas": ["registro-pediu-pausa"],
+        "conversas": ["registro-carta-cautela"]
+      },
+      "escolhas": [
+        { "id": "s3-cartas-mapa", "texto": "Localizar as duas cópias do mapa", "proximaCena": "s4-mapa", "dica": "Duas folhas incompletas podem proteger um lugar e ainda provar que a decisão foi compartilhada." },
+        { "id": "s3-cartas-registradora", "texto": "Buscar o livro suplementar", "proximaCena": "s4-registradora", "dica": "A palavra ‘suplemento’ costuma desaparecer quando um catálogo novo preserva apenas a coluna principal." }
+      ]
+    },
+    {
+      "id": "s4-mapa",
+      "etapaId": "mapa-dividido",
+      "objetivoId": "reunir-mapa",
+      "texto": "Uma metade do mapa está na cartografia; a outra, dobrada dentro da pasta de conservação. As bordas não foram cortadas para formar um enigma. Cada cópia controlava uma parte da informação: uma mostrava o setor, outra, o acesso à câmara secundária. Apenas a referência do livro suplementar permitia reuni-las de maneira autorizada.\n\nO pesquisador alinha fibras, linhas e pequenos danos do papel sem fotografar as coordenadas completas. O percurso resultante é curto. Sai da área de trabalho, contorna uma elevação e termina numa câmara já existente no Setor 47. As medidas anotadas não correspondem a qualquer depósito na capital. A equipe não transferiu o volume para outro acervo; preparou um novo local de repouso próximo ao contexto original.",
+      "imagem": { "recurso": "cena_mumia_mapa", "descricaoAcessivel": "Duas metades de mapa alinhadas sobre uma mesa formam um trajeto curto, com as coordenadas finais cobertas." },
+      "revelacoes": {
+        "pistas": ["mapa-dividido"],
+        "anotacoesPessoas": ["pesquisador-reuniu-mapa"],
+        "anotacoesLocais": ["cartografia-metades-reunidas"],
+        "conversas": ["pesquisador-mapa-dividido"],
+        "lembrancas": ["mapa-foi-separado"]
+      },
+      "escolhas": [
+        { "id": "s4-mapa-medidas", "texto": "Comparar as medidas", "proximaCena": "s4-medidas", "dica": "Uma câmara pode ser reconhecida pelo tamanho antes que alguém pense em procurar sua entrada." },
+        { "id": "s4-mapa-deposito", "texto": "Conferir a referência do livro", "proximaCena": "s4-deposito", "dica": "O mapa indica onde; uma referência cruzada talvez explique quem decidiu e quem testemunhou." }
+      ]
+    },
+    {
+      "id": "s4-registradora",
+      "etapaId": "mapa-dividido",
+      "objetivoId": "reunir-mapa",
+      "texto": "A arquivista encontra uma série curta de cartões biográficos da equipe. A responsável pelo registro aparece em várias fotografias, sempre com o caderno e uma pequena régua de escala. Seus relatórios distinguem observação, hipótese e decisão com consistência. Em nenhum momento ela afirma ter agido sozinha. Cada mudança de acondicionamento recebe duas assinaturas e uma referência.\n\nO último cartão aponta para o livro S-3, guardado entre documentos administrativos porque não continha objetos enviados à capital. A reorganização moderna interpretou S como ‘sem localização’ e encerrou a busca. No sistema de 1938, significava ‘suplementar’. O erro não apagou apenas o destino da múmia; apagou o trabalho de quem registrou a decisão com cuidado suficiente para que pudesse ser reconstruída quase nove décadas depois.",
+      "imagem": { "recurso": "cena_mumia_caderno", "descricaoAcessivel": "Cartões biográficos e relatórios mostram a responsável pelo registro com caderno, régua e referências assinadas." },
+      "revelacoes": { "anotacoesPessoas": ["registro-documentou-decisao", "arquivista-localizou-suplemento"] },
+      "escolhas": [
+        { "id": "s4-registradora-medidas", "texto": "Ler as medidas do acondicionamento", "proximaCena": "s4-medidas", "dica": "Uma régua presente em tantas fotografias talvez tenha deixado uma descrição suficiente para evitar uma abertura." },
+        { "id": "s4-registradora-deposito", "texto": "Abrir o livro S-3", "proximaCena": "s4-deposito", "dica": "Às vezes a letra interpretada como ausência queria dizer apenas que a história continuava em outro volume." }
+      ]
+    },
+    {
+      "id": "s4-medidas",
+      "etapaId": "mapa-dividido",
+      "objetivoId": "confirmar-decisao",
+      "texto": "As medidas aparecem em três lugares: no mapa, numa folha de conservação e na borda de uma fotografia. Comprimento, largura e orientação coincidem. A câmara secundária foi preparada com apoio estável, barreira de tecido novo e uma pequena placa de identificação voltada para dentro. Não havia intenção de criar uma apresentação futura.\n\nO documento também descreve como a entrada foi fechada usando materiais já presentes no setor, sem alterar a forma externa da elevação. A precisão permite comparar o registro com levantamentos atuais de superfície. Saber onde está não exige abrir. Antes disso, falta encontrar a página que confirma a decisão e suas testemunhas, pois medidas compatíveis mostram uma possibilidade, não a autorização que a tornou história institucional.",
+      "imagem": { "recurso": "cena_mumia_medidas", "descricaoAcessivel": "Folha de conservação, mapa e fotografia exibem as mesmas medidas e orientação de uma pequena câmara." },
+      "revelacoes": {
+        "pistas": ["medidas-camara"],
+        "anotacoesLocais": ["camara-medidas-compativeis"]
+      },
+      "escolhas": [
+        { "id": "s4-medidas-local", "texto": "Comparar com a superfície atual", "proximaCena": "s5-local", "dica": "Relevo, orientação e distância podem confirmar um lugar sem que uma porta precise aparecer." },
+        { "id": "s4-medidas-protocolo", "texto": "Revisar as assinaturas", "proximaCena": "s5-protocolo", "dica": "Duas assinaturas num livro esquecido podem transformar uma suspeita correta numa decisão verificável." }
+      ]
+    },
+    {
+      "id": "s4-deposito",
+      "etapaId": "mapa-dividido",
+      "objetivoId": "confirmar-decisao",
+      "texto": "O livro S-3 está numa caixa de documentos administrativos, entre listas de água, ferramentas e turnos. A página referente ao 47-14 registra que o transporte foi suspenso e que os restos foram acondicionados novamente numa câmara secundária. Duas testemunhas assinam. Materiais, medidas e posição correspondem aos outros documentos.\n\nUma observação pede que o mapa permaneça separado das fichas públicas até que a área recebesse proteção permanente. A proteção foi criada, mas a referência cruzada não sobreviveu à mudança de catálogo. O suposto desaparecimento nasce desse rompimento documental. A responsável pelo registro não apagou a pessoa: registrou sua permanência com detalhes e limitou a circulação do endereço. O arquivo moderno perdeu a chave para ler esse cuidado.",
+      "imagem": { "recurso": "cena_mumia_inventario", "descricaoAcessivel": "Livro suplementar aberto numa caixa administrativa mostra decisão assinada, materiais e medidas do novo sepultamento." },
+      "revelacoes": {
+        "pistas": ["registro-novo-sepultamento"],
+        "anotacoesLocais": ["arquivo-livros-separados"],
+        "conversas": ["arquivista-livro-suplementar"],
+        "lembrancas": ["decisao-foi-documentada"]
+      },
+      "escolhas": [
+        { "id": "s4-deposito-local", "texto": "Verificar a área protegida", "proximaCena": "s5-local", "dica": "Se o mapa e as medidas concordam, a superfície pode responder sem revelar a entrada." },
+        { "id": "s4-deposito-protocolo", "texto": "Reconstruir a cadeia documental", "proximaCena": "s5-protocolo", "dica": "Uma história perdida por catálogo talvez seja reparada pela mesma disciplina de referências e cópias." }
+      ]
+    },
+    {
+      "id": "s5-local",
+      "etapaId": "resposta-sem-abrir",
+      "objetivoId": "confirmar-sem-perturbar",
+      "texto": "A equipe consulta imagens atuais autorizadas do Setor 47 e um levantamento de superfície já existente. O setor, o planalto das três pirâmides e a necrópole do sul pertencem à geografia inteiramente fictícia do caso. A elevação, a orientação e as distâncias coincidem com o mapa reunido. Nenhuma abertura recente aparece.\n\nO pesquisador propõe uma leitura remota limitada, conduzida pelas autoridades responsáveis, apenas para confirmar a continuidade da pequena câmara. Não seria uma busca por objetos nem uma preparação para entrada. Os documentos já resolvem a questão histórica; o levantamento serviria à proteção do terreno. A múmia não precisa reaparecer diante de uma câmera para deixar de estar perdida no arquivo.",
+      "imagem": { "recurso": "cena_mumia_horizonte", "descricaoAcessivel": "Levantamento de superfície mostra uma elevação estável no setor fictício, diante de um horizonte desértico imaginário." },
+      "revelacoes": {
+        "pistas": ["superficie-preservada"],
+        "anotacoesPessoas": ["pesquisador-propos-leitura-remota"],
+        "anotacoesLocais": ["setor-superficie-estavel"],
+        "lembrancas": ["local-permanece-estavel", "resposta-nao-exige-abertura"]
+      },
+      "escolhas": [
+        { "id": "s5-local-conselho", "texto": "Reunir o conselho do arquivo", "proximaCena": "s5-conselho", "dica": "Uma localização protegida permite que a primeira decisão seja sobre palavras, créditos e limites." },
+        { "id": "s5-local-protecao", "texto": "Preparar um plano não invasivo", "proximaCena": "s5-protecao", "dica": "Às vezes o melhor instrumento é aquele que confirma o contorno e para antes de atravessá-lo." }
+      ]
+    },
+    {
+      "id": "s5-protocolo",
+      "etapaId": "resposta-sem-abrir",
+      "objetivoId": "confirmar-sem-perturbar",
+      "texto": "A cronologia cabe numa única mesa: preparação do volume, consulta técnica, retorno ao setor, decisão assinada, mapa controlado e reorganização que perdeu a referência. A arquivista cria cópias ligadas sem reunir coordenadas e descrição pública no mesmo registro. A conservadora registra por que uma abertura não é necessária para confirmar o caso.\n\nO novo catálogo separa claramente pessoa, documentação, caixa fotográfica e local protegido. Também remove o título real não confirmado, mantendo a história de como ele surgiu. Em vez de ocultar os erros, a equipe os transforma em contexto para futuras pesquisas. Resta decidir se o primeiro gesto público será corrigir o arquivo e reconhecer a responsável de 1938 ou iniciar um levantamento não invasivo formal acompanhado dessa correção.",
+      "imagem": { "recurso": "cena_mumia_mapa", "descricaoAcessivel": "Cronologia organizada reúne fichas, cartas, mapa coberto e livro suplementar sem expor coordenadas completas." },
+      "revelacoes": { "anotacoesPessoas": ["arquivista-corrige-catalogo"] },
+      "escolhas": [
+        { "id": "s5-protocolo-conselho", "texto": "Priorizar a correção histórica", "proximaCena": "s5-conselho", "dica": "Um nome esquecido no rodapé pode ser a primeira presença que o novo catálogo deve devolver." },
+        { "id": "s5-protocolo-protecao", "texto": "Priorizar a proteção do local", "proximaCena": "s5-protecao", "dica": "Coordenadas protegidas e métodos limitados podem cuidar do terreno sem transformar cuidado em segredo novamente." }
+      ]
+    },
+    {
+      "id": "s5-conselho",
+      "etapaId": "resposta-sem-abrir",
+      "objetivoId": "devolver-historia",
+      "pontoDePausa": true,
+      "texto": "O conselho do arquivo se reúne na capital com conservação, cartografia e pesquisa. A primeira decisão é simples: a exposição não chamará a pessoa por um título que nunca foi confirmado. O painel explicará como uma hipótese a lápis virou certeza impressa e como a responsável pelo registro preservou a dúvida.\n\nAs coordenadas permanecem restritas, mas o livro suplementar e sua lógica entram no catálogo. O fotógrafo também recebe crédito por uma sequência que foi mal interpretada, não mal produzida. Ninguém precisa assumir o papel de vilão para que as decisões apressadas sejam reconhecidas. A equipe pode concluir o caso pela reparação documental ou acrescentar um programa de leitura remota dedicado apenas à proteção da câmara.",
+      "imagem": { "recurso": "cena_mumia_mesa", "descricaoAcessivel": "Conselho reunido em mesa na capital fictícia com cronologia, créditos históricos e coordenadas cobertas." },
+      "revelacoes": { "anotacoesPessoas": ["arquivista-corrige-catalogo"] },
+      "escolhas": [
+        { "id": "s5-conselho-historia", "texto": "Publicar o arquivo corrigido", "proximaCena": "final-historia-recuperada", "dica": "Uma ausência mantida por décadas pode terminar quando as referências voltam a se encontrar, mesmo que nenhuma porta seja aberta." },
+        { "id": "s5-conselho-pesquisa", "texto": "Vincular correção e levantamento", "proximaCena": "final-pesquisa-sem-perturbacao", "dica": "A melhor pesquisa talvez seja aquela que escreve seus limites antes de escolher os instrumentos." }
+      ]
+    },
+    {
+      "id": "s5-protecao",
+      "etapaId": "resposta-sem-abrir",
+      "objetivoId": "devolver-historia",
+      "pontoDePausa": true,
+      "texto": "O plano de proteção começa por limites explícitos. O levantamento não buscará retirar material, abrir passagem ou produzir imagens internas para exibição. Servirá apenas para comparar o contorno externo com as medidas de 1938 e monitorar alterações na superfície. Os dados de localização ficarão sob guarda das autoridades competentes.\n\nAo mesmo tempo, o arquivo corrigirá a identificação e publicará a história documental da responsável pelo registro. Assim, proteção não se transforma em novo apagamento. O caso deixa duas contribuições possíveis: mostrar que o arquivo já oferece uma conclusão respeitosa ou demonstrar como métodos não invasivos podem confirmar uma área sem torná-la atração. Em ambos os caminhos, a câmara permanece fechada.",
+      "imagem": { "recurso": "cena_mumia_mesa", "descricaoAcessivel": "Plano de proteção sobre a mesa lista limites de pesquisa ao lado de um mapa com a localização coberta." },
+      "revelacoes": { "anotacoesPessoas": ["pesquisador-propos-leitura-remota"] },
+      "escolhas": [
+        { "id": "s5-protecao-pesquisa", "texto": "Aprovar o levantamento limitado", "proximaCena": "final-pesquisa-sem-perturbacao", "dica": "Confirmar um contorno pode ser suficiente quando a pergunta é histórica e o compromisso é preservar." },
+        { "id": "s5-protecao-historia", "texto": "Manter somente a proteção documental", "proximaCena": "final-historia-recuperada", "dica": "Talvez os papéis já tenham respondido tudo o que o caso precisa perguntar ao lugar." }
+      ]
+    },
+    {
+      "id": "final-historia-recuperada",
+      "tipo": "final",
+      "etapaId": "resposta-sem-abrir",
+      "texto": "A exposição abre na capital com uma caixa fotográfica, cópias dos negativos e uma cronologia clara. O painel principal não promete revelar uma identidade desconhecida. Conta como dois sistemas de numeração foram confundidos, como uma hipótese perdeu seu ponto de interrogação e como uma profissional cuidadosa registrou um novo sepultamento sem transformar o endereço em informação pública.\n\nO Setor 47 recebe proteção documental reforçada e permanece sem nova intervenção. A múmia deixa de estar desaparecida porque o arquivo recupera a decisão que explica sua permanência. Visitantes acompanham o raciocínio sem ver restos humanos ou coordenadas. A conclusão mais importante não é onde abrir, mas quando reconhecer que uma história pode ser devolvida enquanto o repouso continua intacto.",
+      "imagem": { "recurso": "cena_mumia_final_historia", "descricaoAcessivel": "Exposição clara na capital fictícia apresenta caixa fotográfica, negativos e cronologia, sem restos humanos ou coordenadas." },
+      "desfecho": {
+        "titulo": "A história recuperada",
+        "mensagem": "O arquivo corrigiu o desaparecimento sem transformar a abertura da câmara em resposta.",
+        "explicacaoPistas": "A caixa sem fibras e o número duplicado separaram placas e volume funerário; selo, negativos e horizonte provaram o retorno ao setor; etiqueta, amuleto e laudo desfizeram a atribuição real; carta, mapa, medidas e livro suplementar reconstruíram o novo sepultamento; a superfície preservada permitiu proteger o local e devolver os créditos históricos."
+      }
+    },
+    {
+      "id": "final-pesquisa-sem-perturbacao",
+      "tipo": "final",
+      "etapaId": "resposta-sem-abrir",
+      "texto": "Com autorização e limites publicados, uma equipe realiza o levantamento de superfície. Os resultados correspondem às medidas de 1938 e confirmam a continuidade da pequena câmara sem atravessar sua entrada. Nenhuma imagem interna é produzida e nenhum material é retirado. O monitoramento passa a servir à proteção do setor.\n\nNa capital, o catálogo é corrigido ao mesmo tempo. A responsável pelo registro e o fotógrafo recebem crédito por documentos que conservaram a verdade mesmo depois de perderem suas ligações. A atribuição real é retirada. A mostra explica por que uma pergunta bem respondida não exige acesso irrestrito. A pesquisa acrescenta segurança ao local sem substituir respeito por curiosidade.",
+      "imagem": { "recurso": "cena_mumia_final_pesquisa", "descricaoAcessivel": "Equipe observa dados de superfície em uma tela enquanto o terreno protegido permanece fechado e sem intervenção." },
+      "desfecho": {
+        "titulo": "Pesquisa sem perturbação",
+        "mensagem": "O local foi confirmado e protegido por métodos limitados, enquanto o arquivo recuperou a história completa.",
+        "explicacaoPistas": "As fichas e a caixa mostraram que o transporte foi interpretado errado; as fotografias corrigidas mantiveram o volume no setor; etiqueta, amuleto e laudo revelaram uma identidade inventada; o pedido de cautela e o mapa levaram ao registro suplementar; medidas e superfície permitiram confirmar a área sem abrir a câmara."
+      }
+    }
+  ]
+}

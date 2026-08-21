@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte original do projeto Indício, GPLv3. Caixas e balança da reserva. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_parede_alta" android:pathData="M0,0h400v410h-400z" />
+    <path android:strokeColor="@color/ilustracao_marinho" android:strokeWidth="10" android:pathData="M30,72h340 M30,208h340 M30,344h340 M48,60v390 M352,60v390" />
+    <path android:fillColor="@color/ilustracao_feltro" android:pathData="M62,102h128v96h-128z M210,102h128v96h-128z" />
+    <path android:strokeColor="@color/ilustracao_luz" android:strokeWidth="4" android:pathData="M76,116h100v68h-100z M224,116h100v68h-100z" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M118,410h164v68h-164z" />
+    <path android:fillColor="@color/ilustracao_tinta" android:pathData="M150,374h100v60h-100z" />
+    <path android:fillColor="@color/ilustracao_luz" android:pathData="M166,390h68v26h-68z" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,478h400v122h-400z" />
+</vector>

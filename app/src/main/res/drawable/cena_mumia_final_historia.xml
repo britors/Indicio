@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte original do projeto Indício, GPLv3. Exposição documental sem restos humanos. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_luz" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M20,34h360v418h-360z" />
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M44,62h132v324h-132z M224,62h132v324h-132z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M64,84h92v278h-92z M244,84h92v278h-92z" />
+    <path android:strokeColor="@color/ilustracao_tinta" android:strokeWidth="4" android:pathData="M80,116h60 M80,148h60 M80,180h60 M260,116h60 M260,148h60 M260,180h60" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M126,398h148v90h-148z" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="6" android:pathData="M148,414h104v56h-104z" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,452h400v148h-400z" />
+</vector>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte original do projeto Indício, GPLv3. Laudo com identidade aberta. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M52,48h296v504h-296z" />
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M78,84h244v54h-244z" />
+    <path android:strokeColor="@color/ilustracao_tinta" android:strokeWidth="4" android:pathData="M82,174h236 M82,210h236 M82,246h150 M82,302h236 M82,338h236 M82,374h170" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="6" android:pathData="M92,438 C132,404 168,478 206,434 C238,400 276,470 310,430" />
+    <path android:fillColor="@color/ilustracao_luz" android:fillAlpha="0.35" android:pathData="M52,48 L176,48 L324,552 L226,552 Z" />
+</vector>

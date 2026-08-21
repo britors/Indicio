@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte original do projeto Indício, GPLv3. Etiqueta provisória a lápis. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M54,92 L350,116 L330,490 L34,466 Z" />
+    <path android:fillColor="@color/ilustracao_dourado" android:pathData="M76,126h42v42h-42z" />
+    <path android:strokeColor="@color/ilustracao_tinta" android:strokeWidth="6" android:pathData="M136,142h170 M80,210h230 M80,258h168 M80,306h230" />
+    <path android:strokeColor="@color/ilustracao_marinho" android:strokeWidth="8" android:pathData="M88,382 C132,336 176,424 218,374" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="10" android:pathData="M268,352 C320,352 320,406 294,420 M294,450v8" />
+    <path android:fillColor="@color/ilustracao_sombra" android:fillAlpha="0.22" android:pathData="M0,500h400v100h-400z" />
+</vector>

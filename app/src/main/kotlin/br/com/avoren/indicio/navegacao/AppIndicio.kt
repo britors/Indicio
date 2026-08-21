@@ -2,11 +2,16 @@ package br.com.avoren.indicio.navegacao
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
@@ -25,6 +30,7 @@ import br.com.avoren.indicio.ui.catalogo.TelaCatalogo
 import br.com.avoren.indicio.ui.configuracoes.ConfiguracoesViewModel
 import br.com.avoren.indicio.ui.configuracoes.TelaConfiguracoes
 import br.com.avoren.indicio.ui.descanso.DescansoViewModel
+import br.com.avoren.indicio.ui.descanso.LembreteDescanso
 import br.com.avoren.indicio.ui.descanso.TelaDescanso
 import br.com.avoren.indicio.ui.historia.DestinoHistoria
 import br.com.avoren.indicio.ui.investigacao.DestinoCaderno
@@ -79,7 +85,18 @@ fun AppIndicio(container: ContainerAplicacao) {
 
     TemaIndicio(preferencias = preferencias) {
         val navController = rememberNavController()
+        var pistasNaoLidasPorCaso by remember { mutableStateOf(emptyMap<String, Int>()) }
         val descanso = estadoDescanso as? EstadoCicloDeDescanso.EmDescanso
+        val mostrarLembrete = estadoDescanso == EstadoCicloDeDescanso.LembreteVisual
+
+        fun abrirCaderno(casoId: String) {
+            pistasNaoLidasPorCaso = pistasNaoLidasPorCaso - casoId
+            navController.navigate(Rota.Caderno(casoId))
+        }
+
+        fun limparPistasNaoLidas(casoId: String) {
+            pistasNaoLidasPorCaso = pistasNaoLidasPorCaso - casoId
+        }
 
         Box(modifier = Modifier.fillMaxSize()) {
             NavHost(
@@ -140,7 +157,14 @@ fun AppIndicio(container: ContainerAplicacao) {
                         navController.navigate(Rota.Pausa(rota.casoId, temEtapas))
                     },
                     onAbrirEtapas = { navController.navigate(Rota.Etapas(rota.casoId)) },
-                    onAbrirCaderno = { navController.navigate(Rota.Caderno(rota.casoId)) },
+                    onAbrirCaderno = { abrirCaderno(rota.casoId) },
+                    pistasNaoLidas = pistasNaoLidasPorCaso[rota.casoId] ?: 0,
+                    onPistasReveladas = { pistas ->
+                        pistasNaoLidasPorCaso = pistasNaoLidasPorCaso + (
+                            rota.casoId to ((pistasNaoLidasPorCaso[rota.casoId] ?: 0) + pistas.size)
+                        )
+                    },
+                    onReiniciarCaso = { limparPistasNaoLidas(rota.casoId) },
                     onConfiguracoes = { navController.navigate(Rota.Configuracoes) },
                     onVoltarAoCatalogo = { navController.irParaCatalogo() },
                     emDescanso = descanso != null,
@@ -158,7 +182,7 @@ fun AppIndicio(container: ContainerAplicacao) {
                             popUpTo(rota) { inclusive = true }
                         }
                     },
-                    onAbrirCaderno = { navController.navigate(Rota.Caderno(rota.casoId)) },
+                    onAbrirCaderno = { abrirCaderno(rota.casoId) },
                     onVoltar = { navController.popBackStack() },
                 )
             }
@@ -190,10 +214,11 @@ fun AppIndicio(container: ContainerAplicacao) {
                 TelaPausa(
                     onContinuar = { navController.popBackStack() },
                     onAbrirEtapas = { navController.navigate(Rota.Etapas(rota.casoId)) },
-                    onAbrirCaderno = { navController.navigate(Rota.Caderno(rota.casoId)) },
+                    onAbrirCaderno = { abrirCaderno(rota.casoId) },
                     temEtapas = rota.temEtapas,
                     onConfiguracoes = { navController.navigate(Rota.Configuracoes) },
                     onReiniciar = {
+                        limparPistasNaoLidas(rota.casoId)
                         navController.navigate(Rota.Historia(rota.casoId, retomar = false)) {
                             popUpTo(Rota.Historia(rota.casoId, retomar = true)) { inclusive = true }
                         }
@@ -216,6 +241,15 @@ fun AppIndicio(container: ContainerAplicacao) {
                 TelaDescanso(
                     tempoRestante = descanso.tempoRestante,
                     duracaoTotal = descanso.duracaoTotal,
+                )
+            }
+
+            if (mostrarLembrete) {
+                LembreteDescanso(
+                    onDispensar = descansoViewModel::dispensarLembrete,
+                    modifier = Modifier
+                        .align(Alignment.BottomCenter)
+                        .navigationBarsPadding(),
                 )
             }
         }

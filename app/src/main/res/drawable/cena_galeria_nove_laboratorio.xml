@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte original do projeto Indício, GPLv3. Laboratório e duas embalagens. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_parede_alta" android:pathData="M0,0h400v330h-400z" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M24,316h352v42h-352z M44,358h20v164h-20z M336,358h20v164h-20z" />
+    <path android:fillColor="@color/ilustracao_feltro" android:pathData="M58,202h122v112h-122z M220,202h122v112h-122z" />
+    <path android:strokeColor="@color/ilustracao_luz" android:strokeWidth="4" android:pathData="M78,222h82v72h-82z M240,222h82v72h-82z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M76,274h70v28h-70z M238,274h70v28h-70z" />
+    <path android:fillColor="@color/ilustracao_dourado" android:pathData="M86,282h42v5h-42z" />
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M248,282h42v5h-42z" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,522h400v78h-400z" />
+</vector>

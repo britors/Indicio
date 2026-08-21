@@ -5,11 +5,14 @@ import androidx.compose.ui.test.junit4.v2.createComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performScrollTo
+import androidx.compose.ui.test.performClick
 import br.com.avoren.indicio.domain.model.preferencias.TamanhoTexto
 import br.com.avoren.indicio.ui.descanso.TelaDescanso
+import br.com.avoren.indicio.ui.descanso.LembreteDescanso
 import br.com.avoren.indicio.ui.tema.TemaIndicio
 import kotlin.time.Duration.Companion.minutes
 import kotlin.time.Duration.Companion.seconds
+import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
 
@@ -23,14 +26,14 @@ class DescansoTest {
         composeRule.setContent {
             TemaIndicio {
                 TelaDescanso(
-                    tempoRestante = 4.minutes + 7.seconds,
-                    duracaoTotal = 5.minutes,
+                    tempoRestante = 2.minutes + 7.seconds,
+                    duracaoTotal = 3.minutes,
                 )
             }
         }
 
         composeRule.onNodeWithText("Descanse um pouco").assertIsDisplayed()
-        composeRule.onNodeWithContentDescription("Tempo restante: 4 minutos e 7 segundos")
+        composeRule.onNodeWithContentDescription("Tempo restante: 2 minutos e 7 segundos")
             .assertIsDisplayed()
     }
 
@@ -39,8 +42,8 @@ class DescansoTest {
         composeRule.setContent {
             TemaIndicio(TamanhoTexto.MUITO_GRANDE) {
                 TelaDescanso(
-                    tempoRestante = 5.minutes,
-                    duracaoTotal = 5.minutes,
+                    tempoRestante = 3.minutes,
+                    duracaoTotal = 3.minutes,
                 )
             }
         }
@@ -48,5 +51,23 @@ class DescansoTest {
         composeRule.onNodeWithText(
             "A investigação continua automaticamente ao fim da pausa.",
         ).performScrollTo().assertIsDisplayed()
+    }
+
+    @Test
+    fun lembreteVisualEDiscretoEPodeSerDispensado() {
+        var dispensado = false
+        composeRule.setContent {
+            TemaIndicio {
+                LembreteDescanso(onDispensar = { dispensado = true })
+            }
+        }
+
+        composeRule.onNodeWithText("Descanse os olhos por 20 segundos").assertIsDisplayed()
+        composeRule.onNodeWithText(
+            "Olhe para algo distante e pisque com calma. Você pode continuar quando quiser.",
+        ).assertIsDisplayed()
+        composeRule.onNodeWithText("Entendi").performClick()
+
+        assertTrue(dispensado)
     }
 }

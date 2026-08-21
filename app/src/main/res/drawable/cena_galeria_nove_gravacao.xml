@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte original do projeto Indício, GPLv3. Mecanismo e microgravação. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_parede_alta" android:pathData="M20,40h360v520h-360z" />
+    <path android:fillColor="@color/ilustracao_dourado" android:pathData="M72,110h256v320h-256z" />
+    <path android:fillColor="@color/ilustracao_prata_escura" android:pathData="M90,128h220v284h-220z" />
+    <path android:fillColor="@color/ilustracao_dourado_claro" android:pathData="M132,166a68,68 0,1 0,136,0a68,68 0,1 0,-136,0 M116,292a46,46 0,1 0,92,0a46,46 0,1 0,-92,0 M220,306a38,38 0,1 0,76,0a38,38 0,1 0,-76,0" />
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M184,150h32v32h-32z M148,278h28v28h-28z M246,294h24v24h-24z" />
+    <path android:fillColor="@color/ilustracao_luz" android:pathData="M104,374h192v22h-192z" />
+    <path android:strokeColor="@color/ilustracao_tinta" android:strokeWidth="4" android:pathData="M120,382h160" />
+    <path android:strokeColor="@color/ilustracao_luz" android:strokeWidth="12" android:strokeAlpha="0.55" android:pathData="M54,510 L346,70" />
+</vector>

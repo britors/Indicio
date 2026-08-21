@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte original do projeto Indício, GPLv3. Bandeja de triagem e amuleto sem contexto. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M34,120h332v340h-332z" />
+    <path android:fillColor="@color/ilustracao_feltro" android:pathData="M56,142h288v296h-288z" />
+    <path android:fillColor="@color/ilustracao_sombra" android:pathData="M80,176h64v48h-64z M246,188h66v42h-66z M92,338h86v48h-86z M252,332h58v62h-58z" />
+    <path android:fillColor="@color/ilustracao_dourado" android:pathData="M172,234 C172,190 228,190 228,234 L228,308 C228,352 172,352 172,308 Z" />
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M190,224h20v94h-20z M180,258h40v20h-40z" />
+    <path android:strokeColor="@color/ilustracao_papel" android:strokeWidth="5" android:pathData="M64,272h94 M242,272h94" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,460h400v140h-400z" />
+</vector>

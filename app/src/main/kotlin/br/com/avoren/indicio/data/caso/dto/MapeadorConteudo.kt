@@ -104,6 +104,7 @@ private fun PistaDto.paraDominio() = Pista(
     id = id,
     titulo = titulo,
     descricao = descricao,
+    relevancia = relevancia,
 )
 
 private fun EscolhaDto.paraDominio() = Escolha(

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte original do projeto Indício, GPLv3. Mapa histórico em duas metades. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M30,68 L190,84 L186,514 L18,490 Z M212,84 L370,66 L386,490 L216,514 Z" />
+    <path android:strokeColor="@color/ilustracao_marinho" android:strokeWidth="5" android:pathData="M62,130 C102,176 84,226 150,256 C176,268 166,338 190,362 M214,362 C238,330 224,286 270,256 C316,226 294,174 344,132" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="9" android:pathData="M86,174h24 M140,292h24 M242,292h24 M296,174h24" />
+    <path android:fillColor="@color/ilustracao_marinho_claro" android:pathData="M164,344h72v72h-72z" />
+    <path android:fillColor="@color/ilustracao_sombra" android:fillAlpha="0.75" android:pathData="M142,420h116v58h-116z" />
+    <path android:strokeColor="@color/ilustracao_tinta" android:strokeWidth="4" android:pathData="M58,446h64 M278,446h66" />
+</vector>

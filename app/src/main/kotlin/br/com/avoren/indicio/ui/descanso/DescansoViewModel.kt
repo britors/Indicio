@@ -27,6 +27,8 @@ class DescansoViewModel internal constructor(
 
     fun atualizar() = publicar(ciclo.atualizar(agora()))
 
+    fun dispensarLembrete() = publicar(ciclo.dispensarLembrete())
+
     private fun publicar(novoEstado: EstadoCicloDeDescanso) {
         _estado.value = novoEstado
     }
