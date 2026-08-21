@@ -7,6 +7,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStoreFile
 import br.com.avoren.indicio.data.banco.BancoIndicio
 import br.com.avoren.indicio.data.banco.RepositorioProgressoRoom
+import br.com.avoren.indicio.data.banco.RepositorioDicasRoom
 import br.com.avoren.indicio.data.caso.FonteCasos
 import br.com.avoren.indicio.data.caso.FonteCasosAssets
 import br.com.avoren.indicio.data.caso.RepositorioCasosJson
@@ -15,6 +16,7 @@ import br.com.avoren.indicio.data.narracao.NarradorTextToSpeech
 import br.com.avoren.indicio.data.preferencias.RepositorioPreferenciasDataStore
 import br.com.avoren.indicio.domain.armazenamento.RepositorioPreferencias
 import br.com.avoren.indicio.domain.armazenamento.RepositorioProgresso
+import br.com.avoren.indicio.domain.dica.RepositorioDicas
 import br.com.avoren.indicio.application.caso.ObterCasoParaContinuar
 import br.com.avoren.indicio.domain.caso.RepositorioCasos
 import br.com.avoren.indicio.domain.narracao.Narrador
@@ -32,6 +34,7 @@ interface ContainerAplicacao {
     val repositorioCasos: RepositorioCasos
     val repositorioProgresso: RepositorioProgresso
     val repositorioPreferencias: RepositorioPreferencias
+    val repositorioDicas: RepositorioDicas
     val obterCasoParaContinuar: ObterCasoParaContinuar
 
     /**
@@ -68,6 +71,10 @@ class ContainerAplicacaoPadrao(
 
     override val repositorioProgresso: RepositorioProgresso by lazy {
         RepositorioProgressoRoom(banco.progressoDao(), banco.conclusaoDao())
+    }
+
+    override val repositorioDicas: RepositorioDicas by lazy {
+        RepositorioDicasRoom(banco.dicaDao())
     }
 
     private val dataStore: DataStore<Preferences> by lazy {

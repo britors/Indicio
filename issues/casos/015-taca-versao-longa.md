@@ -63,11 +63,11 @@ leve, sem violência, envolvente e adequado a várias sessões.
 
 - Bíblia, mapa de seis etapas e grafo em camadas integrados.
 - JSON v2 publicado no catálogo de desenvolvimento.
-- 124 cenas comuns possíveis, 42 por percurso e três finais positivos.
+- 83 cenas comuns possíveis, 42 por percurso e dois finais positivos.
 - Etapas, objetivos, Retomada e Caderno preenchidos.
 - Estrutura, alcance e comprimento protegidos por teste automatizado.
-- Conteúdo `4` com 5.799–6.068 palavras de cena por percurso, antes de escolhas,
+- Conteúdo `5` com 5.916–6.062 palavras de cena por percurso, antes de escolhas,
   resumos e consultas ao Caderno.
-- O aceite do responsável após jogar o build refere-se ao conteúdo `3`; a
-  terceira linha investigativa do conteúdo `4` foi integrada depois.
+- O aceite do responsável após jogar o build refere-se ao conteúdo `3`, com
+  duas escolhas; a terceira linha do conteúdo `4` foi retirada após feedback.
 - Artes atuais reutilizadas como substitutas até a #016.

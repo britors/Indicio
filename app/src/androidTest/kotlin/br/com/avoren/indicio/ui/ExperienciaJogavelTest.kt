@@ -14,6 +14,7 @@ import br.com.avoren.indicio.ui.historia.ConteudoHistoria
 import br.com.avoren.indicio.ui.historia.EstadoHistoria
 import br.com.avoren.indicio.ui.tema.TemaIndicio
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
 
@@ -27,6 +28,7 @@ class ExperienciaJogavelTest {
 
     private fun mostrar(
         estadoNarracao: EstadoNarracao,
+        textoDaCena: String = "Texto da cena.",
         onAlternar: () -> Unit = {},
     ) {
         composeRule.setContent {
@@ -36,7 +38,7 @@ class ExperienciaJogavelTest {
                         tituloCaso = "Caso",
                         cena = Cena(
                             id = "cena",
-                            texto = "Texto da cena.",
+                            texto = textoDaCena,
                             imagem = Imagem(
                                 recurso = "recurso_que_nao_existe",
                                 descricaoAcessivel = DESCRICAO_DA_IMAGEM,
@@ -51,7 +53,7 @@ class ExperienciaJogavelTest {
                     estadoNarracao = estadoNarracao,
                     onEscolher = {},
                     onAlternarNarracao = onAlternar,
-                    onPausar = {},
+                    onConfiguracoes = {},
                 )
             }
         }
@@ -101,6 +103,33 @@ class ExperienciaJogavelTest {
 
         composeRule.onNodeWithText(DESCRICAO_DA_IMAGEM).assertIsDisplayed()
         composeRule.onNodeWithContentDescription(DESCRICAO_DA_IMAGEM).assertExists()
+    }
+
+    @Test
+    fun textoLongoPodeSerExpandidoERecolhido() {
+        val textoLongo = List(8) { "Uma observação importante permanece na cena." }.joinToString(" ")
+        mostrar(EstadoNarracao.PRONTO, textoDaCena = textoLongo)
+
+        val alturaRecolhida = composeRule.onNodeWithText(textoLongo)
+            .fetchSemanticsNode().boundsInRoot.height
+
+        composeRule.onNodeWithText("Mostrar texto completo")
+            .assertIsDisplayed()
+            .assertHasClickAction()
+            .performClick()
+
+        val alturaExpandida = composeRule.onNodeWithText(textoLongo)
+            .fetchSemanticsNode().boundsInRoot.height
+        assertTrue(alturaExpandida > alturaRecolhida)
+
+        composeRule.onNodeWithText("Recolher texto")
+            .assertIsDisplayed()
+            .assertHasClickAction()
+            .performClick()
+
+        val alturaRecolhidaNovamente = composeRule.onNodeWithText(textoLongo)
+            .fetchSemanticsNode().boundsInRoot.height
+        assertEquals(alturaRecolhida, alturaRecolhidaNovamente)
     }
 
     private companion object {

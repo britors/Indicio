@@ -1,19 +1,31 @@
 package br.com.avoren.indicio.navegacao
 
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.clearAndSetSemantics
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
+import br.com.avoren.indicio.application.descanso.EstadoCicloDeDescanso
 import br.com.avoren.indicio.di.ContainerAplicacao
 import br.com.avoren.indicio.ui.apresentacao.TelaApresentacao
 import br.com.avoren.indicio.ui.catalogo.TelaCatalogo
 import br.com.avoren.indicio.ui.configuracoes.ConfiguracoesViewModel
 import br.com.avoren.indicio.ui.configuracoes.TelaConfiguracoes
+import br.com.avoren.indicio.ui.descanso.DescansoViewModel
+import br.com.avoren.indicio.ui.descanso.TelaDescanso
 import br.com.avoren.indicio.ui.historia.DestinoHistoria
 import br.com.avoren.indicio.ui.investigacao.DestinoCaderno
 import br.com.avoren.indicio.ui.investigacao.DestinoEtapas
@@ -22,6 +34,7 @@ import br.com.avoren.indicio.ui.inicio.TelaInicio
 import br.com.avoren.indicio.ui.pausa.TelaPausa
 import br.com.avoren.indicio.ui.sobre.TelaSobre
 import br.com.avoren.indicio.ui.tema.TemaIndicio
+import kotlinx.coroutines.delay
 
 /**
  * Raiz do aplicativo: tema e grafo de navegação.
@@ -35,11 +48,49 @@ fun AppIndicio(container: ContainerAplicacao) {
         factory = ConfiguracoesViewModel.fabrica(container.repositorioPreferencias),
     )
     val preferencias by configuracoesViewModel.preferencias.collectAsStateWithLifecycle()
+    val descansoViewModel: DescansoViewModel = viewModel(factory = DescansoViewModel.fabrica())
+    val estadoDescanso by descansoViewModel.estado.collectAsStateWithLifecycle()
+    val proprietario = LocalLifecycleOwner.current
+
+    DisposableEffect(proprietario, descansoViewModel) {
+        val observador = LifecycleEventObserver { _, evento ->
+            when (evento) {
+                Lifecycle.Event.ON_START -> descansoViewModel.retomar()
+                Lifecycle.Event.ON_STOP -> descansoViewModel.pausar()
+                else -> Unit
+            }
+        }
+        proprietario.lifecycle.addObserver(observador)
+        if (proprietario.lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED)) {
+            descansoViewModel.retomar()
+        }
+        onDispose {
+            proprietario.lifecycle.removeObserver(observador)
+            descansoViewModel.pausar()
+        }
+    }
+
+    LaunchedEffect(descansoViewModel) {
+        while (true) {
+            descansoViewModel.atualizar()
+            delay(INTERVALO_ATUALIZACAO_DESCANSO_MILLIS)
+        }
+    }
 
     TemaIndicio(preferencias = preferencias) {
         val navController = rememberNavController()
+        val descanso = estadoDescanso as? EstadoCicloDeDescanso.EmDescanso
 
-        NavHost(navController = navController, startDestination = Rota.Apresentacao) {
+        Box(modifier = Modifier.fillMaxSize()) {
+            NavHost(
+                navController = navController,
+                startDestination = Rota.Apresentacao,
+                modifier = if (descanso == null) {
+                    Modifier
+                } else {
+                    Modifier.clearAndSetSemantics { }
+                },
+            ) {
 
             composable<Rota.Apresentacao> {
                 TelaApresentacao(
@@ -81,6 +132,7 @@ fun AppIndicio(container: ContainerAplicacao) {
                 DestinoHistoria(
                     repositorioCasos = container.repositorioCasos,
                     repositorioProgresso = container.repositorioProgresso,
+                    repositorioDicas = container.repositorioDicas,
                     criarNarrador = container::criarNarrador,
                     casoId = rota.casoId,
                     retomar = rota.retomar,
@@ -89,7 +141,9 @@ fun AppIndicio(container: ContainerAplicacao) {
                     },
                     onAbrirEtapas = { navController.navigate(Rota.Etapas(rota.casoId)) },
                     onAbrirCaderno = { navController.navigate(Rota.Caderno(rota.casoId)) },
+                    onConfiguracoes = { navController.navigate(Rota.Configuracoes) },
                     onVoltarAoCatalogo = { navController.irParaCatalogo() },
+                    emDescanso = descanso != null,
                 )
             }
 
@@ -156,9 +210,19 @@ fun AppIndicio(container: ContainerAplicacao) {
                 val identidade = container.repositorioIdentidade.identidade()
                 TelaSobre(versao = identidade.versao)
             }
+            }
+
+            if (descanso != null) {
+                TelaDescanso(
+                    tempoRestante = descanso.tempoRestante,
+                    duracaoTotal = descanso.duracaoTotal,
+                )
+            }
         }
     }
 }
+
+private const val INTERVALO_ATUALIZACAO_DESCANSO_MILLIS = 250L
 
 /**
  * Volta ao início limpando o que houver acima dele, para que o botão do

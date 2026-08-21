@@ -3,6 +3,7 @@ package br.com.avoren.indicio.ui.historia
 import br.com.avoren.indicio.domain.caso.ErroCarga
 import br.com.avoren.indicio.domain.model.caso.Cena
 import br.com.avoren.indicio.domain.model.caso.Desfecho
+import br.com.avoren.indicio.domain.model.caso.Escolha
 import br.com.avoren.indicio.domain.model.caso.Pista
 
 /**
@@ -27,6 +28,7 @@ sealed interface EstadoHistoria {
         val pistas: List<Pista>,
         val temInvestigacaoLonga: Boolean = false,
         val escolhasHabilitadas: Boolean = true,
+        val escolhaSugerida: Escolha? = null,
     ) : EstadoHistoria
 
     data class Concluida(

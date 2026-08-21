@@ -56,9 +56,9 @@ Validação final:              #014 + #018 → #009 → #010 → #011
 ```
 
 Com a especificação #012, o núcleo #013, a interface #014 e a direção visual
-#018 concluídos, a #015 entrega um roteiro expandido no JSON v2. O conteúdo `4`
-agora oferece três escolhas por cena e precisa de uma inspeção final dessa nova
-linha antes da #016 produzir as artes definitivas.
+#018 concluídos, a #015 entrega um roteiro expandido no JSON v2. O conteúdo `5`
+restaura duas escolhas por cena após feedback de uso e precisa de uma inspeção
+final antes da #016 produzir as artes definitivas.
 A validação manual de acessibilidade #009 e o fechamento de qualidade #010/#011
 acontecem sobre as telas finais, evitando repetir uma certificação do leiaute
 antigo.

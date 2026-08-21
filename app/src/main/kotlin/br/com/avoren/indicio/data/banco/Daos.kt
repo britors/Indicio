@@ -2,7 +2,9 @@ package br.com.avoren.indicio.data.banco
 
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Transaction
 import androidx.room.Upsert
 import kotlinx.coroutines.flow.Flow
 
@@ -34,4 +36,27 @@ interface ConclusaoDao {
 
     @Query("SELECT COUNT(*) FROM conclusoes WHERE casoId = :casoId")
     suspend fun quantidadePorCaso(casoId: String): Int
+}
+
+@Dao
+interface DicaDao {
+    @Query("SELECT * FROM dicas WHERE casoId = :casoId AND cenaId = :cenaId")
+    suspend fun porCena(casoId: String, cenaId: String): DicaEntidade?
+
+    @Query("SELECT COUNT(*) FROM dicas WHERE usadaEm >= :inicio")
+    suspend fun quantidadeDesde(inicio: Long): Int
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun inserir(dica: DicaEntidade): Long
+
+    @Transaction
+    suspend fun registrarSeDisponivel(
+        dica: DicaEntidade,
+        inicioDaSemana: Long,
+        limite: Int,
+    ): Boolean {
+        if (porCena(dica.casoId, dica.cenaId) != null) return true
+        if (quantidadeDesde(inicioDaSemana) >= limite) return false
+        return inserir(dica) != -1L
+    }
 }

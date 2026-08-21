@@ -1,9 +1,11 @@
 package br.com.avoren.indicio.ui
 
 import androidx.compose.ui.test.assertHasClickAction
+import androidx.compose.ui.test.assertCountEquals
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.v2.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
@@ -174,7 +176,7 @@ class TelasEstruturaisTest {
                     estadoNarracao = EstadoNarracao.INDISPONIVEL,
                     onEscolher = { escolhida = it },
                     onAlternarNarracao = {},
-                    onPausar = {},
+                    onConfiguracoes = {},
                 )
             }
         }
@@ -184,6 +186,40 @@ class TelasEstruturaisTest {
         composeRule.onNodeWithText("Segunda opção").performClick()
 
         assertEquals("b", escolhida)
+    }
+
+    @Test
+    fun menuDaHistoriaOfereceEtapasCadernoEConfiguracoes() {
+        var abriuConfiguracoes = false
+        composeRule.setContent {
+            TemaIndicio {
+                ConteudoHistoria(
+                    estado = EstadoHistoria.EmCurso(
+                        tituloCaso = "Caso",
+                        cena = cenaComDuasEscolhas(),
+                        pistas = emptyList(),
+                        temInvestigacaoLonga = true,
+                    ),
+                    estadoNarracao = EstadoNarracao.INDISPONIVEL,
+                    onEscolher = {},
+                    onAlternarNarracao = {},
+                    onConfiguracoes = { abriuConfiguracoes = true },
+                )
+            }
+        }
+
+        composeRule.onNodeWithContentDescription("Abrir menu da investigação")
+            .assertHasClickAction()
+            .performClick()
+
+        composeRule.onAllNodesWithText("Ver etapas da investigação").assertCountEquals(2)
+        composeRule.onAllNodesWithText("Caderno de pistas").assertCountEquals(2)
+        composeRule.onNodeWithText("Configurações")
+            .assertIsDisplayed()
+            .assertHasClickAction()
+            .performClick()
+
+        assertTrue(abriuConfiguracoes)
     }
 
     @Test
@@ -201,7 +237,7 @@ class TelasEstruturaisTest {
                     estadoNarracao = EstadoNarracao.INDISPONIVEL,
                     onEscolher = { cliques++ },
                     onAlternarNarracao = {},
-                    onPausar = {},
+                    onConfiguracoes = {},
                 )
             }
         }
@@ -224,7 +260,7 @@ class TelasEstruturaisTest {
                     estadoNarracao = EstadoNarracao.INDISPONIVEL,
                     onEscolher = {},
                     onAlternarNarracao = {},
-                    onPausar = {},
+                    onConfiguracoes = {},
                 )
             }
         }

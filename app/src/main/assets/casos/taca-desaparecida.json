@@ -1,6 +1,6 @@
 {
   "versaoEsquema": 2,
-  "versaoConteudo": 4,
+  "versaoConteudo": 5,
   "id": "taca-desaparecida",
   "titulo": "O Mistério da Taça Desaparecida",
   "sinopse": "Uma taça desaparece de uma vitrine fechada na manhã de uma exposição. Entre marcas no piso, registros incompletos e caixas muito parecidas, cada cuidado parece ter deixado uma nova pergunta.",
@@ -572,17 +572,14 @@
         {
           "id": "s1-chegada-a",
           "texto": "Examinar a vitrine",
-          "proximaCena": "s1-vitrine"
+          "proximaCena": "s1-vitrine",
+          "dica": "Se eu fosse você, iria ajustar o cabelo; a vitrine pode ser um bom espelho."
         },
         {
           "id": "s1-chegada-b",
           "texto": "Ouvir a curadora",
-          "proximaCena": "s1-curadora"
-        },
-        {
-          "id": "s1-chegada-c",
-          "texto": "Registrar a sala inteira",
-          "proximaCena": "s1-inventario-inicial"
+          "proximaCena": "s1-curadora",
+          "dica": "Quem conhece a sala antes do susto pode lembrar qual detalhe já estava fora do lugar."
         }
       ]
     },
@@ -610,17 +607,14 @@
         {
           "id": "s1-vitrine-a",
           "texto": "Seguir as marcas do piso",
-          "proximaCena": "s1-marcas"
+          "proximaCena": "s1-marcas",
+          "dica": "O chão parece ter sublinhado alguma coisa. Eu começaria pelos riscos que não pertencem ao desenho."
         },
         {
           "id": "s1-vitrine-b",
           "texto": "Consultar a planta da sala",
-          "proximaCena": "s1-planta"
-        },
-        {
-          "id": "s1-vitrine-c",
-          "texto": "Medir as distâncias",
-          "proximaCena": "s1-distancias"
+          "proximaCena": "s1-planta",
+          "dica": "Paredes e móveis mudam de posição, mas alguém costuma desenhar a mudança antes."
         }
       ]
     },
@@ -644,55 +638,14 @@
         {
           "id": "s1-curadora-a",
           "texto": "Seguir as marcas do piso",
-          "proximaCena": "s1-marcas"
+          "proximaCena": "s1-marcas",
+          "dica": "O chão parece ter sublinhado alguma coisa. Eu começaria pelos riscos que não pertencem ao desenho."
         },
         {
           "id": "s1-curadora-b",
           "texto": "Consultar a planta da sala",
-          "proximaCena": "s1-planta"
-        },
-        {
-          "id": "s1-curadora-c",
-          "texto": "Medir as distâncias",
-          "proximaCena": "s1-distancias"
-        }
-      ]
-    },
-    {
-      "id": "s1-inventario-inicial",
-      "etapaId": "sala-vazia",
-      "objetivoId": "examinar-sala",
-      "texto": "Você registra a sala inteira antes de se aproximar da vitrine. Cadeiras, pano de limpeza e iluminação mostram que o ambiente ainda conserva a disposição encontrada pela curadora.\n\nVocê divide a observação em três perguntas: por onde a peça poderia ter saído, quem sabia abrir a vitrine e quais mudanças já estavam previstas. A curadora resiste à vontade de responder tudo de uma vez e procura a chave certa no molho, sem tocar no fecho. Quando a aproxima, o número gravado coincide com a ficha; não há chave abandonada nem encaixe improvisado. Ela também lembra que a sala recebeu ajustes para a abertura, porém não consegue ordenar cada um deles. Essa incerteza não enfraquece o relato. Ao contrário, ajuda a separar uma lembrança honesta de uma certeza construída depois do susto.",
-      "imagem": {
-        "recurso": "cena_chegada",
-        "descricaoAcessivel": "Vista ampla da sala registra vitrine, cadeiras, iluminação e materiais de limpeza antes de qualquer mudança."
-      },
-      "revelacoes": {
-        "pistas": [
-          "vitrine-intacta"
-        ],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": [
-          "vidro-sem-forca"
-        ]
-      },
-      "escolhas": [
-        {
-          "id": "s1-inventario-inicial-a",
-          "texto": "Seguir as marcas do piso",
-          "proximaCena": "s1-marcas"
-        },
-        {
-          "id": "s1-inventario-inicial-b",
-          "texto": "Consultar a planta da sala",
-          "proximaCena": "s1-planta"
-        },
-        {
-          "id": "s1-inventario-inicial-c",
-          "texto": "Medir as distâncias",
-          "proximaCena": "s1-distancias"
+          "proximaCena": "s1-planta",
+          "dica": "Paredes e móveis mudam de posição, mas alguém costuma desenhar a mudança antes."
         }
       ]
     },
@@ -718,17 +671,14 @@
         {
           "id": "s1-marcas-a",
           "texto": "Observar o vidro contra a luz",
-          "proximaCena": "s1-vidro-luz"
+          "proximaCena": "s1-vidro-luz",
+          "dica": "Certas marcas só confessam quando a iluminação deixa de vir pela frente."
         },
         {
           "id": "s1-marcas-b",
           "texto": "Reconstruir a memória da montagem",
-          "proximaCena": "s1-memoria-montagem"
-        },
-        {
-          "id": "s1-marcas-c",
-          "texto": "Procurar o teste de circulação",
-          "proximaCena": "s1-cadeira-teste"
+          "proximaCena": "s1-memoria-montagem",
+          "dica": "Lembranças ficam mais honestas quando remontadas na ordem dos móveis, não na ordem do susto."
         }
       ]
     },
@@ -752,53 +702,14 @@
         {
           "id": "s1-planta-a",
           "texto": "Observar o vidro contra a luz",
-          "proximaCena": "s1-vidro-luz"
+          "proximaCena": "s1-vidro-luz",
+          "dica": "Certas marcas só confessam quando a iluminação deixa de vir pela frente."
         },
         {
           "id": "s1-planta-b",
           "texto": "Reconstruir a memória da montagem",
-          "proximaCena": "s1-memoria-montagem"
-        },
-        {
-          "id": "s1-planta-c",
-          "texto": "Procurar o teste de circulação",
-          "proximaCena": "s1-cadeira-teste"
-        }
-      ]
-    },
-    {
-      "id": "s1-distancias",
-      "etapaId": "sala-vazia",
-      "objetivoId": "examinar-sala",
-      "texto": "As distâncias entre vitrine, pedestal e parede formam um desenho coerente com circulação, não com uma retirada escondida. O espaço mais largo está do lado oposto ao fecho.\n\nUma fita de papel delimita a posição atual do pedestal para que ninguém altere as marcas durante a análise. Visto de cima, o deslocamento é pequeno demais para criar uma saída confortável junto à vitrine, mas suficiente para ampliar o corredor do outro lado. A curadora procura a versão impressa da montagem e encontra duas medidas corrigidas a lápis. A caligrafia é do montador, e a data pertence à véspera. Você anota uma hipótese provisória: o móvel mudou por causa da circulação. Ela só poderá ser aceita se poeira, medida e memória apontarem para a mesma sequência, sem obrigar nenhum sinal a dizer mais do que realmente diz.",
-      "imagem": {
-        "recurso": "cena_comparar",
-        "descricaoAcessivel": "Fita métrica liga pedestal, vitrine e parede numa sala ainda preservada."
-      },
-      "revelacoes": {
-        "pistas": [
-          "marcas-antigas-piso"
-        ],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s1-distancias-a",
-          "texto": "Observar o vidro contra a luz",
-          "proximaCena": "s1-vidro-luz"
-        },
-        {
-          "id": "s1-distancias-b",
-          "texto": "Reconstruir a memória da montagem",
-          "proximaCena": "s1-memoria-montagem"
-        },
-        {
-          "id": "s1-distancias-c",
-          "texto": "Procurar o teste de circulação",
-          "proximaCena": "s1-cadeira-teste"
+          "proximaCena": "s1-memoria-montagem",
+          "dica": "Lembranças ficam mais honestas quando remontadas na ordem dos móveis, não na ordem do susto."
         }
       ]
     },
@@ -822,17 +733,14 @@
         {
           "id": "s1-vidro-luz-a",
           "texto": "Comparar as camadas de poeira",
-          "proximaCena": "s1-poeira-tempo"
+          "proximaCena": "s1-poeira-tempo",
+          "dica": "A poeira é um calendário paciente. As partes mais claras talvez saibam a data da mudança."
         },
         {
           "id": "s1-vidro-luz-b",
           "texto": "Conferir as medidas da passagem",
-          "proximaCena": "s1-medidas-passagem"
-        },
-        {
-          "id": "s1-vidro-luz-c",
-          "texto": "Examinar a camada de cera",
-          "proximaCena": "s1-camada-cera"
+          "proximaCena": "s1-medidas-passagem",
+          "dica": "Corredores não opinam, mas sua largura decide por onde certas coisas conseguem passar."
         }
       ]
     },
@@ -860,55 +768,14 @@
         {
           "id": "s1-memoria-montagem-a",
           "texto": "Comparar as camadas de poeira",
-          "proximaCena": "s1-poeira-tempo"
+          "proximaCena": "s1-poeira-tempo",
+          "dica": "A poeira é um calendário paciente. As partes mais claras talvez saibam a data da mudança."
         },
         {
           "id": "s1-memoria-montagem-b",
           "texto": "Conferir as medidas da passagem",
-          "proximaCena": "s1-medidas-passagem"
-        },
-        {
-          "id": "s1-memoria-montagem-c",
-          "texto": "Examinar a camada de cera",
-          "proximaCena": "s1-camada-cera"
-        }
-      ]
-    },
-    {
-      "id": "s1-cadeira-teste",
-      "etapaId": "sala-vazia",
-      "objetivoId": "separar-momentos",
-      "texto": "Na montagem, a cadeira de teste conserva uma etiqueta da véspera. Sua largura e seu raio de giro correspondem às correções anotadas na planta da exposição.\n\nA curadora apaga uma das luminárias e usa a lanterna do posto técnico de lado, quase paralela ao vidro. Impressões antigas aparecem nas bordas, todas cobertas por uma película uniforme de produto de limpeza. Nenhuma termina perto do fecho. Enquanto vocês mudam o ângulo, ela recupera uma cena da tarde anterior: duas pessoas segurando o pedestal, uma terceira conferindo a passagem com uma cadeira de rodas de teste e todos recuando alguns centímetros até a curva ficar livre. A lembrança traz um detalhe verificável, não apenas uma impressão. A cadeira de teste ainda está na sala de montagem, e a largura anotada na planta corresponde ao espaço necessário para girá-la.",
-      "imagem": {
-        "recurso": "cena_forro",
-        "descricaoAcessivel": "Cadeira de rodas de teste ao lado de uma planta com medidas corrigidas."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [
-          "curadora-circulacao"
-        ],
-        "anotacoesLocais": [],
-        "conversas": [
-          "curadora-circulacao"
-        ],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s1-cadeira-teste-a",
-          "texto": "Comparar as camadas de poeira",
-          "proximaCena": "s1-poeira-tempo"
-        },
-        {
-          "id": "s1-cadeira-teste-b",
-          "texto": "Conferir as medidas da passagem",
-          "proximaCena": "s1-medidas-passagem"
-        },
-        {
-          "id": "s1-cadeira-teste-c",
-          "texto": "Examinar a camada de cera",
-          "proximaCena": "s1-camada-cera"
+          "proximaCena": "s1-medidas-passagem",
+          "dica": "Corredores não opinam, mas sua largura decide por onde certas coisas conseguem passar."
         }
       ]
     },
@@ -932,17 +799,14 @@
         {
           "id": "s1-poeira-tempo-a",
           "texto": "Reunir os sinais da sala",
-          "proximaCena": "s1-comparar-sinais"
+          "proximaCena": "s1-comparar-sinais",
+          "dica": "Poeira, vidro e distância parecem assuntos separados até serem colocados sobre a mesma mesa."
         },
         {
           "id": "s1-poeira-tempo-b",
           "texto": "Investigar os acessos normais",
-          "proximaCena": "s1-pergunta-acessos"
-        },
-        {
-          "id": "s1-poeira-tempo-c",
-          "texto": "Conferir a agenda da manhã",
-          "proximaCena": "s1-agenda-matinal"
+          "proximaCena": "s1-pergunta-acessos",
+          "dica": "Antes de procurar uma entrada secreta, eu contaria as chaves usadas à luz do dia."
         }
       ]
     },
@@ -966,51 +830,14 @@
         {
           "id": "s1-medidas-passagem-a",
           "texto": "Reunir os sinais da sala",
-          "proximaCena": "s1-comparar-sinais"
+          "proximaCena": "s1-comparar-sinais",
+          "dica": "Poeira, vidro e distância parecem assuntos separados até serem colocados sobre a mesma mesa."
         },
         {
           "id": "s1-medidas-passagem-b",
           "texto": "Investigar os acessos normais",
-          "proximaCena": "s1-pergunta-acessos"
-        },
-        {
-          "id": "s1-medidas-passagem-c",
-          "texto": "Conferir a agenda da manhã",
-          "proximaCena": "s1-agenda-matinal"
-        }
-      ]
-    },
-    {
-      "id": "s1-camada-cera",
-      "etapaId": "sala-vazia",
-      "objetivoId": "separar-momentos",
-      "texto": "Uma faixa de cera com brilho uniforme atravessa a marca antiga do pedestal. O acabamento foi aplicado depois do deslocamento e antes de a poeira fina voltar a assentar.\n\nPara testar a ordem dos acontecimentos, você passa uma folha transparente sobre a marca sem tocar no piso e desenha seus limites. A faixa protegida pelo pedestal antigo tem brilho diferente; a área que ficou exposta depois do deslocamento já recebeu uma camada fina e contínua de poeira. Isso exige algum tempo, embora não permita calcular horas exatas. Na passagem ampliada, a fita métrica confirma o valor escrito a lápis. As duas leituras são independentes e chegam à mesma conclusão. O pedestal chama atenção porque mudou de lugar, mas essa mudança ocorreu antes do fechamento e cumpriu uma finalidade conhecida. O desaparecimento precisa de outro relógio e de outro conjunto de sinais.",
-      "imagem": {
-        "recurso": "cena_livro",
-        "descricaoAcessivel": "Luz baixa destaca cera e poeira em camadas ao redor da marca do pedestal."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s1-camada-cera-a",
-          "texto": "Reunir os sinais da sala",
-          "proximaCena": "s1-comparar-sinais"
-        },
-        {
-          "id": "s1-camada-cera-b",
-          "texto": "Investigar os acessos normais",
-          "proximaCena": "s1-pergunta-acessos"
-        },
-        {
-          "id": "s1-camada-cera-c",
-          "texto": "Conferir a agenda da manhã",
-          "proximaCena": "s1-agenda-matinal"
+          "proximaCena": "s1-pergunta-acessos",
+          "dica": "Antes de procurar uma entrada secreta, eu contaria as chaves usadas à luz do dia."
         }
       ]
     },
@@ -1036,17 +863,14 @@
         {
           "id": "s1-comparar-sinais-a",
           "texto": "Registrar a primeira conclusão",
-          "proximaCena": "s1-pausa-a"
+          "proximaCena": "s1-pausa-a",
+          "dica": "Há momentos em que escrever o que já se sabe impede que a próxima suspeita apague as evidências."
         },
         {
           "id": "s1-comparar-sinais-b",
           "texto": "Formular a próxima pergunta",
-          "proximaCena": "s1-pausa-b"
-        },
-        {
-          "id": "s1-comparar-sinais-c",
-          "texto": "Organizar um registro neutro",
-          "proximaCena": "s1-registro-neutro"
+          "proximaCena": "s1-pausa-b",
+          "dica": "Uma boa pergunta abre mais portas do que uma conclusão apressada. Eu escolheria a menor dúvida ainda sem resposta."
         }
       ]
     },
@@ -1072,53 +896,14 @@
         {
           "id": "s1-pergunta-acessos-a",
           "texto": "Registrar a primeira conclusão",
-          "proximaCena": "s1-pausa-a"
+          "proximaCena": "s1-pausa-a",
+          "dica": "Há momentos em que escrever o que já se sabe impede que a próxima suspeita apague as evidências."
         },
         {
           "id": "s1-pergunta-acessos-b",
           "texto": "Formular a próxima pergunta",
-          "proximaCena": "s1-pausa-b"
-        },
-        {
-          "id": "s1-pergunta-acessos-c",
-          "texto": "Organizar um registro neutro",
-          "proximaCena": "s1-registro-neutro"
-        }
-      ]
-    },
-    {
-      "id": "s1-agenda-matinal",
-      "etapaId": "sala-vazia",
-      "objetivoId": "separar-momentos",
-      "texto": "A agenda da equipe reúne entrega de turno, inspeção técnica e preparação da atividade. São acessos previstos, com responsáveis e horários que podem ser conferidos sem partir de suspeitas.\n\nNo Caderno, você desenha duas colunas. Na primeira ficam planta corrigida, poeira assentada e lembrança da passagem; na segunda, vitrine vazia, fecho íntegro e horário ainda desconhecido. A curadora percebe por que misturar as colunas produziria uma história convincente e errada: o objeto mais visível da sala acabaria tratado como causa apenas por estar perto do vazio. Ela consulta a agenda do espaço e encontra três rotinas da manhã, todas normais: entrega de turno, inspeção técnica e preparação de uma atividade. Nenhuma prova onde está a taça, mas todas oferecem intervalos concretos para investigar. O mistério deixa de ser uma imagem parada e passa a ter uma linha do tempo possível.",
-      "imagem": {
-        "recurso": "cena_restauro",
-        "descricaoAcessivel": "Agenda da manhã aberta ao lado do quadro de chaves e dos horários da equipe."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": [
-          "pedestal-foi-movido-antes"
-        ]
-      },
-      "escolhas": [
-        {
-          "id": "s1-agenda-matinal-a",
-          "texto": "Registrar a primeira conclusão",
-          "proximaCena": "s1-pausa-a"
-        },
-        {
-          "id": "s1-agenda-matinal-b",
-          "texto": "Formular a próxima pergunta",
-          "proximaCena": "s1-pausa-b"
-        },
-        {
-          "id": "s1-agenda-matinal-c",
-          "texto": "Organizar um registro neutro",
-          "proximaCena": "s1-registro-neutro"
+          "proximaCena": "s1-pausa-b",
+          "dica": "Uma boa pergunta abre mais portas do que uma conclusão apressada. Eu escolheria a menor dúvida ainda sem resposta."
         }
       ]
     },
@@ -1143,17 +928,14 @@
         {
           "id": "s1-pausa-a-a",
           "texto": "Começar pelo livro da portaria",
-          "proximaCena": "s2-portaria"
+          "proximaCena": "s2-portaria",
+          "dica": "Antes de interrogar portas, eu perguntaria ao papel quem passou por elas."
         },
         {
           "id": "s1-pausa-a-b",
           "texto": "Inspecionar a mancha no forro",
-          "proximaCena": "s2-forro"
-        },
-        {
-          "id": "s1-pausa-a-c",
-          "texto": "Acompanhar a troca de turno",
-          "proximaCena": "s2-troca-turno"
+          "proximaCena": "s2-forro",
+          "dica": "O teto talvez não tenha pés, mas uma marca úmida pode ter posto toda a sala em movimento."
         }
       ]
     },
@@ -1178,52 +960,14 @@
         {
           "id": "s1-pausa-b-a",
           "texto": "Começar pelo livro da portaria",
-          "proximaCena": "s2-portaria"
+          "proximaCena": "s2-portaria",
+          "dica": "Antes de interrogar portas, eu perguntaria ao papel quem passou por elas."
         },
         {
           "id": "s1-pausa-b-b",
           "texto": "Inspecionar a mancha no forro",
-          "proximaCena": "s2-forro"
-        },
-        {
-          "id": "s1-pausa-b-c",
-          "texto": "Acompanhar a troca de turno",
-          "proximaCena": "s2-troca-turno"
-        }
-      ]
-    },
-    {
-      "id": "s1-registro-neutro",
-      "etapaId": "sala-vazia",
-      "objetivoId": "separar-momentos",
-      "pontoDePausa": true,
-      "texto": "Seu primeiro registro evita a palavra desaparecimento como explicação. Ele separa fatos, horários desconhecidos e hipóteses, deixando espaço para que a portaria forneça o próximo recorte.\n\nAntes de sair, vocês fotografam a posição dos móveis, guardam a planta numa capa e prendem um aviso para que a vitrine permaneça fechada. A curadora resume em voz alta o que pode afirmar à equipe: a sala foi adaptada na véspera; não há sinal de abertura forçada; ainda não se sabe quando a peça foi retirada. A formulação reduz a ansiedade sem prometer uma solução precoce. Pela porta, é possível ver o balcão da portaria e o quadro de chaves atrás dele. Esse será o próximo recorte da manhã. O Caderno conserva a pergunta que importa: depois que o porteiro encerrou a última ronda, quem assumiu o acesso normal à exposição?",
-      "imagem": {
-        "recurso": "cena_vitrine",
-        "descricaoAcessivel": "Caderno dividido entre fatos confirmados, horários abertos e hipóteses provisórias."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s1-registro-neutro-a",
-          "texto": "Começar pelo livro da portaria",
-          "proximaCena": "s2-portaria"
-        },
-        {
-          "id": "s1-registro-neutro-b",
-          "texto": "Inspecionar a mancha no forro",
-          "proximaCena": "s2-forro"
-        },
-        {
-          "id": "s1-registro-neutro-c",
-          "texto": "Acompanhar a troca de turno",
-          "proximaCena": "s2-troca-turno"
+          "proximaCena": "s2-forro",
+          "dica": "O teto talvez não tenha pés, mas uma marca úmida pode ter posto toda a sala em movimento."
         }
       ]
     },
@@ -1257,17 +1001,14 @@
         {
           "id": "s2-portaria-a",
           "texto": "Ler os horários registrados",
-          "proximaCena": "s2-livro"
+          "proximaCena": "s2-livro",
+          "dica": "Relógios não dão depoimentos, mas margens preenchidas colocam cada gesto em seu minuto."
         },
         {
           "id": "s2-portaria-b",
           "texto": "Conferir o quadro de chaves",
-          "proximaCena": "s2-chave"
-        },
-        {
-          "id": "s2-portaria-c",
-          "texto": "Cruzar livro e ficha da chave",
-          "proximaCena": "s2-ficha-chave"
+          "proximaCena": "s2-chave",
+          "dica": "Toda porta tem uma cúmplice de metal. Eu descobriria quem a tirou do gancho."
         }
       ]
     },
@@ -1293,62 +1034,14 @@
         {
           "id": "s2-forro-a",
           "texto": "Ler os horários registrados",
-          "proximaCena": "s2-livro"
+          "proximaCena": "s2-livro",
+          "dica": "Relógios não dão depoimentos, mas margens preenchidas colocam cada gesto em seu minuto."
         },
         {
           "id": "s2-forro-b",
           "texto": "Conferir o quadro de chaves",
-          "proximaCena": "s2-chave"
-        },
-        {
-          "id": "s2-forro-c",
-          "texto": "Cruzar livro e ficha da chave",
-          "proximaCena": "s2-ficha-chave"
-        }
-      ]
-    },
-    {
-      "id": "s2-troca-turno",
-      "etapaId": "depois-das-seis",
-      "objetivoId": "reconstruir-horarios",
-      "texto": "A folha de entrega mostra quem recebeu rádio e chaves às seis. A mudança de responsabilidade cria uma fronteira objetiva entre a última ronda e as ações da manhã.\n\nO porteiro oferece café, fecha o rádio para evitar interrupções e coloca o livro sobre uma superfície limpa. Em vez de pedir que ele repita a manhã inteira, você marca o limite que precisa compreender: da última ronda até o momento em que a curadora viu a vitrine. Ele aponta os horários com a unha, cuidadoso para não cobrir as assinaturas. Do corredor chega o som regular de uma gota caindo num recipiente provisório. O ruído cria uma segunda linha de investigação, material e urgente, que não depende da memória de ninguém. Você mantém as duas abertas. Um registro pode revelar quem entrou; a infiltração pode explicar por que uma entrada autorizada se tornou necessária.",
-      "imagem": {
-        "recurso": "cena_chaves",
-        "descricaoAcessivel": "Folha de troca de turno com rádio, chaves e assinaturas registradas às seis."
-      },
-      "revelacoes": {
-        "pistas": [
-          "turno-terminou-seis",
-          "mancha-umidade"
-        ],
-        "anotacoesPessoas": [
-          "porteiro-turno"
-        ],
-        "anotacoesLocais": [
-          "portaria-turnos"
-        ],
-        "conversas": [
-          "porteiro-limite-turno"
-        ],
-        "lembrancas": [
-          "seis-e-dez-foi-depois"
-        ]
-      },
-      "escolhas": [
-        {
-          "id": "s2-troca-turno-a",
-          "texto": "Ler os horários registrados",
-          "proximaCena": "s2-livro"
-        },
-        {
-          "id": "s2-troca-turno-b",
-          "texto": "Conferir o quadro de chaves",
-          "proximaCena": "s2-chave"
-        },
-        {
-          "id": "s2-troca-turno-c",
-          "texto": "Cruzar livro e ficha da chave",
-          "proximaCena": "s2-ficha-chave"
+          "proximaCena": "s2-chave",
+          "dica": "Toda porta tem uma cúmplice de metal. Eu descobriria quem a tirou do gancho."
         }
       ]
     },
@@ -1378,17 +1071,14 @@
         {
           "id": "s2-livro-a",
           "texto": "Delimitar o fim do turno",
-          "proximaCena": "s2-turno"
+          "proximaCena": "s2-turno",
+          "dica": "Eu colocaria uma moldura em torno dos últimos minutos antes da troca de mãos."
         },
         {
           "id": "s2-livro-b",
           "texto": "Relacionar a umidade ao protocolo",
-          "proximaCena": "s2-umidade"
-        },
-        {
-          "id": "s2-livro-c",
-          "texto": "Consultar a foto da limpeza",
-          "proximaCena": "s2-foto-limpeza"
+          "proximaCena": "s2-umidade",
+          "dica": "Uma gota no lugar errado pode mover mais objetos do que uma pessoa apressada."
         }
       ]
     },
@@ -1412,57 +1102,14 @@
         {
           "id": "s2-chave-a",
           "texto": "Delimitar o fim do turno",
-          "proximaCena": "s2-turno"
+          "proximaCena": "s2-turno",
+          "dica": "Eu colocaria uma moldura em torno dos últimos minutos antes da troca de mãos."
         },
         {
           "id": "s2-chave-b",
           "texto": "Relacionar a umidade ao protocolo",
-          "proximaCena": "s2-umidade"
-        },
-        {
-          "id": "s2-chave-c",
-          "texto": "Consultar a foto da limpeza",
-          "proximaCena": "s2-foto-limpeza"
-        }
-      ]
-    },
-    {
-      "id": "s2-ficha-chave",
-      "etapaId": "depois-das-seis",
-      "objetivoId": "reconstruir-horarios",
-      "texto": "Livro e ficha da chave foram preenchidos por pessoas diferentes no mesmo minuto. A coincidência aproxima os registros sem transformar uma caligrafia isolada em certeza.\n\nAs páginas anteriores mostram o padrão do posto: horário na margem, ação no centro e rubrica no fim. A linha das 6h10 respeita os dois primeiros campos, mas para antes da rubrica. No quadro, a ficha presa ao gancho da chave técnica também registra 6h10 e traz as iniciais da conservação. O porteiro explica que confere o conjunto ao entregar o turno, por isso sabe que a chave ainda estava no lugar às seis. Você aproxima as duas informações sem fundi-las: a escrita identifica uma ação interrompida; o quadro identifica uma retirada regular de chave. Juntas, elas reduzem o intervalo, mas ainda não dizem o que foi levado nem para onde.",
-      "imagem": {
-        "recurso": "cena_chegada",
-        "descricaoAcessivel": "Livro da portaria e ficha da chave técnica aparecem lado a lado com o horário de 6h10."
-      },
-      "revelacoes": {
-        "pistas": [
-          "registro-0610"
-        ],
-        "anotacoesPessoas": [
-          "porteiro-registro"
-        ],
-        "anotacoesLocais": [],
-        "conversas": [
-          "porteiro-livro"
-        ],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s2-ficha-chave-a",
-          "texto": "Delimitar o fim do turno",
-          "proximaCena": "s2-turno"
-        },
-        {
-          "id": "s2-ficha-chave-b",
-          "texto": "Relacionar a umidade ao protocolo",
-          "proximaCena": "s2-umidade"
-        },
-        {
-          "id": "s2-ficha-chave-c",
-          "texto": "Consultar a foto da limpeza",
-          "proximaCena": "s2-foto-limpeza"
+          "proximaCena": "s2-umidade",
+          "dica": "Uma gota no lugar errado pode mover mais objetos do que uma pessoa apressada."
         }
       ]
     },
@@ -1486,17 +1133,14 @@
         {
           "id": "s2-turno-a",
           "texto": "Comparar a linha das 6h10",
-          "proximaCena": "s2-registro"
+          "proximaCena": "s2-registro",
+          "dica": "Há um minuto específico nesta história que parece ter ficado sem ponto-final."
         },
         {
           "id": "s2-turno-b",
           "texto": "Procurar o aviso deixado na sala",
-          "proximaCena": "s2-bilhete"
-        },
-        {
-          "id": "s2-turno-c",
-          "texto": "Examinar a fita do aviso",
-          "proximaCena": "s2-fita-aviso"
+          "proximaCena": "s2-bilhete",
+          "dica": "Recados pequenos costumam ficar onde a urgência começou, não onde a história terminou."
         }
       ]
     },
@@ -1522,53 +1166,14 @@
         {
           "id": "s2-umidade-a",
           "texto": "Comparar a linha das 6h10",
-          "proximaCena": "s2-registro"
+          "proximaCena": "s2-registro",
+          "dica": "Há um minuto específico nesta história que parece ter ficado sem ponto-final."
         },
         {
           "id": "s2-umidade-b",
           "texto": "Procurar o aviso deixado na sala",
-          "proximaCena": "s2-bilhete"
-        },
-        {
-          "id": "s2-umidade-c",
-          "texto": "Examinar a fita do aviso",
-          "proximaCena": "s2-fita-aviso"
-        }
-      ]
-    },
-    {
-      "id": "s2-foto-limpeza",
-      "etapaId": "depois-das-seis",
-      "objetivoId": "reconstruir-horarios",
-      "texto": "Uma fotografia feita pela limpeza às 6h05 preserva a mancha ainda pequena e a vitrine ocupada. Em cinco minutos, a umidade ganhou urgência e motivou uma ação técnica.\n\nA palavra “madrugada” quase havia transformado dez minutos numa contradição. O porteiro mostra a folha de escala: para a equipe, o termo acompanha o turno, não a claridade do lado de fora. Às seis, ele entrega chaves e rádio; depois disso, quem chega pertence à rotina da manhã. No corredor técnico, o protocolo de infiltração usa verbos diretos: isolar, proteger, registrar e comunicar. Uma fotografia feita pela equipe de limpeza às 6h05 mostra a primeira mancha no teto, ainda pequena. A sequência agora possui causa e janela compatíveis. Falta descobrir se a pessoa das iniciais seguiu o procedimento e em que ponto a comunicação foi interrompida.",
-      "imagem": {
-        "recurso": "cena_final_bilhete",
-        "descricaoAcessivel": "Fotografia marcada às 6h05 mostra a taça na vitrine sob uma pequena mancha de umidade."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": [
-          "umidade-explica-retirada"
-        ]
-      },
-      "escolhas": [
-        {
-          "id": "s2-foto-limpeza-a",
-          "texto": "Comparar a linha das 6h10",
-          "proximaCena": "s2-registro"
-        },
-        {
-          "id": "s2-foto-limpeza-b",
-          "texto": "Procurar o aviso deixado na sala",
-          "proximaCena": "s2-bilhete"
-        },
-        {
-          "id": "s2-foto-limpeza-c",
-          "texto": "Examinar a fita do aviso",
-          "proximaCena": "s2-fita-aviso"
+          "proximaCena": "s2-bilhete",
+          "dica": "Recados pequenos costumam ficar onde a urgência começou, não onde a história terminou."
         }
       ]
     },
@@ -1592,17 +1197,14 @@
         {
           "id": "s2-registro-a",
           "texto": "Ouvir a conservadora",
-          "proximaCena": "s2-conservadora"
+          "proximaCena": "s2-conservadora",
+          "dica": "Quem separa madeira de metal por profissão sabe distinguir cuidado de desaparecimento."
         },
         {
           "id": "s2-registro-b",
           "texto": "Revisar o procedimento técnico",
-          "proximaCena": "s2-protocolo"
-        },
-        {
-          "id": "s2-registro-c",
-          "texto": "Conferir os materiais usados",
-          "proximaCena": "s2-materiais-usados"
+          "proximaCena": "s2-protocolo",
+          "dica": "Quando o gesto parece estranho, vale descobrir se ele estava escrito nas regras antes do ocorrido."
         }
       ]
     },
@@ -1628,53 +1230,14 @@
         {
           "id": "s2-bilhete-a",
           "texto": "Ouvir a conservadora",
-          "proximaCena": "s2-conservadora"
+          "proximaCena": "s2-conservadora",
+          "dica": "Quem separa madeira de metal por profissão sabe distinguir cuidado de desaparecimento."
         },
         {
           "id": "s2-bilhete-b",
           "texto": "Revisar o procedimento técnico",
-          "proximaCena": "s2-protocolo"
-        },
-        {
-          "id": "s2-bilhete-c",
-          "texto": "Conferir os materiais usados",
-          "proximaCena": "s2-materiais-usados"
-        }
-      ]
-    },
-    {
-      "id": "s2-fita-aviso",
-      "etapaId": "depois-das-seis",
-      "objetivoId": "encontrar-primeiro-destino",
-      "texto": "A fita do aviso perdeu aderência apenas na ponta molhada. Papel, cola e dobra explicam a queda atrás do pedestal sem exigir que alguém tenha escondido a mensagem.\n\nVocê compara a linha incompleta com uma ficha de controle preenchida na semana anterior. O formato dos algarismos e o modo de cruzar a letra inicial são os mesmos, o bastante para orientar uma conversa, não para transformar caligrafia em prova absoluta. Atrás do pedestal, o papel dobrado traz uma marca arredondada de umidade numa ponta. A fita adesiva perdeu aderência justamente nessa região, explicando por que o aviso caiu. A frase foi escrita para ser vista da entrada e teria evitado o alarme se continuasse presa. Seu conteúdo confirma a retirada preventiva, mas o presente exige cautela: “está na conservação” descreve a intenção daquele minuto, não garante que a peça permaneceu lá.",
-      "imagem": {
-        "recurso": "cena_forro",
-        "descricaoAcessivel": "Aviso dobrado e fita úmida são examinados perto do pedestal."
-      },
-      "revelacoes": {
-        "pistas": [
-          "bilhete-caido"
-        ],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s2-fita-aviso-a",
-          "texto": "Ouvir a conservadora",
-          "proximaCena": "s2-conservadora"
-        },
-        {
-          "id": "s2-fita-aviso-b",
-          "texto": "Revisar o procedimento técnico",
-          "proximaCena": "s2-protocolo"
-        },
-        {
-          "id": "s2-fita-aviso-c",
-          "texto": "Conferir os materiais usados",
-          "proximaCena": "s2-materiais-usados"
+          "proximaCena": "s2-protocolo",
+          "dica": "Quando o gesto parece estranho, vale descobrir se ele estava escrito nas regras antes do ocorrido."
         }
       ]
     },
@@ -1702,17 +1265,14 @@
         {
           "id": "s2-conservadora-a",
           "texto": "Examinar a bancada",
-          "proximaCena": "s2-bancada"
+          "proximaCena": "s2-bancada",
+          "dica": "Superfícies de trabalho guardam ausências com o formato exato do que passou por elas."
         },
         {
           "id": "s2-conservadora-b",
           "texto": "Conferir a base da taça",
-          "proximaCena": "s2-base"
-        },
-        {
-          "id": "s2-conservadora-c",
-          "texto": "Mapear as áreas da bancada",
-          "proximaCena": "s2-areas-bancada"
+          "proximaCena": "s2-base",
+          "dica": "Quando uma peça some pela metade, a metade que ficou pode apresentar a ausente."
         }
       ]
     },
@@ -1736,55 +1296,14 @@
         {
           "id": "s2-protocolo-a",
           "texto": "Examinar a bancada",
-          "proximaCena": "s2-bancada"
+          "proximaCena": "s2-bancada",
+          "dica": "Superfícies de trabalho guardam ausências com o formato exato do que passou por elas."
         },
         {
           "id": "s2-protocolo-b",
           "texto": "Conferir a base da taça",
-          "proximaCena": "s2-base"
-        },
-        {
-          "id": "s2-protocolo-c",
-          "texto": "Mapear as áreas da bancada",
-          "proximaCena": "s2-areas-bancada"
-        }
-      ]
-    },
-    {
-      "id": "s2-materiais-usados",
-      "etapaId": "depois-das-seis",
-      "objetivoId": "encontrar-primeiro-destino",
-      "texto": "Luvas secando, bandeja acolchoada e pano guardado repetem os passos descritos pela conservadora. Os materiais funcionam como um registro paralelo do procedimento realizado.\n\nA conservadora não tenta completar de memória o registro que deixou em branco. Ela reconstrói gestos: abriu a vitrine com a chave técnica, verificou se havia água sobre a peça, separou a base de madeira da parte metálica e levou ambas numa bandeja acolchoada. O protocolo permite essa separação quando materiais diferentes precisam secar em condições próprias. Enquanto prendia o aviso, alguém a chamou porque a água avançava perto de um painel de papel. Ela mostra as luvas deixadas para secar e o pano usado na vitrine, ambos guardados conforme a rotina. Cada detalhe oferece uma verificação externa. A interrupção foi real, mas ocorreu depois que o primeiro deslocamento já estava protegido.",
-      "imagem": {
-        "recurso": "cena_po",
-        "descricaoAcessivel": "Luvas, bandeja e pano técnico estão organizados na área de conservação."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [
-          "conservadora-retirada"
-        ],
-        "anotacoesLocais": [],
-        "conversas": [
-          "conservadora-protocolo"
-        ],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s2-materiais-usados-a",
-          "texto": "Examinar a bancada",
-          "proximaCena": "s2-bancada"
-        },
-        {
-          "id": "s2-materiais-usados-b",
-          "texto": "Conferir a base da taça",
-          "proximaCena": "s2-base"
-        },
-        {
-          "id": "s2-materiais-usados-c",
-          "texto": "Mapear as áreas da bancada",
-          "proximaCena": "s2-areas-bancada"
+          "proximaCena": "s2-base",
+          "dica": "Quando uma peça some pela metade, a metade que ficou pode apresentar a ausente."
         }
       ]
     },
@@ -1814,17 +1333,14 @@
         {
           "id": "s2-bancada-a",
           "texto": "Registrar o primeiro destino",
-          "proximaCena": "s2-pausa-a"
+          "proximaCena": "s2-pausa-a",
+          "dica": "Antes de procurar o fim da viagem, eu fixaria com cuidado onde ela realmente começou."
         },
         {
           "id": "s2-bancada-b",
           "texto": "Rever o que o bilhete não explica",
-          "proximaCena": "s2-pausa-b"
-        },
-        {
-          "id": "s2-bancada-c",
-          "texto": "Registrar a segunda partida",
-          "proximaCena": "s2-segunda-partida"
+          "proximaCena": "s2-pausa-b",
+          "dica": "Um recado esclarece a urgência, mas o silêncio dele sobre o destino pode ser a parte mais útil."
         }
       ]
     },
@@ -1848,57 +1364,14 @@
         {
           "id": "s2-base-a",
           "texto": "Registrar o primeiro destino",
-          "proximaCena": "s2-pausa-a"
+          "proximaCena": "s2-pausa-a",
+          "dica": "Antes de procurar o fim da viagem, eu fixaria com cuidado onde ela realmente começou."
         },
         {
           "id": "s2-base-b",
           "texto": "Rever o que o bilhete não explica",
-          "proximaCena": "s2-pausa-b"
-        },
-        {
-          "id": "s2-base-c",
-          "texto": "Registrar a segunda partida",
-          "proximaCena": "s2-segunda-partida"
-        }
-      ]
-    },
-    {
-      "id": "s2-areas-bancada",
-      "etapaId": "depois-das-seis",
-      "objetivoId": "encontrar-primeiro-destino",
-      "texto": "As marcações da bancada separam madeira, metal e materiais úmidos. A base está na área correta; o espaço destinado ao metal aponta para uma proteção intermediária.\n\nA bancada tem áreas marcadas por função. A base ocupa o quadrado destinado a materiais de madeira, sobre papel absorvente, com número e horário visíveis. Ao lado existe um espaço limpo do tamanho aproximado da parte metálica, mas nenhuma marca indica que ela tenha ficado diretamente ali. A conservadora explica que metal trabalhado não deve roçar na superfície nem receber peso por cima. Na ficha, uma seta liga as duas partes e termina diante de um campo vazio. Você mede o apoio da base e registra os pontos de encaixe; esses dados poderão confirmar a identidade mais tarde. Por enquanto, a bancada prova chegada e separação. O recipiente seguinte ainda precisa ser encontrado.",
-      "imagem": {
-        "recurso": "cena_restauro",
-        "descricaoAcessivel": "Bancada dividida por áreas de material, com a base identificada sobre papel absorvente."
-      },
-      "revelacoes": {
-        "pistas": [
-          "base-na-bancada"
-        ],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [
-          "conservacao-bancada"
-        ],
-        "conversas": [],
-        "lembrancas": [
-          "base-ficou-na-conservacao"
-        ]
-      },
-      "escolhas": [
-        {
-          "id": "s2-areas-bancada-a",
-          "texto": "Registrar o primeiro destino",
-          "proximaCena": "s2-pausa-a"
-        },
-        {
-          "id": "s2-areas-bancada-b",
-          "texto": "Rever o que o bilhete não explica",
-          "proximaCena": "s2-pausa-b"
-        },
-        {
-          "id": "s2-areas-bancada-c",
-          "texto": "Registrar a segunda partida",
-          "proximaCena": "s2-segunda-partida"
+          "proximaCena": "s2-pausa-b",
+          "dica": "Um recado esclarece a urgência, mas o silêncio dele sobre o destino pode ser a parte mais útil."
         }
       ]
     },
@@ -1923,17 +1396,14 @@
         {
           "id": "s2-pausa-a-a",
           "texto": "Examinar os materiais",
-          "proximaCena": "s3-materiais"
+          "proximaCena": "s3-materiais",
+          "dica": "Tesoura, tecido e embalagem podem recontar uma preparação sem dizer uma palavra."
         },
         {
           "id": "s2-pausa-a-b",
           "texto": "Ouvir a continuação do relato",
-          "proximaCena": "s3-relato"
-        },
-        {
-          "id": "s2-pausa-a-c",
-          "texto": "Ler a ordem de manutenção",
-          "proximaCena": "s3-ordem-manutencao"
+          "proximaCena": "s3-relato",
+          "dica": "Uma história interrompida na parte prática costuma guardar o motivo no parágrafo seguinte."
         }
       ]
     },
@@ -1958,52 +1428,14 @@
         {
           "id": "s2-pausa-b-a",
           "texto": "Examinar os materiais",
-          "proximaCena": "s3-materiais"
+          "proximaCena": "s3-materiais",
+          "dica": "Tesoura, tecido e embalagem podem recontar uma preparação sem dizer uma palavra."
         },
         {
           "id": "s2-pausa-b-b",
           "texto": "Ouvir a continuação do relato",
-          "proximaCena": "s3-relato"
-        },
-        {
-          "id": "s2-pausa-b-c",
-          "texto": "Ler a ordem de manutenção",
-          "proximaCena": "s3-ordem-manutencao"
-        }
-      ]
-    },
-    {
-      "id": "s2-segunda-partida",
-      "etapaId": "depois-das-seis",
-      "objetivoId": "encontrar-primeiro-destino",
-      "pontoDePausa": true,
-      "texto": "A linha do tempo agora possui duas viagens distintas: a retirada autorizada da exposição e a saída ainda sem destino da parte metálica. Confundir as duas esconderia a pergunta útil.\n\nA equipe instala uma proteção temporária sob a infiltração e atualiza o aviso da exposição com informação confirmada, sem anunciar um destino que já pode ter mudado. Você ordena os horários no Caderno: foto da mancha às 6h05, chave retirada e livro iniciado às 6h10, base identificada poucos minutos depois. Não há salto oculto entre a sala e a conservação. O que existe é uma segunda partida, registrada apenas pela ausência da parte metálica na bancada. A conservadora abre o armário de materiais e aponta a caixa que deveria ter usado numa emergência. Seu fecho está desmontado. A próxima etapa começa nesse defeito pequeno e numa pergunta prática: qual alternativa segura estava ao alcance?",
-      "imagem": {
-        "recurso": "cena_bilhete",
-        "descricaoAcessivel": "Linha do tempo separa a chegada da base e a segunda partida da parte metálica."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s2-segunda-partida-a",
-          "texto": "Examinar os materiais",
-          "proximaCena": "s3-materiais"
-        },
-        {
-          "id": "s2-segunda-partida-b",
-          "texto": "Ouvir a continuação do relato",
-          "proximaCena": "s3-relato"
-        },
-        {
-          "id": "s2-segunda-partida-c",
-          "texto": "Ler a ordem de manutenção",
-          "proximaCena": "s3-ordem-manutencao"
+          "proximaCena": "s3-relato",
+          "dica": "Uma história interrompida na parte prática costuma guardar o motivo no parágrafo seguinte."
         }
       ]
     },
@@ -2031,17 +1463,14 @@
         {
           "id": "s3-materiais-a",
           "texto": "Comparar o feltro",
-          "proximaCena": "s3-feltro"
+          "proximaCena": "s3-feltro",
+          "dica": "O azul deixou uma ponta da conversa escapar. Eu procuraria de qual tecido veio o sotaque."
         },
         {
           "id": "s3-materiais-b",
           "texto": "Conferir o armário tátil",
-          "proximaCena": "s3-armario-tatil"
-        },
-        {
-          "id": "s3-materiais-c",
-          "texto": "Rastrear o rolo de feltro",
-          "proximaCena": "s3-rolo-numerado"
+          "proximaCena": "s3-armario-tatil",
+          "dica": "Uma prateleira vazia faz mais barulho quando sabemos o que costumava dormir nela."
         }
       ]
     },
@@ -2065,55 +1494,14 @@
         {
           "id": "s3-relato-a",
           "texto": "Comparar o feltro",
-          "proximaCena": "s3-feltro"
+          "proximaCena": "s3-feltro",
+          "dica": "O azul deixou uma ponta da conversa escapar. Eu procuraria de qual tecido veio o sotaque."
         },
         {
           "id": "s3-relato-b",
           "texto": "Conferir o armário tátil",
-          "proximaCena": "s3-armario-tatil"
-        },
-        {
-          "id": "s3-relato-c",
-          "texto": "Rastrear o rolo de feltro",
-          "proximaCena": "s3-rolo-numerado"
-        }
-      ]
-    },
-    {
-      "id": "s3-ordem-manutencao",
-      "etapaId": "caixa-sem-nome",
-      "objetivoId": "identificar-recipiente",
-      "texto": "A ordem de manutenção confirma que o fecho já estava desmontado havia dois dias. A caixa de emergência não falhou naquela manhã; ela era uma opção sabidamente indisponível.\n\nVocê pede que os materiais permaneçam onde foram encontrados. Parafusos, mola e fecho da caixa de emergência estão alinhados sobre um pano branco, acompanhados de uma ordem de manutenção aberta dois dias antes. Não se trata de uma avaria descoberta naquela manhã. A conservadora percorre mentalmente as opções que tinha: um estojo pequeno demais, uma caixa de madeira sem revestimento e, no armário vizinho, um recipiente cinza rígido usado pela mediação. O tempo importava porque a sala continuava úmida, mas rapidez não significava abandonar critérios. Ela verificou limpeza, estabilidade e folga antes de escolher. A decisão improvisou a função da caixa, não a proteção da peça.",
-      "imagem": {
-        "recurso": "cena_chaves",
-        "descricaoAcessivel": "Ordem de manutenção acompanha o fecho desmontado sobre um pano branco."
-      },
-      "revelacoes": {
-        "pistas": [
-          "fecho-em-reparo"
-        ],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": [
-          "caixa-emergencia-indisponivel"
-        ]
-      },
-      "escolhas": [
-        {
-          "id": "s3-ordem-manutencao-a",
-          "texto": "Comparar o feltro",
-          "proximaCena": "s3-feltro"
-        },
-        {
-          "id": "s3-ordem-manutencao-b",
-          "texto": "Conferir o armário tátil",
-          "proximaCena": "s3-armario-tatil"
-        },
-        {
-          "id": "s3-ordem-manutencao-c",
-          "texto": "Rastrear o rolo de feltro",
-          "proximaCena": "s3-rolo-numerado"
+          "proximaCena": "s3-armario-tatil",
+          "dica": "Uma prateleira vazia faz mais barulho quando sabemos o que costumava dormir nela."
         }
       ]
     },
@@ -2139,17 +1527,14 @@
         {
           "id": "s3-feltro-a",
           "texto": "Identificar a caixa cinza",
-          "proximaCena": "s3-caixa-cinza"
+          "proximaCena": "s3-caixa-cinza",
+          "dica": "Cinza é uma cor discreta demais para ser identidade. Procure o hábito que aquela embalagem carregava."
         },
         {
           "id": "s3-feltro-b",
           "texto": "Comparar as medidas",
-          "proximaCena": "s3-medidas"
-        },
-        {
-          "id": "s3-feltro-c",
-          "texto": "Simular o acondicionamento",
-          "proximaCena": "s3-simulacao-papel"
+          "proximaCena": "s3-medidas",
+          "dica": "Meus olhos já me enganaram. Uma régua, bem menos vaidosa, costuma ser mais sincera."
         }
       ]
     },
@@ -2175,54 +1560,14 @@
         {
           "id": "s3-armario-tatil-a",
           "texto": "Identificar a caixa cinza",
-          "proximaCena": "s3-caixa-cinza"
+          "proximaCena": "s3-caixa-cinza",
+          "dica": "Cinza é uma cor discreta demais para ser identidade. Procure o hábito que aquela embalagem carregava."
         },
         {
           "id": "s3-armario-tatil-b",
           "texto": "Comparar as medidas",
-          "proximaCena": "s3-medidas"
-        },
-        {
-          "id": "s3-armario-tatil-c",
-          "texto": "Simular o acondicionamento",
-          "proximaCena": "s3-simulacao-papel"
-        }
-      ]
-    },
-    {
-      "id": "s3-rolo-numerado",
-      "etapaId": "caixa-sem-nome",
-      "objetivoId": "identificar-recipiente",
-      "texto": "O número do rolo de feltro liga a sobra na bancada à ficha de materiais. A largura cortada corresponde à volta necessária para proteger a parte metálica.\n\nO feltro azul vem de um rolo numerado e possui ficha de uso. Um trecho recém-cortado corresponde à largura necessária para envolver a parte metálica sem dobrar suas bordas. Sob luz branca, uma sequência de fibras curtas permanece na mesa, indicando que o corte foi feito ali. No armário de mediação, o contorno claro da poeira desenha o lugar normalmente ocupado pela caixa cinza. A reprodução tátil não aparece no compartimento, mas a ausência dela ainda admite duas explicações: poderia estar dentro da caixa deslocada ou já ter sido retirada antes. Você registra ambas, evitando escolher a mais conveniente. Saber qual recipiente sumiu é diferente de saber o que ele continha.",
-      "imagem": {
-        "recurso": "cena_ercilia",
-        "descricaoAcessivel": "Rolo numerado e retalho azul são comparados com a ficha de uso."
-      },
-      "revelacoes": {
-        "pistas": [
-          "feltro-azul",
-          "espaco-caixa-tatil"
-        ],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s3-rolo-numerado-a",
-          "texto": "Identificar a caixa cinza",
-          "proximaCena": "s3-caixa-cinza"
-        },
-        {
-          "id": "s3-rolo-numerado-b",
-          "texto": "Comparar as medidas",
-          "proximaCena": "s3-medidas"
-        },
-        {
-          "id": "s3-rolo-numerado-c",
-          "texto": "Simular o acondicionamento",
-          "proximaCena": "s3-simulacao-papel"
+          "proximaCena": "s3-medidas",
+          "dica": "Meus olhos já me enganaram. Uma régua, bem menos vaidosa, costuma ser mais sincera."
         }
       ]
     },
@@ -2252,17 +1597,14 @@
         {
           "id": "s3-caixa-cinza-a",
           "texto": "Ler a etiqueta provisória",
-          "proximaCena": "s3-etiqueta"
+          "proximaCena": "s3-etiqueta",
+          "dica": "Um pedaço de papel separado de sua caixa ainda pode revelar o papel que ela representava."
         },
         {
           "id": "s3-caixa-cinza-b",
           "texto": "Ver o painel protegido",
-          "proximaCena": "s3-painel"
-        },
-        {
-          "id": "s3-caixa-cinza-c",
-          "texto": "Conferir o chamado no rádio",
-          "proximaCena": "s3-radio-chamado"
+          "proximaCena": "s3-painel",
+          "dica": "Uma superfície coberta com o mesmo zelo da caixa pode revelar para que aqueles materiais foram preparados."
         }
       ]
     },
@@ -2286,57 +1628,14 @@
         {
           "id": "s3-medidas-a",
           "texto": "Ler a etiqueta provisória",
-          "proximaCena": "s3-etiqueta"
+          "proximaCena": "s3-etiqueta",
+          "dica": "Um pedaço de papel separado de sua caixa ainda pode revelar o papel que ela representava."
         },
         {
           "id": "s3-medidas-b",
           "texto": "Ver o painel protegido",
-          "proximaCena": "s3-painel"
-        },
-        {
-          "id": "s3-medidas-c",
-          "texto": "Conferir o chamado no rádio",
-          "proximaCena": "s3-radio-chamado"
-        }
-      ]
-    },
-    {
-      "id": "s3-simulacao-papel",
-      "etapaId": "caixa-sem-nome",
-      "objetivoId": "identificar-recipiente",
-      "texto": "Uma silhueta de papel reproduz as medidas do inventário e cabe na caixa com folga regular. O teste confirma a escolha técnica sem precisar manipular a peça procurada.\n\nA conservadora reproduz a preparação usando uma folha de papel com as mesmas dimensões da peça, sem tocar no original ausente. Deixa folga nas laterais, simula a dobra do feltro e mostra onde colocou dois pequenos apoios para impedir movimento. A caixa cinza atende às exigências do protocolo, embora sua cor e seu lugar habitual comuniquem outra função. Você compara as medidas anotadas no inventário, o retalho cortado e o espaço vazio no armário. Nada depende apenas do relato. Surge, porém, um risco de contexto: uma pessoa que visse o volume fechado não teria como adivinhar a mudança de uso. Somente uma etiqueta firme poderia transportar essa informação junto com a caixa.",
-      "imagem": {
-        "recurso": "cena_final_bilhete",
-        "descricaoAcessivel": "Silhueta de papel e pequenos apoios simulam a acomodação dentro da caixa cinza."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [
-          "conservadora-caixa"
-        ],
-        "anotacoesLocais": [],
-        "conversas": [
-          "conservadora-caixa-cinza"
-        ],
-        "lembrancas": [
-          "cinza-nao-era-conteudo"
-        ]
-      },
-      "escolhas": [
-        {
-          "id": "s3-simulacao-papel-a",
-          "texto": "Ler a etiqueta provisória",
-          "proximaCena": "s3-etiqueta"
-        },
-        {
-          "id": "s3-simulacao-papel-b",
-          "texto": "Ver o painel protegido",
-          "proximaCena": "s3-painel"
-        },
-        {
-          "id": "s3-simulacao-papel-c",
-          "texto": "Conferir o chamado no rádio",
-          "proximaCena": "s3-radio-chamado"
+          "proximaCena": "s3-painel",
+          "dica": "Uma superfície coberta com o mesmo zelo da caixa pode revelar para que aqueles materiais foram preparados."
         }
       ]
     },
@@ -2362,17 +1661,14 @@
         {
           "id": "s3-etiqueta-a",
           "texto": "Seguir o carrinho",
-          "proximaCena": "s3-carrinho"
+          "proximaCena": "s3-carrinho",
+          "dica": "Uma caixa raramente muda de sala sozinha; as rodas podem apresentar a próxima pessoa da história."
         },
         {
           "id": "s3-etiqueta-b",
           "texto": "Analisar a identidade da caixa",
-          "proximaCena": "s3-identidade"
-        },
-        {
-          "id": "s3-etiqueta-c",
-          "texto": "Reconstituir a prateleira do carrinho",
-          "proximaCena": "s3-prateleira-carrinho"
+          "proximaCena": "s3-identidade",
+          "dica": "Caixas cinzentas se parecem demais. Eu procuraria aquilo que faz uma delas ser justamente esta."
         }
       ]
     },
@@ -2396,53 +1692,14 @@
         {
           "id": "s3-painel-a",
           "texto": "Seguir o carrinho",
-          "proximaCena": "s3-carrinho"
+          "proximaCena": "s3-carrinho",
+          "dica": "Uma caixa raramente muda de sala sozinha; as rodas podem apresentar a próxima pessoa da história."
         },
         {
           "id": "s3-painel-b",
           "texto": "Analisar a identidade da caixa",
-          "proximaCena": "s3-identidade"
-        },
-        {
-          "id": "s3-painel-c",
-          "texto": "Reconstituir a prateleira do carrinho",
-          "proximaCena": "s3-prateleira-carrinho"
-        }
-      ]
-    },
-    {
-      "id": "s3-radio-chamado",
-      "etapaId": "caixa-sem-nome",
-      "objetivoId": "entender-interrupcao",
-      "texto": "O registro do rádio situa o chamado do painel entre a primeira linha da etiqueta e a busca pelo cordão. A interrupção possui minuto e motivo verificáveis.\n\nA etiqueta provisória foi escrita em duas linhas. A primeira identifica a peça e a separação da base; a segunda deveria informar recipiente e destino. Há um ponto de tinta no começo dessa linha, seguido pelo branco. A conservadora localiza no rádio o chamado referente ao painel e confere o minuto: ocorreu enquanto ela preparava o cordão. No outro ambiente, folhas absorventes e suportes elevados mostram o trabalho realizado para afastar o painel da água. O desvio consumiu poucos minutos, mas bastou para quebrar uma sequência que dependia de retorno imediato. Você anota que a urgência concorrente explica a etiqueta incompleta; ainda falta explicar como ela se separou do volume.",
-      "imagem": {
-        "recurso": "cena_nivaldo",
-        "descricaoAcessivel": "Rádio e etiqueta incompleta mostram o chamado recebido durante a preparação."
-      },
-      "revelacoes": {
-        "pistas": [
-          "etiqueta-provisoria"
-        ],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s3-radio-chamado-a",
-          "texto": "Seguir o carrinho",
-          "proximaCena": "s3-carrinho"
-        },
-        {
-          "id": "s3-radio-chamado-b",
-          "texto": "Analisar a identidade da caixa",
-          "proximaCena": "s3-identidade"
-        },
-        {
-          "id": "s3-radio-chamado-c",
-          "texto": "Reconstituir a prateleira do carrinho",
-          "proximaCena": "s3-prateleira-carrinho"
+          "proximaCena": "s3-identidade",
+          "dica": "Caixas cinzentas se parecem demais. Eu procuraria aquilo que faz uma delas ser justamente esta."
         }
       ]
     },
@@ -2468,17 +1725,14 @@
         {
           "id": "s3-carrinho-a",
           "texto": "Ordenar a preparação",
-          "proximaCena": "s3-sequencia"
+          "proximaCena": "s3-sequencia",
+          "dica": "Cada material chegou à mesa em um momento. A sequência talvez revele quando a troca aconteceu."
         },
         {
           "id": "s3-carrinho-b",
           "texto": "Procurar sinais de movimento",
-          "proximaCena": "s3-pergunta-movimento"
-        },
-        {
-          "id": "s3-carrinho-c",
-          "texto": "Ordenar os cartões da preparação",
-          "proximaCena": "s3-cartoes-sequencia"
+          "proximaCena": "s3-pergunta-movimento",
+          "dica": "Se algo mudou de lugar, o chão e os apoios devem ter sentido primeiro."
         }
       ]
     },
@@ -2502,53 +1756,14 @@
         {
           "id": "s3-identidade-a",
           "texto": "Ordenar a preparação",
-          "proximaCena": "s3-sequencia"
+          "proximaCena": "s3-sequencia",
+          "dica": "Cada material chegou à mesa em um momento. A sequência talvez revele quando a troca aconteceu."
         },
         {
           "id": "s3-identidade-b",
           "texto": "Procurar sinais de movimento",
-          "proximaCena": "s3-pergunta-movimento"
-        },
-        {
-          "id": "s3-identidade-c",
-          "texto": "Ordenar os cartões da preparação",
-          "proximaCena": "s3-cartoes-sequencia"
-        }
-      ]
-    },
-    {
-      "id": "s3-prateleira-carrinho",
-      "etapaId": "caixa-sem-nome",
-      "objetivoId": "entender-interrupcao",
-      "texto": "A prateleira superior reunia volumes de preparação visualmente semelhantes. Sem cordão ou etiqueta presa, a caixa cinza assumia a identidade sugerida pelos objetos ao redor.\n\nO carrinho estava reservado para materiais de preparação e não possuía uma área exclusiva para conservação. Na prateleira superior havia rolos, suportes e duas caixas neutras; a caixa cinza cabia entre eles sem parecer deslocada. A conservadora havia deixado a etiqueta por cima enquanto procurava o cordão. Quando foi chamada, fechou a porta da sala, mas não bloqueou o carrinho porque outras equipes ainda precisavam da passagem. Essa rotina compartilhada transforma aparência em informação: cor, posição e vizinhança sugeriam material de mediação. Para quem conhecia o conteúdo, era uma proteção temporária; para quem conhecia o recipiente, era apenas a caixa tátil pronta para seguir seu circuito habitual.",
-      "imagem": {
-        "recurso": "cena_po",
-        "descricaoAcessivel": "Caixa cinza entre rolos, suportes e caixas neutras na prateleira do carrinho."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [
-          "corredor-rota"
-        ],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s3-prateleira-carrinho-a",
-          "texto": "Ordenar a preparação",
-          "proximaCena": "s3-sequencia"
-        },
-        {
-          "id": "s3-prateleira-carrinho-b",
-          "texto": "Procurar sinais de movimento",
-          "proximaCena": "s3-pergunta-movimento"
-        },
-        {
-          "id": "s3-prateleira-carrinho-c",
-          "texto": "Ordenar os cartões da preparação",
-          "proximaCena": "s3-cartoes-sequencia"
+          "proximaCena": "s3-pergunta-movimento",
+          "dica": "Se algo mudou de lugar, o chão e os apoios devem ter sentido primeiro."
         }
       ]
     },
@@ -2572,17 +1787,14 @@
         {
           "id": "s3-sequencia-a",
           "texto": "Registrar a caixa usada",
-          "proximaCena": "s3-pausa-a"
+          "proximaCena": "s3-pausa-a",
+          "dica": "Antes de seguir viagem, eu daria um nome seguro ao recipiente que trocou de função."
         },
         {
           "id": "s3-sequencia-b",
           "texto": "Seguir a marca da roda",
-          "proximaCena": "s3-pausa-b"
-        },
-        {
-          "id": "s3-sequencia-c",
-          "texto": "Medir os intervalos da roda",
-          "proximaCena": "s3-marcas-intervalos"
+          "proximaCena": "s3-pausa-b",
+          "dica": "Pequenas vírgulas no chão talvez estejam tentando terminar uma frase em outra sala."
         }
       ]
     },
@@ -2606,51 +1818,14 @@
         {
           "id": "s3-pergunta-movimento-a",
           "texto": "Registrar a caixa usada",
-          "proximaCena": "s3-pausa-a"
+          "proximaCena": "s3-pausa-a",
+          "dica": "Antes de seguir viagem, eu daria um nome seguro ao recipiente que trocou de função."
         },
         {
           "id": "s3-pergunta-movimento-b",
           "texto": "Seguir a marca da roda",
-          "proximaCena": "s3-pausa-b"
-        },
-        {
-          "id": "s3-pergunta-movimento-c",
-          "texto": "Medir os intervalos da roda",
-          "proximaCena": "s3-marcas-intervalos"
-        }
-      ]
-    },
-    {
-      "id": "s3-cartoes-sequencia",
-      "etapaId": "caixa-sem-nome",
-      "objetivoId": "entender-interrupcao",
-      "texto": "Quatro cartões ordenam disponibilidade, proteção, recipiente e identificação. A sequência preservou a taça, mas deixou o contexto dependente de um papel ainda solto.\n\nVocê dispõe quatro cartões sobre a bancada: caixa de emergência em reparo, feltro recém-cortado, espaço vazio no armário e etiqueta sem cordão. A ordem explica por que a peça ficou segura e, ao mesmo tempo, perdeu sua identidade visível. Falta ligar essa preparação a um deslocamento concreto. Uma das rodas do carrinho oferece a transição. Seu aro tem um pequeno resíduo escuro de fita de marcação, material usado na montagem do piso. A cada volta ele deixa um traço curto, quase uma vírgula, que desaparece em superfícies escuras e reaparece no corredor claro. Você fotografa o padrão e procura a próxima marca sem supor ainda quem empurrou o carrinho.",
-      "imagem": {
-        "recurso": "cena_zilda",
-        "descricaoAcessivel": "Cartões de sequência ligam caixa em reparo, feltro, recipiente cinza e etiqueta."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s3-cartoes-sequencia-a",
-          "texto": "Registrar a caixa usada",
-          "proximaCena": "s3-pausa-a"
-        },
-        {
-          "id": "s3-cartoes-sequencia-b",
-          "texto": "Seguir a marca da roda",
-          "proximaCena": "s3-pausa-b"
-        },
-        {
-          "id": "s3-cartoes-sequencia-c",
-          "texto": "Medir os intervalos da roda",
-          "proximaCena": "s3-marcas-intervalos"
+          "proximaCena": "s3-pausa-b",
+          "dica": "Pequenas vírgulas no chão talvez estejam tentando terminar uma frase em outra sala."
         }
       ]
     },
@@ -2675,17 +1850,14 @@
         {
           "id": "s3-pausa-a-a",
           "texto": "Acompanhar a roda",
-          "proximaCena": "s4-roda"
+          "proximaCena": "s4-roda",
+          "dica": "Rodinhas também contam histórias; basta não perder de vista onde termina cada volta."
         },
         {
           "id": "s3-pausa-a-b",
           "texto": "Examinar a prancheta",
-          "proximaCena": "s4-prancheta"
-        },
-        {
-          "id": "s3-pausa-a-c",
-          "texto": "Conferir as faixas do corredor",
-          "proximaCena": "s4-corredor-marcado"
+          "proximaCena": "s4-prancheta",
+          "dica": "Papéis que não acompanharam a carga talvez tenham ficado esperando num apoio bem próximo."
         }
       ]
     },
@@ -2710,52 +1882,14 @@
         {
           "id": "s3-pausa-b-a",
           "texto": "Acompanhar a roda",
-          "proximaCena": "s4-roda"
+          "proximaCena": "s4-roda",
+          "dica": "Rodinhas também contam histórias; basta não perder de vista onde termina cada volta."
         },
         {
           "id": "s3-pausa-b-b",
           "texto": "Examinar a prancheta",
-          "proximaCena": "s4-prancheta"
-        },
-        {
-          "id": "s3-pausa-b-c",
-          "texto": "Conferir as faixas do corredor",
-          "proximaCena": "s4-corredor-marcado"
-        }
-      ]
-    },
-    {
-      "id": "s3-marcas-intervalos",
-      "etapaId": "caixa-sem-nome",
-      "objetivoId": "entender-interrupcao",
-      "pontoDePausa": true,
-      "texto": "Você mede os intervalos entre as pequenas vírgulas deixadas pela roda. O padrão regular indica deslocamento contínuo até a montagem, sem paradas laterais.\n\nA conservadora prende uma nova identificação na base e separa materiais equivalentes para mostrar à equipe, evitando alterar os vestígios originais. No Caderno, a caixa cinza ganha duas legendas lado a lado: “conteúdo protegido” e “aparência habitual”. A diferença resume a etapa melhor do que a palavra engano, porque ninguém forneceu informação falsa; uma informação importante simplesmente não acompanhou o objeto. No corredor, as marcas da roda seguem em intervalos regulares até a sala de montagem. Você deixa a bancada com uma pergunta delimitada: quem encontrou o carrinho, que necessidade orientou o movimento e onde a caixa estava quando essa pessoa terminou sua tarefa?",
-      "imagem": {
-        "recurso": "cena_bilhete",
-        "descricaoAcessivel": "Marcas curtas e regulares de uma roda atravessam o corredor claro."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s3-marcas-intervalos-a",
-          "texto": "Acompanhar a roda",
-          "proximaCena": "s4-roda"
-        },
-        {
-          "id": "s3-marcas-intervalos-b",
-          "texto": "Examinar a prancheta",
-          "proximaCena": "s4-prancheta"
-        },
-        {
-          "id": "s3-marcas-intervalos-c",
-          "texto": "Conferir as faixas do corredor",
-          "proximaCena": "s4-corredor-marcado"
+          "proximaCena": "s4-prancheta",
+          "dica": "Papéis que não acompanharam a carga talvez tenham ficado esperando num apoio bem próximo."
         }
       ]
     },
@@ -2787,17 +1921,14 @@
         {
           "id": "s4-roda-a",
           "texto": "Medir a passagem",
-          "proximaCena": "s4-passagem"
+          "proximaCena": "s4-passagem",
+          "dica": "Antes de imaginar uma rota, tente fazer o móvel caber nela."
         },
         {
           "id": "s4-roda-b",
           "texto": "Perguntar como a caixa foi reconhecida",
-          "proximaCena": "s4-reconhecer-caixa"
-        },
-        {
-          "id": "s4-roda-c",
-          "texto": "Examinar a área de mediação",
-          "proximaCena": "s4-faixa-mediacao"
+          "proximaCena": "s4-reconhecer-caixa",
+          "dica": "Eu desconfiaria menos da pessoa e mais da aparência familiar que fez uma embalagem ganhar um nome."
         }
       ]
     },
@@ -2825,62 +1956,14 @@
         {
           "id": "s4-prancheta-a",
           "texto": "Medir a passagem",
-          "proximaCena": "s4-passagem"
+          "proximaCena": "s4-passagem",
+          "dica": "Antes de imaginar uma rota, tente fazer o móvel caber nela."
         },
         {
           "id": "s4-prancheta-b",
           "texto": "Perguntar como a caixa foi reconhecida",
-          "proximaCena": "s4-reconhecer-caixa"
-        },
-        {
-          "id": "s4-prancheta-c",
-          "texto": "Examinar a área de mediação",
-          "proximaCena": "s4-faixa-mediacao"
-        }
-      ]
-    },
-    {
-      "id": "s4-corredor-marcado",
-      "etapaId": "caminho-carrinho",
-      "objetivoId": "reconstruir-movimento",
-      "texto": "Faixas temporárias no corredor delimitam a largura que deveria permanecer livre. O carrinho invadia essa área, tornando previsível a decisão de movê-lo.\n\nO montador não se surpreende com a visita. Ele já havia notado o carrinho fora do lugar quando voltou da pausa e estava tentando descobrir a quem pertencia a etiqueta guardada. Em vez de reconstruir tudo de uma vez, mostra primeiro o corredor: pela manhã, painéis apoiados numa parede reduziram a largura útil, e o carrinho ocupava justamente o ponto de passagem. Ele o empurrou até uma área marcada para volumes prontos. A etiqueta caiu na primeira curva. Como tinha apenas uma linha legível, ele a prendeu à prancheta para entregar à conservação depois. O gesto preservou a informação, mas afastou-a da caixa no instante em que ela mais fazia falta.",
-      "imagem": {
-        "recurso": "cena_comparar",
-        "descricaoAcessivel": "Faixas no piso mostram o carrinho ocupando parte da passagem acessível."
-      },
-      "revelacoes": {
-        "pistas": [
-          "roda-irregular",
-          "etiqueta-na-prancheta"
-        ],
-        "anotacoesPessoas": [
-          "montador-carrinho"
-        ],
-        "anotacoesLocais": [
-          "montagem-carrinho"
-        ],
-        "conversas": [
-          "montador-carrinho"
-        ],
-        "lembrancas": [
-          "etiqueta-nao-foi-descartada"
-        ]
-      },
-      "escolhas": [
-        {
-          "id": "s4-corredor-marcado-a",
-          "texto": "Medir a passagem",
-          "proximaCena": "s4-passagem"
-        },
-        {
-          "id": "s4-corredor-marcado-b",
-          "texto": "Perguntar como a caixa foi reconhecida",
-          "proximaCena": "s4-reconhecer-caixa"
-        },
-        {
-          "id": "s4-corredor-marcado-c",
-          "texto": "Examinar a área de mediação",
-          "proximaCena": "s4-faixa-mediacao"
+          "proximaCena": "s4-reconhecer-caixa",
+          "dica": "Eu desconfiaria menos da pessoa e mais da aparência familiar que fez uma embalagem ganhar um nome."
         }
       ]
     },
@@ -2904,17 +1987,14 @@
         {
           "id": "s4-passagem-a",
           "texto": "Consultar a planta antiga",
-          "proximaCena": "s4-planta-antiga"
+          "proximaCena": "s4-planta-antiga",
+          "dica": "O caminho de ontem pode explicar por que uma lembrança parece fora do lugar hoje."
         },
         {
           "id": "s4-passagem-b",
           "texto": "Ler a planta atual",
-          "proximaCena": "s4-planta-atual"
-        },
-        {
-          "id": "s4-passagem-c",
-          "texto": "Distinguir carimbos e dobras",
-          "proximaCena": "s4-carimbo-planta"
+          "proximaCena": "s4-planta-atual",
+          "dica": "Eu confiaria no desenho que ainda tem tinta fresca e uma passagem larga o bastante para o presente."
         }
       ]
     },
@@ -2938,51 +2018,14 @@
         {
           "id": "s4-reconhecer-caixa-a",
           "texto": "Consultar a planta antiga",
-          "proximaCena": "s4-planta-antiga"
+          "proximaCena": "s4-planta-antiga",
+          "dica": "O caminho de ontem pode explicar por que uma lembrança parece fora do lugar hoje."
         },
         {
           "id": "s4-reconhecer-caixa-b",
           "texto": "Ler a planta atual",
-          "proximaCena": "s4-planta-atual"
-        },
-        {
-          "id": "s4-reconhecer-caixa-c",
-          "texto": "Distinguir carimbos e dobras",
-          "proximaCena": "s4-carimbo-planta"
-        }
-      ]
-    },
-    {
-      "id": "s4-faixa-mediacao",
-      "etapaId": "caminho-carrinho",
-      "objetivoId": "reconstruir-movimento",
-      "texto": "A área de destino traz a palavra mediação e os contornos de volumes previstos. A caixa fechada se integrou ao conjunto sem destoar da organização visual.\n\nVocê mede a passagem com o carrinho vazio colocado na posição descrita. O espaço restante não atende à largura registrada na planta atual e obrigaria duas pessoas a se alternarem. No local para onde ele foi levado, uma faixa no piso indica “mediação”, acompanhada por cartões e suportes semelhantes aos que cercavam a caixa. O montador diz que não abriu nenhum volume porque sua responsabilidade era circulação e montagem, não conferência de conteúdo. A caixa cinza lhe pareceu familiar, embora ele não soubesse nomear a reprodução guardada nela. Essa limitação combina com o trabalho que realizava. Reconhecer um recipiente pela rotina foi razoável; tratá-lo como prova de conteúdo seria ir além do que ele podia saber.",
-      "imagem": {
-        "recurso": "cena_ercilia",
-        "descricaoAcessivel": "Área marcada para mediação reúne cartões, suportes e o espaço da caixa cinza."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s4-faixa-mediacao-a",
-          "texto": "Consultar a planta antiga",
-          "proximaCena": "s4-planta-antiga"
-        },
-        {
-          "id": "s4-faixa-mediacao-b",
-          "texto": "Ler a planta atual",
-          "proximaCena": "s4-planta-atual"
-        },
-        {
-          "id": "s4-faixa-mediacao-c",
-          "texto": "Distinguir carimbos e dobras",
-          "proximaCena": "s4-carimbo-planta"
+          "proximaCena": "s4-planta-atual",
+          "dica": "Eu confiaria no desenho que ainda tem tinta fresca e uma passagem larga o bastante para o presente."
         }
       ]
     },
@@ -3010,17 +2053,14 @@
         {
           "id": "s4-planta-antiga-a",
           "texto": "Comparar as datas",
-          "proximaCena": "s4-datas"
+          "proximaCena": "s4-datas",
+          "dica": "Dois mapas podem dizer a verdade e ainda discordar; o rodapé costuma explicar o motivo."
         },
         {
           "id": "s4-planta-antiga-b",
           "texto": "Sobrepor as rotas",
-          "proximaCena": "s4-rotas"
-        },
-        {
-          "id": "s4-planta-antiga-c",
-          "texto": "Consultar o histórico de impressão",
-          "proximaCena": "s4-horario-impressao"
+          "proximaCena": "s4-rotas",
+          "dica": "Dois caminhos transparentes revelam melhor as diferenças quando colocados um sobre o outro."
         }
       ]
     },
@@ -3046,56 +2086,14 @@
         {
           "id": "s4-planta-atual-a",
           "texto": "Comparar as datas",
-          "proximaCena": "s4-datas"
+          "proximaCena": "s4-datas",
+          "dica": "Dois mapas podem dizer a verdade e ainda discordar; o rodapé costuma explicar o motivo."
         },
         {
           "id": "s4-planta-atual-b",
           "texto": "Sobrepor as rotas",
-          "proximaCena": "s4-rotas"
-        },
-        {
-          "id": "s4-planta-atual-c",
-          "texto": "Consultar o histórico de impressão",
-          "proximaCena": "s4-horario-impressao"
-        }
-      ]
-    },
-    {
-      "id": "s4-carimbo-planta",
-      "etapaId": "caminho-carrinho",
-      "objetivoId": "reconstruir-movimento",
-      "texto": "Carimbo, dobras e cor das correções distinguem as plantas antes mesmo da leitura das rotas. A cópia antiga saiu da impressora, não da parede consultada.\n\nDuas cópias da planta circulavam porque a impressora do setor havia deixado a versão anterior numa bandeja. A folha antiga tem um carimbo discreto no verso e marcas de dobra diferentes; a atual traz correções em verde e o mesmo alargamento observado junto ao pedestal. Você segue cada rota com o dedo. Ambas começam na conservação, mas só a nova passa pela área marcada para mediação. O montador recorda ter consultado a folha presa à parede, não a encontrada depois no arquivo. A distinção importa: plantas diferentes poderiam sugerir relatos incompatíveis, porém datas, cores e furos de fixação permitem colocá-las em sequência. Uma mostra o plano abandonado; a outra, o caminho realmente disponível.",
-      "imagem": {
-        "recurso": "cena_livro",
-        "descricaoAcessivel": "Versos de duas plantas revelam carimbos, dobras e datas diferentes."
-      },
-      "revelacoes": {
-        "pistas": [
-          "planta-antiga",
-          "planta-atual"
-        ],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [
-          "arquivo-plantas"
-        ],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s4-carimbo-planta-a",
-          "texto": "Comparar as datas",
-          "proximaCena": "s4-datas"
-        },
-        {
-          "id": "s4-carimbo-planta-b",
-          "texto": "Sobrepor as rotas",
-          "proximaCena": "s4-rotas"
-        },
-        {
-          "id": "s4-carimbo-planta-c",
-          "texto": "Consultar o histórico de impressão",
-          "proximaCena": "s4-horario-impressao"
+          "proximaCena": "s4-rotas",
+          "dica": "Dois caminhos transparentes revelam melhor as diferenças quando colocados um sobre o outro."
         }
       ]
     },
@@ -3125,17 +2123,14 @@
         {
           "id": "s4-datas-a",
           "texto": "Examinar a mesa da mediação",
-          "proximaCena": "s4-mesa"
+          "proximaCena": "s4-mesa",
+          "dica": "Toda viagem tem uma escala. Eu procuraria o lugar onde um conjunto de rodas deu lugar a outro."
         },
         {
           "id": "s4-datas-b",
           "texto": "Juntar etiqueta e percurso",
-          "proximaCena": "s4-etiqueta-sequencia"
-        },
-        {
-          "id": "s4-datas-c",
-          "texto": "Comparar os dois conjuntos de rodas",
-          "proximaCena": "s4-duas-rodas"
+          "proximaCena": "s4-etiqueta-sequencia",
+          "dica": "Um nome sem viagem e uma viagem sem nome parecem incompletos pela mesma razão."
         }
       ]
     },
@@ -3159,57 +2154,14 @@
         {
           "id": "s4-rotas-a",
           "texto": "Examinar a mesa da mediação",
-          "proximaCena": "s4-mesa"
+          "proximaCena": "s4-mesa",
+          "dica": "Toda viagem tem uma escala. Eu procuraria o lugar onde um conjunto de rodas deu lugar a outro."
         },
         {
           "id": "s4-rotas-b",
           "texto": "Juntar etiqueta e percurso",
-          "proximaCena": "s4-etiqueta-sequencia"
-        },
-        {
-          "id": "s4-rotas-c",
-          "texto": "Comparar os dois conjuntos de rodas",
-          "proximaCena": "s4-duas-rodas"
-        }
-      ]
-    },
-    {
-      "id": "s4-horario-impressao",
-      "etapaId": "caminho-carrinho",
-      "objetivoId": "conciliar-plantas",
-      "texto": "O histórico de impressão situa a planta atual na tarde anterior. A rota verde existia antes da emergência e não foi criada para justificar o movimento depois.\n\nA sobreposição das folhas revela mais do que um destino. Na montagem antiga, o carrinho faria uma curva fechada perto da vitrine; na atual, segue reto até a mesa e deixa livre a passagem ampliada na véspera. Essa coerência conecta o primeiro indício da investigação a uma decisão de circulação repetida em outro ponto. Você confere o horário de impressão e encontra a versão nova gerada antes do fechamento da sala. Portanto, ninguém redesenhou a rota para justificar o movimento depois do desaparecimento. A linha verde já existia. O trajeto do montador obedeceu a um plano anterior à emergência, e as marcas da roda terminam exatamente onde esse plano previa uma parada.",
-      "imagem": {
-        "recurso": "cena_nivaldo",
-        "descricaoAcessivel": "Registro de impressão acompanha a planta atual com rota destacada em verde."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [
-          "montador-plantas"
-        ],
-        "anotacoesLocais": [],
-        "conversas": [
-          "montador-duas-plantas"
-        ],
-        "lembrancas": [
-          "plantas-mostram-momentos"
-        ]
-      },
-      "escolhas": [
-        {
-          "id": "s4-horario-impressao-a",
-          "texto": "Examinar a mesa da mediação",
-          "proximaCena": "s4-mesa"
-        },
-        {
-          "id": "s4-horario-impressao-b",
-          "texto": "Juntar etiqueta e percurso",
-          "proximaCena": "s4-etiqueta-sequencia"
-        },
-        {
-          "id": "s4-horario-impressao-c",
-          "texto": "Comparar os dois conjuntos de rodas",
-          "proximaCena": "s4-duas-rodas"
+          "proximaCena": "s4-etiqueta-sequencia",
+          "dica": "Um nome sem viagem e uma viagem sem nome parecem incompletos pela mesma razão."
         }
       ]
     },
@@ -3233,17 +2185,14 @@
         {
           "id": "s4-mesa-a",
           "texto": "Comparar os contextos",
-          "proximaCena": "s4-contexto"
+          "proximaCena": "s4-contexto",
+          "dica": "O mesmo objeto muda de significado conforme a sala. Eu observaria quem esperava encontrá-lo ali."
         },
         {
           "id": "s4-mesa-b",
           "texto": "Procurar quem preparou a atividade",
-          "proximaCena": "s4-proxima-pessoa"
-        },
-        {
-          "id": "s4-mesa-c",
-          "texto": "Ler a lista de tarefas",
-          "proximaCena": "s4-lista-tarefas"
+          "proximaCena": "s4-proxima-pessoa",
+          "dica": "A próxima testemunha talvez não tenha visto uma taça, apenas o material que esperava oferecer ao público."
         }
       ]
     },
@@ -3267,51 +2216,14 @@
         {
           "id": "s4-etiqueta-sequencia-a",
           "texto": "Comparar os contextos",
-          "proximaCena": "s4-contexto"
+          "proximaCena": "s4-contexto",
+          "dica": "O mesmo objeto muda de significado conforme a sala. Eu observaria quem esperava encontrá-lo ali."
         },
         {
           "id": "s4-etiqueta-sequencia-b",
           "texto": "Procurar quem preparou a atividade",
-          "proximaCena": "s4-proxima-pessoa"
-        },
-        {
-          "id": "s4-etiqueta-sequencia-c",
-          "texto": "Ler a lista de tarefas",
-          "proximaCena": "s4-lista-tarefas"
-        }
-      ]
-    },
-    {
-      "id": "s4-duas-rodas",
-      "etapaId": "caminho-carrinho",
-      "objetivoId": "conciliar-plantas",
-      "texto": "Régua e fotografias distinguem a distância entre as rodas do carrinho e as do armário. Um percurso termina na mesa exatamente quando o outro começa.\n\nNa mesa de mediação, uma funcionária havia limpado apenas metade do piso antes de ser chamada para a reunião da manhã. A parte não limpa conserva dois conjuntos de marcas: as vírgulas curtas do carrinho chegando e linhas paralelas mais suaves saindo em outra direção. O primeiro conjunto encerra perto do espaço reservado aos volumes; o segundo pertence a um móvel de distância entre rodas maior. Você usa uma régua simples para registrar essa diferença. A etiqueta, guardada alguns metros atrás, não acompanhou a troca de veículo. Assim, a caixa completou uma etapa e começou outra sem ser aberta. O vestígio físico muda de assinatura, indicando que uma nova pessoa e uma nova rotina assumiram o percurso.",
-      "imagem": {
-        "recurso": "cena_vitrine",
-        "descricaoAcessivel": "Dois conjuntos de marcas de rodas são medidos diante da mesa da mediação."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s4-duas-rodas-a",
-          "texto": "Comparar os contextos",
-          "proximaCena": "s4-contexto"
-        },
-        {
-          "id": "s4-duas-rodas-b",
-          "texto": "Procurar quem preparou a atividade",
-          "proximaCena": "s4-proxima-pessoa"
-        },
-        {
-          "id": "s4-duas-rodas-c",
-          "texto": "Ler a lista de tarefas",
-          "proximaCena": "s4-lista-tarefas"
+          "proximaCena": "s4-proxima-pessoa",
+          "dica": "A próxima testemunha talvez não tenha visto uma taça, apenas o material que esperava oferecer ao público."
         }
       ]
     },
@@ -3335,17 +2247,14 @@
         {
           "id": "s4-contexto-a",
           "texto": "Registrar o caminho do carrinho",
-          "proximaCena": "s4-pausa-a"
+          "proximaCena": "s4-pausa-a",
+          "dica": "Uma rota bem desenhada separa quem apenas transportou de quem decidiu o destino."
         },
         {
           "id": "s4-contexto-b",
           "texto": "Seguir para a mediação",
-          "proximaCena": "s4-pausa-b"
-        },
-        {
-          "id": "s4-contexto-c",
-          "texto": "Registrar apenas o relato confirmado",
-          "proximaCena": "s4-nota-assinada"
+          "proximaCena": "s4-pausa-b",
+          "dica": "Quando uma etiqueta fala em toque e aprendizagem, eu procuraria quem prepara encontros com o público."
         }
       ]
     },
@@ -3369,51 +2278,14 @@
         {
           "id": "s4-proxima-pessoa-a",
           "texto": "Registrar o caminho do carrinho",
-          "proximaCena": "s4-pausa-a"
+          "proximaCena": "s4-pausa-a",
+          "dica": "Uma rota bem desenhada separa quem apenas transportou de quem decidiu o destino."
         },
         {
           "id": "s4-proxima-pessoa-b",
           "texto": "Seguir para a mediação",
-          "proximaCena": "s4-pausa-b"
-        },
-        {
-          "id": "s4-proxima-pessoa-c",
-          "texto": "Registrar apenas o relato confirmado",
-          "proximaCena": "s4-nota-assinada"
-        }
-      ]
-    },
-    {
-      "id": "s4-lista-tarefas",
-      "etapaId": "caminho-carrinho",
-      "objetivoId": "conciliar-plantas",
-      "texto": "A lista de tarefas coloca a mediadora junto à mesa no intervalo correto, mas não prova sozinha que ela levou a caixa. Ela apenas identifica a próxima conversa necessária.\n\nO montador consulta a lista de tarefas e identifica quem preparava a atividade: a mediadora responsável pelos materiais táteis. Ele lembra de vê-la junto à mesa, mas evita afirmar que ela levou a caixa; naquele momento carregava painéis e não acompanhou a saída. Essa precisão mantém o relato útil. Na mesa, o roteiro da atividade está aberto numa página sobre reconhecimento pelo toque, e uma bolsa de tecido ocupa o lugar central. Se a reprodução habitual já estava fora do recipiente, a caixa fechada poderia atravessar a preparação sem despertar pergunta. Você decide começar pelaquilo que a mediadora sabia antes de encontrar o volume: quais itens esperava, quais já havia conferido e qual móvel deveria seguir para a sala de atividades.",
-      "imagem": {
-        "recurso": "cena_zilda",
-        "descricaoAcessivel": "Lista de tarefas da manhã destaca a preparação da atividade na mesa de mediação."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s4-lista-tarefas-a",
-          "texto": "Registrar o caminho do carrinho",
-          "proximaCena": "s4-pausa-a"
-        },
-        {
-          "id": "s4-lista-tarefas-b",
-          "texto": "Seguir para a mediação",
-          "proximaCena": "s4-pausa-b"
-        },
-        {
-          "id": "s4-lista-tarefas-c",
-          "texto": "Registrar apenas o relato confirmado",
-          "proximaCena": "s4-nota-assinada"
+          "proximaCena": "s4-pausa-b",
+          "dica": "Quando uma etiqueta fala em toque e aprendizagem, eu procuraria quem prepara encontros com o público."
         }
       ]
     },
@@ -3438,17 +2310,14 @@
         {
           "id": "s4-pausa-a-a",
           "texto": "Examinar a reprodução tátil",
-          "proximaCena": "s5-reproducao"
+          "proximaCena": "s5-reproducao",
+          "dica": "Uma cópia feita para as mãos pode explicar o engano cometido pelos olhos."
         },
         {
           "id": "s4-pausa-a-b",
           "texto": "Conferir a lista de volumes",
-          "proximaCena": "s5-lista"
-        },
-        {
-          "id": "s4-pausa-a-c",
-          "texto": "Examinar as etiquetas em relevo",
-          "proximaCena": "s5-etiquetas-relevo"
+          "proximaCena": "s5-lista",
+          "dica": "Antes de acreditar na memória de uma caixa, eu perguntaria à lista o que deveria estar dentro dela."
         }
       ]
     },
@@ -3473,52 +2342,14 @@
         {
           "id": "s4-pausa-b-a",
           "texto": "Examinar a reprodução tátil",
-          "proximaCena": "s5-reproducao"
+          "proximaCena": "s5-reproducao",
+          "dica": "Uma cópia feita para as mãos pode explicar o engano cometido pelos olhos."
         },
         {
           "id": "s4-pausa-b-b",
           "texto": "Conferir a lista de volumes",
-          "proximaCena": "s5-lista"
-        },
-        {
-          "id": "s4-pausa-b-c",
-          "texto": "Examinar as etiquetas em relevo",
-          "proximaCena": "s5-etiquetas-relevo"
-        }
-      ]
-    },
-    {
-      "id": "s4-nota-assinada",
-      "etapaId": "caminho-carrinho",
-      "objetivoId": "conciliar-plantas",
-      "pontoDePausa": true,
-      "texto": "Uma nota curta preserva apenas o que o montador confirma: corredor liberado, carrinho estacionado e etiqueta guardada. As marcas físicas completam o que ele não viu.\n\nAntes de chamar a mediadora, você devolve as plantas aos envelopes corretos e fotografa a etiqueta ainda presa à prancheta. O montador assina uma nota curta confirmando somente três ações: liberou o corredor, estacionou o carrinho na área indicada e guardou o papel encontrado no chão. O restante permanece inferência sustentada pelas marcas. No Caderno, a rota ganha uma mudança de símbolo: pequenas vírgulas até a mesa, linhas paralelas a partir dela. Essa troca evita que dois móveis sejam tratados como um só. A investigação chegou a uma fronteira de responsabilidade. Para atravessá-la, será preciso comparar a caixa recebida com a lista de volumes e com a reprodução tátil preparada para a atividade.",
-      "imagem": {
-        "recurso": "cena_chegada",
-        "descricaoAcessivel": "Nota assinada fica ao lado da prancheta, das plantas e das fotografias das rodas."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s4-nota-assinada-a",
-          "texto": "Examinar a reprodução tátil",
-          "proximaCena": "s5-reproducao"
-        },
-        {
-          "id": "s4-nota-assinada-b",
-          "texto": "Conferir a lista de volumes",
-          "proximaCena": "s5-lista"
-        },
-        {
-          "id": "s4-nota-assinada-c",
-          "texto": "Examinar as etiquetas em relevo",
-          "proximaCena": "s5-etiquetas-relevo"
+          "proximaCena": "s5-lista",
+          "dica": "Antes de acreditar na memória de uma caixa, eu perguntaria à lista o que deveria estar dentro dela."
         }
       ]
     },
@@ -3552,17 +2383,14 @@
         {
           "id": "s5-reproducao-a",
           "texto": "Questionar o conteúdo esperado",
-          "proximaCena": "s5-caixa-vazia"
+          "proximaCena": "s5-caixa-vazia",
+          "dica": "O engano pode estar menos no que havia na caixa e mais no que todos acreditavam haver."
         },
         {
           "id": "s5-reproducao-b",
           "texto": "Ler o roteiro da atividade",
-          "proximaCena": "s5-roteiro"
-        },
-        {
-          "id": "s5-reproducao-c",
-          "texto": "Rever a conferência anterior",
-          "proximaCena": "s5-conferencia-previa"
+          "proximaCena": "s5-roteiro",
+          "dica": "Quem preparou uma experiência para o público talvez tenha anotado exatamente o objeto que esperava receber."
         }
       ]
     },
@@ -3588,62 +2416,14 @@
         {
           "id": "s5-lista-a",
           "texto": "Questionar o conteúdo esperado",
-          "proximaCena": "s5-caixa-vazia"
+          "proximaCena": "s5-caixa-vazia",
+          "dica": "O engano pode estar menos no que havia na caixa e mais no que todos acreditavam haver."
         },
         {
           "id": "s5-lista-b",
           "texto": "Ler o roteiro da atividade",
-          "proximaCena": "s5-roteiro"
-        },
-        {
-          "id": "s5-lista-c",
-          "texto": "Rever a conferência anterior",
-          "proximaCena": "s5-conferencia-previa"
-        }
-      ]
-    },
-    {
-      "id": "s5-etiquetas-relevo",
-      "etapaId": "volume-trocado",
-      "objetivoId": "comparar-conteudos",
-      "texto": "As etiquetas em relevo da reprodução registram uma revisão iniciada na véspera. Elas confirmam que a peça tátil já estava fora da caixa antes da chegada do carrinho.\n\nA mediadora abre a bolsa de tecido e deixa a reprodução sobre uma base macia. Ela possui forma semelhante à peça original, mas material, textura e número de inventário próprios. Pequenas etiquetas em relevo mostram que estava sendo revisada desde a tarde anterior. Na lista, cada volume recebe um sinal depois da conferência; reprodução, bolsa e cartões já estavam marcados antes das sete. A caixa cinza não aparece como item separado porque normalmente funciona apenas como embalagem da reprodução. Você pergunta o que ela esperaria encontrar se a abrisse naquela manhã. A resposta é reveladora: nada. Como a reprodução já estava sobre a mesa, a caixa deveria estar vazia, pronta para ser guardada junto aos suportes.",
-      "imagem": {
-        "recurso": "cena_comparar",
-        "descricaoAcessivel": "Reprodução tátil sobre base macia exibe pequenas etiquetas em relevo."
-      },
-      "revelacoes": {
-        "pistas": [
-          "reproducao-fora-caixa",
-          "lista-volumes"
-        ],
-        "anotacoesPessoas": [
-          "mediadora-reproducao"
-        ],
-        "anotacoesLocais": [
-          "mediacao-reproducao"
-        ],
-        "conversas": [
-          "mediadora-preparacao"
-        ],
-        "lembrancas": [
-          "reproducao-ja-estava-fora"
-        ]
-      },
-      "escolhas": [
-        {
-          "id": "s5-etiquetas-relevo-a",
-          "texto": "Questionar o conteúdo esperado",
-          "proximaCena": "s5-caixa-vazia"
-        },
-        {
-          "id": "s5-etiquetas-relevo-b",
-          "texto": "Ler o roteiro da atividade",
-          "proximaCena": "s5-roteiro"
-        },
-        {
-          "id": "s5-etiquetas-relevo-c",
-          "texto": "Rever a conferência anterior",
-          "proximaCena": "s5-conferencia-previa"
+          "proximaCena": "s5-roteiro",
+          "dica": "Quem preparou uma experiência para o público talvez tenha anotado exatamente o objeto que esperava receber."
         }
       ]
     },
@@ -3667,17 +2447,14 @@
         {
           "id": "s5-caixa-vazia-a",
           "texto": "Examinar o armário",
-          "proximaCena": "s5-armario"
+          "proximaCena": "s5-armario",
+          "dica": "Móveis também transportam segredos, especialmente quando um compartimento parece pesado demais."
         },
         {
           "id": "s5-caixa-vazia-b",
           "texto": "Perguntar sobre o peso",
-          "proximaCena": "s5-peso"
-        },
-        {
-          "id": "s5-caixa-vazia-c",
-          "texto": "Testar as rodas do armário",
-          "proximaCena": "s5-roda-livre"
+          "proximaCena": "s5-peso",
+          "dica": "Os braços lembram diferenças que os olhos não percebem. Alguém pode ter carregado a resposta sem vê-la."
         }
       ]
     },
@@ -3701,51 +2478,14 @@
         {
           "id": "s5-roteiro-a",
           "texto": "Examinar o armário",
-          "proximaCena": "s5-armario"
+          "proximaCena": "s5-armario",
+          "dica": "Móveis também transportam segredos, especialmente quando um compartimento parece pesado demais."
         },
         {
           "id": "s5-roteiro-b",
           "texto": "Perguntar sobre o peso",
-          "proximaCena": "s5-peso"
-        },
-        {
-          "id": "s5-roteiro-c",
-          "texto": "Testar as rodas do armário",
-          "proximaCena": "s5-roda-livre"
-        }
-      ]
-    },
-    {
-      "id": "s5-conferencia-previa",
-      "etapaId": "volume-trocado",
-      "objetivoId": "comparar-conteudos",
-      "texto": "Os sinais de conferência foram feitos antes das sete. A caixa não aparece como volume porque era tratada como embalagem vazia, não como item independente.\n\nO roteiro orienta que participantes conheçam primeiro a reprodução e só depois comparem sua descrição com a peça na vitrine. Por isso, devolvê-la à caixa antes da atividade contrariaria a preparação registrada. A mediadora recebeu o recipiente fechado no lugar habitual e presumiu que alguém havia reunido dentro dele pequenos suportes ainda não conferidos. O som não ajudou: o feltro impedia qualquer movimento da parte metálica. Ela não abriu porque os materiais estavam organizados por responsável e a sala precisava ficar pronta. A decisão parece comum quando vista daquele ponto da manhã. O erro de contexto só aparece agora, quando o Caderno reúne algo que nenhuma pessoa possuía: a história anterior da caixa.",
-      "imagem": {
-        "recurso": "cena_forro",
-        "descricaoAcessivel": "Lista de volumes com horários e sinais de conferência anteriores à chegada da caixa."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s5-conferencia-previa-a",
-          "texto": "Examinar o armário",
-          "proximaCena": "s5-armario"
-        },
-        {
-          "id": "s5-conferencia-previa-b",
-          "texto": "Perguntar sobre o peso",
-          "proximaCena": "s5-peso"
-        },
-        {
-          "id": "s5-conferencia-previa-c",
-          "texto": "Testar as rodas do armário",
-          "proximaCena": "s5-roda-livre"
+          "proximaCena": "s5-peso",
+          "dica": "Os braços lembram diferenças que os olhos não percebem. Alguém pode ter carregado a resposta sem vê-la."
         }
       ]
     },
@@ -3775,17 +2515,14 @@
         {
           "id": "s5-armario-a",
           "texto": "Seguir a planta atual",
-          "proximaCena": "s5-planta"
+          "proximaCena": "s5-planta",
+          "dica": "Se há duas versões do caminho, eu escolheria a que já conhecia a sala desta manhã."
         },
         {
           "id": "s5-armario-b",
           "texto": "Acompanhar as marcas de rodas",
-          "proximaCena": "s5-marcas-rodas"
-        },
-        {
-          "id": "s5-armario-c",
-          "texto": "Seguir a rota pontilhada",
-          "proximaCena": "s5-rota-pontilhada"
+          "proximaCena": "s5-marcas-rodas",
+          "dica": "O chão costuma guardar o itinerário que as pessoas esquecem de mencionar."
         }
       ]
     },
@@ -3809,57 +2546,14 @@
         {
           "id": "s5-peso-a",
           "texto": "Seguir a planta atual",
-          "proximaCena": "s5-planta"
+          "proximaCena": "s5-planta",
+          "dica": "Se há duas versões do caminho, eu escolheria a que já conhecia a sala desta manhã."
         },
         {
           "id": "s5-peso-b",
           "texto": "Acompanhar as marcas de rodas",
-          "proximaCena": "s5-marcas-rodas"
-        },
-        {
-          "id": "s5-peso-c",
-          "texto": "Seguir a rota pontilhada",
-          "proximaCena": "s5-rota-pontilhada"
-        }
-      ]
-    },
-    {
-      "id": "s5-roda-livre",
-      "etapaId": "volume-trocado",
-      "objetivoId": "comparar-conteudos",
-      "texto": "A mediadora testou cada roda ao perceber resistência na rampa. Como nenhuma estava presa, interpretou o esforço como peso dos materiais guardados.\n\nO armário baixo recebe volumes em dois compartimentos. No superior ficam materiais de uso imediato; no inferior, caixas fechadas e suportes de reposição. A mediadora colocou a caixa cinza embaixo para não ocupar a mesa e acrescentou dois pacotes leves ao lado. Ao iniciar o movimento, percebeu resistência maior na rampa, parou e verificou se alguma roda estava presa. Todas giravam livremente. Como esperava suportes extras dentro da caixa, atribuiu a diferença ao conjunto e continuou devagar. Você pede que estime o esforço sem oferecer números e só depois consulta o inventário. Essa ordem reduz a chance de a lembrança se ajustar ao valor esperado e preserva o peso como indício independente.",
-      "imagem": {
-        "recurso": "cena_livro",
-        "descricaoAcessivel": "Mediadora examina as rodas livres do armário junto a uma pequena rampa."
-      },
-      "revelacoes": {
-        "pistas": [
-          "armario-mais-pesado"
-        ],
-        "anotacoesPessoas": [
-          "mediadora-armario"
-        ],
-        "anotacoesLocais": [],
-        "conversas": [
-          "mediadora-peso"
-        ],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s5-roda-livre-a",
-          "texto": "Seguir a planta atual",
-          "proximaCena": "s5-planta"
-        },
-        {
-          "id": "s5-roda-livre-b",
-          "texto": "Acompanhar as marcas de rodas",
-          "proximaCena": "s5-marcas-rodas"
-        },
-        {
-          "id": "s5-roda-livre-c",
-          "texto": "Seguir a rota pontilhada",
-          "proximaCena": "s5-rota-pontilhada"
+          "proximaCena": "s5-marcas-rodas",
+          "dica": "O chão costuma guardar o itinerário que as pessoas esquecem de mencionar."
         }
       ]
     },
@@ -3885,17 +2579,14 @@
         {
           "id": "s5-planta-a",
           "texto": "Entrar na sala de atividades",
-          "proximaCena": "s5-porta"
+          "proximaCena": "s5-porta",
+          "dica": "Se uma rota foi preparada para receber visitantes, talvez o destino ainda esteja esperando por eles."
         },
         {
           "id": "s5-planta-b",
           "texto": "Examinar o compartimento inferior",
-          "proximaCena": "s5-compartimento"
-        },
-        {
-          "id": "s5-planta-c",
-          "texto": "Conferir o lacre da sala",
-          "proximaCena": "s5-lacre-sala"
+          "proximaCena": "s5-compartimento",
+          "dica": "Nem tudo que viaja num móvel escolhe a prateleira mais visível."
         }
       ]
     },
@@ -3919,53 +2610,14 @@
         {
           "id": "s5-marcas-rodas-a",
           "texto": "Entrar na sala de atividades",
-          "proximaCena": "s5-porta"
+          "proximaCena": "s5-porta",
+          "dica": "Se uma rota foi preparada para receber visitantes, talvez o destino ainda esteja esperando por eles."
         },
         {
           "id": "s5-marcas-rodas-b",
           "texto": "Examinar o compartimento inferior",
-          "proximaCena": "s5-compartimento"
-        },
-        {
-          "id": "s5-marcas-rodas-c",
-          "texto": "Conferir o lacre da sala",
-          "proximaCena": "s5-lacre-sala"
-        }
-      ]
-    },
-    {
-      "id": "s5-rota-pontilhada",
-      "etapaId": "volume-trocado",
-      "objetivoId": "seguir-armario",
-      "texto": "A linha pontilhada da planta evita a área úmida e termina no recuo da sala. Ela coincide com as marcas largas deixadas pelo armário.\n\nA rota do armário está desenhada com uma linha pontilhada na planta atual. Ela evita a área úmida, atravessa uma pequena rampa e termina num recuo que não bloqueia a circulação da sala de atividades. No piso claro, as marcas paralelas aparecem sobretudo depois da rampa, onde a mediadora precisou corrigir a direção. A distância entre elas corresponde às rodas traseiras do armário. Nenhuma vírgula escura do carrinho de conservação segue além da mesa. Essa separação confirma a troca de veículo e reduz os destinos possíveis: a caixa não continuou para depósitos ou saída de serviço; acompanhou os materiais da atividade por uma rota curta, planejada e inteiramente interna.",
-      "imagem": {
-        "recurso": "cena_restauro",
-        "descricaoAcessivel": "Planta atual e marcas paralelas indicam a rota até a sala de atividades."
-      },
-      "revelacoes": {
-        "pistas": [
-          "destino-sala-atividades"
-        ],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s5-rota-pontilhada-a",
-          "texto": "Entrar na sala de atividades",
-          "proximaCena": "s5-porta"
-        },
-        {
-          "id": "s5-rota-pontilhada-b",
-          "texto": "Examinar o compartimento inferior",
-          "proximaCena": "s5-compartimento"
-        },
-        {
-          "id": "s5-rota-pontilhada-c",
-          "texto": "Conferir o lacre da sala",
-          "proximaCena": "s5-lacre-sala"
+          "proximaCena": "s5-compartimento",
+          "dica": "Nem tudo que viaja num móvel escolhe a prateleira mais visível."
         }
       ]
     },
@@ -3993,17 +2645,14 @@
         {
           "id": "s5-porta-a",
           "texto": "Calcular o peso pelo inventário",
-          "proximaCena": "s5-inventario"
+          "proximaCena": "s5-inventario",
+          "dica": "Às vezes a ausência deixa um número na balança. Papel e lápis podem fazê-lo aparecer."
         },
         {
           "id": "s5-porta-b",
           "texto": "Reunir a equipe antes de abrir",
-          "proximaCena": "s5-cuidado-abertura"
-        },
-        {
-          "id": "s5-porta-c",
-          "texto": "Fazer uma pesagem comparativa",
-          "proximaCena": "s5-pesagem-comparativa"
+          "proximaCena": "s5-cuidado-abertura",
+          "dica": "Algumas tampas merecem testemunhas. Eu juntaria as pessoas cujos relatos chegam até aqui."
         }
       ]
     },
@@ -4027,55 +2676,14 @@
         {
           "id": "s5-compartimento-a",
           "texto": "Calcular o peso pelo inventário",
-          "proximaCena": "s5-inventario"
+          "proximaCena": "s5-inventario",
+          "dica": "Às vezes a ausência deixa um número na balança. Papel e lápis podem fazê-lo aparecer."
         },
         {
           "id": "s5-compartimento-b",
           "texto": "Reunir a equipe antes de abrir",
-          "proximaCena": "s5-cuidado-abertura"
-        },
-        {
-          "id": "s5-compartimento-c",
-          "texto": "Fazer uma pesagem comparativa",
-          "proximaCena": "s5-pesagem-comparativa"
-        }
-      ]
-    },
-    {
-      "id": "s5-lacre-sala",
-      "etapaId": "volume-trocado",
-      "objetivoId": "seguir-armario",
-      "texto": "O lacre de preparação registra que ninguém entrou depois que o armário foi estacionado. O ambiente preserva a organização descrita pela mediadora.\n\nA porta da sala ainda tem o lacre de preparação usado para evitar entrada antes da abertura. A mediadora possui o registro de quando o colocou, depois de estacionar o armário e conferir mesas e cadeiras. Ao remover o lacre com a curadora presente, vocês encontram o ambiente como ela descreveu. O compartimento inferior está fechado por um trinco simples, sem chave, e a caixa não pode ser vista sem abri-lo. Uma fibra azul presa à fresta chama atenção porque os outros materiais do armário são brancos ou cinza. Você resiste à solução imediata. Cor semelhante pode ter muitas origens; antes de abrir, é possível comparar fibra, peso, medidas e etiqueta por caminhos independentes.",
-      "imagem": {
-        "recurso": "cena_vitrine",
-        "descricaoAcessivel": "Lacre numerado ainda fecha a porta da sala de atividades organizada."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [
-          "atividades-armario"
-        ],
-        "conversas": [],
-        "lembrancas": [
-          "armario-seguiu-planta-atual"
-        ]
-      },
-      "escolhas": [
-        {
-          "id": "s5-lacre-sala-a",
-          "texto": "Calcular o peso pelo inventário",
-          "proximaCena": "s5-inventario"
-        },
-        {
-          "id": "s5-lacre-sala-b",
-          "texto": "Reunir a equipe antes de abrir",
-          "proximaCena": "s5-cuidado-abertura"
-        },
-        {
-          "id": "s5-lacre-sala-c",
-          "texto": "Fazer uma pesagem comparativa",
-          "proximaCena": "s5-pesagem-comparativa"
+          "proximaCena": "s5-cuidado-abertura",
+          "dica": "Algumas tampas merecem testemunhas. Eu juntaria as pessoas cujos relatos chegam até aqui."
         }
       ]
     },
@@ -4099,17 +2707,14 @@
         {
           "id": "s5-inventario-a",
           "texto": "Registrar o destino provável",
-          "proximaCena": "s5-pausa-a"
+          "proximaCena": "s5-pausa-a",
+          "dica": "Quando peso, fibra e medida apontam para o mesmo lugar, talvez seja hora de marcar o mapa a lápis."
         },
         {
           "id": "s5-inventario-b",
           "texto": "Aguardar confirmações independentes",
-          "proximaCena": "s5-pausa-b"
-        },
-        {
-          "id": "s5-inventario-c",
-          "texto": "Preparar o plano de abertura",
-          "proximaCena": "s5-plano-abertura"
+          "proximaCena": "s5-pausa-b",
+          "dica": "Uma coincidência é charmosa. Duas, sem combinar entre si, já merecem uma cadeira à mesa."
         }
       ]
     },
@@ -4133,51 +2738,14 @@
         {
           "id": "s5-cuidado-abertura-a",
           "texto": "Registrar o destino provável",
-          "proximaCena": "s5-pausa-a"
+          "proximaCena": "s5-pausa-a",
+          "dica": "Quando peso, fibra e medida apontam para o mesmo lugar, talvez seja hora de marcar o mapa a lápis."
         },
         {
           "id": "s5-cuidado-abertura-b",
           "texto": "Aguardar confirmações independentes",
-          "proximaCena": "s5-pausa-b"
-        },
-        {
-          "id": "s5-cuidado-abertura-c",
-          "texto": "Preparar o plano de abertura",
-          "proximaCena": "s5-plano-abertura"
-        }
-      ]
-    },
-    {
-      "id": "s5-pesagem-comparativa",
-      "etapaId": "volume-trocado",
-      "objetivoId": "seguir-armario",
-      "texto": "Um armário equivalente permite descontar estrutura e materiais conhecidos. A diferença restante permanece compatível com caixa, feltro, apoios e parte metálica.\n\nA ficha de inventário informa o peso da parte metálica, da base e do conjunto completo, além das medidas máximas. Vocês pesam primeiro um armário equivalente vazio e depois os pacotes conhecidos, sem movimentar o compartimento investigado. A diferença restante se aproxima da soma entre caixa, feltro e metal, com pequena margem para os apoios. A conservadora confirma que a caixa pode ser aberta com segurança, mas recomenda levá-la de volta à bancada antes de retirar o conteúdo. A curadora organiza o procedimento e registra quem estará presente. O cuidado desacelera apenas o necessário: não serve para prolongar suspense, e sim para impedir que a recuperação apague as informações que explicam como a peça chegou ali.",
-      "imagem": {
-        "recurso": "cena_chaves",
-        "descricaoAcessivel": "Dois armários equivalentes e uma balança permitem comparar pesos sem abrir o compartimento."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s5-pesagem-comparativa-a",
-          "texto": "Registrar o destino provável",
-          "proximaCena": "s5-pausa-a"
-        },
-        {
-          "id": "s5-pesagem-comparativa-b",
-          "texto": "Aguardar confirmações independentes",
-          "proximaCena": "s5-pausa-b"
-        },
-        {
-          "id": "s5-pesagem-comparativa-c",
-          "texto": "Preparar o plano de abertura",
-          "proximaCena": "s5-plano-abertura"
+          "proximaCena": "s5-pausa-b",
+          "dica": "Uma coincidência é charmosa. Duas, sem combinar entre si, já merecem uma cadeira à mesa."
         }
       ]
     },
@@ -4202,17 +2770,14 @@
         {
           "id": "s5-pausa-a-a",
           "texto": "Comparar a fibra azul",
-          "proximaCena": "s6-fibra"
+          "proximaCena": "s6-fibra",
+          "dica": "Um fio solitário parece pouco, até encontrar outro que fale a mesma língua."
         },
         {
           "id": "s5-pausa-a-b",
           "texto": "Medir a diferença de peso",
-          "proximaCena": "s6-peso"
-        },
-        {
-          "id": "s5-pausa-a-c",
-          "texto": "Comparar as amostras",
-          "proximaCena": "s6-amostras"
+          "proximaCena": "s6-peso",
+          "dica": "O que não se vê ainda pode inclinar uma balança. Eu prestaria atenção ao excesso, não à aparência."
         }
       ]
     },
@@ -4237,52 +2802,14 @@
         {
           "id": "s5-pausa-b-a",
           "texto": "Comparar a fibra azul",
-          "proximaCena": "s6-fibra"
+          "proximaCena": "s6-fibra",
+          "dica": "Um fio solitário parece pouco, até encontrar outro que fale a mesma língua."
         },
         {
           "id": "s5-pausa-b-b",
           "texto": "Medir a diferença de peso",
-          "proximaCena": "s6-peso"
-        },
-        {
-          "id": "s5-pausa-b-c",
-          "texto": "Comparar as amostras",
-          "proximaCena": "s6-amostras"
-        }
-      ]
-    },
-    {
-      "id": "s5-plano-abertura",
-      "etapaId": "volume-trocado",
-      "objetivoId": "seguir-armario",
-      "pontoDePausa": true,
-      "texto": "O plano define local limpo, pessoas presentes e ordem de registro antes da abertura. Recuperar a peça e preservar a explicação tornam-se partes do mesmo cuidado.\n\nO armário permanece no recuo, agora acompanhado por uma placa discreta para que ninguém o mova. A mediadora revê sua lista e acrescenta uma observação sobre a caixa recebida fechada; a conservadora traz uma amostra identificada do feltro; o montador entrega a etiqueta da prancheta. No Caderno, três linhas independentes convergem para o compartimento: rota das rodas, diferença de peso e fibra azul. Ainda assim, nenhuma substitui a confirmação direta da identidade. Você encerra a etapa com o destino provável localizado e um plano claro para a abertura. Depois da pausa, base, etiqueta e horários serão confrontados com o conteúdo, de modo que o alívio não venha antes da compreensão.",
-      "imagem": {
-        "recurso": "cena_chegada",
-        "descricaoAcessivel": "Plano de abertura reúne nomes de funções, bancada limpa e sequência de conferência."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s5-plano-abertura-a",
-          "texto": "Comparar a fibra azul",
-          "proximaCena": "s6-fibra"
-        },
-        {
-          "id": "s5-plano-abertura-b",
-          "texto": "Medir a diferença de peso",
-          "proximaCena": "s6-peso"
-        },
-        {
-          "id": "s5-plano-abertura-c",
-          "texto": "Comparar as amostras",
-          "proximaCena": "s6-amostras"
+          "proximaCena": "s6-peso",
+          "dica": "O que não se vê ainda pode inclinar uma balança. Eu prestaria atenção ao excesso, não à aparência."
         }
       ]
     },
@@ -4308,17 +2835,14 @@
         {
           "id": "s6-fibra-a",
           "texto": "Conferir o encaixe da base",
-          "proximaCena": "s6-base"
+          "proximaCena": "s6-base",
+          "dica": "Duas partes separadas ainda reconhecem uma à outra pelas marcas do encontro."
         },
         {
           "id": "s6-fibra-b",
           "texto": "Comparar o número da etiqueta",
-          "proximaCena": "s6-etiqueta"
-        },
-        {
-          "id": "s6-fibra-c",
-          "texto": "Mapear os apoios assimétricos",
-          "proximaCena": "s6-apoios-assimetricos"
+          "proximaCena": "s6-etiqueta",
+          "dica": "Nomes podem cair no caminho, mas números bem conferidos ainda sabem a quem pertencem."
         }
       ]
     },
@@ -4344,54 +2868,14 @@
         {
           "id": "s6-peso-a",
           "texto": "Conferir o encaixe da base",
-          "proximaCena": "s6-base"
+          "proximaCena": "s6-base",
+          "dica": "Duas partes separadas ainda reconhecem uma à outra pelas marcas do encontro."
         },
         {
           "id": "s6-peso-b",
           "texto": "Comparar o número da etiqueta",
-          "proximaCena": "s6-etiqueta"
-        },
-        {
-          "id": "s6-peso-c",
-          "texto": "Mapear os apoios assimétricos",
-          "proximaCena": "s6-apoios-assimetricos"
-        }
-      ]
-    },
-    {
-      "id": "s6-amostras",
-      "etapaId": "ultima-porta",
-      "objetivoId": "confirmar-identidade",
-      "texto": "As amostras são comparadas sem promessa de exclusividade. Cor, torção e corte tornam a fibra compatível com o feltro, enquanto o peso fornece confirmação independente.\n\nA conservadora coloca a fibra encontrada e a amostra de feltro em lâminas transparentes separadas. Sem microscópio ou promessa de certeza absoluta, vocês comparam cor, espessura, torção e modo de corte. As características coincidem, mas o Caderno registra o resultado como compatível, não exclusivo. A pesagem recebe o mesmo cuidado. O valor observado é comparado com uma faixa que inclui caixa, apoios e margem do equipamento, em vez de um número perfeito escolhido depois. Duas pistas modestas tornam-se fortes porque foram obtidas por métodos diferentes. Juntas, indicam que o compartimento abriga um volume preparado na conservação, com massa consistente com a parte metálica procurada.",
-      "imagem": {
-        "recurso": "cena_final_bilhete",
-        "descricaoAcessivel": "Duas lâminas transparentes exibem fibra encontrada e amostra identificada do feltro."
-      },
-      "revelacoes": {
-        "pistas": [
-          "fibra-no-armario",
-          "peso-compativel"
-        ],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s6-amostras-a",
-          "texto": "Conferir o encaixe da base",
-          "proximaCena": "s6-base"
-        },
-        {
-          "id": "s6-amostras-b",
-          "texto": "Comparar o número da etiqueta",
-          "proximaCena": "s6-etiqueta"
-        },
-        {
-          "id": "s6-amostras-c",
-          "texto": "Mapear os apoios assimétricos",
-          "proximaCena": "s6-apoios-assimetricos"
+          "proximaCena": "s6-etiqueta",
+          "dica": "Nomes podem cair no caminho, mas números bem conferidos ainda sabem a quem pertencem."
         }
       ]
     },
@@ -4417,17 +2901,14 @@
         {
           "id": "s6-base-a",
           "texto": "Montar a linha do tempo",
-          "proximaCena": "s6-linha-tempo"
+          "proximaCena": "s6-linha-tempo",
+          "dica": "As pistas parecem espalhadas porque ainda não receberam seus lugares no relógio."
         },
         {
           "id": "s6-base-b",
           "texto": "Cruzar os cinco relatos",
-          "proximaCena": "s6-relatos"
-        },
-        {
-          "id": "s6-base-c",
-          "texto": "Ordenar cartões e horários",
-          "proximaCena": "s6-cartoes-horarios"
+          "proximaCena": "s6-relatos",
+          "dica": "Cinco vozes não precisam cantar igual; basta descobrir em que compasso elas se encontram."
         }
       ]
     },
@@ -4451,53 +2932,14 @@
         {
           "id": "s6-etiqueta-a",
           "texto": "Montar a linha do tempo",
-          "proximaCena": "s6-linha-tempo"
+          "proximaCena": "s6-linha-tempo",
+          "dica": "As pistas parecem espalhadas porque ainda não receberam seus lugares no relógio."
         },
         {
           "id": "s6-etiqueta-b",
           "texto": "Cruzar os cinco relatos",
-          "proximaCena": "s6-relatos"
-        },
-        {
-          "id": "s6-etiqueta-c",
-          "texto": "Ordenar cartões e horários",
-          "proximaCena": "s6-cartoes-horarios"
-        }
-      ]
-    },
-    {
-      "id": "s6-apoios-assimetricos",
-      "etapaId": "ultima-porta",
-      "objetivoId": "confirmar-identidade",
-      "texto": "O desenho assimétrico dos três apoios funciona como uma assinatura material. Ele aparece na base, na ficha e na silhueta preparada para a caixa.\n\nNa bancada, a base é fotografada de cima e de perfil. Três pontos de apoio formam um desenho assimétrico, difícil de encaixar por acaso em outra peça. A ficha técnica repete o desenho e associa a ele o mesmo número iniciado na etiqueta provisória. O papel guardado pelo montador conserva uma dobra curva que corresponde à borda da caixa cinza, sinal de que esteve apoiado sobre ela antes de cair. Nenhum desses detalhes exige abrir o compartimento. Você monta uma cadeia de identificação que começa na exposição, passa pela separação da base e continua na etiqueta. Se o conteúdo apresentar os mesmos apoios, a confirmação dependerá de correspondência material, não apenas do lugar onde foi encontrado.",
-      "imagem": {
-        "recurso": "cena_forro",
-        "descricaoAcessivel": "Três pontos de apoio assimétricos são comparados entre base, ficha e molde de papel."
-      },
-      "revelacoes": {
-        "pistas": [
-          "encaixe-da-base"
-        ],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s6-apoios-assimetricos-a",
-          "texto": "Montar a linha do tempo",
-          "proximaCena": "s6-linha-tempo"
-        },
-        {
-          "id": "s6-apoios-assimetricos-b",
-          "texto": "Cruzar os cinco relatos",
-          "proximaCena": "s6-relatos"
-        },
-        {
-          "id": "s6-apoios-assimetricos-c",
-          "texto": "Ordenar cartões e horários",
-          "proximaCena": "s6-cartoes-horarios"
+          "proximaCena": "s6-relatos",
+          "dica": "Cinco vozes não precisam cantar igual; basta descobrir em que compasso elas se encontram."
         }
       ]
     },
@@ -4525,17 +2967,14 @@
         {
           "id": "s6-linha-tempo-a",
           "texto": "Abrir a caixa com cuidado",
-          "proximaCena": "s6-abertura"
+          "proximaCena": "s6-abertura",
+          "dica": "Há respostas que passam a vida dentro de quatro paredes. Eu só não teria pressa com a tampa."
         },
         {
           "id": "s6-linha-tempo-b",
           "texto": "Confirmar a identidade da peça",
-          "proximaCena": "s6-confirmacao"
-        },
-        {
-          "id": "s6-linha-tempo-c",
-          "texto": "Registrar a abertura da caixa",
-          "proximaCena": "s6-verificacao-caixa"
+          "proximaCena": "s6-confirmacao",
+          "dica": "Antes de celebrar o reencontro, eu pediria à madeira e ao metal que provassem que já foram um só."
         }
       ]
     },
@@ -4561,57 +3000,14 @@
         {
           "id": "s6-relatos-a",
           "texto": "Abrir a caixa com cuidado",
-          "proximaCena": "s6-abertura"
+          "proximaCena": "s6-abertura",
+          "dica": "Há respostas que passam a vida dentro de quatro paredes. Eu só não teria pressa com a tampa."
         },
         {
           "id": "s6-relatos-b",
           "texto": "Confirmar a identidade da peça",
-          "proximaCena": "s6-confirmacao"
-        },
-        {
-          "id": "s6-relatos-c",
-          "texto": "Registrar a abertura da caixa",
-          "proximaCena": "s6-verificacao-caixa"
-        }
-      ]
-    },
-    {
-      "id": "s6-cartoes-horarios",
-      "etapaId": "ultima-porta",
-      "objetivoId": "reconstruir-corrente",
-      "texto": "Cartões com minutos exatos e faixas aproximadas mantêm cada grau de certeza visível. As bordas se encontram sem criar intervalos impossíveis.\n\nCinco cartões recebem horários ou intervalos: descoberta da umidade, retirada da exposição, preparação na conservação, movimento até a mediação e chegada à sala de atividades. As bordas se tocam sem sobreposição impossível. Quando um horário é aproximado, ele permanece marcado como faixa, e não como minuto inventado. Cada pessoa lê apenas o cartão referente à própria ação e corrige pequenas palavras, sem conhecer antes a versão das outras. Os relatos continuam compatíveis. A caixa nunca precisa desaparecer da linha do tempo para reaparecer adiante; ela apenas muda de responsável e de significado. Esse mapa reduz a última incerteza logística e mostra por que ninguém, isoladamente, poderia ter reconstruído a manhã completa.",
-      "imagem": {
-        "recurso": "cena_po",
-        "descricaoAcessivel": "Cartões de horários formam uma linha contínua entre quatro ambientes."
-      },
-      "revelacoes": {
-        "pistas": [
-          "linha-do-tempo-completa"
-        ],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [
-          "equipe-antes-de-abrir"
-        ],
-        "lembrancas": [
-          "ninguem-viu-percurso-inteiro"
-        ]
-      },
-      "escolhas": [
-        {
-          "id": "s6-cartoes-horarios-a",
-          "texto": "Abrir a caixa com cuidado",
-          "proximaCena": "s6-abertura"
-        },
-        {
-          "id": "s6-cartoes-horarios-b",
-          "texto": "Confirmar a identidade da peça",
-          "proximaCena": "s6-confirmacao"
-        },
-        {
-          "id": "s6-cartoes-horarios-c",
-          "texto": "Registrar a abertura da caixa",
-          "proximaCena": "s6-verificacao-caixa"
+          "proximaCena": "s6-confirmacao",
+          "dica": "Antes de celebrar o reencontro, eu pediria à madeira e ao metal que provassem que já foram um só."
         }
       ]
     },
@@ -4635,17 +3031,14 @@
         {
           "id": "s6-abertura-a",
           "texto": "Ouvir cada trecho da equipe",
-          "proximaCena": "s6-cada-trecho"
+          "proximaCena": "s6-cada-trecho",
+          "dica": "Ninguém viu a viagem inteira. Talvez seja preciso emprestar um começo a cada final contado."
         },
         {
           "id": "s6-abertura-b",
           "texto": "Ver o percurso no mapa",
-          "proximaCena": "s6-mapa-completo"
-        },
-        {
-          "id": "s6-abertura-c",
-          "texto": "Marcar as informações perdidas",
-          "proximaCena": "s6-informacoes-perdidas"
+          "proximaCena": "s6-mapa-completo",
+          "dica": "Depois de tantos passos, talvez seja hora de olhar a viagem de cima e procurar o único trecho ainda solto."
         }
       ]
     },
@@ -4669,51 +3062,14 @@
         {
           "id": "s6-confirmacao-a",
           "texto": "Ouvir cada trecho da equipe",
-          "proximaCena": "s6-cada-trecho"
+          "proximaCena": "s6-cada-trecho",
+          "dica": "Ninguém viu a viagem inteira. Talvez seja preciso emprestar um começo a cada final contado."
         },
         {
           "id": "s6-confirmacao-b",
           "texto": "Ver o percurso no mapa",
-          "proximaCena": "s6-mapa-completo"
-        },
-        {
-          "id": "s6-confirmacao-c",
-          "texto": "Marcar as informações perdidas",
-          "proximaCena": "s6-informacoes-perdidas"
-        }
-      ]
-    },
-    {
-      "id": "s6-verificacao-caixa",
-      "etapaId": "ultima-porta",
-      "objetivoId": "reconstruir-corrente",
-      "texto": "Antes de afastar o feltro, a conservadora registra tampa, cantos, apoios e posição. A caixa confirma passo a passo a preparação que ela havia descrito.\n\nO armário é levado devagar à conservação e apoiado sobre a área limpa. A conservadora abre o trinco, retira a caixa com as duas mãos e verifica tampa, cantos e posição antes de desfazer o fecho. O feltro azul preenche os espaços como ela havia descrito. Ao afastar a primeira dobra, surge a superfície metálica seca, sem contato com as paredes. A equipe evita comemorar antes da conferência: número, medidas e três pontos de apoio são comparados com a base. O encaixe ocorre sem pressão. Só então a curadora confirma em voz alta que a peça está completa e estável. O alívio não apaga o percurso; torna possível examiná-lo sem medo nem procura por culpados.",
-      "imagem": {
-        "recurso": "cena_restauro",
-        "descricaoAcessivel": "Caixa cinza aberta sobre bancada limpa enquanto sua posição é registrada."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s6-verificacao-caixa-a",
-          "texto": "Ouvir cada trecho da equipe",
-          "proximaCena": "s6-cada-trecho"
-        },
-        {
-          "id": "s6-verificacao-caixa-b",
-          "texto": "Ver o percurso no mapa",
-          "proximaCena": "s6-mapa-completo"
-        },
-        {
-          "id": "s6-verificacao-caixa-c",
-          "texto": "Marcar as informações perdidas",
-          "proximaCena": "s6-informacoes-perdidas"
+          "proximaCena": "s6-mapa-completo",
+          "dica": "Depois de tantos passos, talvez seja hora de olhar a viagem de cima e procurar o único trecho ainda solto."
         }
       ]
     },
@@ -4741,17 +3097,14 @@
         {
           "id": "s6-cada-trecho-a",
           "texto": "Preparar a exposição segura",
-          "proximaCena": "s6-exposicao-segura"
+          "proximaCena": "s6-exposicao-segura",
+          "dica": "Depois de encontrar a peça, ainda resta escolher como devolvê-la sem repetir a confusão."
         },
         {
           "id": "s6-cada-trecho-b",
           "texto": "Discutir o aprendizado",
-          "proximaCena": "s6-aprendizado"
-        },
-        {
-          "id": "s6-cada-trecho-c",
-          "texto": "Separar as identificações táteis",
-          "proximaCena": "s6-identificacao-tatil"
+          "proximaCena": "s6-aprendizado",
+          "dica": "Uma investigação termina melhor quando a equipe leva consigo mais do que a peça recuperada."
         }
       ]
     },
@@ -4775,55 +3128,14 @@
         {
           "id": "s6-mapa-completo-a",
           "texto": "Preparar a exposição segura",
-          "proximaCena": "s6-exposicao-segura"
+          "proximaCena": "s6-exposicao-segura",
+          "dica": "Depois de encontrar a peça, ainda resta escolher como devolvê-la sem repetir a confusão."
         },
         {
           "id": "s6-mapa-completo-b",
           "texto": "Discutir o aprendizado",
-          "proximaCena": "s6-aprendizado"
-        },
-        {
-          "id": "s6-mapa-completo-c",
-          "texto": "Separar as identificações táteis",
-          "proximaCena": "s6-identificacao-tatil"
-        }
-      ]
-    },
-    {
-      "id": "s6-informacoes-perdidas",
-      "etapaId": "ultima-porta",
-      "objetivoId": "reconstruir-corrente",
-      "texto": "Nos espaços entre os cartões ficam aviso, etiqueta e conteúdo não conferido. O mapa revela que a falha esteve nas passagens de contexto, não nos cuidados individuais.\n\nCom a taça protegida, a curadora convida todos a colocar os cartões no chão segundo a ordem dos ambientes. O porteiro encerra seu trecho às seis; a conservadora começa às 6h10; o montador recebe um carrinho sem contexto; a mediadora reconhece uma caixa pelo uso habitual. Entre os cartões, vocês acrescentam pequenos espaços para as informações que não viajaram: aviso caído, etiqueta solta, conteúdo não conferido. A história deixa de parecer uma sequência de erros individuais. Ela revela passagens frágeis entre trabalhos bem executados. O mapa completo cabe em poucos metros de corredor, mas atravessa quatro vocabulários profissionais. É nessa mudança de vocabulário, e não numa intenção escondida, que o mistério finalmente se resolve.",
-      "imagem": {
-        "recurso": "cena_bilhete",
-        "descricaoAcessivel": "Cartões da equipe são separados por pequenos registros das informações que não acompanharam a caixa."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [
-          "curadora-aprendizado"
-        ],
-        "anotacoesLocais": [],
-        "conversas": [
-          "equipe-corrente-reconstruida"
-        ],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s6-informacoes-perdidas-a",
-          "texto": "Preparar a exposição segura",
-          "proximaCena": "s6-exposicao-segura"
-        },
-        {
-          "id": "s6-informacoes-perdidas-b",
-          "texto": "Discutir o aprendizado",
-          "proximaCena": "s6-aprendizado"
-        },
-        {
-          "id": "s6-informacoes-perdidas-c",
-          "texto": "Separar as identificações táteis",
-          "proximaCena": "s6-identificacao-tatil"
+          "proximaCena": "s6-aprendizado",
+          "dica": "Uma investigação termina melhor quando a equipe leva consigo mais do que a peça recuperada."
         }
       ]
     },
@@ -4847,17 +3159,14 @@
         {
           "id": "s6-exposicao-segura-a",
           "texto": "Valorizar a história do cuidado",
-          "proximaCena": "s6-pausa-a"
+          "proximaCena": "s6-pausa-a",
+          "dica": "Eu encerraria lembrando que esta peça foi encontrada porque muita gente tentou protegê-la, mesmo sem enxergar o quadro inteiro."
         },
         {
           "id": "s6-exposicao-segura-b",
           "texto": "Fortalecer a passagem de turno",
-          "proximaCena": "s6-pausa-b"
-        },
-        {
-          "id": "s6-exposicao-segura-c",
-          "texto": "Revisar o Caderno completo",
-          "proximaCena": "s6-revisao-caderno"
+          "proximaCena": "s6-pausa-b",
+          "dica": "O objeto voltou; agora eu cuidaria para que a informação não se perca na próxima troca de mãos."
         }
       ]
     },
@@ -4881,51 +3190,14 @@
         {
           "id": "s6-aprendizado-a",
           "texto": "Valorizar a história do cuidado",
-          "proximaCena": "s6-pausa-a"
+          "proximaCena": "s6-pausa-a",
+          "dica": "Eu encerraria lembrando que esta peça foi encontrada porque muita gente tentou protegê-la, mesmo sem enxergar o quadro inteiro."
         },
         {
           "id": "s6-aprendizado-b",
           "texto": "Fortalecer a passagem de turno",
-          "proximaCena": "s6-pausa-b"
-        },
-        {
-          "id": "s6-aprendizado-c",
-          "texto": "Revisar o Caderno completo",
-          "proximaCena": "s6-revisao-caderno"
-        }
-      ]
-    },
-    {
-      "id": "s6-identificacao-tatil",
-      "etapaId": "ultima-porta",
-      "objetivoId": "escolher-enfase-final",
-      "texto": "A reprodução recebe identificação própria e um lugar que não depende da cor do recipiente. A solução reduz a chance de caixa e conteúdo voltarem a ser confundidos.\n\nA equipe técnica confirma que a infiltração foi contida e instala uma proteção adicional antes de devolver a taça à vitrine. A reprodução tátil permanece acessível na mesa, agora com uma identificação que não depende da cor da caixa. A abertura ao público poderá acontecer com pequeno ajuste de horário, sem esconder o ocorrido nem transformar trabalhadores em personagens de uma acusação. Duas ideias surgem da conversa. A primeira torna visível o trabalho de cuidado por trás da exposição e convida visitantes a perceber conservação, montagem e mediação. A segunda cria uma passagem de responsabilidade simples, com destino confirmado por quem entrega e por quem recebe. Ambas respondem ao mesmo aprendizado por caminhos diferentes.",
-      "imagem": {
-        "recurso": "cena_chaves",
-        "descricaoAcessivel": "Reprodução tátil identificada permanece acessível ao lado da vitrine protegida."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s6-identificacao-tatil-a",
-          "texto": "Valorizar a história do cuidado",
-          "proximaCena": "s6-pausa-a"
-        },
-        {
-          "id": "s6-identificacao-tatil-b",
-          "texto": "Fortalecer a passagem de turno",
-          "proximaCena": "s6-pausa-b"
-        },
-        {
-          "id": "s6-identificacao-tatil-c",
-          "texto": "Revisar o Caderno completo",
-          "proximaCena": "s6-revisao-caderno"
+          "proximaCena": "s6-pausa-b",
+          "dica": "O objeto voltou; agora eu cuidaria para que a informação não se perca na próxima troca de mãos."
         }
       ]
     },
@@ -4950,17 +3222,14 @@
         {
           "id": "s6-pausa-a-a",
           "texto": "Contar a história do cuidado",
-          "proximaCena": "final-historia-cuidado"
+          "proximaCena": "final-historia-cuidado",
+          "dica": "Talvez o melhor final não seja sobre um sumiço, mas sobre todas as mãos que evitaram uma perda."
         },
         {
           "id": "s6-pausa-a-b",
           "texto": "Criar um combinado claro",
-          "proximaCena": "final-combinado-claro"
-        },
-        {
-          "id": "s6-pausa-a-c",
-          "texto": "Abrir uma conversa de bastidores",
-          "proximaCena": "final-bastidores-abertos"
+          "proximaCena": "final-combinado-claro",
+          "dica": "Quando todos cuidam de algo, uma frase simples pode impedir que a responsabilidade desapareça no plural."
         }
       ]
     },
@@ -4985,52 +3254,14 @@
         {
           "id": "s6-pausa-b-a",
           "texto": "Contar a história do cuidado",
-          "proximaCena": "final-historia-cuidado"
+          "proximaCena": "final-historia-cuidado",
+          "dica": "Talvez o melhor final não seja sobre um sumiço, mas sobre todas as mãos que evitaram uma perda."
         },
         {
           "id": "s6-pausa-b-b",
           "texto": "Criar um combinado claro",
-          "proximaCena": "final-combinado-claro"
-        },
-        {
-          "id": "s6-pausa-b-c",
-          "texto": "Abrir uma conversa de bastidores",
-          "proximaCena": "final-bastidores-abertos"
-        }
-      ]
-    },
-    {
-      "id": "s6-revisao-caderno",
-      "etapaId": "ultima-porta",
-      "objetivoId": "escolher-enfase-final",
-      "pontoDePausa": true,
-      "texto": "A revisão final liga cada pista a uma explicação e cada pessoa ao trecho que podia conhecer. Nada permanece solto antes da decisão de encerramento.\n\nVocê faz uma última revisão no Caderno. Cada pista importante agora possui explicação: a vitrine íntegra afastou a hipótese de força; a umidade motivou a retirada; a base marcou o primeiro destino; feltro e caixa revelaram a proteção; rodas e plantas reconstruíram a rota; reprodução, peso e fibra localizaram o volume; etiqueta e encaixe confirmaram a identidade. Nenhuma descoberta precisou diminuir uma pessoa para valorizar outra. A escolha final não altera a segurança da taça nem mede desempenho. Ela define qual memória a equipe deseja levar adiante: compartilhar com o público a corrente de cuidados ou formalizar um combinado capaz de preservar contexto nas próximas passagens.",
-      "imagem": {
-        "recurso": "cena_ercilia",
-        "descricaoAcessivel": "Caderno completo mostra pistas, pessoas, locais e a linha do tempo resolvida."
-      },
-      "revelacoes": {
-        "pistas": [],
-        "anotacoesPessoas": [],
-        "anotacoesLocais": [],
-        "conversas": [],
-        "lembrancas": []
-      },
-      "escolhas": [
-        {
-          "id": "s6-revisao-caderno-a",
-          "texto": "Contar a história do cuidado",
-          "proximaCena": "final-historia-cuidado"
-        },
-        {
-          "id": "s6-revisao-caderno-b",
-          "texto": "Criar um combinado claro",
-          "proximaCena": "final-combinado-claro"
-        },
-        {
-          "id": "s6-revisao-caderno-c",
-          "texto": "Abrir uma conversa de bastidores",
-          "proximaCena": "final-bastidores-abertos"
+          "proximaCena": "final-combinado-claro",
+          "dica": "Quando todos cuidam de algo, uma frase simples pode impedir que a responsabilidade desapareça no plural."
         }
       ]
     },
@@ -5062,21 +3293,6 @@
         "titulo": "Um combinado claro",
         "mensagem": "Cada função mantém sua autonomia e as passagens deixam de perder contexto.",
         "explicacaoPistas": "Horários, bilhete e base provaram a retirada preventiva; caixa cinza e etiqueta explicaram a confusão de identidade; carrinho e plantas reconstruíram a rota; lista, reprodução e peso apontaram o armário; fibra, encaixe e linha do tempo fecharam a corrente."
-      }
-    },
-    {
-      "id": "final-bastidores-abertos",
-      "tipo": "final",
-      "etapaId": "ultima-porta",
-      "texto": "A exposição abre com a taça segura e uma conversa breve de bastidores. Conservação, montagem e mediação apresentam juntas o percurso da caixa, mostrando como perguntas cuidadosas transformam desencontros em conhecimento compartilhado.",
-      "imagem": {
-        "recurso": "cena_final_seguranca",
-        "descricaoAcessivel": "Equipe e visitantes conversam diante da taça segura, da reprodução tátil e do mapa de bastidores."
-      },
-      "desfecho": {
-        "titulo": "Bastidores abertos",
-        "mensagem": "A investigação se transforma numa conversa sobre atenção, contexto e trabalho coletivo.",
-        "explicacaoPistas": "Sala e horários separaram os acontecimentos; materiais de conservação identificaram a caixa; rodas, plantas e listas recompuseram as passagens; reprodução, fibra, peso, etiqueta e base confirmaram a peça; os registros mostraram quais informações não acompanharam cada mudança de responsável."
       }
     }
   ]

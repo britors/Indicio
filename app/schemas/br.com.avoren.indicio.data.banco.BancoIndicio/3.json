@@ -1,0 +1,180 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 3,
+    "identityHash": "94910e7dde49872677451316b8607b74",
+    "entities": [
+      {
+        "tableName": "progresso",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`casoId` TEXT NOT NULL, `cenaAtual` TEXT NOT NULL, `escolhas` TEXT NOT NULL, `pistas` TEXT NOT NULL, `desfechoAlcancado` TEXT, `atualizadoEm` INTEGER NOT NULL, `versaoEsquema` INTEGER NOT NULL, `versaoConteudo` INTEGER NOT NULL, PRIMARY KEY(`casoId`))",
+        "fields": [
+          {
+            "fieldPath": "casoId",
+            "columnName": "casoId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cenaAtual",
+            "columnName": "cenaAtual",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "escolhas",
+            "columnName": "escolhas",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pistas",
+            "columnName": "pistas",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "desfechoAlcancado",
+            "columnName": "desfechoAlcancado",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "atualizadoEm",
+            "columnName": "atualizadoEm",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "versaoEsquema",
+            "columnName": "versaoEsquema",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "versaoConteudo",
+            "columnName": "versaoConteudo",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "casoId"
+          ]
+        }
+      },
+      {
+        "tableName": "conclusoes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `casoId` TEXT NOT NULL, `cenaFinal` TEXT NOT NULL, `tituloDesfecho` TEXT NOT NULL, `pistas` TEXT NOT NULL, `concluidoEm` INTEGER NOT NULL, `versaoEsquema` INTEGER NOT NULL, `versaoConteudo` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "casoId",
+            "columnName": "casoId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cenaFinal",
+            "columnName": "cenaFinal",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tituloDesfecho",
+            "columnName": "tituloDesfecho",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pistas",
+            "columnName": "pistas",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "concluidoEm",
+            "columnName": "concluidoEm",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "versaoEsquema",
+            "columnName": "versaoEsquema",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "versaoConteudo",
+            "columnName": "versaoConteudo",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "dicas",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`casoId` TEXT NOT NULL, `cenaId` TEXT NOT NULL, `escolhaId` TEXT NOT NULL, `usadaEm` INTEGER NOT NULL, PRIMARY KEY(`casoId`, `cenaId`))",
+        "fields": [
+          {
+            "fieldPath": "casoId",
+            "columnName": "casoId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cenaId",
+            "columnName": "cenaId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "escolhaId",
+            "columnName": "escolhaId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "usadaEm",
+            "columnName": "usadaEm",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "casoId",
+            "cenaId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_dicas_usadaEm",
+            "unique": false,
+            "columnNames": [
+              "usadaEm"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_dicas_usadaEm` ON `${TABLE_NAME}` (`usadaEm`)"
+          }
+        ]
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '94910e7dde49872677451316b8607b74')"
+    ]
+  }
+}

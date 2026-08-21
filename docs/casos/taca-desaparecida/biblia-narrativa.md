@@ -204,7 +204,7 @@ pontuação, final ruim, escolha punitiva nem repetição para aumentar duraçã
 
 ## Finais positivos
 
-Os três finais recuperam a taça seca, intacta e acompanhada da base correta. A
+Os dois finais recuperam a taça seca, intacta e acompanhada da base correta. A
 infiltração é isolada antes de a peça voltar à exposição. Ninguém é acusado ou
 humilhado.
 
@@ -221,14 +221,8 @@ A equipe cria uma passagem de turno simples: etiqueta presa ao volume, quadro
 compartilhado e confirmação do destino. A exposição abre com a taça segura e
 com um processo que preserva a autonomia de cada função.
 
-### Bastidores abertos
-
-A equipe recebe o público com uma conversa breve sobre o percurso da caixa.
-Conservação, montagem e mediação mostram juntas como registros parciais podem
-ser reunidos sem procurar culpados.
-
-Os finais representam ênfases diferentes — contar a história, melhorar o
-processo ou abrir uma conversa —, não sucesso e fracasso. Todos explicam as
+Os finais representam ênfases diferentes — contar a história ou melhorar o
+processo —, não sucesso e fracasso. Ambos explicam as
 pistas centrais.
 
 ## Limites editoriais e jurídicos
@@ -254,4 +248,4 @@ A bíblia estará aprovada quando o responsável pelo produto confirmar que:
   artifício;
 - os cinco personagens têm função clara e ninguém funciona como vilão;
 - o afastamento de eventos, entidades e troféus reais deve ser mantido;
-- os três finais representam o tom desejado para o Indício.
+- os dois finais representam o tom desejado para o Indício.

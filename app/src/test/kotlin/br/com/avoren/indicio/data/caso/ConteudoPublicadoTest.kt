@@ -112,11 +112,11 @@ class ConteudoPublicadoTest {
         val palavras = palavrasAteFinal(caso, caso.cenaInicial)
 
         assertEquals(2, caso.revisao.esquema)
-        assertEquals(4, caso.revisao.conteudo)
+        assertEquals(5, caso.revisao.conteudo)
         assertEquals(6, caso.etapas.size)
-        assertEquals(124, caso.cenas.count { it.tipo == TipoCena.COMUM })
-        assertEquals(3, caso.cenas.count { it.tipo == TipoCena.FINAL })
-        assertTrue(caso.cenas.filter { it.tipo == TipoCena.COMUM }.all { it.escolhas.size == 3 })
+        assertEquals(83, caso.cenas.count { it.tipo == TipoCena.COMUM })
+        assertEquals(2, caso.cenas.count { it.tipo == TipoCena.FINAL })
+        assertTrue(caso.cenas.filter { it.tipo == TipoCena.COMUM }.all { it.escolhas.size == 2 })
         assertEquals(42..42, comprimentos)
         assertTrue(
             "O menor percurso tem apenas ${palavras.first} palavras.",
@@ -152,6 +152,21 @@ class ConteudoPublicadoTest {
                     cena.imagem.descricaoAcessivel.length >= 30,
                 )
             }
+        }
+    }
+
+    @Test
+    fun `dicas da taca insinuam sem entregar o texto da escolha`() = runTest {
+        val caso = casosPublicados().single { it.id == "taca-desaparecida" }
+
+        caso.cenas.flatMap(Cena::escolhas).forEach { escolha ->
+            val dica = escolha.dica.orEmpty()
+            assertTrue("A escolha \"${escolha.id}\" não possui dica narrativa.", dica.isNotBlank())
+            assertTrue(
+                "A dica da escolha \"${escolha.id}\" entrega diretamente o caminho.",
+                !dica.contains(escolha.texto, ignoreCase = true) &&
+                    !dica.contains("siga por", ignoreCase = true),
+            )
         }
     }
 
@@ -214,7 +229,9 @@ class ConteudoPublicadoTest {
             append(cena.narracao.orEmpty()).append(' ')
             append(cena.imagem.descricaoAcessivel).append(' ')
             cena.pista?.let { append(it.titulo).append(' ').append(it.descricao).append(' ') }
-            cena.escolhas.forEach { escolha: Escolha -> append(escolha.texto).append(' ') }
+            cena.escolhas.forEach { escolha: Escolha ->
+                append(escolha.texto).append(' ').append(escolha.dica.orEmpty()).append(' ')
+            }
             cena.desfecho?.let {
                 append(it.titulo).append(' ').append(it.mensagem).append(' ').append(it.explicacaoPistas)
             }

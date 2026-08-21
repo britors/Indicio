@@ -79,6 +79,7 @@ termos têm significado estável no produto, na documentação, no JSON e no có
 | Sessão de investigação | Estado de uma tentativa em andamento ou concluída. |
 | Progresso salvo | Representação persistida necessária para reconstruir a sessão. |
 | Catálogo | Modelo de leitura que lista os casos disponíveis; não é o caso em si. |
+| Dica do Anônimo | Recomendação opcional do caminho mais curto até conteúdo ainda não descoberto. |
 
 Há dois agregados principais:
 
@@ -246,6 +247,14 @@ atual é de 30 minutos desde `atualizadoEm`: abaixo disso o jogador volta direto
 O relógio e o limite são substituíveis em teste e não pertencem ao conteúdo do
 caso.
 
+`CicloDeDescanso` é outra política temporal da aplicação. Ele acumula somente o
+uso do aplicativo em primeiro plano e, a cada 45 minutos, inicia um descanso de
+cinco minutos. O relógio monotônico do Android entra pelo `DescansoViewModel`;
+assim a política continua independente da plataforma e pode ser validada com
+tempo controlado. Depois de iniciado, o descanso continua correndo em segundo
+plano e a interface interrompe a narração, bloqueia a investigação e retorna
+automaticamente ao mesmo ponto ao fim da contagem.
+
 ## Formato e evolução
 
 Os esquemas suportados são as versões `1` e `2`. A leitura é estrita: campo
@@ -277,7 +286,9 @@ banco guarda versões, escolhas e índices mínimos para retomada.
 ## Persistência
 
 Room guarda progresso e histórico porque esses dados são relacionais e precisam
-de consulta por caso e por recência. DataStore guarda somente preferências
+de consulta por caso e por recência. Room também guarda as dicas reveladas, com
+cena, escolha e instante de uso, para aplicar atomicamente a cota semanal e não
+cobrar novamente ao rever a mesma cena. DataStore guarda somente preferências
 globais de leitura e movimento. A aparência segue o modo claro ou escuro do
 sistema e não é persistida separadamente pelo aplicativo.
 
@@ -296,6 +307,13 @@ estado observável e coordenam detalhes de ciclo de vida. Regras narrativas não
 devem nascer neles. Operações simples de uma única porta podem ser chamadas
 diretamente pelo adaptador; não se cria um caso de uso de uma linha apenas para
 completar um desenho de camadas.
+
+`SugerirEscolha` percorre o grafo sem conhecer enredos específicos e compara a
+distância de cada escolha até uma pista, anotação, conversa ou lembrança ainda
+oculta. `GerenciarDicas` aplica a cota global de duas novas dicas na semana ISO,
+de segunda a domingo. A gravação condicional é transacional no adaptador Room,
+impedindo que pedidos concorrentes ultrapassem o limite. Uma dica já revelada
+continua disponível em visitas futuras e não volta a consumir a cota.
 
 `ContainerAplicacao` é a raiz de composição manual. ViewModels recebem
 interfaces ou casos de uso, nunca o próprio container nem classes de `data/`.
@@ -328,9 +346,9 @@ editorial sobre o conteúdo empacotado pertence aos testes de publicação.
 - Categorias formam um vocabulário controlado. Acrescentar uma categoria é uma
   mudança de produto e de código; acrescentar um caso a uma categoria existente
   não é.
-- O esquema `1` preserva exatamente duas escolhas por compatibilidade. O
-  esquema `2` exige três escolhas distintas em cada cena comum por decisão de
-  experiência, não por limitação do JSON.
+- Os esquemas `1` e `2` exigem exatamente duas escolhas distintas em cada cena
+  comum. A quantidade reduz a carga de decisão sem limitar a convergência ou a
+  duração dos caminhos narrativos.
 - O esquema `1` continua executando o piloto curto, mas Retomada, Etapas,
   Pessoas, Locais e Conversas só existem no esquema `2`.
 

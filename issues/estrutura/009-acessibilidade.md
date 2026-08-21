@@ -16,7 +16,7 @@ Garantir uso confortável por idosos e pessoas com dificuldades cognitivas leves
 - Ordenar foco e anúncios para TalkBack sem repetição excessiva.
 - Não comunicar estado ou informação importante somente por cor.
 - Garantir áreas de toque amplas, estados de foco claros e espaçamento generoso.
-- Limitar densidade de conteúdo e preservar três escolhas visualmente distintas.
+- Limitar densidade de conteúdo e preservar duas escolhas visualmente distintas.
 - Respeitar redução de movimentos e evitar flashes/estímulos piscantes.
 - Revisar linguagem para evitar infantilização, tom hospitalar e alegações de tratar, prevenir ou retardar demência.
 - Verificar orientação/tamanhos de tela definidos como suportados pelo MVP.

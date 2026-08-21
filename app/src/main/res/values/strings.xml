@@ -33,11 +33,15 @@
     <string name="catalogo_abrir_curto">Abrir caso</string>
 
     <!-- História -->
-    <string name="historia_pausar">Pausar</string>
+    <string name="historia_abrir_menu">Abrir menu da investigação</string>
     <string name="historia_ouvir">Ouvir o trecho</string>
     <string name="historia_parar_narracao">Parar a narração</string>
     <string name="historia_narrando">Narrando o trecho</string>
     <string name="historia_sem_voz">Este aparelho não tem voz em português instalada. A história continua disponível para leitura.</string>
+    <string name="historia_expandir_texto">Mostrar texto completo</string>
+    <string name="historia_recolher_texto">Recolher texto</string>
+    <string name="historia_texto_recolhido">Texto recolhido</string>
+    <string name="historia_texto_expandido">Texto expandido</string>
     <string name="historia_escolhas">Qual caminho seguir?</string>
     <string name="historia_escolhas_apoio">Escolha uma carta</string>
     <string name="historia_nova_pista">Nova pista</string>
@@ -48,6 +52,43 @@
     <string name="historia_atualizada_titulo">Este caso foi atualizado</string>
     <string name="historia_atualizada_mensagem">O progresso salvo de “%1$s” pertence a outra versão. Para proteger seu histórico, ele só será substituído se você escolher recomeçar.</string>
     <string name="historia_atualizada_recomecar">Recomeçar o caso</string>
+    <string name="historia_dica_consultando">Consultando o Anônimo…</string>
+    <string name="historia_dica_remetente">Mensagem do Anônimo</string>
+    <string name="historia_dica_mensagem_generica">Alguns detalhes preferem não chamar atenção. Eu voltaria os olhos para o que parece apenas parte do cenário.</string>
+    <plurals name="historia_dicas_restantes">
+        <item quantity="one">%1$d dica restante nesta semana</item>
+        <item quantity="other">%1$d dicas restantes nesta semana</item>
+    </plurals>
+    <string name="historia_menu_dica_titulo">Dica do Anônimo</string>
+    <plurals name="historia_menu_dica_saldo">
+        <item quantity="one">%1$d disponível</item>
+        <item quantity="other">%1$d disponíveis</item>
+    </plurals>
+    <string name="historia_menu_dica_reabrir">Reabrir mensagem</string>
+    <string name="historia_menu_dicas_esgotadas">Novas dicas na segunda-feira</string>
+    <string name="historia_menu_dica_consultando">Consultando disponibilidade…</string>
+    <string name="historia_menu_dica_tentar_novamente">Toque para tentar novamente</string>
+    <string name="historia_dialogo_dica_titulo">Bilhete do Anônimo</string>
+    <plurals name="historia_dialogo_dica_saldo">
+        <item quantity="one">Você tem %1$d dica nesta semana.</item>
+        <item quantity="other">Você tem %1$d dicas nesta semana.</item>
+    </plurals>
+    <string name="historia_dialogo_dica_pergunta">Deseja usar uma delas para receber uma sugestão sobre esta cena?</string>
+    <string name="historia_dialogo_dica_usar">Usar uma dica</string>
+    <string name="historia_dialogo_dica_agora_nao">Agora não</string>
+    <string name="historia_dialogo_dica_aguarde">A mensagem está a caminho.</string>
+    <string name="historia_dialogo_dica_fechar">Fechar</string>
+    <string name="historia_dialogo_dica_entendi">Entendi</string>
+    <string name="historia_dialogo_dica_falha_titulo">O bilhete não chegou</string>
+    <string name="historia_dialogo_dica_falha_mensagem">Não foi possível consultar o Anônimo agora. Nenhuma dica foi consumida.</string>
+    <string name="historia_dialogo_dica_tentar_novamente">Tentar novamente</string>
+
+    <!-- Descanso -->
+    <string name="descanso_rotulo">Pausa da investigação</string>
+    <string name="descanso_titulo">Descanse um pouco</string>
+    <string name="descanso_mensagem">Afaste os olhos da tela e aproveite estes minutos com calma. Sua investigação está guardada.</string>
+    <string name="descanso_tempo_acessivel">Tempo restante: %1$d minutos e %2$d segundos</string>
+    <string name="descanso_retorno_automatico">A investigação continua automaticamente ao fim da pausa.</string>
 
     <!-- Conclusão -->
     <string name="conclusao_titulo">Caso concluído</string>

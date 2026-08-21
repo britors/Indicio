@@ -126,11 +126,7 @@ class ValidadorCaso {
         idsDeCena: Set<String>,
         problemas: MutableList<ProblemaValidacao>,
     ) {
-        val escolhasEsperadas = if (caso.revisao.esquema == 2) {
-            ESCOLHAS_POR_CENA_LONGA
-        } else {
-            ESCOLHAS_POR_CENA_LEGADA
-        }
+        val escolhasEsperadas = ESCOLHAS_POR_CENA
         if (cena.escolhas.isEmpty()) {
             problemas += problema(
                 caso,
@@ -298,7 +294,6 @@ class ValidadorCaso {
     ) = ProblemaValidacao(casoId = caso.id, cenaId = cenaId, campo = campo, mensagem = mensagem)
 
     private companion object {
-        const val ESCOLHAS_POR_CENA_LEGADA = 2
-        const val ESCOLHAS_POR_CENA_LONGA = 3
+        const val ESCOLHAS_POR_CENA = 2
     }
 }

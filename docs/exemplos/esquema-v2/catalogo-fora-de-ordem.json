@@ -191,11 +191,6 @@
           "id": "chegada-b",
           "texto": "Examinar a gaveta sob o armário",
           "proximaCena": "gaveta"
-        },
-        {
-          "id": "chegada-c",
-          "texto": "Mapear as etiquetas",
-          "proximaCena": "catalogo-visual"
         }
       ]
     },
@@ -230,11 +225,6 @@
           "id": "bibliotecaria-b",
           "texto": "Visitar a mesa da oficina",
           "proximaCena": "oficina"
-        },
-        {
-          "id": "bibliotecaria-c",
-          "texto": "Comparar as fichas soltas",
-          "proximaCena": "fichas-soltas"
         }
       ]
     },
@@ -265,50 +255,6 @@
           "id": "gaveta-b",
           "texto": "Procurar materiais parecidos na oficina",
           "proximaCena": "oficina"
-        },
-        {
-          "id": "gaveta-c",
-          "texto": "Comparar as fichas soltas",
-          "proximaCena": "fichas-soltas"
-        }
-      ]
-    },
-    {
-      "id": "catalogo-visual",
-      "etapaId": "observar-colecao",
-      "objetivoId": "entender-organizacao",
-      "pontoDePausa": true,
-      "texto": "O catálogo visual permite comparar etiquetas e posições antes de escolher uma gaveta.",
-      "imagem": {
-        "recurso": "cena_catalogo_bibliotecaria",
-        "descricaoAcessivel": "Catálogo visual aberto ao lado das gavetas numeradas."
-      },
-      "revelacoes": {
-        "anotacoesPessoas": [
-          "bibliotecaria-separou-series"
-        ],
-        "conversas": [
-          "conversa-bibliotecaria-etiquetas"
-        ],
-        "lembrancas": [
-          "series-separadas"
-        ]
-      },
-      "escolhas": [
-        {
-          "id": "catalogo-visual-a",
-          "texto": "Conferir a lista de consulta",
-          "proximaCena": "lista-consulta"
-        },
-        {
-          "id": "catalogo-visual-b",
-          "texto": "Visitar a mesa da oficina",
-          "proximaCena": "oficina"
-        },
-        {
-          "id": "catalogo-visual-c",
-          "texto": "Comparar as fichas soltas",
-          "proximaCena": "fichas-soltas"
         }
       ]
     },
@@ -339,11 +285,6 @@
           "id": "lista-b",
           "texto": "Examinar diretamente as cópias",
           "proximaCena": "versos"
-        },
-        {
-          "id": "lista-consulta-c",
-          "texto": "Ouvir a mediadora",
-          "proximaCena": "mediadora"
         }
       ]
     },
@@ -374,46 +315,6 @@
           "id": "oficina-b",
           "texto": "Virar os cartões sobre a mesa",
           "proximaCena": "versos"
-        },
-        {
-          "id": "oficina-c",
-          "texto": "Ouvir a mediadora",
-          "proximaCena": "mediadora"
-        }
-      ]
-    },
-    {
-      "id": "fichas-soltas",
-      "etapaId": "comparar-registros",
-      "objetivoId": "localizar-primeira-troca",
-      "texto": "Três fichas soltas preservam a ordem das consultas mesmo fora da gaveta habitual.",
-      "imagem": {
-        "recurso": "cena_catalogo_lista",
-        "descricaoAcessivel": "Fichas de consulta são comparadas sobre uma mesa clara."
-      },
-      "revelacoes": {
-        "pistas": [
-          "lista-da-oficina"
-        ],
-        "lembrancas": [
-          "oficina-usou-copias"
-        ]
-      },
-      "escolhas": [
-        {
-          "id": "fichas-soltas-a",
-          "texto": "Perguntar ao orientador sobre os códigos",
-          "proximaCena": "orientador"
-        },
-        {
-          "id": "fichas-soltas-b",
-          "texto": "Examinar diretamente as cópias",
-          "proximaCena": "versos"
-        },
-        {
-          "id": "fichas-soltas-c",
-          "texto": "Ouvir a mediadora",
-          "proximaCena": "mediadora"
         }
       ]
     },
@@ -451,11 +352,6 @@
           "id": "orientador-b",
           "texto": "Conferir cada código antes de separar",
           "proximaCena": "final-conferido"
-        },
-        {
-          "id": "orientador-c",
-          "texto": "Expor a ordem reconstruída",
-          "proximaCena": "final-explicado"
         }
       ]
     },
@@ -486,53 +382,6 @@
           "id": "versos-b",
           "texto": "Reordenar primeiro os cartões originais",
           "proximaCena": "final-conferido"
-        },
-        {
-          "id": "versos-c",
-          "texto": "Expor a ordem reconstruída",
-          "proximaCena": "final-explicado"
-        }
-      ]
-    },
-    {
-      "id": "mediadora",
-      "etapaId": "restaurar-sequencia",
-      "objetivoId": "reconstruir-ordem",
-      "pontoDePausa": true,
-      "texto": "A mediadora reconhece as cópias usadas na oficina e ajuda a reunir a sequência completa.",
-      "imagem": {
-        "recurso": "cena_catalogo_orientador",
-        "descricaoAcessivel": "Mediadora organiza cartões originais e cópias marcadas."
-      },
-      "revelacoes": {
-        "pistas": [
-          "marca-de-lapis"
-        ],
-        "anotacoesPessoas": [
-          "orientador-fez-copias"
-        ],
-        "conversas": [
-          "conversa-orientador-copias"
-        ],
-        "lembrancas": [
-          "copias-marcadas"
-        ]
-      },
-      "escolhas": [
-        {
-          "id": "mediadora-a",
-          "texto": "Separar os cartões pelas marcas",
-          "proximaCena": "final-separado"
-        },
-        {
-          "id": "mediadora-b",
-          "texto": "Conferir cada código antes de separar",
-          "proximaCena": "final-conferido"
-        },
-        {
-          "id": "mediadora-c",
-          "texto": "Expor a ordem reconstruída",
-          "proximaCena": "final-explicado"
         }
       ]
     },
@@ -564,21 +413,6 @@
         "titulo": "Uma ordem fácil de preservar",
         "mensagem": "A coleção voltou ao lugar e ganhou um guia claro para uso compartilhado.",
         "explicacaoPistas": "As cores revelaram a quebra da sequência, a lista explicou a mistura e as marcas no verso permitiram separar cada cópia."
-      }
-    },
-    {
-      "id": "final-explicado",
-      "tipo": "final",
-      "etapaId": "restaurar-sequencia",
-      "texto": "A ordem reconstruída passa a acompanhar o catálogo visual, tornando a consulta clara para toda a equipe.",
-      "imagem": {
-        "recurso": "cena_catalogo_final_separado",
-        "descricaoAcessivel": "Catálogo e cartões ordenados ficam disponíveis juntos."
-      },
-      "desfecho": {
-        "titulo": "Uma ordem visível",
-        "mensagem": "Originais e cópias agora têm lugares próprios e fáceis de reconhecer.",
-        "explicacaoPistas": "A faixa mostrava a separação original, a lista ligava os cartões à oficina e os pontos de lápis distinguiam as cópias."
       }
     }
   ]

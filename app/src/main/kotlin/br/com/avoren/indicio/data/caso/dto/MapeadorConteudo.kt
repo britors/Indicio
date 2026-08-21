@@ -185,4 +185,5 @@ private fun EscolhaV2Dto.paraDominio() = Escolha(
     texto = texto,
     proximaCena = proximaCena,
     revelacoes = revelacoes.paraDominio(),
+    dica = dica,
 )

@@ -1,6 +1,6 @@
 # Taça Desaparecida — desenho da versão longa
 
-**Estado:** três escolhas integradas; inspeção do conteúdo `4` pendente
+**Estado:** duas escolhas por cena restauradas; inspeção do conteúdo `5` pendente
 **Issue:** [#015](../../../issues/casos/015-taca-versao-longa.md)
 
 Este diretório contém o desenho editorial da primeira investigação longa do
@@ -23,13 +23,13 @@ na caixa cinza normalmente usada pela reprodução tátil da exposição. Outras
 pessoas deslocaram essa caixa seguindo rotinas válidas, cada uma conhecendo
 somente uma parte da manhã.
 
-O caso tem seis etapas. O grafo completo contém 124 cenas comuns e três finais;
+O caso tem seis etapas. O grafo completo contém 83 cenas comuns e dois finais;
 todo percurso visitará exatamente 42 cenas comuns e um dos finais positivos. O
-conteúdo `4` possui de 5.799 a 6.068 palavras de cena por percurso, antes de
+conteúdo `5` possui de 5.916 a 6.062 palavras de cena por percurso, antes de
 escolhas, resumos e consultas ao Caderno. O responsável jogou e aceitou o
-conteúdo `3`; a terceira linha foi integrada depois desse aceite e ainda precisa
-de inspeção no fluxo final. Como não foi informado tempo cronometrado, o aceite
-não deve ser apresentado como uma medição comprovada de 60 minutos.
+conteúdo `3`, com duas escolhas. A terceira linha integrada no conteúdo `4` foi
+retirada após feedback de uso. Como não foi informado tempo cronometrado, o
+aceite não deve ser apresentado como uma medição comprovada de 60 minutos.
 
 ## O que ainda falta para publicação
 

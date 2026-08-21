@@ -1,6 +1,7 @@
 package br.com.avoren.indicio.data.banco
 
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 
 /**
@@ -38,4 +39,17 @@ data class ConclusaoEntidade(
     val concluidoEm: Long,
     val versaoEsquema: Int = 1,
     val versaoConteudo: Int = 1,
+)
+
+/** Uma dica permanece revelada para a mesma cena e conta na semana em que foi usada. */
+@Entity(
+    tableName = "dicas",
+    primaryKeys = ["casoId", "cenaId"],
+    indices = [Index("usadaEm")],
+)
+data class DicaEntidade(
+    val casoId: String,
+    val cenaId: String,
+    val escolhaId: String,
+    val usadaEm: Long,
 )

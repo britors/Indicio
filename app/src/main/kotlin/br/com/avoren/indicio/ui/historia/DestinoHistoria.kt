@@ -13,9 +13,11 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import br.com.avoren.indicio.domain.armazenamento.RepositorioProgresso
 import br.com.avoren.indicio.domain.caso.RepositorioCasos
+import br.com.avoren.indicio.domain.dica.RepositorioDicas
 import br.com.avoren.indicio.domain.narracao.Narrador
 import br.com.avoren.indicio.ui.comum.ConteudoCarregando
 import br.com.avoren.indicio.ui.comum.ConteudoDeFalha
+import br.com.avoren.indicio.ui.dica.DicaViewModel
 
 /**
  * Destino de navegação da história.
@@ -28,13 +30,16 @@ import br.com.avoren.indicio.ui.comum.ConteudoDeFalha
 fun DestinoHistoria(
     repositorioCasos: RepositorioCasos,
     repositorioProgresso: RepositorioProgresso,
+    repositorioDicas: RepositorioDicas,
     criarNarrador: () -> Narrador,
     casoId: String,
     retomar: Boolean,
     onPausar: (Boolean) -> Unit,
     onAbrirEtapas: () -> Unit,
     onAbrirCaderno: () -> Unit,
+    onConfiguracoes: () -> Unit,
     onVoltarAoCatalogo: () -> Unit,
+    emDescanso: Boolean = false,
     modifier: Modifier = Modifier,
     viewModel: HistoriaViewModel = viewModel(
         factory = HistoriaViewModel.fabrica(
@@ -43,6 +48,7 @@ fun DestinoHistoria(
             criarNarrador = criarNarrador,
         ),
     ),
+    dicaViewModel: DicaViewModel = viewModel(factory = DicaViewModel.fabrica(repositorioDicas)),
 ) {
     LaunchedEffect(casoId, retomar) {
         viewModel.abrir(casoId, retomar = retomar)
@@ -50,6 +56,23 @@ fun DestinoHistoria(
 
     val estado by viewModel.estado.collectAsStateWithLifecycle()
     val estadoNarracao by viewModel.estadoNarracao.collectAsStateWithLifecycle()
+    val estadoDica by dicaViewModel.estado.collectAsStateWithLifecycle()
+    val historiaEmCurso = estado as? EstadoHistoria.EmCurso
+
+    LaunchedEffect(casoId, historiaEmCurso?.cena?.id) {
+        historiaEmCurso?.let { atual ->
+            dicaViewModel.carregar(
+                casoId = casoId,
+                cenaId = atual.cena.id,
+                escolhas = atual.cena.escolhas,
+                escolhaSugerida = atual.escolhaSugerida,
+            )
+        }
+    }
+
+    LaunchedEffect(emDescanso) {
+        if (emDescanso) viewModel.silenciar()
+    }
 
     // Sair da tela ou levá-la a segundo plano interrompe a fala; o mecanismo em
     // si só é liberado quando o ViewModel morre.
@@ -66,7 +89,7 @@ fun DestinoHistoria(
     }
 
     // O botão do sistema abre a pausa em vez de sair da história sem aviso.
-    BackHandler(enabled = estado is EstadoHistoria.EmCurso) {
+    BackHandler(enabled = estado is EstadoHistoria.EmCurso && !emDescanso) {
         val emCurso = estado as? EstadoHistoria.EmCurso
         onPausar(emCurso?.temInvestigacaoLonga == true)
     }
@@ -91,9 +114,13 @@ fun DestinoHistoria(
             estadoNarracao = estadoNarracao,
             onEscolher = viewModel::escolher,
             onAlternarNarracao = viewModel::alternarNarracao,
-            onPausar = { onPausar(atual.temInvestigacaoLonga) },
+            onConfiguracoes = onConfiguracoes,
             onAbrirEtapas = onAbrirEtapas,
             onAbrirCaderno = onAbrirCaderno,
+            bloquearMenu = emDescanso,
+            estadoDica = estadoDica,
+            onRevelarDica = dicaViewModel::revelar,
+            onRecarregarDica = dicaViewModel::recarregar,
             modifier = modifier,
         )
 

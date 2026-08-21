@@ -1,7 +1,7 @@
 # Mapa de etapas — O Mistério da Taça Desaparecida
 
-**Estado:** três escolhas integradas ao JSON v2, conteúdo `4`
-**Versão editorial:** `0.4`
+**Estado:** duas escolhas por cena restauradas no JSON v2, conteúdo `5`
+**Versão editorial:** `0.5`
 **Título:** provisório
 
 Este mapa transforma a [bíblia narrativa](biblia-narrativa.md) em seis unidades
@@ -10,8 +10,8 @@ menos uma pista anterior e termina num ponto seguro de pausa.
 
 ## Estrutura de duração
 
-Todo percurso contém exatamente 42 cenas comuns, sete por etapa, e um dos três
-finais. Toda cena oferece três escolhas de abordagem com destinos distintos. O
+Todo percurso contém exatamente 42 cenas comuns, sete por etapa, e um dos dois
+finais. Toda cena oferece duas escolhas de abordagem com destinos distintos. O
 grafo em camadas mantém o mesmo comprimento em qualquer combinação, sem caminho
 certo, erro ou atalho.
 
@@ -25,16 +25,16 @@ certo, erro ou atalho.
 | 6. A última porta | 7 + final | 1.150–1.300 | 11–13 min |
 | **Percurso completo** | **42 + final** | **6.350–7.250** | **60–72 min** |
 
-No conteúdo `4`, o texto das cenas mede de 5.799 a 6.068 palavras por
+No conteúdo `5`, o texto das cenas mede de 5.916 a 6.062 palavras por
 percurso. Escolhas, resumos de etapa e conteúdo consultado no Caderno completam
 o orçamento previsto, mas não substituem a medição humana do tempo.
 
 O orçamento inclui leitura, observação da carta, consulta espontânea ao
 Caderno e decisão entre escolhas. Ele é uma hipótese de produção, não uma
-prova de duração. O responsável jogou e aceitou o conteúdo `3`, antes da
-inclusão da terceira escolha, mas não informou tempo cronometrado. Por isso, a
-faixa continua sendo uma estimativa editorial e o conteúdo `4` ainda requer
-inspeção no fluxo final.
+prova de duração. O responsável jogou e aceitou o conteúdo `3`, com duas
+escolhas, mas não informou tempo cronometrado. A terceira linha do conteúdo `4`
+foi retirada após feedback de uso; por isso, a faixa continua sendo uma
+estimativa editorial e o conteúdo `5` ainda requer inspeção no fluxo final.
 
 ## Etapa 1 — A sala vazia
 
@@ -255,8 +255,8 @@ sem acusação ou constrangimento.
 **Resumo de retomada:** você localizou a caixa e confirmou a identidade da
 peça. Resta escolher como a equipe registrará o que aprendeu.
 
-**Ponto de pausa:** `s6-pausa-a`, `s6-pausa-b` ou `s6-revisao-caderno`,
-imediatamente antes da escolha entre os três finais positivos.
+**Ponto de pausa:** `s6-pausa-a` ou `s6-pausa-b`, imediatamente antes da
+escolha entre os dois finais positivos.
 
 **Revelações principais**
 

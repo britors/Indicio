@@ -147,7 +147,7 @@ internal class ValidadorCasoLongo {
                 if (cena.escolhas.map { it.texto }.distinct().size != cena.escolhas.size ||
                     cena.escolhas.map { it.proximaCena }.distinct().size != cena.escolhas.size
                 ) {
-                    problemas += problema(caso, "escolhas", "as três escolhas precisam ter textos e destinos distintos", cena.id)
+                    problemas += problema(caso, "escolhas", "as duas escolhas precisam ter textos e destinos distintos", cena.id)
                 }
             }
 

@@ -225,4 +225,5 @@ internal data class EscolhaV2Dto(
     val texto: String,
     val proximaCena: String,
     val revelacoes: RevelacoesDto = RevelacoesDto(),
+    val dica: String? = null,
 )

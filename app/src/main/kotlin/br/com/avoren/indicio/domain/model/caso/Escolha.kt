@@ -12,4 +12,5 @@ data class Escolha(
     val proximaCena: String,
     val pista: Pista? = null,
     val revelacoes: Revelacoes = Revelacoes(),
+    val dica: String? = null,
 )

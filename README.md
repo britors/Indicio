@@ -92,14 +92,17 @@ Prontos:
 - **Persistência** — progresso e histórico de conclusões em Room, preferências
   de leitura em DataStore, com falhas de armazenamento tratadas sem perder o
   estado em memória.
-- **Primeiro caso** — *O Mistério da Taça Desaparecida*, 15 cenas e três finais
+- **Primeiro caso** — *O Mistério da Taça Desaparecida*, 85 cenas e dois finais
   positivos, escrito inteiramente em JSON.
 - **Navegação e telas** — apresentação, início, catálogo, história, pausa,
   conclusão, configurações e sobre, com progresso e preferências restaurados ao
   reabrir o aplicativo.
 - **Experiência jogável e narração** — leitura em voz alta com o TextToSpeech do
   Android em português, com o caso permanecendo utilizável quando não há voz
-  instalada no aparelho.
+  instalada no aparelho; após 45 minutos de uso em primeiro plano, uma pausa de
+  descanso de cinco minutos protege o bem-estar sem alterar escolhas ou
+  progresso. O Anônimo também pode recomendar um dos dois caminhos mais
+  promissores da cena, com limite de duas novas dicas por semana.
 - **Identidade visual** — a história é jogada como um baralho: cada cena é uma
   carta distribuída, que chega virada para baixo e é revelada, e cada escolha é
   uma carta a jogar. A direção contemporânea das maquetes já está aplicada ao

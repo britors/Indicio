@@ -9,6 +9,7 @@ import br.com.avoren.indicio.domain.armazenamento.RepositorioProgresso
 import br.com.avoren.indicio.domain.armazenamento.ResultadoArmazenamento
 import br.com.avoren.indicio.domain.caso.RepositorioCasos
 import br.com.avoren.indicio.domain.caso.ResultadoCarga
+import br.com.avoren.indicio.domain.dica.SugerirEscolha
 import br.com.avoren.indicio.domain.model.caso.Caso
 import br.com.avoren.indicio.domain.model.sessao.ProgressoCaso
 import br.com.avoren.indicio.domain.model.sessao.SessaoInvestigacao
@@ -38,6 +39,7 @@ class HistoriaViewModel(
     private val repositorioProgresso: RepositorioProgresso,
     private val narrador: Narrador? = null,
     private val mecanismo: MecanismoNarrativo = MecanismoNarrativo(),
+    private val sugerirEscolha: SugerirEscolha = SugerirEscolha(),
 ) : ViewModel() {
 
     /**
@@ -223,6 +225,7 @@ class HistoriaViewModel(
                 pistas = sessaoAtual.pistas,
                 temInvestigacaoLonga = casoAtual.etapas.isNotEmpty(),
                 escolhasHabilitadas = habilitado,
+                escolhaSugerida = sugerirEscolha.executar(casoAtual, sessaoAtual),
             )
         }
     }

@@ -57,7 +57,30 @@ class BancoIndicioMigracaoTest {
         banco.close()
     }
 
+    @Test
+    fun migracao2Para3CriaArmazenamentoDeDicas() {
+        helper.createDatabase(NOME_BANCO_DICAS, 2).close()
+
+        val banco = helper.runMigrationsAndValidate(
+            NOME_BANCO_DICAS,
+            3,
+            true,
+            BancoIndicio.MIGRACAO_2_3,
+        )
+        banco.execSQL(
+            "INSERT INTO dicas (casoId, cenaId, escolhaId, usadaEm) " +
+                "VALUES ('caso', 'cena', 'escolha', 100)",
+        )
+
+        banco.query("SELECT COUNT(*) FROM dicas").use { cursor ->
+            cursor.moveToFirst()
+            assertEquals(1, cursor.getInt(0))
+        }
+        banco.close()
+    }
+
     private companion object {
         const val NOME_BANCO = "migracao-indicio-test"
+        const val NOME_BANCO_DICAS = "migracao-indicio-dicas-test"
     }
 }

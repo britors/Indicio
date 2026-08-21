@@ -11,6 +11,7 @@ import androidx.compose.ui.test.isHeading
 import androidx.compose.ui.test.junit4.v2.createComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollTo
 import androidx.compose.ui.unit.dp
 import br.com.avoren.indicio.domain.model.caso.Cena
@@ -23,6 +24,7 @@ import br.com.avoren.indicio.ui.historia.ConteudoHistoria
 import br.com.avoren.indicio.ui.historia.EstadoHistoria
 import br.com.avoren.indicio.ui.tema.AlturaMinimaBotao
 import br.com.avoren.indicio.ui.tema.TemaIndicio
+import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
 
@@ -41,6 +43,7 @@ class AcessibilidadeTest {
     private fun montar(
         tamanho: TamanhoTexto = TamanhoTexto.GRANDE,
         recursoDaArte: String = ARTE_EXISTENTE,
+        textoDaCena: String = TEXTO_DA_CENA,
     ) {
         composeRule.setContent {
             TemaIndicio(tamanho) {
@@ -49,7 +52,7 @@ class AcessibilidadeTest {
                         tituloCaso = "O Mistério da Taça Desaparecida",
                         cena = Cena(
                             id = "vitrine",
-                            texto = "A vitrine está intacta. O pedestal, porém, não está centralizado.",
+                            texto = textoDaCena,
                             imagem = Imagem(recursoDaArte, DESCRICAO),
                             escolhas = listOf(
                                 Escolha("a", PRIMEIRA_ESCOLHA, "po"),
@@ -61,7 +64,7 @@ class AcessibilidadeTest {
                     estadoNarracao = EstadoNarracao.PRONTO,
                     onEscolher = {},
                     onAlternarNarracao = {},
-                    onPausar = {},
+                    onConfiguracoes = {},
                 )
             }
         }
@@ -126,6 +129,24 @@ class AcessibilidadeTest {
     }
 
     @Test
+    fun o_controle_de_narracao_fica_entre_a_imagem_e_o_texto_sem_rolagem() {
+        montar(textoDaCena = List(12) { TEXTO_DA_CENA }.joinToString(" "))
+
+        val limiteInferiorDaImagem = composeRule.onNodeWithContentDescription(DESCRICAO)
+            .fetchSemanticsNode().boundsInRoot.bottom
+        val controle = composeRule.onNodeWithText("Ouvir o trecho")
+            .assertIsDisplayed()
+            .assertHasClickAction()
+            .fetchSemanticsNode().boundsInRoot
+        val inicioDoTexto = composeRule.onNodeWithText(
+            List(12) { TEXTO_DA_CENA }.joinToString(" "),
+        ).fetchSemanticsNode().boundsInRoot.top
+
+        assertTrue(controle.top >= limiteInferiorDaImagem)
+        assertTrue(controle.bottom <= inicioDoTexto)
+    }
+
+    @Test
     fun a_pista_e_sempre_textual() {
         // Nenhuma pista pode depender de ícone ou de cor.
         montar()
@@ -150,19 +171,39 @@ class AcessibilidadeTest {
     }
 
     @Test
-    fun com_texto_muito_grande_o_trecho_da_cena_nao_e_truncado() {
-        montar(tamanho = TamanhoTexto.MUITO_GRANDE)
+    fun com_texto_muito_grande_o_painel_permite_acessar_todo_o_trecho() {
+        val textoLongo = List(8) { TEXTO_DA_CENA }.joinToString(" ")
+        montar(
+            tamanho = TamanhoTexto.MUITO_GRANDE,
+            textoDaCena = textoLongo,
+        )
 
-        composeRule.onNodeWithText(
-            "A vitrine está intacta. O pedestal, porém, não está centralizado.",
-        ).performScrollTo().assertIsDisplayed()
+        val alturaRecolhida = composeRule.onNodeWithText(textoLongo)
+            .fetchSemanticsNode().boundsInRoot.height
+
+        composeRule.onNodeWithText("Mostrar texto completo")
+            .performScrollTo()
+            .assertIsDisplayed()
+            .assertHasClickAction()
+            .performClick()
+
+        val alturaExpandida = composeRule.onNodeWithText(textoLongo)
+            .fetchSemanticsNode().boundsInRoot.height
+
+        assertTrue(alturaExpandida > alturaRecolhida)
     }
 
     @Test
-    fun a_pausa_continua_ao_alcance_com_texto_muito_grande() {
+    fun o_menu_do_topo_continua_ao_alcance_com_texto_muito_grande() {
         montar(tamanho = TamanhoTexto.MUITO_GRANDE)
 
-        composeRule.onNodeWithContentDescription("Pausar")
+        composeRule.onNodeWithContentDescription("Abrir menu da investigação")
+            .assertIsDisplayed()
+            .assertHasClickAction()
+            .assertHeightIsAtLeast(AlturaMinimaBotao)
+            .performClick()
+
+        composeRule.onNodeWithText("Configurações")
             .assertIsDisplayed()
             .assertHasClickAction()
             .assertHeightIsAtLeast(AlturaMinimaBotao)
@@ -172,6 +213,8 @@ class AcessibilidadeTest {
         /** Precisa ser uma arte que existe, para exercitar o caminho da imagem. */
         const val ARTE_EXISTENTE = "cena_vitrine"
         const val DESCRICAO = "Vitrine de vidro fechada sobre um pedestal deslocado."
+        const val TEXTO_DA_CENA =
+            "A vitrine está intacta. O pedestal, porém, não está centralizado."
         const val PRIMEIRA_ESCOLHA = "Examinar o chão em volta do pedestal"
         const val SEGUNDA_ESCOLHA = "Olhar para o forro, acima da vitrine"
         const val TITULO_DA_PISTA = "O pedestal fora do lugar"

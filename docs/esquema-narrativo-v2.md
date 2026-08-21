@@ -283,6 +283,7 @@ recentes, sempre preservando a ordem em que foram descobertas.
       "id": "armario-a",
       "texto": "Comparar as cores das etiquetas",
       "proximaCena": "etiquetas",
+      "dica": "Algumas cores só contam a verdade quando ficam lado a lado.",
       "revelacoes": {
         "pistas": ["faixa-de-papel"]
       }
@@ -291,11 +292,6 @@ recentes, sempre preservando a ordem em que foram descobertas.
       "id": "armario-b",
       "texto": "Conferir a lista de consulta",
       "proximaCena": "lista"
-    },
-    {
-      "id": "armario-c",
-      "texto": "Mapear as etiquetas visuais",
-      "proximaCena": "catalogo-visual"
     }
   ]
 }
@@ -314,19 +310,26 @@ recentes, sempre preservando a ordem em que foram descobertas.
 | `imagem` | sim | Recurso e descrição acessível. |
 | `narracao` | não | Usa `texto`. |
 | `revelacoes` | não | Todas as listas usam padrão vazio. |
-| `escolhas` | sim | Exatamente três. |
+| `escolhas` | sim | Exatamente duas. |
 | `desfecho` | proibido | Exclusivo de cena final. |
 
 ### Escolha
 
-`id`, `texto` e `proximaCena` são obrigatórios. `revelacoes` é opcional. Ids de
-escolha são únicos em todo o caso, pois são persistidos e reproduzidos.
+`id`, `texto` e `proximaCena` são obrigatórios. `revelacoes` e `dica` são
+opcionais. Ids de escolha são únicos em todo o caso, pois são persistidos e
+reproduzidos.
+
+`dica` é a mensagem que o Anônimo apresenta quando o algoritmo recomenda essa
+escolha. Ela deve insinuar uma observação útil no universo da cena, sem repetir
+o texto do botão nem usar instruções explícitas como “siga por”. Exemplo: para
+“Examinar a vitrine”, prefira “Se eu fosse você, iria ajustar o cabelo; a
+vitrine pode ser um bom espelho”.
 
 Ao escolher, o domínio aplica primeiro as revelações da escolha e depois as da
 cena de destino. Repetições são eliminadas pelo id, preservando a primeira ordem
 de descoberta.
 
-As três escolhas precisam ter texto e destino distintos. Isso protege uma
+As duas escolhas precisam ter texto e destino distintos. Isso protege uma
 decisão real de apresentação, mesmo quando os caminhos convergem mais adiante.
 
 ### Revelações
@@ -362,7 +365,7 @@ Além das regras do esquema `1`, o formato `2` exige:
 - nenhuma transição volta para uma etapa anterior ou salta uma etapa;
 - cenas finais somente na última etapa;
 - grafo acíclico, com todos os caminhos terminando em final positivo;
-- exatamente três escolhas distintas em cada cena comum;
+- exatamente duas escolhas distintas em cada cena comum;
 - toda referência em `revelacoes` existente;
 - conversa vinculada a pessoa existente;
 - em todo caminho que revela uma conversa, sua pessoa também fica visível no

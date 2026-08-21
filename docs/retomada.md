@@ -9,7 +9,7 @@ Leia também o [README](../README.md) (visão do produto e comandos) e o
 ## Onde o projeto está
 
 O aplicativo é **jogável do início ao fim, ilustrado e narrado**. O primeiro
-caso, *O Mistério da Taça Desaparecida*, tem 15 cenas e três finais positivos.
+caso, *O Mistério da Taça Desaparecida*, tem 85 cenas e dois finais positivos.
 Tudo funciona sem rede, sem conta e sem permissão nenhuma.
 
 As onze issues originais foram organizadas nas trilhas `issues/estrutura/` e
@@ -56,10 +56,10 @@ persiste casos v1 e v2 simultaneamente. A interface também já oferece Retomada
 Etapas e Caderno reconstruídos a partir do percurso. A Taça longa é agora o
 primeiro caso v2 no catálogo de desenvolvimento. A bíblia, o mapa de seis
 etapas e o grafo estão em
-`docs/casos/taca-desaparecida/`. O conteúdo `4` oferece três escolhas por cena,
-124 cenas comuns, três finais e 5.799–6.068 palavras de cena por percurso. O
-responsável aceitou o conteúdo `3`; a terceira linha foi integrada depois desse
-aceite e ainda requer inspeção no fluxo final. Não foi informado tempo
+`docs/casos/taca-desaparecida/`. O conteúdo `5` oferece duas escolhas por cena,
+83 cenas comuns, dois finais e 5.916–6.062 palavras de cena por percurso. O
+responsável aceitou o conteúdo `3`, também com duas escolhas; a terceira linha
+do conteúdo `4` foi retirada após feedback de uso. Não foi informado tempo
 cronometrado. A próxima entrega, depois dessa conferência, é a produção das
 artes (#016).
 
@@ -155,7 +155,7 @@ redução de movimentos e uso em paisagem.
 
 Do escopo da issue, falta principalmente:
 
-- percorrer **todos os caminhos** do caso até os três finais, por teste;
+- percorrer **todos os caminhos** do caso até os dois finais, por teste;
 - o cenário **"escolher → fechar o app → reabrir → continuar"** ponta a ponta
   (hoje há cobertura das peças, não do percurso);
 - ausência de TTS e estados de erro recuperáveis, na interface;
