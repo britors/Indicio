@@ -157,7 +157,7 @@ class HistoriaViewModelTest {
     }
 
     @Test
-    fun `cada escolha grava o progresso antes da proxima interacao`() = runTest {
+    fun `abertura e cada escolha gravam o progresso antes da proxima interacao`() = runTest {
         val armazenamento = RepositorioProgressoFalso()
         val vm = viewModel(progresso = armazenamento)
         vm.abrir(CasoFixtures.ID)
@@ -165,7 +165,7 @@ class HistoriaViewModelTest {
         vm.escolher("abertura-a")
         vm.escolher("sala-b")
 
-        assertEquals(2, armazenamento.salvamentos)
+        assertEquals(3, armazenamento.salvamentos)
         assertEquals(
             listOf("abertura-a", "sala-b"),
             armazenamento.progresso(CasoFixtures.ID)?.escolhas,

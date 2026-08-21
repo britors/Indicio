@@ -155,5 +155,9 @@ class RepositorioProgressoRoomTest {
 
         assertEquals("sala", repositorio.progresso(caso.id)?.cenaAtual)
         assertEquals("abertura", repositorio.progresso(segundoCaso.id)?.cenaAtual)
+        assertEquals(
+            setOf(caso.id, segundoCaso.id),
+            repositorio.progressos().first().map { it.casoId }.toSet(),
+        )
     }
 }

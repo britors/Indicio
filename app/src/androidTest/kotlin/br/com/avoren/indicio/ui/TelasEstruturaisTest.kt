@@ -11,6 +11,8 @@ import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollTo
 import androidx.compose.ui.test.performScrollToIndex
+import br.com.avoren.indicio.application.catalogo.CasoDoCatalogo
+import br.com.avoren.indicio.application.catalogo.SituacaoCasoCatalogo
 import br.com.avoren.indicio.domain.model.caso.Categoria
 import br.com.avoren.indicio.domain.model.caso.Cena
 import br.com.avoren.indicio.domain.model.caso.Desfecho
@@ -34,6 +36,7 @@ import br.com.avoren.indicio.ui.inicio.EstadoInicio
 import br.com.avoren.indicio.ui.pausa.TelaPausa
 import br.com.avoren.indicio.ui.sobre.TelaSobre
 import br.com.avoren.indicio.ui.tema.TemaIndicio
+import kotlin.math.abs
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Rule
@@ -128,19 +131,29 @@ class TelasEstruturaisTest {
                             GrupoDeCategoria(
                                 Categoria.FUTEBOL,
                                 listOf(
-                                    ResumoCaso(
-                                        id = "disponivel",
-                                        titulo = "Caso disponível",
-                                        sinopse = "Pode jogar.",
-                                        categoria = Categoria.FUTEBOL,
-                                        disponivel = true,
+                                    CasoDoCatalogo(
+                                        resumo = ResumoCaso(
+                                            id = "disponivel",
+                                            titulo = "Caso disponível",
+                                            sinopse = "Pode jogar.",
+                                            categoria = Categoria.FUTEBOL,
+                                            disponivel = true,
+                                        ),
+                                        situacao = SituacaoCasoCatalogo.NAO_INICIADO,
+                                        emAndamento = false,
+                                        ultimoAcessoEm = null,
                                     ),
-                                    ResumoCaso(
-                                        id = "futuro",
-                                        titulo = "Caso futuro",
-                                        sinopse = "Ainda não.",
-                                        categoria = Categoria.FUTEBOL,
-                                        disponivel = false,
+                                    CasoDoCatalogo(
+                                        resumo = ResumoCaso(
+                                            id = "futuro",
+                                            titulo = "Caso futuro",
+                                            sinopse = "Ainda não.",
+                                            categoria = Categoria.FUTEBOL,
+                                            disponivel = false,
+                                        ),
+                                        situacao = SituacaoCasoCatalogo.NAO_INICIADO,
+                                        emAndamento = false,
+                                        ultimoAcessoEm = null,
                                     ),
                                 ),
                             ),
@@ -154,10 +167,77 @@ class TelasEstruturaisTest {
         }
 
         composeRule.onNodeWithText("Disponível agora").assertIsDisplayed()
-        composeRule.onNodeWithContentDescription("Abrir o caso Caso disponível").assertHasClickAction()
+        composeRule.onNodeWithContentDescription("Começar o caso Caso disponível").assertHasClickAction()
         composeRule.onNodeWithTag(TAG_LISTA_CATALOGO).performScrollToIndex(4)
         composeRule.onNodeWithText("EM PREPARAÇÃO · SEM PREVISÃO").assertIsDisplayed()
-        composeRule.onNodeWithContentDescription("Abrir o caso Caso futuro").assertDoesNotExist()
+        composeRule.onNodeWithContentDescription("Começar o caso Caso futuro").assertDoesNotExist()
+    }
+
+    @Test
+    fun catalogoMostraProgressoEConfirmaReinicio() {
+        var aberto: String? = null
+        var reiniciado: String? = null
+        var narrado: String? = null
+        composeRule.setContent {
+            TemaIndicio {
+                ConteudoCatalogo(
+                    estado = EstadoCatalogo.Conteudo(
+                        listOf(
+                            GrupoDeCategoria(
+                                Categoria.MISTERIOS_POLICIAIS,
+                                listOf(
+                                    CasoDoCatalogo(
+                                        resumo = ResumoCaso(
+                                            id = "em-andamento",
+                                            titulo = "Caso em andamento",
+                                            sinopse = "Uma investigação já iniciada reúne registros, versões e objetos " +
+                                                "que precisam ser comparados com calma antes da próxima decisão.",
+                                            categoria = Categoria.MISTERIOS_POLICIAIS,
+                                            disponivel = true,
+                                            imagem = Imagem(
+                                                recurso = "cena_bilhete",
+                                                descricaoAcessivel = "Vitrine vazia usada como capa do caso.",
+                                            ),
+                                        ),
+                                        situacao = SituacaoCasoCatalogo.EM_ANDAMENTO,
+                                        emAndamento = true,
+                                        ultimoAcessoEm = 1_700_000_000_000L,
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
+                    onAbrirCaso = { aberto = it },
+                    onReiniciarCaso = { reiniciado = it },
+                    onTentarNovamente = {},
+                    estadoNarracao = EstadoNarracao.PRONTO,
+                    onAlternarNarracao = { narrado = it.id },
+                )
+            }
+        }
+
+        composeRule.onNodeWithText("Em andamento").assertExists()
+        composeRule.onNodeWithText("Último acesso:", substring = true).assertExists()
+        composeRule.onNodeWithContentDescription("Vitrine vazia usada como capa do caso.").assertExists()
+        composeRule.onNodeWithText("Ouvir o trecho").performScrollTo().performClick()
+        assertEquals("em-andamento", narrado)
+        composeRule.onNodeWithText("Mostrar texto completo").performScrollTo().performClick()
+        composeRule.onNodeWithText("Recolher texto").assertExists()
+        val retomar = composeRule.onNodeWithText("Retomar caso").performScrollTo()
+        val reiniciar = composeRule.onNodeWithText("Reiniciar caso").performScrollTo()
+        val limitesRetomar = retomar.fetchSemanticsNode().boundsInRoot
+        val limitesReiniciar = reiniciar.fetchSemanticsNode().boundsInRoot
+        assertTrue(abs(limitesRetomar.top - limitesReiniciar.top) < 1f)
+        assertTrue(limitesRetomar.right < limitesReiniciar.left)
+
+        retomar.performClick()
+        assertEquals("em-andamento", aberto)
+
+        reiniciar.performClick()
+        composeRule.onNodeWithText("Reiniciar este caso?").assertIsDisplayed()
+        assertEquals(null, reiniciado)
+        composeRule.onNodeWithText("Reiniciar").performClick()
+        assertEquals("em-andamento", reiniciado)
     }
 
     // ---------- História ----------

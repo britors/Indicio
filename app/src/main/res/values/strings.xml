@@ -29,8 +29,21 @@
     </plurals>
     <string name="catalogo_em_preparacao_sem_previsao">Em preparação · sem previsão</string>
     <string name="catalogo_categoria_vazia">Nenhum caso desta categoria foi escrito ainda.</string>
-    <string name="catalogo_abrir">Abrir o caso %1$s</string>
-    <string name="catalogo_abrir_curto">Abrir caso</string>
+    <string name="catalogo_abrir">Começar o caso %1$s</string>
+    <string name="catalogo_abrir_curto">Começar caso</string>
+    <string name="catalogo_retomar">Retomar caso</string>
+    <string name="catalogo_retomar_caso">Retomar o caso %1$s</string>
+    <string name="catalogo_reiniciar">Reiniciar caso</string>
+    <string name="catalogo_reiniciar_caso">Reiniciar o caso %1$s</string>
+    <string name="catalogo_estado_nao_iniciado">Não iniciado</string>
+    <string name="catalogo_estado_em_andamento">Em andamento</string>
+    <string name="catalogo_estado_resolvido">Resolvido</string>
+    <string name="catalogo_estado_nova_investigacao">Nova investigação em andamento</string>
+    <string name="catalogo_ultimo_acesso">Último acesso: %1$s</string>
+    <string name="catalogo_ultimo_acesso_nunca">Último acesso: nunca</string>
+    <string name="catalogo_reiniciar_confirmar_titulo">Reiniciar este caso?</string>
+    <string name="catalogo_reiniciar_confirmar_texto">“%1$s” volta ao começo e o progresso atual será apagado. Se o caso já foi resolvido, essa conquista continuará guardada.</string>
+    <string name="catalogo_reiniciar_confirmar_sim">Reiniciar</string>
 
     <!-- História -->
     <string name="historia_abrir_menu">Abrir menu da investigação</string>
@@ -56,22 +69,22 @@
     <string name="historia_dica_remetente">Mensagem do Anônimo</string>
     <string name="historia_dica_mensagem_generica">Alguns detalhes preferem não chamar atenção. Eu voltaria os olhos para o que parece apenas parte do cenário.</string>
     <plurals name="historia_dicas_restantes">
-        <item quantity="one">%1$d dica restante nesta semana</item>
-        <item quantity="other">%1$d dicas restantes nesta semana</item>
+        <item quantity="one">%1$d dica restante para este caso nesta semana</item>
+        <item quantity="other">%1$d dicas restantes para este caso nesta semana</item>
     </plurals>
     <string name="historia_menu_dica_titulo">Dica do Anônimo</string>
     <plurals name="historia_menu_dica_saldo">
-        <item quantity="one">%1$d disponível</item>
-        <item quantity="other">%1$d disponíveis</item>
+        <item quantity="one">%1$d disponível neste caso</item>
+        <item quantity="other">%1$d disponíveis neste caso</item>
     </plurals>
     <string name="historia_menu_dica_reabrir">Reabrir mensagem</string>
-    <string name="historia_menu_dicas_esgotadas">Novas dicas na segunda-feira</string>
+    <string name="historia_menu_dicas_esgotadas">Novas dicas para este caso na segunda-feira</string>
     <string name="historia_menu_dica_consultando">Consultando disponibilidade…</string>
     <string name="historia_menu_dica_tentar_novamente">Toque para tentar novamente</string>
     <string name="historia_dialogo_dica_titulo">Bilhete do Anônimo</string>
     <plurals name="historia_dialogo_dica_saldo">
-        <item quantity="one">Você tem %1$d dica nesta semana.</item>
-        <item quantity="other">Você tem %1$d dicas nesta semana.</item>
+        <item quantity="one">Para este caso, você tem %1$d dica nesta semana.</item>
+        <item quantity="other">Para este caso, você tem %1$d dicas nesta semana.</item>
     </plurals>
     <string name="historia_dialogo_dica_pergunta">Deseja usar uma delas para receber uma sugestão sobre esta cena?</string>
     <string name="historia_dialogo_dica_usar">Usar uma dica</string>

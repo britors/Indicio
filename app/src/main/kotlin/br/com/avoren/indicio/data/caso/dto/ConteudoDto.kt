@@ -18,6 +18,7 @@ internal data class ResumoCasoDto(
     val categoria: CategoriaDto,
     val arquivo: String? = null,
     val disponivel: Boolean = false,
+    val imagem: ImagemDto? = null,
 )
 
 @Serializable
@@ -115,6 +116,7 @@ internal data class ResumoCasoV2Dto(
     val disponivel: Boolean = false,
     val versaoEsquema: Int? = null,
     val versaoConteudo: Int? = null,
+    val imagem: ImagemDto? = null,
 )
 
 @Serializable

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte vetorial original do projeto Indício, GPLv3. Composição temática: cena_cidade_meio_dia_relogio. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_luz" android:pathData="M0,0h400v350h-400z" />
+    <path android:fillColor="@color/ilustracao_dourado" android:pathData="M138,210a54,54 0,1 0,1 0z" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M54,332h292v122h-292z M170,166h60v166h-60z" />
+    <path android:strokeColor="@color/ilustracao_marinho" android:strokeWidth="8" android:pathData="M200,220v-38 M200,220l32,20" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,500h400v100h-400z" />
+</vector>

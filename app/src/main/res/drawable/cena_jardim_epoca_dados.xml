@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte vetorial original do projeto Indício, GPLv3. Composição temática: cena_jardim_epoca_dados. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_luz" android:pathData="M34,54h332v430h-332z" />
+    <path android:strokeColor="@color/ilustracao_feltro" android:strokeWidth="12" android:pathData="M200,458 C154,366 153,244 200,118 C250,244 249,366 200,458 Z" />
+    <path android:fillColor="@color/ilustracao_dourado" android:pathData="M200,162 C142,128 104,186 154,224 C112,244 130,310 190,280 C214,342 278,314 252,260 C316,230 284,166 232,202 C238,174 220,154 200,162 Z" />
+    <path android:strokeColor="@color/ilustracao_marinho" android:strokeWidth="7" android:pathData="M76,137h248 M76,368h248" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,500h400v100h-400z" />
+</vector>

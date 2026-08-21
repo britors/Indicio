@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte vetorial original do projeto Indício, GPLv3. Composição temática: cena_cartas_magnolias_tipografia. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M52,92 L314,72 L338,430 L76,450 Z" />
+    <path android:strokeColor="@color/ilustracao_marinho" android:strokeWidth="6" android:pathData="M98,192h188 M98,240h156 M98,288h178" />
+    <path android:fillColor="@color/ilustracao_dourado" android:pathData="M305,220 C350,246 344,304 298,314 C256,290 260,242 305,220 Z" />
+    <path android:strokeColor="@color/ilustracao_feltro" android:strokeWidth="7" android:pathData="M302,310 C292,348 266,374 230,410" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,500h400v100h-400z" />
+</vector>

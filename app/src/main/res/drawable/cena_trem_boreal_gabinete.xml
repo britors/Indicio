@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte vetorial original do projeto Indício, GPLv3. Composição temática: gabinete isolado para mapas. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_parede_alta" android:pathData="M54,56h292v474h-292z" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M82,92h236v366h-236z" />
+    <path android:fillColor="@color/ilustracao_feltro" android:pathData="M106,172h188v172h-188z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M128,198h144v112h-144z" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="8" android:pathData="M128,198h144v112h-144z" />
+    <path android:fillColor="@color/ilustracao_prata" android:pathData="M120,384h160v32h-160z" />
+    <path android:fillColor="@color/ilustracao_dourado" android:pathData="M294,260a12,12 0,1 0,0.1 0z" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,542h400v58h-400z" />
+</vector>

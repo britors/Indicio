@@ -13,6 +13,9 @@ import kotlinx.coroutines.flow.Flow
  */
 interface RepositorioProgresso {
 
+    /** Todos os progressos atuais, usados por visões resumidas como o catálogo. */
+    fun progressos(): Flow<List<ProgressoSalvo>>
+
     /** Progresso mexido mais recentemente, base do "Continuar". */
     fun maisRecente(): Flow<ProgressoSalvo?>
 

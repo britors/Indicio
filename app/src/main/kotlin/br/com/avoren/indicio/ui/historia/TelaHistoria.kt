@@ -67,7 +67,9 @@ import br.com.avoren.indicio.ui.carta.CartaDistribuida
 import br.com.avoren.indicio.ui.comum.BarraDoTopo
 import br.com.avoren.indicio.ui.comum.BotaoIcone
 import br.com.avoren.indicio.ui.comum.BotaoSecundario
+import br.com.avoren.indicio.ui.comum.ControleDeNarracao
 import br.com.avoren.indicio.ui.comum.IconesIndicio
+import br.com.avoren.indicio.ui.comum.PainelDeTextoRecolhivel
 import br.com.avoren.indicio.ui.comum.RotuloEditorial
 import br.com.avoren.indicio.ui.dica.EstadoDica
 import br.com.avoren.indicio.ui.tema.ElevacaoIndicio
@@ -606,77 +608,9 @@ private fun CartaDaCena(
                 onAlternar = onAlternarNarracao,
             )
 
-            PainelDeTextoDaCena(
+            PainelDeTextoRecolhivel(
                 chave = cena.id,
                 texto = cena.texto,
-            )
-        }
-    }
-}
-
-@Composable
-private fun PainelDeTextoDaCena(
-    chave: String,
-    texto: String,
-    modifier: Modifier = Modifier,
-) {
-    var expandido by rememberSaveable(chave) { mutableStateOf(false) }
-    var possuiMaisDeDuasLinhas by remember(chave, texto) { mutableStateOf(false) }
-
-    Surface(
-        modifier = modifier.fillMaxWidth(),
-        shape = FormasIndicio.pequena,
-        color = MaterialTheme.colorScheme.surfaceContainerHigh,
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.16f)),
-    ) {
-        Column {
-            if (possuiMaisDeDuasLinhas) {
-                val rotulo = stringResource(
-                    if (expandido) R.string.historia_recolher_texto else R.string.historia_expandir_texto,
-                )
-                val situacao = stringResource(
-                    if (expandido) R.string.historia_texto_expandido else R.string.historia_texto_recolhido,
-                )
-
-                Surface(
-                    onClick = { expandido = !expandido },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .heightIn(min = AlturaMinimaBotao)
-                        .semantics {
-                            role = Role.Button
-                            stateDescription = situacao
-                        },
-                    color = MaterialTheme.colorScheme.surfaceContainerHigh,
-                    contentColor = MaterialTheme.colorScheme.primary,
-                ) {
-                    Row(
-                        modifier = Modifier.padding(horizontal = EspacamentoIndicio.padrao),
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertically,
-                    ) {
-                        Text(text = rotulo, style = MaterialTheme.typography.labelLarge)
-                        Icon(
-                            imageVector = IconesIndicio.avancar,
-                            contentDescription = null,
-                            modifier = Modifier.rotate(if (expandido) -90f else 90f),
-                        )
-                    }
-                }
-                HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.16f))
-            }
-
-            Text(
-                text = texto,
-                style = MaterialTheme.typography.bodyLarge,
-                maxLines = if (expandido) Int.MAX_VALUE else DUAS_LINHAS,
-                overflow = TextOverflow.Ellipsis,
-                onTextLayout = { resultado ->
-                    if (!expandido) possuiMaisDeDuasLinhas = resultado.hasVisualOverflow
-                },
-                modifier = Modifier
-                    .padding(EspacamentoIndicio.padrao)
-                    .semantics { liveRegion = LiveRegionMode.Polite },
             )
         }
     }
@@ -753,7 +687,6 @@ internal fun PainelDePistas(
 
 private const val PROPORCAO_ARTE_CENA = 16f / 9f
 private const val FRACAO_DA_ALTURA_DA_ARTE = 0.46f
-private const val DUAS_LINHAS = 2
 private val LARGURA_MINIMA_MENU = 280.dp
 private val LARGURA_MAXIMA_DESCOBERTA = 560.dp
 

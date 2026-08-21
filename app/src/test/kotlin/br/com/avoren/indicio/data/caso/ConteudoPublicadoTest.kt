@@ -45,6 +45,21 @@ class ConteudoPublicadoTest {
     }
 
     @Test
+    fun `todo caso publicado declara uma capa acessivel`() = runTest {
+        val catalogo = (repositorio.catalogo() as ResultadoCarga.Sucesso).valor
+
+        catalogo.disponiveis().forEach { resumo ->
+            val imagem = resumo.imagem
+            assertTrue("O caso \"${resumo.id}\" não declara uma capa no catálogo.", imagem != null)
+            assertTrue("A capa de \"${resumo.id}\" não declara um recurso.", !imagem?.recurso.isNullOrBlank())
+            assertTrue(
+                "A capa de \"${resumo.id}\" não possui descrição acessível.",
+                !imagem?.descricaoAcessivel.isNullOrBlank(),
+            )
+        }
+    }
+
+    @Test
     fun `todo caso disponivel carrega e valida`() = runTest {
         assertTrue(casosPublicados().isNotEmpty())
     }
@@ -242,6 +257,69 @@ class ConteudoPublicadoTest {
                 termo !in texto,
             )
         }
+    }
+
+    @Test
+    fun `novos casos compactos mantem cinco etapas e percursos equilibrados`() = runTest {
+        val novosIds = setOf(
+            "ultimo-quadro-estrela-papel",
+            "cidade-sem-meio-dia",
+            "cartas-casa-magnolias",
+            "farol-duas-mares",
+            "ultima-transmissao-radio-aurora",
+            "jardim-fora-de-epoca",
+            "enigma-vagao-boreal",
+            "roubo-rosa-boreal",
+        )
+        val novos = casosPublicados().filter { it.id in novosIds }
+
+        assertEquals(novosIds, novos.map(Caso::id).toSet())
+        novos.forEach { caso ->
+            val comprimentos = comprimentosAteFinal(caso, caso.cenaInicial)
+            val palavras = palavrasAteFinal(caso, caso.cenaInicial)
+
+            assertEquals(2, caso.revisao.esquema)
+            assertEquals(1, caso.revisao.conteudo)
+            assertEquals(5, caso.etapas.size)
+            assertEquals(11, caso.cenas.count { it.tipo == TipoCena.COMUM })
+            assertEquals(2, caso.cenas.count { it.tipo == TipoCena.FINAL })
+            assertEquals(6..6, comprimentos)
+            assertTrue(
+                "O menor percurso de ${caso.titulo} tem apenas ${palavras.first} palavras.",
+                palavras.first >= 450,
+            )
+            assertTrue(
+                "Os percursos de ${caso.titulo} diferem em ${palavras.last - palavras.first} palavras.",
+                palavras.last - palavras.first <= 100,
+            )
+        }
+    }
+
+    @Test
+    fun `casos ferroviarios mantem enredos e identidades inteiramente originais`() = runTest {
+        val casos = casosPublicados().filter { it.id in setOf("enigma-vagao-boreal", "roubo-rosa-boreal") }
+
+        assertEquals(2, casos.size)
+        casos.forEach { caso ->
+            val texto = textoCompleto(caso).lowercase()
+            assertTrue("A travessia precisa permanecer situada no Canadá.", "canad" in texto)
+            listOf(
+                "expresso do oriente",
+                "orient express",
+                "poirot",
+                "agatha christie",
+                "murder on the orient express",
+                "assassinato no expresso do oriente",
+            ).forEach { referencia ->
+                assertTrue(
+                    "O caso ferroviário contém a referência distintiva \"$referencia\".",
+                    referencia !in texto,
+                )
+            }
+        }
+
+        val roubo = casos.single { it.id == "roubo-rosa-boreal" }
+        assertTrue("O novo caso precisa tratar de um furto real.", "furto" in textoCompleto(roubo).lowercase())
     }
 
     private fun alcancaveis(caso: Caso): Set<String> {

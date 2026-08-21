@@ -9,7 +9,7 @@ import java.time.ZoneId
 import java.time.temporal.TemporalAdjusters
 
 data class SituacaoDica(
-    val restantesNestaSemana: Int,
+    val restantesDoCasoNestaSemana: Int,
     val escolhaIdRevelada: String? = null,
 )
 
@@ -19,7 +19,7 @@ sealed interface ResultadoRevelacaoDica {
     data class Falha(val causa: String) : ResultadoRevelacaoDica
 }
 
-/** Aplica a cota semanal sem misturar calendário, persistência e interface. */
+/** Aplica a cota semanal por caso sem misturar calendário, persistência e interface. */
 class GerenciarDicas(
     private val repositorio: RepositorioDicas,
     private val agora: () -> Long = System::currentTimeMillis,
@@ -33,13 +33,15 @@ class GerenciarDicas(
             is ResultadoArmazenamento.Falha -> return resultado
             is ResultadoArmazenamento.Sucesso -> resultado.valor
         }
-        val quantidade = when (val resultado = repositorio.quantidadeDesde(inicioDaSemana())) {
+        val quantidade = when (
+            val resultado = repositorio.quantidadeDoCasoDesde(casoId, inicioDaSemana())
+        ) {
             is ResultadoArmazenamento.Falha -> return resultado
             is ResultadoArmazenamento.Sucesso -> resultado.valor
         }
         return ResultadoArmazenamento.Sucesso(
             SituacaoDica(
-                restantesNestaSemana = (LIMITE_SEMANAL - quantidade).coerceAtLeast(0),
+                restantesDoCasoNestaSemana = (LIMITE_SEMANAL_POR_CASO - quantidade).coerceAtLeast(0),
                 escolhaIdRevelada = existente?.escolhaId,
             ),
         )
@@ -57,7 +59,7 @@ class GerenciarDicas(
                 if (situacao.escolhaIdRevelada != null) {
                     return ResultadoRevelacaoDica.Revelada(situacao)
                 }
-                if (situacao.restantesNestaSemana == 0) {
+                if (situacao.restantesDoCasoNestaSemana == 0) {
                     return ResultadoRevelacaoDica.LimiteSemanalAtingido
                 }
 
@@ -66,7 +68,7 @@ class GerenciarDicas(
                     val registro = repositorio.registrarSeDisponivel(
                         dica = dica,
                         inicioDaSemana = inicioDaSemana(),
-                        limite = LIMITE_SEMANAL,
+                        limite = LIMITE_SEMANAL_POR_CASO,
                     )
                 ) {
                     is ResultadoArmazenamento.Falha -> ResultadoRevelacaoDica.Falha(registro.causa)
@@ -96,6 +98,6 @@ class GerenciarDicas(
     }
 
     companion object {
-        const val LIMITE_SEMANAL = 2
+        const val LIMITE_SEMANAL_POR_CASO = 3
     }
 }

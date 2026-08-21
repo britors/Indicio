@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte vetorial original do projeto Indício, GPLv3. Composição temática: área técnica do trem. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_parede_alta" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M28,64h344v248h-344z" />
+    <path android:strokeColor="@color/ilustracao_prata" android:strokeWidth="12" android:pathData="M82,112h236 M108,112v146 M200,112v146 M292,112v146" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M38,350h324v166h-324z" />
+    <path android:fillColor="@color/ilustracao_marinho_claro" android:pathData="M68,378h150v106h-150z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M244,378h86v106h-86z" />
+    <path android:strokeColor="@color/ilustracao_tinta" android:strokeWidth="5" android:pathData="M258,406h58 M258,432h48 M258,458h60" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,532h400v68h-400z" />
+</vector>

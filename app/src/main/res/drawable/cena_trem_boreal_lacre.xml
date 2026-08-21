@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte vetorial original do projeto Indício, GPLv3. Composição temática: lacres e capa térmica. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M34,84h332v418h-332z" />
+    <path android:fillColor="@color/ilustracao_marinho_claro" android:pathData="M72,116h256v174h-256z" />
+    <path android:strokeColor="@color/ilustracao_prata" android:strokeWidth="8" android:pathData="M72,116 l128,86 l128,-86" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M72,330h178v128h-178z" />
+    <path android:strokeColor="@color/ilustracao_tinta" android:strokeWidth="5" android:pathData="M94,362h132 M94,392h110 M94,422h124" />
+    <path android:fillColor="@color/ilustracao_dourado" android:pathData="M278,342a42,42 0,1 0,0.1 0z" />
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M264,330h28v24h-28z" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,520h400v80h-400z" />
+</vector>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte vetorial original do projeto Indício, GPLv3. Salão da Rosa Boreal. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_luz" android:pathData="M36,54h328v194h-328z" />
+    <path android:fillColor="@color/ilustracao_marinho_claro" android:pathData="M36,190 l86,-82 l62,54 l68,-92 l112,120 v58 h-328z" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M58,300h284v216h-284z" />
+    <path android:fillColor="@color/ilustracao_vidro" android:pathData="M92,330h216v148h-216z" />
+    <path android:strokeColor="@color/ilustracao_prata_escura" android:strokeWidth="8" android:pathData="M92,330h216v148h-216z" />
+    <path android:strokeColor="@color/ilustracao_marinho_claro" android:strokeWidth="14" android:pathData="M164,434 c10,-66 62,-66 72,0 M174,410 l-24,-28 M226,410 l24,-28" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,536h400v64h-400z" />
+</vector>

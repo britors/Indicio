@@ -12,16 +12,42 @@ import org.junit.Test
 class GerenciarDicasTest {
 
     @Test
-    fun bloqueiaATerceiraDicaDaMesmaSemana() = executar {
+    fun bloqueiaAQuartaDicaDoMesmoCasoNaMesmaSemana() = executar {
         val relogio = Relogio("2026-08-19T12:00:00Z")
         val gerenciador = GerenciarDicas(RepositorioEmMemoria(), relogio::agora, UTC)
 
         assertTrue(gerenciador.revelar("caso", "cena-1", "a") is ResultadoRevelacaoDica.Revelada)
         assertTrue(gerenciador.revelar("caso", "cena-2", "b") is ResultadoRevelacaoDica.Revelada)
+        assertTrue(gerenciador.revelar("caso", "cena-3", "a") is ResultadoRevelacaoDica.Revelada)
 
         assertEquals(
             ResultadoRevelacaoDica.LimiteSemanalAtingido,
-            gerenciador.revelar("caso", "cena-3", "a"),
+            gerenciador.revelar("caso", "cena-4", "b"),
+        )
+    }
+
+    @Test
+    fun esgotarUmCasoNaoConsomeACotaDeOutro() = executar {
+        val gerenciador = GerenciarDicas(
+            RepositorioEmMemoria(),
+            Relogio("2026-08-19T12:00:00Z")::agora,
+            UTC,
+        )
+        repeat(3) { indice ->
+            assertTrue(
+                gerenciador.revelar("primeiro", "cena-$indice", "a") is
+                    ResultadoRevelacaoDica.Revelada,
+            )
+        }
+
+        val outroCaso = gerenciador.revelar("segundo", "cena-1", "a")
+
+        assertTrue(outroCaso is ResultadoRevelacaoDica.Revelada)
+        assertEquals(
+            2,
+            (outroCaso as ResultadoRevelacaoDica.Revelada)
+                .situacao
+                .restantesDoCasoNestaSemana,
         )
     }
 
@@ -38,7 +64,7 @@ class GerenciarDicasTest {
         val repetida = gerenciador.revelar("caso", "cena-1", "a")
 
         val situacao = (repetida as ResultadoRevelacaoDica.Revelada).situacao
-        assertEquals(1, situacao.restantesNestaSemana)
+        assertEquals(2, situacao.restantesDoCasoNestaSemana)
         assertEquals(1, repositorio.registros.size)
     }
 
@@ -49,12 +75,18 @@ class GerenciarDicasTest {
         val gerenciador = GerenciarDicas(repositorio, relogio::agora, UTC)
         gerenciador.revelar("caso", "domingo-1", "a")
         gerenciador.revelar("caso", "domingo-2", "b")
+        gerenciador.revelar("caso", "domingo-3", "a")
 
         relogio.valor = Instant.parse("2026-08-24T00:01:00Z").toEpochMilli()
 
         val novaSemana = gerenciador.revelar("caso", "segunda", "a")
         assertTrue(novaSemana is ResultadoRevelacaoDica.Revelada)
-        assertEquals(1, (novaSemana as ResultadoRevelacaoDica.Revelada).situacao.restantesNestaSemana)
+        assertEquals(
+            2,
+            (novaSemana as ResultadoRevelacaoDica.Revelada)
+                .situacao
+                .restantesDoCasoNestaSemana,
+        )
     }
 
     private class Relogio(valorInicial: String) {
@@ -72,8 +104,10 @@ class GerenciarDicasTest {
             registros.firstOrNull { it.casoId == casoId && it.cenaId == cenaId },
         )
 
-        override suspend fun quantidadeDesde(inicio: Long) =
-            ResultadoArmazenamento.Sucesso(registros.count { it.usadaEm >= inicio })
+        override suspend fun quantidadeDoCasoDesde(casoId: String, inicio: Long) =
+            ResultadoArmazenamento.Sucesso(
+                registros.count { it.casoId == casoId && it.usadaEm >= inicio },
+            )
 
         override suspend fun registrarSeDisponivel(
             dica: DicaRegistrada,
@@ -83,7 +117,10 @@ class GerenciarDicasTest {
             if (registros.any { it.casoId == dica.casoId && it.cenaId == dica.cenaId }) {
                 return ResultadoArmazenamento.Sucesso(true)
             }
-            if (registros.count { it.usadaEm >= inicioDaSemana } >= limite) {
+            if (registros.count {
+                    it.casoId == dica.casoId && it.usadaEm >= inicioDaSemana
+                } >= limite
+            ) {
                 return ResultadoArmazenamento.Sucesso(false)
             }
             registros.removeAll { it.casoId == dica.casoId && it.cenaId == dica.cenaId }

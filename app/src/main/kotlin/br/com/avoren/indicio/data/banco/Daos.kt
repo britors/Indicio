@@ -11,6 +11,9 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface ProgressoDao {
 
+    @Query("SELECT * FROM progresso ORDER BY atualizadoEm DESC")
+    fun observarTodos(): Flow<List<ProgressoEntidade>>
+
     @Query("SELECT * FROM progresso WHERE casoId = :casoId")
     suspend fun porCaso(casoId: String): ProgressoEntidade?
 
@@ -43,8 +46,8 @@ interface DicaDao {
     @Query("SELECT * FROM dicas WHERE casoId = :casoId AND cenaId = :cenaId")
     suspend fun porCena(casoId: String, cenaId: String): DicaEntidade?
 
-    @Query("SELECT COUNT(*) FROM dicas WHERE usadaEm >= :inicio")
-    suspend fun quantidadeDesde(inicio: Long): Int
+    @Query("SELECT COUNT(*) FROM dicas WHERE casoId = :casoId AND usadaEm >= :inicio")
+    suspend fun quantidadeDoCasoDesde(casoId: String, inicio: Long): Int
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun inserir(dica: DicaEntidade): Long
@@ -56,7 +59,7 @@ interface DicaDao {
         limite: Int,
     ): Boolean {
         if (porCena(dica.casoId, dica.cenaId) != null) return true
-        if (quantidadeDesde(inicioDaSemana) >= limite) return false
+        if (quantidadeDoCasoDesde(dica.casoId, inicioDaSemana) >= limite) return false
         return inserir(dica) != -1L
     }
 }

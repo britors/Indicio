@@ -136,8 +136,14 @@ fun AppIndicio(container: ContainerAplicacao) {
             composable<Rota.Catalogo> {
                 TelaCatalogo(
                     repositorioCasos = container.repositorioCasos,
+                    repositorioProgresso = container.repositorioProgresso,
+                    criarNarrador = container::criarNarrador,
                     onAbrirCaso = { casoId ->
                         navController.navigate(Rota.Retomada(casoId))
+                    },
+                    onCasoReiniciado = { casoId ->
+                        limparPistasNaoLidas(casoId)
+                        navController.navigate(Rota.Historia(casoId, retomar = false))
                     },
                     onVoltar = { navController.popBackStack() },
                 )

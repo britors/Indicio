@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte vetorial original do projeto Indício, GPLv3. Tubo de mapas e pesagem. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M34,72h332v448h-332z" />
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M82,122h236v104h-236z" />
+    <path android:fillColor="@color/ilustracao_feltro" android:pathData="M104,142h192v64h-192z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M154,122h92v42h-92z" />
+    <path android:fillColor="@color/ilustracao_prata" android:pathData="M74,294h252v130h-252z" />
+    <path android:fillColor="@color/ilustracao_marinho_claro" android:pathData="M102,324h196v68h-196z" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="8" android:pathData="M200,358 l0,-22 M200,358 l34,12" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,538h400v62h-400z" />
+</vector>

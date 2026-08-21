@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte vetorial original do projeto Indício, GPLv3. Composição temática: conclusão da travessia canadense. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_luz" android:pathData="M34,54h332v228h-332z" />
+    <path android:fillColor="@color/ilustracao_marinho_claro" android:pathData="M34,206 l82,-92 l54,54 l62,-104 l134,142 v76 h-332z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M34,242 l84,-56 l66,44 l68,-58 l114,70 v40 h-332z" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M48,332h304v188h-304z" />
+    <path android:fillColor="@color/ilustracao_vidro" android:pathData="M82,362h236v126h-236z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M130,388h140v74h-140z" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="7" android:pathData="M130,388h140v74h-140z" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,542h400v58h-400z" />
+</vector>

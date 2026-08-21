@@ -1,0 +1,140 @@
+{
+  "versaoEsquema": 2,
+  "versaoConteudo": 1,
+  "id": "ultimo-quadro-estrela-papel",
+  "titulo": "O Último Quadro da Estrela de Papel",
+  "sinopse": "O rolo final de um desenho colorido desapareceu antes da estreia de 1954. Acetatos, música e créditos raspados podem devolver à obra o nome de quem também a criou.",
+  "categoria": "cultura_popular_antiga",
+  "cenaInicial": "e1-estudio",
+  "etapas": [
+    { "id": "rolo-ausente", "titulo": "O rolo ausente", "descricao": "A lata principal está vazia, mas o inventário e a poeira contam histórias diferentes.", "resumoConclusao": "A lata foi preparada para uma cópia de exibição que nunca chegou a ser montada.", "resumoRetomada": "Você separou o desaparecimento do rolo da história contada pelo inventário.", "objetivos": [{ "id": "examinar-rolo", "texto": "Descobrir o que deveria estar na lata", "perguntaEmAberto": "O filme terminou de ser montado?" }] },
+    { "id": "movimento-e-musica", "titulo": "Movimento e música", "descricao": "Acetatos numerados e uma partitura incompleta recompõem a sequência final.", "resumoConclusao": "Os desenhos foram concluídos, mas a ordem oficial ocultou uma segunda linguagem de marcação.", "resumoRetomada": "Você sabe que o final existiu em acetatos e procura sua montagem correta.", "objetivos": [{ "id": "sincronizar-quadros", "texto": "Sincronizar imagens e trilha", "perguntaEmAberto": "Qual ordem os criadores realmente planejaram?" }] },
+    { "id": "assinatura-apagada", "titulo": "A assinatura apagada", "descricao": "Pequenos símbolos repetidos apontam para uma autoria retirada dos créditos.", "resumoConclusao": "A desenhista-chefe criou a personagem e dirigiu a sequência, mas seu nome foi coberto.", "resumoRetomada": "Você encontrou uma autoria apagada e precisa entender como isso alterou o filme.", "objetivos": [{ "id": "restituir-autoria", "texto": "Identificar a linguagem da cocriadora", "perguntaEmAberto": "Quem organizou os últimos quadros?" }] },
+    { "id": "copia-de-trabalho", "titulo": "A cópia de trabalho", "descricao": "Uma gravação e um projetor revelam onde o final sobreviveu.", "resumoConclusao": "O último rolo permaneceu como cópia de trabalho sem créditos, guardado junto à trilha.", "resumoRetomada": "Você localizou o filme e agora precisa decidir o que pode ser restaurado.", "objetivos": [{ "id": "localizar-copia", "texto": "Confirmar a cópia preservada", "perguntaEmAberto": "A imagem e o som ainda podem ser reunidos?" }] },
+    { "id": "estreia-devolvida", "titulo": "A estreia devolvida", "descricao": "O arquivo pode restaurar o filme sem repetir o apagamento que encerrou o estúdio.", "resumoConclusao": "A obra retorna com autoria reconhecida e limites documentais claros.", "resumoRetomada": "A Estrela de Papel está completa; falta escolher como apresentá-la.", "objetivos": [{ "id": "apresentar-obra", "texto": "Preparar uma devolução responsável", "perguntaEmAberto": "Como exibir o filme e sua história com honestidade?" }] }
+  ],
+  "caderno": {
+    "pistas": [
+      { "id": "poeira-circular", "titulo": "Um círculo sem poeira", "descricao": "A prateleira conserva a marca de uma lata menor ao lado da embalagem principal.", "relevancia": "A marca mostra que dois recipientes foram separados antes do fechamento do estúdio." },
+      { "id": "inventario-a-lapis", "titulo": "Uma linha escrita a lápis", "descricao": "O inventário chama o rolo final de montagem provisória, sem número de exibição.", "relevancia": "A anotação indica que a versão desaparecida ainda não era uma cópia definitiva." },
+      { "id": "janela-sem-filme", "titulo": "Uma janela sem película", "descricao": "A lata vazia possui ventilação de transporte, mas nenhum desgaste de filme armazenado.", "relevancia": "O recipiente pode ter sido preparado para a estreia sem jamais receber a película." },
+      { "id": "quadros-duplos", "titulo": "Numeração em duas mãos", "descricao": "Os acetatos alternam números datilografados e pequenos símbolos desenhados à tinta.", "relevancia": "Os símbolos preservam uma ordem criativa diferente da sequência administrativa." },
+      { "id": "compasso-extra", "titulo": "Um compasso além da partitura", "descricao": "A fita contém oito tempos que não aparecem na cópia impressa da música.", "relevancia": "O trecho adicional oferece uma medida segura para ordenar os quadros finais." },
+      { "id": "estrela-assinada", "titulo": "A estrela como assinatura", "descricao": "Uma pequena estrela de cinco pontas surge no canto de cenas decisivas e em cartas da desenhista-chefe.", "relevancia": "A repetição liga a direção visual da sequência a uma autora ausente dos créditos." },
+      { "id": "credito-coberto", "titulo": "Uma faixa sobre o crédito", "descricao": "A fotografia do letreiro mostra papel opaco cobrindo uma linha mais longa que o nome exibido.", "relevancia": "A alteração física confirma que a ficha de autoria foi reduzida depois da montagem." },
+      { "id": "copia-na-trilha", "titulo": "Uma película junto ao som", "descricao": "Uma lata identificada como teste de áudio contém também a imagem completa do final.", "relevancia": "A classificação equivocada explica por que o filme sobreviveu fora da coleção visual." }
+    ],
+    "pessoas": [
+      { "id": "arquivista", "nome": "A arquivista de filmes", "papel": "Responsável pela coleção do antigo estúdio", "anotacoes": [{ "id": "arquivista-abriu-acervo", "texto": "Separou inventário, latas e fotografias sem presumir que a ausência significasse descarte." }] },
+      { "id": "musicista", "nome": "O restaurador de som", "papel": "Leitura das fitas e partituras", "anotacoes": [{ "id": "musicista-ouviu-compasso", "texto": "Reconheceu oito tempos preservados apenas na gravação de trabalho." }] },
+      { "id": "desenhista", "nome": "A desenhista-chefe", "papel": "Cocriação e direção visual em 1954", "anotacoes": [{ "id": "desenhista-usava-estrela", "texto": "Marcava com uma estrela os acetatos aprovados para a sequência final." }] },
+      { "id": "projecionista", "nome": "A antiga projecionista", "papel": "Preparação das cópias de trabalho", "anotacoes": [{ "id": "projecionista-guardou-teste", "texto": "Guardou imagem e som juntos porque ainda esperava uma revisão dos créditos." }] }
+    ],
+    "locais": [
+      { "id": "arquivo-estudio", "nome": "Arquivo do estúdio fictício", "anotacoes": [{ "id": "arquivo-prateleira-dupla", "texto": "A prateleira mostra marcas de duas latas com tamanhos diferentes." }] },
+      { "id": "mesa-acetatos", "nome": "Mesa de acetatos", "anotacoes": [{ "id": "mesa-luz-lateral", "texto": "A luz lateral permite ver símbolos discretos sem depender das cores." }] },
+      { "id": "sala-som", "nome": "Sala de som", "anotacoes": [{ "id": "som-fita-completa", "texto": "A fita de ensaio conserva um compasso excluído da partitura impressa." }] },
+      { "id": "cabine-projecao", "nome": "Cabine de projeção", "anotacoes": [{ "id": "cabine-lata-teste", "texto": "Uma lata de teste foi arquivada no armário reservado ao áudio." }] },
+      { "id": "sala-exibicao", "nome": "Sala de exibição", "anotacoes": [{ "id": "exibicao-painel-autoria", "texto": "O novo painel comporta filme, processo e créditos restaurados no mesmo percurso." }] }
+    ],
+    "conversas": [
+      { "id": "conversa-arquivista", "pessoaId": "arquivista", "titulo": "Duas latas, uma ausência", "texto": "A arquivista explica que a embalagem maior foi catalogada muitos anos depois, quando a lata menor já estava na coleção sonora." },
+      { "id": "conversa-musicista", "pessoaId": "musicista", "titulo": "Oito tempos guardados", "texto": "O restaurador diz que o silêncio depois do último acorde não é vazio: há espaço medido para mais oito movimentos." },
+      { "id": "conversa-desenhista", "pessoaId": "desenhista", "titulo": "Uma estrela no canto", "texto": "Cartas preservadas contam que a desenhista usava a estrela para aprovar cenas sem escrever o próprio nome sobre a arte." },
+      { "id": "conversa-projecionista", "pessoaId": "projecionista", "titulo": "A sessão que ficou esperando", "texto": "A projecionista registrou que não exibiria a cópia enquanto a ficha de autoria permanecesse incompleta." }
+    ]
+  },
+  "lembrancas": [
+    { "id": "duas-latas", "texto": "Duas latas diferentes participaram da história do rolo final.", "essencial": true },
+    { "id": "montagem-provisoria", "texto": "O inventário descrevia uma montagem provisória, não uma cópia de estreia." },
+    { "id": "som-mais-longo", "texto": "A gravação dura oito tempos além da partitura." },
+    { "id": "estrela-era-marca", "texto": "A estrela nos acetatos era a marca de aprovação da desenhista-chefe.", "essencial": true },
+    { "id": "credito-foi-coberto", "texto": "Uma faixa de papel encurtou os créditos depois da montagem." },
+    { "id": "copia-sobreviveu", "texto": "A cópia de trabalho sobreviveu numa lata arquivada junto ao som.", "essencial": true }
+  ],
+  "cenas": [
+    {
+      "id": "e1-estudio", "tipo": "comum", "etapaId": "rolo-ausente", "objetivoId": "examinar-rolo", "texto": "O pequeno estúdio fictício fechou as portas poucas semanas depois de cancelar a estreia de seu primeiro desenho colorido. Agora o arquivo municipal recebe caixas, acetatos e uma lata grande rotulada como ‘final’. Ela está vazia. Antes de chamar isso de desaparecimento, a arquivista ilumina a prateleira: ao lado da lata existe um círculo menor sem poeira. A ausência começou com dois recipientes, não com um. O inventário de 1954 e as marcas do armário podem dizer qual deles realmente guardou o filme.", "imagem": { "recurso": "cena_estrela_papel_estudio", "descricaoAcessivel": "Estúdio de animação fictício com prateleiras, latas de filme e uma mesa iluminada." }, "revelacoes": { "pistas": ["poeira-circular"], "anotacoesPessoas": ["arquivista-abriu-acervo"], "anotacoesLocais": ["arquivo-prateleira-dupla"], "conversas": ["conversa-arquivista"], "lembrancas": ["duas-latas"] },
+      "escolhas": [
+        { "id": "e1-estudio-inventario", "texto": "Ler o inventário de 1954", "proximaCena": "e1-inventario", "dica": "Às vezes uma palavra provisória pesa mais do que um número definitivo." },
+        { "id": "e1-estudio-lata", "texto": "Examinar a lata vazia", "proximaCena": "e1-lata", "dica": "Um recipiente também registra aquilo que nunca precisou suportar." }
+      ]
+    },
+    {
+      "id": "e1-inventario", "tipo": "comum", "etapaId": "rolo-ausente", "objetivoId": "examinar-rolo", "pontoDePausa": true, "texto": "A última linha do inventário foi escrita a lápis: ‘montagem provisória, imagem com trilha de ensaio’. Não há número de cópia nem autorização para exibição. Em folhas posteriores, alguém transformou essa descrição cautelosa em ‘rolo final desaparecido’. A arquivista compara a caligrafia e percebe que a linha original foi feita antes da fabricação da lata grande. O filme podia existir, mas ainda não na forma prometida pelo cartaz da estreia. A investigação muda de direção: é preciso procurar materiais de montagem, não uma cópia pronta.", "imagem": { "recurso": "cena_estrela_papel_estudio", "descricaoAcessivel": "Inventário antigo aberto ao lado de duas latas de filme com tamanhos diferentes." }, "revelacoes": { "pistas": ["inventario-a-lapis"], "anotacoesLocais": ["mesa-luz-lateral"], "lembrancas": ["montagem-provisoria"] },
+      "escolhas": [
+        { "id": "e1-inventario-acetatos", "texto": "Ordenar os acetatos", "proximaCena": "e2-acetatos", "dica": "Pequenos sinais repetidos costumam sobreviver melhor que grandes títulos." },
+        { "id": "e1-inventario-musica", "texto": "Conferir a trilha de ensaio", "proximaCena": "e2-musica", "dica": "Quando a imagem termina cedo demais, vale escutar o tempo que restou." }
+      ]
+    },
+    {
+      "id": "e1-lata", "tipo": "comum", "etapaId": "rolo-ausente", "objetivoId": "examinar-rolo", "pontoDePausa": true, "texto": "A lata grande tem janelas de ventilação e uma etiqueta produzida para transporte. Por dentro, porém, o metal não apresenta o desenho circular deixado por uma película armazenada por anos. A dobradiça quase não foi usada. Tudo indica que a embalagem foi preparada para uma cópia futura e guardada vazia quando a estreia foi suspensa. A fotografia da prateleira feita no fechamento mostra uma lata menor, escura, ao lado de caixas de som. O suposto objeto desaparecido pode ter recebido outro nome antes de ser catalogado.", "imagem": { "recurso": "cena_estrela_papel_estudio", "descricaoAcessivel": "Lata de filme aberta sob luz lateral, com interior limpo e etiqueta de transporte." }, "revelacoes": { "pistas": ["janela-sem-filme"], "anotacoesPessoas": ["musicista-ouviu-compasso"], "conversas": ["conversa-musicista"] },
+      "escolhas": [
+        { "id": "e1-lata-musica", "texto": "Ouvir a fita de ensaio", "proximaCena": "e2-musica", "dica": "O fim de uma melodia pode deixar espaço para movimentos que ninguém imprimiu." },
+        { "id": "e1-lata-acetatos", "texto": "Abrir as caixas de desenho", "proximaCena": "e2-acetatos", "dica": "Uma sequência pode estar espalhada sem estar incompleta." }
+      ]
+    },
+    {
+      "id": "e2-acetatos", "tipo": "comum", "etapaId": "movimento-e-musica", "objetivoId": "sincronizar-quadros", "pontoDePausa": true, "texto": "Centenas de folhas transparentes ocupam a mesa de luz. A numeração datilografada avança com falhas, mas pequenos círculos, luas e estrelas formam uma sequência contínua nos cantos. Quando os acetatos são ordenados por esses símbolos, a personagem atravessa o cenário sem saltos e levanta uma estrela de papel no último gesto. A ordem administrativa foi refeita depois; a ordem desenhada pertence ao processo criativo. Falta descobrir quem usava os símbolos e se a música confirma o mesmo final.", "imagem": { "recurso": "cena_estrela_papel_acetatos", "descricaoAcessivel": "Folhas transparentes de animação alinhadas sobre uma mesa de luz com símbolos nos cantos." }, "revelacoes": { "pistas": ["quadros-duplos"], "anotacoesLocais": ["som-fita-completa"], "lembrancas": ["som-mais-longo"] },
+      "escolhas": [
+        { "id": "e2-acetatos-simbolos", "texto": "Comparar os símbolos das folhas", "proximaCena": "e3-simbolos", "dica": "A mesma figura pequena aparece onde uma decisão grande foi tomada." },
+        { "id": "e2-acetatos-creditos", "texto": "Examinar as fotografias dos créditos", "proximaCena": "e3-creditos", "dica": "Uma faixa muito larga pode estar escondendo mais que uma correção curta." }
+      ]
+    },
+    {
+      "id": "e2-musica", "tipo": "comum", "etapaId": "movimento-e-musica", "objetivoId": "sincronizar-quadros", "pontoDePausa": true, "texto": "A fita de ensaio termina com oito tempos suaves depois do último compasso impresso. Não são ruídos: há marcações de metrônomo e o som breve de papel sendo dobrado. O restaurador posiciona os acetatos nesse intervalo e o movimento se encaixa sem cortes. A trilha confirma que o desenho teve um final completo, ainda que nenhuma cópia de estreia tenha sido feita. No verso da partitura, uma estrela manuscrita aponta para a caixa de correspondências da desenhista-chefe.", "imagem": { "recurso": "cena_estrela_papel_som", "descricaoAcessivel": "Gravador de fita, partitura e cronômetro organizados numa pequena sala de som." }, "revelacoes": { "pistas": ["compasso-extra"], "anotacoesPessoas": ["desenhista-usava-estrela"], "conversas": ["conversa-desenhista"] },
+      "escolhas": [
+        { "id": "e2-musica-creditos", "texto": "Rever o letreiro fotografado", "proximaCena": "e3-creditos", "dica": "O papel colocado sobre uma imagem deixa bordas que a memória não apaga." },
+        { "id": "e2-musica-simbolos", "texto": "Abrir as cartas da desenhista", "proximaCena": "e3-simbolos", "dica": "Quem evita escrever o nome pode deixar uma constelação inteira de sinais." }
+      ]
+    },
+    {
+      "id": "e3-simbolos", "tipo": "comum", "etapaId": "assinatura-apagada", "objetivoId": "restituir-autoria", "pontoDePausa": true, "texto": "As cartas não reivindicam fama. Elas discutem ritmo, expressão e a decisão de deixar a personagem erguer a estrela em vez de receber uma coroa. Em várias páginas, a desenhista-chefe aprova mudanças com o mesmo símbolo encontrado nos acetatos. Uma folha de produção confirma que ela coordenava a sequência final. Seu nome, contudo, não aparece na fotografia do letreiro. O mistério do rolo agora inclui um apagamento de autoria: restaurar apenas a imagem repetiria a omissão.", "imagem": { "recurso": "cena_estrela_papel_creditos", "descricaoAcessivel": "Cartas, acetatos e uma pequena estrela desenhada repetidamente sobre a mesa." }, "revelacoes": { "pistas": ["estrela-assinada"], "anotacoesLocais": ["cabine-lata-teste"], "lembrancas": ["estrela-era-marca"] },
+      "escolhas": [
+        { "id": "e3-simbolos-cabine", "texto": "Procurar a sessão de ensaio", "proximaCena": "e4-cabine", "dica": "Uma estreia cancelada ainda pode ter deixado o projetor preparado." },
+        { "id": "e3-simbolos-fita", "texto": "Conferir as latas de áudio", "proximaCena": "e4-fita", "dica": "Certas imagens encontram abrigo em armários com o nome errado." }
+      ]
+    },
+    {
+      "id": "e3-creditos", "tipo": "comum", "etapaId": "assinatura-apagada", "objetivoId": "restituir-autoria", "pontoDePausa": true, "texto": "A ampliação da fotografia mostra uma faixa de papel colada sobre o letreiro original. A linha coberta é mais longa que o único nome visível. Sob luz inclinada aparecem fragmentos das palavras ‘criação visual’. A mudança não foi parte do desenho; ocorreu na preparação da cópia. Ao lado da fotografia, uma ficha de projeção diz ‘aguardar autorização conjunta’. Alguém preservou o filme fora da circulação enquanto os créditos não fossem corrigidos, e essa escolha pode explicar a lata guardada entre materiais sonoros.", "imagem": { "recurso": "cena_estrela_papel_creditos", "descricaoAcessivel": "Fotografia ampliada de um letreiro com uma faixa de papel cobrindo parte dos créditos." }, "revelacoes": { "pistas": ["credito-coberto"], "anotacoesPessoas": ["projecionista-guardou-teste"], "conversas": ["conversa-projecionista"] },
+      "escolhas": [
+        { "id": "e3-creditos-fita", "texto": "Examinar o armário de som", "proximaCena": "e4-fita", "dica": "Uma etiqueta descreve a função esperada, nem sempre tudo o que há dentro." },
+        { "id": "e3-creditos-cabine", "texto": "Ler o diário da cabine", "proximaCena": "e4-cabine", "dica": "Uma sessão que não aconteceu também ganha horário e observação." }
+      ]
+    },
+    {
+      "id": "e4-cabine", "tipo": "comum", "etapaId": "copia-de-trabalho", "objetivoId": "localizar-copia", "pontoDePausa": true, "texto": "O diário da cabine registra uma sessão técnica na véspera da estreia. A imagem estava completa e sincronizada, mas a projecionista anotou que os créditos aguardavam duas aprovações. O número da lata termina com a letra S, usada pelo arquivo para som. No armário correspondente, uma embalagem estreita guarda película e fita no mesmo núcleo de ensaio. Não houve retirada misteriosa: houve uma cópia de trabalho protegida de uma apresentação incompleta. O material pode ser restaurado sem inventar quadros ou autoria.", "imagem": { "recurso": "cena_estrela_papel_projecao", "descricaoAcessivel": "Cabine de projeção com diário aberto, projetor antigo e uma lata estreita identificada para teste." }, "revelacoes": { "pistas": ["copia-na-trilha"], "anotacoesLocais": ["exibicao-painel-autoria"], "lembrancas": ["credito-foi-coberto"] },
+      "escolhas": [
+        { "id": "e4-cabine-restaurar", "texto": "Preparar a restauração conjunta", "proximaCena": "e5-restauracao", "dica": "Imagem e som já conversam; falta convidar os nomes para a mesma mesa." },
+        { "id": "e4-cabine-contexto", "texto": "Organizar a história do estúdio", "proximaCena": "e5-contexto", "dica": "O que ficou fora da tela talvez explique melhor por que ela escureceu." }
+      ]
+    },
+    {
+      "id": "e4-fita", "tipo": "comum", "etapaId": "copia-de-trabalho", "objetivoId": "localizar-copia", "pontoDePausa": true, "texto": "A lata marcada como teste de som contém uma tira de imagem completa, montada com a fita de ensaio. As perfurações combinam, os oito tempos finais estão presentes e a estrela surge no último quadro. Uma etiqueta interna pede: ‘não separar até revisão da ficha’. A solução esteve no acervo durante décadas, invisível por causa de uma categoria estreita demais. A arquivista cria duas referências cruzadas para que o erro não se repita e mantém o material em condições estáveis antes de qualquer exibição.", "imagem": { "recurso": "cena_estrela_papel_projecao", "descricaoAcessivel": "Película e fita de som alinhadas diante de um projetor, com etiqueta de revisão entre elas." }, "revelacoes": { "pistas": ["copia-na-trilha"], "lembrancas": ["copia-sobreviveu"] },
+      "escolhas": [
+        { "id": "e4-fita-contexto", "texto": "Documentar o apagamento dos créditos", "proximaCena": "e5-contexto", "dica": "Uma obra recuperada pode continuar incompleta se o silêncio virar moldura." },
+        { "id": "e4-fita-restaurar", "texto": "Sincronizar a cópia preservada", "proximaCena": "e5-restauracao", "dica": "Os oito tempos oferecem uma ponte precisa entre duas matérias frágeis." }
+      ]
+    },
+    {
+      "id": "e5-restauracao", "tipo": "comum", "etapaId": "estreia-devolvida", "objetivoId": "apresentar-obra", "pontoDePausa": true, "texto": "A restauração conserva riscos e pequenas variações que pertencem à cópia de trabalho. Nada é redesenhado para parecer definitivo. Os créditos recebem os nomes encontrados nas folhas de produção, acompanhados por uma nota clara sobre a faixa que cobriu a autoria original. Antes da sessão, o arquivo oferece duas formas responsáveis de devolução: uma estreia restaurada, com explicação do processo, ou uma exposição documental em que o filme aparece ao lado das cartas, símbolos e decisões que o preservaram.", "imagem": { "recurso": "cena_estrela_papel_exibicao", "descricaoAcessivel": "Tela de projeção com estrela de papel e mesa lateral exibindo cartas, acetatos e créditos restaurados." },
+      "escolhas": [
+        { "id": "e5-restauracao-filme", "texto": "Realizar a estreia restaurada", "proximaCena": "final-estreia", "dica": "Há beleza em permitir que os oito tempos cheguem enfim ao público." },
+        { "id": "e5-restauracao-exposicao", "texto": "Expor o processo de criação", "proximaCena": "final-autoria", "dica": "Algumas estrelas iluminam mais quando também mostramos quem as desenhou." }
+      ]
+    },
+    {
+      "id": "e5-contexto", "tipo": "comum", "etapaId": "estreia-devolvida", "objetivoId": "apresentar-obra", "pontoDePausa": true, "texto": "O arquivo monta uma linha do tempo sem transformar o conflito em espetáculo. O painel mostra a ordem dos acetatos, a duração da música, a fotografia alterada e a decisão da projecionista de esperar. A desenhista-chefe surge como cocriadora por evidência documental, não por suposição. O filme pode agora ser apresentado inteiro, mas a própria investigação também merece espaço. Seja numa estreia comentada ou numa mostra sobre autoria, a Estrela de Papel retorna sem que o reconhecimento de uma pessoa apague o trabalho coletivo.", "imagem": { "recurso": "cena_estrela_papel_exibicao", "descricaoAcessivel": "Painel cronológico com acetatos, partitura, fotografia dos créditos e uma tela preparada para exibição." },
+      "escolhas": [
+        { "id": "e5-contexto-exposicao", "texto": "Abrir a mostra documental", "proximaCena": "final-autoria", "dica": "O caminho da obra até a tela também é parte da obra recuperada." },
+        { "id": "e5-contexto-filme", "texto": "Projetar o filme com apresentação", "proximaCena": "final-estreia", "dica": "Uma breve conversa antes da luz baixar pode devolver o nome junto da imagem." }
+      ]
+    },
+    {
+      "id": "final-estreia", "tipo": "final", "etapaId": "estreia-devolvida", "texto": "A sala escurece e a cópia de trabalho restaurada ocupa a tela. Os riscos permanecem discretamente visíveis, lembrando que o filme atravessou décadas sem uma versão definitiva. Quando a personagem ergue a estrela, os oito tempos finais se encaixam na música. Os créditos apresentam criação, desenho, som e projeção com base nos documentos preservados. Depois da sessão, o público pode consultar uma síntese do processo e entender por que a estreia esperou tanto. O aplauso não celebra um rolo encontrado por acaso, mas uma autoria devolvida com cuidado.", "imagem": { "recurso": "cena_estrela_papel_final", "descricaoAcessivel": "Público diante de uma tela com estrela de papel e créditos restaurados apresentados com clareza." }, "desfecho": { "titulo": "A estreia que soube esperar", "mensagem": "O filme chegou ao público completo e com a autoria reconhecida.", "explicacaoPistas": "A lata sem desgaste mostrou que a cópia de estreia nunca existiu; os símbolos, os oito tempos e a faixa sobre o letreiro reconstruíram a obra e seus créditos. A película guardada junto ao som preservou o final." }
+    },
+    {
+      "id": "final-autoria", "tipo": "final", "etapaId": "estreia-devolvida", "texto": "A exposição abre com a lata vazia, não como símbolo de perda, mas como ponto de partida para uma catalogação mais honesta. Acetatos e partitura permitem acompanhar o movimento quadro a quadro. A fotografia dos créditos aparece ao lado das cartas da desenhista-chefe e da anotação da projecionista. No fim do percurso, o filme restaurado é exibido em sessões pequenas, sempre acompanhado pela história de sua criação. A coleção ganha novas referências e a Estrela de Papel deixa de ser um mistério sobre ausência para se tornar uma história de autoria recuperada.", "imagem": { "recurso": "cena_estrela_papel_final", "descricaoAcessivel": "Exposição clara com lata de filme, acetatos, partitura e créditos de autoria restaurados." }, "desfecho": { "titulo": "A autoria volta ao quadro", "mensagem": "O processo criativo foi preservado junto da obra.", "explicacaoPistas": "A numeração dupla, a estrela manuscrita e o crédito coberto identificaram a direção visual apagada. A cópia classificada como som confirmou que o filme permanecera no acervo e podia ser mostrado sem inventar lacunas." }
+    }
+  ]
+}

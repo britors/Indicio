@@ -94,10 +94,12 @@ class DicaViewModel(
             revelada != null -> EstadoDica.Revelada(
                 cenaId = atual.cenaId,
                 mensagem = revelada.dica,
-                restantes = restantesNestaSemana,
+                restantes = restantesDoCasoNestaSemana,
             )
             escolhaIdRevelada != null -> EstadoDica.Oculta
-            restantesNestaSemana > 0 -> EstadoDica.Disponivel(atual.cenaId, restantesNestaSemana)
+            restantesDoCasoNestaSemana > 0 -> {
+                EstadoDica.Disponivel(atual.cenaId, restantesDoCasoNestaSemana)
+            }
             else -> EstadoDica.Esgotada(atual.cenaId)
         }
     }

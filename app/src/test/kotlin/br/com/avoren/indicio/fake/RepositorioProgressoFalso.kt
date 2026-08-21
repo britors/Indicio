@@ -18,16 +18,24 @@ class RepositorioProgressoFalso(
     private val falhaAoGravar: String? = null,
 ) : RepositorioProgresso {
 
-    private val armazenado = MutableStateFlow(inicial)
+    private val armazenados = MutableStateFlow(
+        inicial?.let { mapOf(it.casoId to it) }.orEmpty(),
+    )
     private val conclusoes = MutableStateFlow(emptyList<ConclusaoRegistrada>())
 
     var salvamentos: Int = 0
         private set
 
-    override fun maisRecente(): Flow<ProgressoSalvo?> = armazenado
+    override fun progressos(): Flow<List<ProgressoSalvo>> = armazenados.map { mapa ->
+        mapa.values.sortedByDescending(ProgressoSalvo::atualizadoEm)
+    }
+
+    override fun maisRecente(): Flow<ProgressoSalvo?> = armazenados.map { mapa ->
+        mapa.values.maxByOrNull(ProgressoSalvo::atualizadoEm)
+    }
 
     override suspend fun progresso(casoId: String): ProgressoSalvo? =
-        armazenado.value?.takeIf { it.casoId == casoId }
+        armazenados.value[casoId]
 
     override suspend fun salvar(
         sessao: SessaoInvestigacao,
@@ -36,7 +44,7 @@ class RepositorioProgressoFalso(
         salvamentos++
         falhaAoGravar?.let { return ResultadoArmazenamento.Falha(it) }
 
-        armazenado.value = ProgressoSalvo(
+        val salvo = ProgressoSalvo(
             casoId = sessao.casoId,
             cenaAtual = sessao.cenaAtual,
             escolhas = sessao.caminho,
@@ -45,6 +53,7 @@ class RepositorioProgressoFalso(
             atualizadoEm = salvamentos.toLong(),
             revisao = sessao.revisao,
         )
+        armazenados.value += sessao.casoId to salvo
         if (sessao.concluida) {
             conclusoes.value += ConclusaoRegistrada(
                 casoId = sessao.casoId,
@@ -60,7 +69,7 @@ class RepositorioProgressoFalso(
 
     override suspend fun reiniciar(casoId: String): ResultadoArmazenamento<Unit> {
         falhaAoGravar?.let { return ResultadoArmazenamento.Falha(it) }
-        armazenado.value = null
+        armazenados.value -= casoId
         return ResultadoArmazenamento.Sucesso(Unit)
     }
 

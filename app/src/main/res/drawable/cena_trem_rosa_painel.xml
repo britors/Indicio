@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte vetorial original do projeto Indício, GPLv3. Painel entre os salões. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_parede_alta" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M36,48h328v490h-328z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M62,78h150v196h-150z" />
+    <path android:strokeColor="@color/ilustracao_marinho" android:strokeWidth="6" android:pathData="M82,112h110 M82,144h80 M82,176h104 M82,208h62" />
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M238,86h92v354h-92z" />
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M252,112h64v286h-64z" />
+    <path android:fillColor="@color/ilustracao_prata" android:pathData="M244,458h82v18h-82z" />
+    <path android:fillColor="@color/ilustracao_feltro" android:pathData="M72,322h134v144h-134z" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,548h400v52h-400z" />
+</vector>

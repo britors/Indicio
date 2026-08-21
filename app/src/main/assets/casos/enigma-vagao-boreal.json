@@ -1,0 +1,222 @@
+{
+  "versaoEsquema": 2,
+  "versaoConteudo": 1,
+  "id": "enigma-vagao-boreal",
+  "titulo": "O Enigma do Vagão Boreal",
+  "sinopse": "Durante uma travessia fictícia do Canadá, uma caixa documental desaparece de uma vitrine fechada. Relógios, etiquetas e a ordem mutável dos vagões podem recolocar a viagem nos trilhos.",
+  "categoria": "misterios_policiais",
+  "cenaInicial": "e1-mirante",
+  "etapas": [
+    {
+      "id": "vitrine-em-movimento",
+      "titulo": "A vitrine em movimento",
+      "descricao": "A caixa sumiu durante a noite, mas vidro, fechadura e lacre permanecem intactos.",
+      "resumoConclusao": "A divergência entre os relógios separa o horário da descoberta do horário da transferência.",
+      "resumoRetomada": "Você reconstruiu a madrugada e procura o registro feito durante a parada na neve.",
+      "objetivos": [
+        { "id": "reconstruir-madrugada", "texto": "Reconstruir a madrugada no trem", "perguntaEmAberto": "Em que momento a caixa deixou o mirante?" }
+      ]
+    },
+    {
+      "id": "dois-vagoes-sete",
+      "titulo": "Dois vagões sete",
+      "descricao": "A posição na composição e a placa do veículo usam o mesmo número para coisas diferentes.",
+      "resumoConclusao": "A ordem dos carros mudou na parada, mas a ordem de transferência manteve a identificação física.",
+      "resumoRetomada": "Você sabe por que o registro aponta para dois lugares diferentes.",
+      "objetivos": [
+        { "id": "identificar-vagao", "texto": "Identificar o vagão correto", "perguntaEmAberto": "O número descreve posição ou veículo?" }
+      ]
+    },
+    {
+      "id": "rastro-de-conservacao",
+      "titulo": "O rastro de conservação",
+      "descricao": "Feltro térmico, umidade e selos numerados revelam uma transferência planejada.",
+      "resumoConclusao": "A caixa viajou protegida por uma capa e conservou o mesmo lacre durante todo o deslocamento.",
+      "resumoRetomada": "Você confirmou a transferência e segue a capa térmica até a área técnica.",
+      "objetivos": [
+        { "id": "seguir-protecao", "texto": "Seguir os materiais de proteção", "perguntaEmAberto": "Onde a caixa poderia permanecer estável?" }
+      ]
+    },
+    {
+      "id": "gabinete-dos-mapas",
+      "titulo": "O gabinete dos mapas",
+      "descricao": "Um armário isolado aparece no diagrama antigo com nome diferente do usado pela equipe atual.",
+      "resumoConclusao": "Peso, dimensões e ventilação confirmam que o gabinete recebeu a caixa sem romper o selo.",
+      "resumoRetomada": "Você localizou o documento e precisa restaurar uma cadeia de registro compreensível.",
+      "objetivos": [
+        { "id": "localizar-caixa", "texto": "Localizar e conferir a caixa", "perguntaEmAberto": "Como provar que o conteúdo permaneceu protegido?" }
+      ]
+    },
+    {
+      "id": "viagem-reconstituida",
+      "titulo": "A viagem reconstituída",
+      "descricao": "A exposição pode continuar com identificadores claros ou priorizar a preservação do original.",
+      "resumoConclusao": "O caderno retorna ao público com sua procedência e seu percurso documentados.",
+      "resumoRetomada": "A caixa está segura; falta escolher como contar sua travessia.",
+      "objetivos": [
+        { "id": "devolver-caderno", "texto": "Devolver o caderno com contexto", "perguntaEmAberto": "Qual apresentação evita uma nova confusão?" }
+      ]
+    }
+  ],
+  "caderno": {
+    "pistas": [
+      { "id": "relogios-diferentes", "titulo": "Dois relógios, dois fusos", "descricao": "O mirante já marca o novo fuso, enquanto o relógio de serviço conserva o horário anterior.", "relevancia": "A diferença impede que os dois registros sejam tratados como acontecimentos separados por uma hora inteira." },
+      { "id": "parada-quarenta-sete", "titulo": "Quarenta e sete minutos na neve", "descricao": "O diário de bordo registra uma parada técnica mais longa que a prevista durante a madrugada.", "relevancia": "A parada oferece tempo e estabilidade suficientes para uma transferência autorizada entre vagões." },
+      { "id": "placa-cb7", "titulo": "A placa CB-7", "descricao": "Uma placa de latão identifica permanentemente o veículo, mesmo quando sua posição na composição muda.", "relevancia": "A placa demonstra que ‘sete’ pode indicar o carro físico, e não o sétimo lugar do trem naquela manhã." },
+      { "id": "ordem-invertida", "titulo": "Uma composição reorganizada", "descricao": "O diagrama da madrugada mostra dois vagões de serviço trocando de posição após a parada.", "relevancia": "A mudança explica por que a mesma instrução levou passageiros e equipe a compartimentos diferentes." },
+      { "id": "selo-continuo", "titulo": "O mesmo selo em três registros", "descricao": "O número do lacre aparece na vitrine, na ordem de transferência e no gabinete técnico.", "relevancia": "A continuidade comprova que a caixa permaneceu fechada enquanto foi deslocada para proteção climática." },
+      { "id": "fibra-azul", "titulo": "Fibras de feltro azul", "descricao": "Fibras encontradas no suporte combinam com uma capa térmica guardada no vagão técnico.", "relevancia": "O material liga a vitrine ao procedimento de conservação sem depender da lembrança de uma única pessoa." },
+      { "id": "alerta-umidade", "titulo": "Um alerta de umidade", "descricao": "O sensor do mirante registra condensação crescente pouco antes da parada noturna.", "relevancia": "O alerta fornece o motivo técnico para retirar temporariamente um documento sensível da área envidraçada." },
+      { "id": "peso-gabinete", "titulo": "Dezoito quilos a mais", "descricao": "A balança do gabinete registra aumento igual ao peso combinado da caixa e da capa térmica.", "relevancia": "A medição confirma o destino da transferência antes mesmo que o armário seja aberto para conferência conjunta." }
+    ],
+    "pessoas": [
+      { "id": "chefe-trem", "nome": "A chefe do trem", "papel": "Coordenação da travessia fictícia", "anotacoes": [{ "id": "chefe-registra-fusos", "texto": "Mantém os horários antigo e novo lado a lado sempre que a rota cruza um fuso." }] },
+      { "id": "conservadora", "nome": "A conservadora viajante", "papel": "Proteção do Caderno das Passagens", "anotacoes": [{ "id": "conservadora-usou-capa", "texto": "Preparou a capa térmica e anotou o número do selo antes da transferência." }] },
+      { "id": "mecanica", "nome": "A mecânica da composição", "papel": "Acoplamento e identificação dos vagões", "anotacoes": [{ "id": "mecanica-trocou-posicoes", "texto": "Reorganizou dois carros para isolar o sistema de climatização do mirante." }] },
+      { "id": "mediador", "nome": "O mediador da exposição", "papel": "Apresentação pública do caderno", "anotacoes": [{ "id": "mediador-usou-posicao", "texto": "Chamava cada vagão pela posição exibida ao público, e não pela placa técnica." }] }
+    ],
+    "locais": [
+      { "id": "mirante", "nome": "Vagão Mirante", "anotacoes": [{ "id": "mirante-condensacao", "texto": "As janelas panorâmicas tornam o ambiente mais sensível à condensação durante mudanças rápidas de temperatura." }] },
+      { "id": "corredor", "nome": "Corredor da composição", "anotacoes": [{ "id": "corredor-duas-numeracoes", "texto": "Painéis digitais mostram posição; placas de latão mostram a identidade permanente do veículo." }] },
+      { "id": "vagao-tecnico", "nome": "Vagão técnico", "anotacoes": [{ "id": "tecnico-capa-ventilada", "texto": "A área guarda capas térmicas e possui controle mais estável de temperatura e umidade." }] },
+      { "id": "gabinete-mapas", "nome": "Gabinete dos mapas", "anotacoes": [{ "id": "gabinete-isolado", "texto": "O armário possui ventilação indireta, balança interna e espaço para documentos de grande formato." }] },
+      { "id": "sala-leitura", "nome": "Sala de leitura móvel", "anotacoes": [{ "id": "leitura-identificadores", "texto": "A nova montagem pode exibir horário, posição e placa técnica em uma única legenda." }] }
+    ],
+    "conversas": [
+      { "id": "conversa-chefe", "pessoaId": "chefe-trem", "titulo": "A hora que muda", "texto": "A chefe explica que passageiros ajustam os relógios antes da equipe técnica, para que o despertar acompanhe o destino seguinte." },
+      { "id": "conversa-conservadora", "pessoaId": "conservadora", "titulo": "Vidro frio, papel sensível", "texto": "A conservadora descreve como uma janela gelada pode criar umidade mesmo dentro de um vagão aquecido." },
+      { "id": "conversa-mecanica", "pessoaId": "mecanica", "titulo": "Posição não é identidade", "texto": "A mecânica mostra que a placa acompanha o veículo, enquanto o número do painel muda a cada nova composição." },
+      { "id": "conversa-mediador", "pessoaId": "mediador", "titulo": "O número que o público vê", "texto": "O mediador admite ter procurado no sétimo lugar, embora a ficha técnica dissesse CB-7." }
+    ]
+  },
+  "lembrancas": [
+    { "id": "fusos-separados", "texto": "O mirante e a equipe técnica registravam fusos diferentes.", "essencial": true },
+    { "id": "parada-permitiu-transferencia", "texto": "A parada de quarenta e sete minutos permitiu mover a caixa com estabilidade." },
+    { "id": "posicao-nao-identidade", "texto": "A posição do vagão mudou, mas a placa CB-7 permaneceu com o veículo.", "essencial": true },
+    { "id": "selo-acompanhou-caixa", "texto": "O mesmo selo acompanhou a caixa em todos os registros." },
+    { "id": "umidade-motivou-cuidado", "texto": "A condensação no mirante motivou a transferência preventiva." },
+    { "id": "peso-confirma-destino", "texto": "O peso do gabinete confirma que caixa e capa chegaram juntas.", "essencial": true }
+  ],
+  "cenas": [
+    {
+      "id": "e1-mirante", "tipo": "comum", "etapaId": "vitrine-em-movimento", "objetivoId": "reconstruir-madrugada",
+      "texto": "O Horizonte Boreal, trem e serviço inteiramente fictícios, atravessa o Canadá do litoral atlântico ao pacífico. No Vagão Mirante, uma pequena exposição acompanha a viagem: seu centro é o Caderno das Passagens, criado para registrar relatos de comunidades ao longo da rota. Ao amanhecer, a caixa documental não está na vitrine. Vidro, fechadura e lacre de controle parecem intactos. Lá fora, a paisagem branca continua correndo; dentro do trem, dois relógios discordam por uma hora. Antes de procurar responsáveis, você decide reconstruir a noite usando o tempo e o próprio movimento da composição.",
+      "imagem": { "recurso": "cena_trem_boreal_mirante", "descricaoAcessivel": "Vagão panorâmico de trem fictício com paisagem nevada, vitrine vazia e dois relógios ao fundo." },
+      "revelacoes": { "pistas": ["relogios-diferentes"], "anotacoesPessoas": ["chefe-registra-fusos"], "anotacoesLocais": ["mirante-condensacao"], "conversas": ["conversa-chefe"], "lembrancas": ["fusos-separados"] },
+      "escolhas": [
+        { "id": "e1-mirante-relogios", "texto": "Comparar os relógios do trem", "proximaCena": "e1-relogios", "dica": "Quando a paisagem muda de hora, nem todos os ponteiros recebem a notícia juntos." },
+        { "id": "e1-mirante-diario", "texto": "Examinar o diário de bordo", "proximaCena": "e1-diario", "dica": "Uma parada longa deixa mais espaço no papel do que uma simples redução de velocidade." }
+      ]
+    },
+    {
+      "id": "e1-relogios", "tipo": "comum", "etapaId": "vitrine-em-movimento", "objetivoId": "reconstruir-madrugada", "pontoDePausa": true,
+      "texto": "O relógio do mirante foi adiantado para o fuso seguinte antes de os passageiros dormirem. O relógio de serviço só mudou após a conferência da manhã. A transferência anotada às duas e doze e a descoberta registrada às três e vinte parecem distantes, mas pertencem a convenções separadas: entre elas há apenas oito minutos. Nesse intervalo, o trem estava parado num desvio fictício por causa do acúmulo de neve. O diário técnico descreve quarenta e sete minutos sem movimento e menciona uma alteração na ordem dos vagões antes da partida.",
+      "imagem": { "recurso": "cena_trem_boreal_relogios", "descricaoAcessivel": "Dois relógios ferroviários marcando horas diferentes ao lado de um diário de bordo aberto." },
+      "revelacoes": { "pistas": ["parada-quarenta-sete"], "anotacoesLocais": ["corredor-duas-numeracoes"], "lembrancas": ["parada-permitiu-transferencia"] },
+      "escolhas": [
+        { "id": "e1-relogios-placas", "texto": "Conferir as placas dos vagões", "proximaCena": "e2-placas", "dica": "O número luminoso muda de lugar; uma pequena peça de latão prefere viajar com o mesmo corpo." },
+        { "id": "e1-relogios-diagrama", "texto": "Comparar os diagramas da composição", "proximaCena": "e2-diagrama", "dica": "Duas linhas quase iguais revelam mais quando suas extremidades trocam de lado." }
+      ]
+    },
+    {
+      "id": "e1-diario", "tipo": "comum", "etapaId": "vitrine-em-movimento", "objetivoId": "reconstruir-madrugada", "pontoDePausa": true,
+      "texto": "O diário registra a parada entre duas anotações de fuso e separa horário público de horário técnico. Durante quarenta e sete minutos, a equipe isolou o sistema de climatização do mirante e reposicionou dois carros. Uma linha diz: ‘transferência preventiva para CB-7, selo conferido’. Pela manhã, o mediador interpretou CB-7 como sétima posição e procurou no vagão-restaurante, agora instalado ali. A mecânica explica que letras e número identificam o veículo físico. O diagrama anterior à parada pode mostrar onde esse carro estava quando recebeu a caixa.",
+      "imagem": { "recurso": "cena_trem_boreal_relogios", "descricaoAcessivel": "Diário ferroviário fictício com parada de quarenta e sete minutos, fusos e código CB-7 destacados." },
+      "revelacoes": { "pistas": ["parada-quarenta-sete"], "anotacoesPessoas": ["mediador-usou-posicao"], "conversas": ["conversa-mediador"] },
+      "escolhas": [
+        { "id": "e1-diario-diagrama", "texto": "Reconstituir a ordem noturna", "proximaCena": "e2-diagrama", "dica": "Procure o carro pelo vizinho que ele tinha antes de o trem voltar a andar." },
+        { "id": "e1-diario-placas", "texto": "Localizar o código CB-7", "proximaCena": "e2-placas", "dica": "Uma identificação curta pode estar mais perto do chão que do painel dos passageiros." }
+      ]
+    },
+    {
+      "id": "e2-placas", "tipo": "comum", "etapaId": "dois-vagoes-sete", "objetivoId": "identificar-vagao", "pontoDePausa": true,
+      "texto": "No corredor, painéis digitais numeram posições de um a nove. Perto dos acoplamentos, placas de latão trazem códigos permanentes. A placa CB-7 pertence ao atual vagão técnico, que ocupa a nona posição depois da reorganização. O sétimo lugar é apenas a posição do restaurante nesta parte da viagem. A ordem de transferência seguiu a placa técnica, enquanto o anúncio feito ao público usou a posição. Duas linguagens corretas produziram uma busca no lugar errado. Resta provar que a caixa realmente seguiu para o carro físico e não apenas que a ordem pretendia levá-la até lá.",
+      "imagem": { "recurso": "cena_trem_boreal_composicao", "descricaoAcessivel": "Corredor de trem com painel digital sete e placa de latão CB-7 presa junto ao acoplamento." },
+      "revelacoes": { "pistas": ["placa-cb7"], "anotacoesPessoas": ["mecanica-trocou-posicoes"], "conversas": ["conversa-mecanica"], "lembrancas": ["posicao-nao-identidade"] },
+      "escolhas": [
+        { "id": "e2-placas-selo", "texto": "Seguir o número do selo", "proximaCena": "e3-selo", "dica": "Um pequeno número repetido pode atravessar mais portas que qualquer testemunha." },
+        { "id": "e2-placas-capa", "texto": "Procurar o material de proteção", "proximaCena": "e3-capa", "dica": "O suporte vazio ainda guarda fibras daquilo que o cobriu por poucos minutos." }
+      ]
+    },
+    {
+      "id": "e2-diagrama", "tipo": "comum", "etapaId": "dois-vagoes-sete", "objetivoId": "identificar-vagao", "pontoDePausa": true,
+      "texto": "Os diagramas antes e depois da parada parecem iguais até que você acompanha as placas permanentes. CB-7 e o carro de refeições trocaram de posição para afastar o circuito instável do mirante. A mecânica registrou o serviço por identidade física; o novo mapa dos passageiros foi impresso por posição. A ordem ‘levar ao sete’ circulou sem as letras e tornou ambíguo um procedimento originalmente preciso. No desenho antigo, CB-7 aparece ao lado do armário chamado gabinete dos mapas. A lista atual usa outro nome para o mesmo compartimento, por isso a busca rápida não o incluiu.",
+      "imagem": { "recurso": "cena_trem_boreal_composicao", "descricaoAcessivel": "Dois diagramas de composição mostrando vagões fictícios em posições trocadas após uma parada." },
+      "revelacoes": { "pistas": ["ordem-invertida"], "anotacoesLocais": ["gabinete-isolado"] },
+      "escolhas": [
+        { "id": "e2-diagrama-capa", "texto": "Examinar o suporte da vitrine", "proximaCena": "e3-capa", "dica": "Uma textura macia pode ter deixado uma assinatura onde o papel não tocava diretamente." },
+        { "id": "e2-diagrama-selo", "texto": "Cruzar as fichas de transferência", "proximaCena": "e3-selo", "dica": "Três formulários discordam nos nomes, mas um conjunto de algarismos permanece imóvel." }
+      ]
+    },
+    {
+      "id": "e3-selo", "tipo": "comum", "etapaId": "rastro-de-conservacao", "objetivoId": "seguir-protecao", "pontoDePausa": true,
+      "texto": "O lacre da vitrine foi removido conforme o protocolo e guardado numa bolsa transparente. Seu número reaparece na ordem assinada pela conservadora e no registro automático do gabinete técnico. Um segundo selo foi aplicado à porta do armário, não à caixa, preservando a sequência. A conservadora explica que o sensor de umidade do mirante subiu quando o ar aquecido encontrou as janelas resfriadas pela neve. Mover o caderno era mais seguro que deixá-lo exposto à condensação. A capa térmica deveria ter acompanhado a caixa e pode confirmar o caminho até o vagão técnico.",
+      "imagem": { "recurso": "cena_trem_boreal_lacre", "descricaoAcessivel": "Selos numerados, ordem de transferência e gráfico de umidade organizados sobre uma mesa estreita." },
+      "revelacoes": { "pistas": ["selo-continuo", "alerta-umidade"], "anotacoesPessoas": ["conservadora-usou-capa"], "conversas": ["conversa-conservadora"], "lembrancas": ["selo-acompanhou-caixa", "umidade-motivou-cuidado"] },
+      "escolhas": [
+        { "id": "e3-selo-gabinete", "texto": "Conferir o gabinete dos mapas", "proximaCena": "e4-gabinete", "dica": "Um nome antigo pode sobreviver gravado por dentro de uma porta renovada." },
+        { "id": "e3-selo-oficina", "texto": "Visitar a área técnica", "proximaCena": "e4-oficina", "dica": "A proteção que falta na vitrine talvez esteja secando perto de uma saída de ar." }
+      ]
+    },
+    {
+      "id": "e3-capa", "tipo": "comum", "etapaId": "rastro-de-conservacao", "objetivoId": "seguir-protecao", "pontoDePausa": true,
+      "texto": "Fibras azuis permanecem entre o suporte e a borda da vitrine. Elas correspondem ao feltro de uma capa térmica encontrada aberta para secagem no vagão técnico. A capa tem formato exato para a caixa e carrega uma etiqueta com o mesmo número do selo. Próximo dela, o relatório do sensor mostra a subida de umidade que motivou a retirada preventiva. Nada indica abertura do conteúdo: o procedimento buscava estabilizar temperatura e papel. A etiqueta cita ‘mapas’, palavra que não aparece na lista moderna de armários, mas permanece no diagrama histórico do carro CB-7.",
+      "imagem": { "recurso": "cena_trem_boreal_lacre", "descricaoAcessivel": "Capa térmica de feltro azul com etiqueta numerada ao lado de suporte vazio e sensor climático." },
+      "revelacoes": { "pistas": ["fibra-azul", "alerta-umidade"], "anotacoesLocais": ["tecnico-capa-ventilada"] },
+      "escolhas": [
+        { "id": "e3-capa-oficina", "texto": "Reconstituir o acondicionamento", "proximaCena": "e4-oficina", "dica": "Dobras recentes contam a forma do objeto que viajou protegido dentro delas." },
+        { "id": "e3-capa-gabinete", "texto": "Localizar o antigo armário", "proximaCena": "e4-gabinete", "dica": "Quando a lista nova falha, a planta presa à estrutura ainda pode lembrar o primeiro nome." }
+      ]
+    },
+    {
+      "id": "e4-gabinete", "tipo": "comum", "etapaId": "gabinete-dos-mapas", "objetivoId": "localizar-caixa", "pontoDePausa": true,
+      "texto": "Atrás de uma porta hoje marcada ‘materiais planos’, uma placa interna ainda diz gabinete dos mapas. A balança integrada registra dezoito quilos a mais desde a parada: exatamente o peso da caixa somado ao da capa. O selo externo coincide com a ficha da conservadora. Diante da chefe do trem e do mediador, o armário é aberto. A caixa está ali, fechada, apoiada horizontalmente e longe da parede fria. Antes de devolvê-la à exposição, você confere o caderno, o registro de temperatura e cada número da cadeia documental. O desaparecimento foi uma falha de linguagem, não de cuidado.",
+      "imagem": { "recurso": "cena_trem_boreal_gabinete", "descricaoAcessivel": "Gabinete isolado aberto com caixa documental lacrada, balança interna e placa antiga de mapas." },
+      "revelacoes": { "pistas": ["peso-gabinete"], "anotacoesLocais": ["leitura-identificadores"], "lembrancas": ["peso-confirma-destino"] },
+      "escolhas": [
+        { "id": "e4-gabinete-mirante", "texto": "Redesenhar a exposição do mirante", "proximaCena": "e5-mirante", "dica": "Uma legenda pode mostrar três identidades sem transformar nenhuma delas em nota de rodapé." },
+        { "id": "e4-gabinete-leitura", "texto": "Preparar uma sala de leitura", "proximaCena": "e5-leitura", "dica": "A viagem do original pode parar, enquanto sua história continua atravessando as janelas." }
+      ]
+    },
+    {
+      "id": "e4-oficina", "tipo": "comum", "etapaId": "gabinete-dos-mapas", "objetivoId": "localizar-caixa", "pontoDePausa": true,
+      "texto": "Na área técnica, as dobras da capa reproduzem as quinas da caixa e uma ficha anota seu peso antes e depois do transporte. O valor final aparece também na balança do antigo gabinete dos mapas. A equipe abre o armário em conferência conjunta e encontra o caderno estável, selado e acompanhado pelo relatório climático. A transferência foi correta; a comunicação perdeu as letras que distinguiam placa e posição. O novo registro passa a exibir fuso, posição pública e identidade física em campos separados. Resta decidir se o original volta ao mirante ou permanece protegido numa sala de leitura móvel.",
+      "imagem": { "recurso": "cena_trem_boreal_oficina", "descricaoAcessivel": "Área técnica de trem com capa dobrada, ficha de peso, ferramentas e gabinete isolado ao fundo." },
+      "revelacoes": { "pistas": ["peso-gabinete"], "lembrancas": ["peso-confirma-destino"] },
+      "escolhas": [
+        { "id": "e4-oficina-leitura", "texto": "Criar uma consulta protegida", "proximaCena": "e5-leitura", "dica": "Uma boa cópia pode viajar mais longe quando deixa claro onde o original descansa." },
+        { "id": "e4-oficina-mirante", "texto": "Corrigir a vitrine itinerante", "proximaCena": "e5-mirante", "dica": "O público pode acompanhar o percurso se cada mudança ganhar hora, placa e posição." }
+      ]
+    },
+    {
+      "id": "e5-mirante", "tipo": "comum", "etapaId": "viagem-reconstituida", "objetivoId": "devolver-caderno", "pontoDePausa": true,
+      "texto": "A vitrine recebe controle climático revisado e uma legenda que explica os dois fusos, a parada na neve e a diferença entre CB-7 e sétima posição. O caderno pode voltar por períodos curtos, acompanhado por uma reprodução acessível nas horas de maior condensação. Outra possibilidade é manter o original no gabinete estável e transformar o mirante numa exposição sobre a investigação, com mapas da composição e páginas reproduzidas. Em ambos os caminhos, a travessia deixa de parecer um sumiço e passa a ensinar como documentos, veículos e horários precisam de identificadores que continuem claros em movimento.",
+      "imagem": { "recurso": "cena_trem_boreal_mirante", "descricaoAcessivel": "Vagão panorâmico reorganizado com vitrine climatizada, mapa da composição e legendas de fusos." },
+      "escolhas": [
+        { "id": "e5-mirante-exposicao", "texto": "Reabrir a exposição itinerante", "proximaCena": "final-exposicao", "dica": "A própria confusão pode virar uma legenda capaz de impedir que ela se repita." },
+        { "id": "e5-mirante-arquivo", "texto": "Priorizar a sala de leitura", "proximaCena": "final-arquivo", "dica": "Nem todo viajante precisa tocar o original para compreender por onde ele passou." }
+      ]
+    },
+    {
+      "id": "e5-leitura", "tipo": "comum", "etapaId": "viagem-reconstituida", "objetivoId": "devolver-caderno", "pontoDePausa": true,
+      "texto": "A sala de leitura móvel combina uma reprodução integral, trechos narrados e um painel tátil da composição. O original permanece no gabinete isolado e pode ser consultado em condições estáveis nas paradas programadas. O mirante ainda pode receber uma exposição sobre relógios, placas e conservação, ou o projeto pode concentrar-se na leitura acessível do Caderno das Passagens. A chefe do trem acrescenta um formulário único para futuras transferências, sempre com fuso, posição e placa física. A solução não imobiliza a história: apenas distingue o que precisa viajar do que precisa permanecer protegido.",
+      "imagem": { "recurso": "cena_trem_boreal_gabinete", "descricaoAcessivel": "Sala de leitura móvel com reprodução de caderno, mapa tátil e gabinete climatizado fechado." },
+      "escolhas": [
+        { "id": "e5-leitura-arquivo", "texto": "Inaugurar a leitura protegida", "proximaCena": "final-arquivo", "dica": "A rota fica mais aberta quando o objeto frágil encontra um lugar estável para repousar." },
+        { "id": "e5-leitura-exposicao", "texto": "Contar o enigma no mirante", "proximaCena": "final-exposicao", "dica": "Dois relógios e uma placa de latão podem apresentar a viagem melhor que uma resposta isolada." }
+      ]
+    },
+    {
+      "id": "final-exposicao", "tipo": "final", "etapaId": "viagem-reconstituida",
+      "texto": "Quando o Horizonte Boreal alcança as montanhas do oeste canadense, a exposição reabre. O Caderno das Passagens permanece na vitrine apenas sob condições seguras; ao lado, o diagrama mostra como CB-7 mudou de posição durante a parada. Dois relógios explicam os fusos, e uma sequência de selos documenta cada cuidado. Passageiros descobrem que a caixa não atravessou uma porta secreta nem desapareceu entre estações: ela foi protegida corretamente e procurada segundo o número errado. A investigação agora viaja com o objeto, tornando visível a diferença entre mover, guardar e perder.",
+      "imagem": { "recurso": "cena_trem_boreal_final", "descricaoAcessivel": "Vagão mirante diante de montanhas canadenses com caixa segura, dois relógios e diagrama dos vagões." },
+      "desfecho": { "titulo": "A exposição volta aos trilhos", "mensagem": "O caderno retorna ao público com uma cadeia de conservação clara.", "explicacaoPistas": "Os fusos aproximaram transferência e descoberta; a placa CB-7 e os diagramas corrigiram o destino. Selo, feltro, umidade e peso comprovaram que a caixa permaneceu protegida no gabinete." }
+    },
+    {
+      "id": "final-arquivo", "tipo": "final", "etapaId": "viagem-reconstituida",
+      "texto": "A sala de leitura torna-se o ponto mais visitado do trem. Reproduções acessíveis percorrem a composição, enquanto o original permanece estável no gabinete técnico e aparece somente em consultas programadas. Um painel permite reorganizar vagões, comparar fusos e seguir o selo da caixa durante a madrugada. Ao chegar ao litoral pacífico, o público conhece tanto as páginas quanto o cuidado necessário para preservá-las. O enigma termina sem esconder o erro de comunicação: a equipe mantém os dois diagramas e adota um registro que nunca mais confunde posição, veículo e destino.",
+      "imagem": { "recurso": "cena_trem_boreal_final", "descricaoAcessivel": "Sala de leitura em trem fictício com reproduções acessíveis, mapa da travessia e gabinete protegido." },
+      "desfecho": { "titulo": "A viagem encontra uma sala de leitura", "mensagem": "O original fica protegido e sua história continua acessível durante a travessia.", "explicacaoPistas": "Relógios e diário reconstruíram a madrugada; placas e composição revelaram os dois vagões sete. A capa, o alerta climático, os selos e a balança localizaram a caixa intacta." }
+    }
+  ]
+}

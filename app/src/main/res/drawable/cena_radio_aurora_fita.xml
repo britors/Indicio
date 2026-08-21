@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte vetorial original do projeto Indício, GPLv3. Composição temática: cena_radio_aurora_fita. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M42,86h316v404h-316z" />
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M78,122h244v250h-244z" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="10" android:pathData="M100,270 l34,-54 l34,92 l34,-128 l34,112 l34,-58 l30,36" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M92,402h216v54h-216z" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,500h400v100h-400z" />
+</vector>

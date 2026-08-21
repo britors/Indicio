@@ -94,7 +94,12 @@ class HistoriaViewModel(
                     } else {
                         null
                     }
-                    instalar(resultado.valor, salvo)
+                    if (instalar(resultado.valor, salvo)) {
+                        // Abrir ou retomar também é um acesso relevante. Além
+                        // de atualizar o cartão do catálogo, isto permite
+                        // retomar um caso mesmo antes da primeira escolha.
+                        sessao?.let { sessaoInstalada -> salvar(sessaoInstalada) }
+                    }
                 }
             }
         }
@@ -186,7 +191,7 @@ class HistoriaViewModel(
         }
     }
 
-    private fun instalar(caso: Caso, progresso: ProgressoCaso?) {
+    private fun instalar(caso: Caso, progresso: ProgressoCaso?): Boolean {
         this.caso = caso
 
         sessao = when {
@@ -197,12 +202,13 @@ class HistoriaViewModel(
                 is ResultadoReconstrucao.ProgressoIncompativel -> {
                     sessao = null
                     _estado.value = EstadoHistoria.AtualizacaoNecessaria(caso.titulo)
-                    return
+                    return false
                 }
             }
         }
 
         atualizarEstado(habilitado = true)
+        return sessao != null
     }
 
     private fun atualizarEstado(habilitado: Boolean) {

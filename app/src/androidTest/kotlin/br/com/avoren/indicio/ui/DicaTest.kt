@@ -28,7 +28,7 @@ class DicaTest {
     @Test
     fun confirmaAntesDeConsumirEDicaFicaAntesDeConfiguracoes() {
         var pediu = false
-        montar(EstadoDica.Disponivel(CENA_ID, restantes = 2), onRevelar = { pediu = true })
+        montar(EstadoDica.Disponivel(CENA_ID, restantes = 3), onRevelar = { pediu = true })
 
         composeRule.onNodeWithText("Dica do Anônimo").assertDoesNotExist()
         abrirMenu()
@@ -44,7 +44,7 @@ class DicaTest {
 
         assertFalse(pediu)
         composeRule.onNodeWithText("Bilhete do Anônimo").assertIsDisplayed()
-        composeRule.onNodeWithText("Você tem 2 dicas nesta semana.").assertIsDisplayed()
+        composeRule.onNodeWithText("Para este caso, você tem 3 dicas nesta semana.").assertIsDisplayed()
         composeRule.onNodeWithText("Usar uma dica").performClick()
         assertTrue(pediu)
     }
@@ -52,7 +52,7 @@ class DicaTest {
     @Test
     fun fecharBilheteNaoConsomeDica() {
         var pediu = false
-        montar(EstadoDica.Disponivel(CENA_ID, restantes = 2), onRevelar = { pediu = true })
+        montar(EstadoDica.Disponivel(CENA_ID, restantes = 3), onRevelar = { pediu = true })
 
         abrirMenu()
         composeRule.onNodeWithText("Dica do Anônimo").performClick()
@@ -71,13 +71,15 @@ class DicaTest {
 
         composeRule.onNodeWithText("Mensagem do Anônimo").assertIsDisplayed()
         composeRule.onNodeWithText(MENSAGEM_INDIRETA).assertIsDisplayed()
-        composeRule.onNodeWithText("1 dica restante nesta semana").assertIsDisplayed()
+        composeRule
+            .onNodeWithText("1 dica restante para este caso nesta semana")
+            .assertIsDisplayed()
     }
 
     @Test
     fun painelContinuaAcessivelComTextoMuitoGrande() {
         montar(
-            EstadoDica.Disponivel(CENA_ID, restantes = 2),
+            EstadoDica.Disponivel(CENA_ID, restantes = 3),
             tamanhoTexto = TamanhoTexto.MUITO_GRANDE,
         )
 

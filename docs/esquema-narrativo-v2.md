@@ -37,6 +37,10 @@ caso. Isso permite que um mesmo aplicativo ofereça simultaneamente casos `1` e
       "id": "catalogo-fora-de-ordem",
       "titulo": "O Catálogo Fora de Ordem",
       "sinopse": "Cartões de uma pequena coleção foram reorganizados durante a noite.",
+      "imagem": {
+        "recurso": "cena_catalogo_mesa",
+        "descricaoAcessivel": "Mesa com cartões de catálogo reorganizados."
+      },
       "categoria": "misterios_policiais",
       "arquivo": "casos/catalogo-fora-de-ordem.json",
       "disponivel": true,
@@ -54,6 +58,7 @@ caso. Isso permite que um mesmo aplicativo ofereça simultaneamente casos `1` e
 | `id` | sim | Id estável do caso. |
 | `titulo` | sim | Título sem revelar a solução. |
 | `sinopse` | sim | Resumo curto para o catálogo. |
+| `imagem` | em publicação | Capa local com `recurso` e `descricaoAcessivel`; pode ser omitida apenas enquanto a entrada não é conteúdo publicado. |
 | `categoria` | sim | Chave do vocabulário controlado existente. |
 | `arquivo` | se disponível | Caminho local a partir de `assets/`. |
 | `disponivel` | não | Padrão `false`. |
@@ -61,8 +66,8 @@ caso. Isso permite que um mesmo aplicativo ofereça simultaneamente casos `1` e
 | `versaoConteudo` | se disponível | Inteiro positivo, iniciado em `1`. |
 
 Para uma entrada disponível, as duas versões declaradas precisam coincidir com
-o arquivo carregado. Entrada indisponível omite `arquivo`, `versaoEsquema` e
-`versaoConteudo`.
+o arquivo carregado e a capa precisa apontar para uma arte local existente.
+Entrada indisponível omite `arquivo`, `versaoEsquema` e `versaoConteudo`.
 
 ## Estrutura do caso
 

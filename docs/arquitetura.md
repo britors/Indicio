@@ -166,11 +166,19 @@ app/src/main/assets/casos/
 ├── taca-desaparecida.json
 ├── silencio-galeria-nove.json
 ├── sumico-da-mumia.json
+├── ultimo-quadro-estrela-papel.json
+├── cidade-sem-meio-dia.json
+├── cartas-casa-magnolias.json
+├── farol-duas-mares.json
+├── ultima-transmissao-radio-aurora.json
+├── jardim-fora-de-epoca.json
+├── enigma-vagao-boreal.json
+├── roubo-rosa-boreal.json
 └── <novo-caso>.json
 ```
 
-Cada entrada informa `id`, título, sinopse, categoria, disponibilidade e o
-caminho do arquivo. Cada arquivo de caso contém seu próprio grafo de cenas. O
+Cada entrada informa `id`, título, sinopse, capa acessível, categoria,
+disponibilidade e o caminho do arquivo. Cada arquivo de caso contém seu próprio grafo de cenas. O
 motor segue `cenaInicial` e `escolhas[].proximaCena`; ele nunca conhece nomes de
 cenas ou soluções específicas.
 
@@ -178,7 +186,7 @@ Um caso novo no esquema atual exige apenas:
 
 1. `casos/<id>.json` válido;
 2. uma entrada única em `catalogo.json`;
-3. uma arte local para cada cena;
+3. uma capa no catálogo e uma arte local para cada cena;
 4. revisão editorial, jurídica e de acessibilidade;
 5. testes de conteúdo aprovados.
 
@@ -211,11 +219,18 @@ salvo de versões anteriores.
 ### Catálogo e abertura
 
 1. `CatalogoViewModel` solicita `RepositorioCasos.catalogo()`.
-2. `RepositorioCasosJson` desserializa DTOs, valida o contrato externo e os
+2. O ViewModel observa `RepositorioProgresso.progressos()` e `historico()`;
+   `ProjetarCasosDoCatalogo` consolida os três modelos em estado de leitura,
+   último acesso e ações permitidas, sem regras de persistência na interface.
+3. Progresso atual e conclusão são conceitos independentes: um caso pode
+   continuar marcado como resolvido enquanto uma nova investigação está em
+   andamento. Reiniciar apaga somente o progresso atual.
+4. `RepositorioCasosJson` desserializa DTOs, valida o contrato externo e os
    converte para o domínio.
-3. A rota da história transporta apenas `casoId`.
-4. `HistoriaViewModel` solicita o caso pelo contrato do domínio.
-5. O repositório resolve o arquivo declarado pelo catálogo, desserializa e
+5. A rota da história transporta apenas `casoId` e a intenção de retomar ou
+   iniciar do começo.
+6. `HistoriaViewModel` solicita o caso pelo contrato do domínio.
+7. O repositório resolve o arquivo declarado pelo catálogo, desserializa e
    valida o grafo antes de entregá-lo.
 
 ### Escolha e salvamento
@@ -282,10 +297,9 @@ O contrato para casos longos foi aprovado como
 objetivos, personagens, locais, conversas, lembranças e `versaoConteudo` sem
 alterar incrementalmente o formato `1`. A #013 implementou leitura simultânea,
 validação, reconstrução e persistência dos dois formatos. O catálogo de
-produção contém três casos longos no esquema `2`. As inclusões de *O Silêncio
-da Galeria Nove* e *O Sumiço da Múmia* confirmaram que casos novos entram apenas
-por JSON e artes locais, sem condicionais de enredo no motor, na navegação ou
-na interface.
+produção contém onze casos longos no esquema `2`. As inclusões mais recentes
+confirmaram que casos novos entram apenas por JSON e artes locais, sem
+condicionais de enredo no motor, na navegação ou na interface.
 
 O processo de evolução de qualquer versão continua sendo:
 
@@ -306,7 +320,7 @@ banco guarda versões, escolhas e índices mínimos para retomada.
 
 Room guarda progresso e histórico porque esses dados são relacionais e precisam
 de consulta por caso e por recência. Room também guarda as dicas reveladas, com
-cena, escolha e instante de uso, para aplicar atomicamente a cota semanal e não
+caso, cena, escolha e instante de uso, para aplicar atomicamente a cota semanal por caso e não
 cobrar novamente ao rever a mesma cena. DataStore guarda somente preferências
 globais de leitura e movimento. A aparência segue o modo claro ou escuro do
 sistema e não é persistida separadamente pelo aplicativo.
@@ -329,8 +343,8 @@ completar um desenho de camadas.
 
 `SugerirEscolha` percorre o grafo sem conhecer enredos específicos e compara a
 distância de cada escolha até uma pista, anotação, conversa ou lembrança ainda
-oculta. `GerenciarDicas` aplica a cota global de duas novas dicas na semana ISO,
-de segunda a domingo. A gravação condicional é transacional no adaptador Room,
+oculta. `GerenciarDicas` aplica a cota independente de três novas dicas por caso
+na semana ISO, de segunda a domingo. A gravação condicional é transacional no adaptador Room,
 impedindo que pedidos concorrentes ultrapassem o limite. Uma dica já revelada
 continua disponível em visitas futuras e não volta a consumir a cota.
 

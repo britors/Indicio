@@ -24,7 +24,7 @@ ilustrações seguem a mesma regra.
 ## Formato
 
 As artes são **vector drawables**, não bitmaps. A escolha tem três motivos: o
-conjunto inteiro ocupa 68 KB, funciona em qualquer densidade de tela sem
+conjunto inteiro ocupa cerca de 133 KB em fonte, funciona em qualquer densidade de tela sem
 variantes, e é legível em texto — uma arte pode ser revisada em diff.
 
 | Propriedade | Valor | Por quê |
@@ -182,6 +182,25 @@ Todas foram desenhadas como vetores originais para o Indício.
 | `cena_mumia_mesa` | Conselho e proteção | Documentos e limites de pesquisa sobre a mesa |
 | `cena_mumia_final_historia` | Final documental | Exposição de arquivo sem restos humanos ou coordenadas |
 | `cena_mumia_final_pesquisa` | Final não invasivo | Leitura de superfície limitada à proteção do terreno |
+
+### Cartas dos oito casos compactos
+
+Os oito casos acrescentam 54 vetores originais e offline. Cada conjunto usa o
+prefixo próprio do caso (`cena_estrela_papel_`, `cena_cidade_meio_dia_`,
+`cena_cartas_magnolias_`, `cena_farol_duas_mares_`, `cena_radio_aurora_` e
+`cena_jardim_epoca_`, além de `cena_trem_boreal_` e `cena_trem_rosa_`). As composições representam
+documentos, mecanismos, mapas, plantas e espaços; nenhuma pista depende somente
+da imagem ou da cor.
+
+O conjunto ferroviário contém sete composições: mirante, relógios, diagramas da
+composição, lacres e capa térmica, gabinete isolado, área técnica e conclusão da
+travessia. Trem, identidade visual e interiores foram desenhados para o projeto
+sem reproduzir um serviço ferroviário real ou uma obra preexistente.
+
+O caso da Rosa Boreal compartilha os interiores do trem fictício e acrescenta
+quatro artes próprias para o salão, o painel técnico, o tubo de mapas e a
+recuperação da escultura. Nenhuma composição reproduz personagem, objeto ou
+cena distintiva da obra usada apenas como referência de atmosfera.
 
 ## Verificação
 

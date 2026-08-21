@@ -5,6 +5,7 @@
       "id": "taca-desaparecida",
       "titulo": "O Mistério da Taça Desaparecida",
       "sinopse": "Uma taça desaparece de uma vitrine fechada na manhã de uma exposição. Entre marcas no piso, registros incompletos e caixas muito parecidas, cada cuidado parece ter deixado uma nova pergunta.",
+      "imagem": { "recurso": "cena_bilhete", "descricaoAcessivel": "Curadora diante de uma vitrine vazia e intacta, com o pedestal levemente deslocado." },
       "categoria": "futebol",
       "arquivo": "casos/taca-desaparecida.json",
       "disponivel": true,
@@ -15,6 +16,7 @@
       "id": "silencio-galeria-nove",
       "titulo": "O Silêncio da Galeria Nove",
       "sinopse": "Após um apagão de 83 segundos, um relógio celeste desaparece de uma vitrine ainda trancada. Antes do amanhecer, registros, passagens de serviço e versões incompletas precisam ser colocados sob a mesma luz.",
+      "imagem": { "recurso": "cena_galeria_nove_chegada", "descricaoAcessivel": "Galeria iluminada apenas por luzes de presença, com uma vitrine vazia no centro e duas pessoas ao lado." },
       "categoria": "misterios_policiais",
       "arquivo": "casos/silencio-galeria-nove.json",
       "disponivel": true,
@@ -25,11 +27,100 @@
       "id": "sumico-da-mumia",
       "titulo": "O Sumiço da Múmia",
       "sinopse": "Uma caixa registrada na capital em 1938 chegou vazia, e a múmia que deveria estar nela desapareceu também dos arquivos. Fotografias, mapas divididos e anotações prudentes podem devolver a história sem perturbar seu repouso.",
+      "imagem": { "recurso": "cena_mumia_arquivo", "descricaoAcessivel": "Arquivo claro da capital fictícia com caixas de madeira, fichas abertas e luz entrando por painéis altos." },
       "categoria": "misterios_policiais",
       "arquivo": "casos/sumico-da-mumia.json",
       "disponivel": true,
       "versaoEsquema": 2,
       "versaoConteudo": 2
+    },
+    {
+      "id": "ultimo-quadro-estrela-papel",
+      "titulo": "O Último Quadro da Estrela de Papel",
+      "sinopse": "O rolo final de um desenho colorido desapareceu antes da estreia de 1954. Acetatos, música e créditos raspados podem devolver à obra o nome de quem também a criou.",
+      "imagem": { "recurso": "cena_estrela_papel_estudio", "descricaoAcessivel": "Estúdio de animação fictício com prateleiras, latas de filme e uma mesa iluminada." },
+      "categoria": "cultura_popular_antiga",
+      "arquivo": "casos/ultimo-quadro-estrela-papel.json",
+      "disponivel": true,
+      "versaoEsquema": 2,
+      "versaoConteudo": 1
+    },
+    {
+      "id": "cidade-sem-meio-dia",
+      "titulo": "A Cidade Sem Meio-Dia",
+      "sinopse": "Na vila fictícia de Pedra Serena, o relógio da estação parou quando uma escritura sumiu da mala postal. Sombras, telegramas e horários podem devolver terras à comunidade.",
+      "imagem": { "recurso": "cena_cidade_meio_dia_estacao", "descricaoAcessivel": "Estação de vila fictícia com relógio parado, banco de madeira e mala postal sobre um carrinho." },
+      "categoria": "faroeste",
+      "arquivo": "casos/cidade-sem-meio-dia.json",
+      "disponivel": true,
+      "versaoEsquema": 2,
+      "versaoConteudo": 1
+    },
+    {
+      "id": "cartas-casa-magnolias",
+      "titulo": "As Cartas da Casa das Magnólias",
+      "sinopse": "Uma caixa de cartas revela duas caligrafias e três vozes ligadas a um romance publicado sob um único nome. Papéis, flores prensadas e provas tipográficas podem restituir uma criação compartilhada.",
+      "imagem": { "recurso": "cena_cartas_magnolias_caixa", "descricaoAcessivel": "Caixa de correspondência aberta com cartas, duas lupas e um romance sobre uma mesa clara." },
+      "categoria": "romances_classicos",
+      "arquivo": "casos/cartas-casa-magnolias.json",
+      "disponivel": true,
+      "versaoEsquema": 2,
+      "versaoConteudo": 1
+    },
+    {
+      "id": "farol-duas-mares",
+      "titulo": "O Farol das Duas Marés",
+      "sinopse": "Um farol desativado volta a piscar durante três noites, sempre entre duas marés. Tabelas, lentes e registros de manutenção revelam uma rota comunitária que ainda pede proteção.",
+      "imagem": { "recurso": "cena_farol_duas_mares_torre", "descricaoAcessivel": "Farol fictício diante do mar ao entardecer, com três feixes longos representados no horizonte." },
+      "categoria": "misterios_policiais",
+      "arquivo": "casos/farol-duas-mares.json",
+      "disponivel": true,
+      "versaoEsquema": 2,
+      "versaoConteudo": 1
+    },
+    {
+      "id": "ultima-transmissao-radio-aurora",
+      "titulo": "A Última Transmissão da Rádio Aurora",
+      "sinopse": "Uma fita interrompida conserva palavras escondidas entre ruídos e anúncios. Roteiros, sinais de estúdio e um mapa de vozes revelam o acervo que a emissora fictícia tentou proteger.",
+      "imagem": { "recurso": "cena_radio_aurora_fita", "descricaoAcessivel": "Gravador de rolo com duas trilhas indicadas, roteiro aberto e relógio de estúdio." },
+      "categoria": "cultura_popular_antiga",
+      "arquivo": "casos/ultima-transmissao-radio-aurora.json",
+      "disponivel": true,
+      "versaoEsquema": 2,
+      "versaoConteudo": 1
+    },
+    {
+      "id": "jardim-fora-de-epoca",
+      "titulo": "O Jardim que Floresceu Fora de Época",
+      "sinopse": "Uma estufa fictícia floresce meses antes do previsto. Etiquetas trocadas, paredes térmicas e cadernos meteorológicos recuperam o método esquecido de uma pesquisadora.",
+      "imagem": { "recurso": "cena_jardim_epoca_estufa", "descricaoAcessivel": "Estufa fictícia com canteiro florido, etiqueta transparente e quatro janelas altas." },
+      "categoria": "misterios_policiais",
+      "arquivo": "casos/jardim-fora-de-epoca.json",
+      "disponivel": true,
+      "versaoEsquema": 2,
+      "versaoConteudo": 1
+    },
+    {
+      "id": "enigma-vagao-boreal",
+      "titulo": "O Enigma do Vagão Boreal",
+      "sinopse": "Durante uma travessia fictícia do Canadá, uma caixa documental desaparece de uma vitrine fechada. Relógios, etiquetas e a ordem mutável dos vagões podem recolocar a viagem nos trilhos.",
+      "imagem": { "recurso": "cena_trem_boreal_mirante", "descricaoAcessivel": "Vagão panorâmico de trem fictício com paisagem nevada, vitrine vazia e dois relógios ao fundo." },
+      "categoria": "misterios_policiais",
+      "arquivo": "casos/enigma-vagao-boreal.json",
+      "disponivel": true,
+      "versaoEsquema": 2,
+      "versaoConteudo": 1
+    },
+    {
+      "id": "roubo-rosa-boreal",
+      "titulo": "O Roubo da Rosa Boreal",
+      "sinopse": "Uma escultura de vidro é furtada de um salão fechado enquanto um trem fictício atravessa o Canadá. Quatro versões, uma parede dupla e um tubo de mapas guardam a resposta a bordo.",
+      "imagem": { "recurso": "cena_trem_rosa_salao", "descricaoAcessivel": "Salão de trem fictício com vitrine vazia, escultura representada numa placa e montanhas pela janela." },
+      "categoria": "misterios_policiais",
+      "arquivo": "casos/roubo-rosa-boreal.json",
+      "disponivel": true,
+      "versaoEsquema": 2,
+      "versaoConteudo": 1
     }
   ]
 }

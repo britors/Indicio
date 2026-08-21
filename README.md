@@ -42,6 +42,16 @@ o volume funerário associado ao mesmo número desapareceu dos arquivos. A
 investigação reorganiza negativos, mapas e livros suplementares para recuperar
 a história sem abrir a câmara protegida.
 
+### Oito novas investigações
+
+O catálogo também inclui casos compactos em cinco etapas: *O Último Quadro da
+Estrela de Papel*, *A Cidade Sem Meio-Dia*, *As Cartas da Casa das Magnólias*,
+*O Farol das Duas Marés*, *A Última Transmissão da Rádio Aurora* e *O Jardim
+que Floresceu Fora de Época*, além de *O Enigma do Vagão Boreal*, ambientado
+numa travessia fictícia do Canadá, e *O Roubo da Rosa Boreal*, um caso fechado
+de furto no mesmo trem. Trem, serviço, personagens, objetos,
+instituições e acontecimentos desses enredos são fictícios.
+
 ## MVP planejado
 
 - Aplicativo Android nativo em Kotlin.
@@ -70,7 +80,7 @@ As camadas, os fluxos, os contratos de identificadores e a evolução para vári
 casos estão descritos em [Arquitetura](docs/arquitetura.md).
 O contrato aprovado para investigações longas está em
 [Esquema narrativo v2](docs/esquema-narrativo-v2.md). O motor já lê e valida
-casos v1 e v2 simultaneamente; os três casos jogáveis atuais usam o formato v2.
+casos v1 e v2 simultaneamente; os onze casos jogáveis atuais usam o formato v2.
 
 ## Desenvolvimento
 
@@ -113,6 +123,10 @@ Prontos:
 - **Terceiro caso** — *O Sumiço da Múmia*, 23 cenas, cinco etapas, 14 pistas e
   dois finais que resolvem a investigação histórica sem abrir a câmara nem
   representar restos humanos como recompensa visual.
+- **Oito casos compactos** — novas investigações de animação, faroeste,
+  literatura, farol, rádio, botânica e viagem ferroviária, cada uma com 13
+  cenas, cinco etapas, caderno próprio e dois finais positivos; as duas viagens
+  ferroviárias possuem mistérios e soluções independentes.
 - **Navegação e telas** — apresentação, início, catálogo, história, pausa,
   conclusão, configurações e sobre, com progresso e preferências restaurados ao
   reabrir o aplicativo.
@@ -121,19 +135,19 @@ Prontos:
   instalada no aparelho; após 20 minutos há um lembrete visual discreto e, aos
   30 minutos de uso em primeiro plano, uma pausa de três minutos protege o
   bem-estar sem alterar escolhas ou progresso. O Anônimo também pode recomendar
-  um dos dois caminhos mais promissores da cena, com limite de duas novas dicas
-  por semana. Novas pistas recebem um momento breve de descoberta, contexto
+  um dos dois caminhos mais promissores da cena, com limite independente de
+  três novas dicas por caso a cada semana. Novas pistas recebem um momento breve de descoberta, contexto
   sobre sua relevância e um indicador no Caderno até a primeira leitura.
 - **Identidade visual** — a história é jogada como um baralho: cada cena é uma
   carta distribuída, que chega virada para baixo e é revelada, e cada escolha é
   uma carta a jogar. A direção contemporânea das maquetes já está aplicada ao
-  sistema Compose reutilizável. As 42 artes dos casos e o verso comum são
+  sistema Compose reutilizável. As 96 artes dos casos e o verso comum são
   vetores originais, funcionando sem rede.
 - **Acessibilidade** — contraste conferido contra a WCAG AA e travado por teste,
   alvo de toque de 64 dp, escolhas com papel de botão, imagens com texto
   equivalente, texto ampliável em dois tamanhos e uso em pé ou deitado.
 
-Os três casos são jogáveis do início ao fim, ilustrados e narrados.
+Os onze casos são jogáveis do início ao fim, ilustrados e narrados.
 
 Faltam o roteiro manual com TalkBack e os testes integrados de percurso completo.
 O que já está pronto, o que falta e as armadilhas

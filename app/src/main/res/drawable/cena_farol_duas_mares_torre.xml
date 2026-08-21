@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte vetorial original do projeto Indício, GPLv3. Composição temática: cena_farol_duas_mares_torre. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_vidro" android:pathData="M0,0h400v360h-400z" />
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M0,360h400v240h-400z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M160,170h80l34,330h-148z" />
+    <path android:fillColor="@color/ilustracao_dourado" android:pathData="M138,122h124v78h-124z" />
+    <path android:fillColor="@color/ilustracao_luz" android:fillAlpha="0.55" android:pathData="M262,128 L400,82 L400,214 L262,190 Z" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,500h400v100h-400z" />
+</vector>

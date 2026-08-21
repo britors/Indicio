@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte vetorial original do projeto Indício, GPLv3. Composição temática: relógios e diário ferroviário. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M40,72h320v230h-320z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M76,108h104v104h-104z M220,108h104v104h-104z" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="8" android:pathData="M128,160 l0,-34 M128,160 l26,18 M272,160 l0,-34 M272,160 l-24,22" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M34,344h332v190h-332z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M72,374h256v126h-256z" />
+    <path android:strokeColor="@color/ilustracao_tinta" android:strokeWidth="5" android:pathData="M96,406h192 M96,434h154 M96,462h178" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,548h400v52h-400z" />
+</vector>

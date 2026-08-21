@@ -24,6 +24,10 @@ class RepositorioProgressoRoom(
     private val agora: () -> Long = System::currentTimeMillis,
 ) : RepositorioProgresso {
 
+    override fun progressos(): Flow<List<ProgressoSalvo>> = progressoDao.observarTodos()
+        .map { lista -> lista.map(ProgressoEntidade::paraDominio) }
+        .catch { emit(emptyList()) }
+
     override fun maisRecente(): Flow<ProgressoSalvo?> = progressoDao.maisRecente()
         .map { entidade -> entidade?.paraDominio() }
         .catch { emit(null) }

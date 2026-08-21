@@ -13,6 +13,7 @@ data class ResumoCaso(
     val categoria: Categoria,
     val disponivel: Boolean = false,
     val revisao: RevisaoCaso? = null,
+    val imagem: Imagem? = null,
 )
 
 /** Índice de todos os casos conhecidos pelo aplicativo. */

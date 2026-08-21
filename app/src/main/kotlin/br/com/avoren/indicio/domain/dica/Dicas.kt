@@ -10,11 +10,11 @@ data class DicaRegistrada(
     val usadaEm: Long,
 )
 
-/** Porta local que guarda o consumo semanal e as dicas já reveladas. */
+/** Porta local que guarda o consumo semanal por caso e as dicas já reveladas. */
 interface RepositorioDicas {
     suspend fun porCena(casoId: String, cenaId: String): ResultadoArmazenamento<DicaRegistrada?>
 
-    suspend fun quantidadeDesde(inicio: Long): ResultadoArmazenamento<Int>
+    suspend fun quantidadeDoCasoDesde(casoId: String, inicio: Long): ResultadoArmazenamento<Int>
 
     suspend fun registrarSeDisponivel(
         dica: DicaRegistrada,

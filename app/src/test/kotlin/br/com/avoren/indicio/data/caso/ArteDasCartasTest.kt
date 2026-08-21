@@ -47,6 +47,19 @@ class ArteDasCartasTest {
     }
 
     @Test
+    fun `toda capa publicada aponta para uma arte local`() = runTest {
+        val catalogo = (repositorio.catalogo() as ResultadoCarga.Sucesso).valor
+
+        catalogo.disponiveis().forEach { resumo ->
+            val recurso = requireNotNull(resumo.imagem).recurso
+            assertTrue(
+                "A capa do caso \"${resumo.id}\" aponta para \"$recurso\", que não existe.",
+                File(drawable, "$recurso.xml").isFile,
+            )
+        }
+    }
+
+    @Test
     fun `o verso comum das cartas existe`() {
         assertTrue(File(drawable, "carta_verso.xml").isFile)
     }

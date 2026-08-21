@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte vetorial original do projeto Indício, GPLv3. Composição temática: cena_estrela_papel_acetatos. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_parede" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M72,116h256v332h-256z" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="7" android:pathData="M112,170h176 M112,238h176 M112,306h136" />
+    <path android:fillColor="@color/ilustracao_dourado" android:pathData="M200,172 L218,210 L260,214 L228,242 L238,284 L200,262 L162,284 L172,242 L140,214 L182,210 Z" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,500h400v100h-400z" />
+</vector>

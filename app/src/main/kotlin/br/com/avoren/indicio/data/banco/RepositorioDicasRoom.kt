@@ -15,8 +15,13 @@ class RepositorioDicasRoom(
         dao.porCena(casoId, cenaId)?.paraDominio()
     }
 
-    override suspend fun quantidadeDesde(inicio: Long): ResultadoArmazenamento<Int> =
-        protegido("consultar a cota de dicas") { dao.quantidadeDesde(inicio) }
+    override suspend fun quantidadeDoCasoDesde(
+        casoId: String,
+        inicio: Long,
+    ): ResultadoArmazenamento<Int> =
+        protegido("consultar a cota de dicas do caso") {
+            dao.quantidadeDoCasoDesde(casoId, inicio)
+        }
 
     override suspend fun registrarSeDisponivel(
         dica: DicaRegistrada,

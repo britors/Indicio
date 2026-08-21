@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arte vetorial original do projeto Indício, GPLv3. Composição temática: diagramas da composição ferroviária. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="132dp" android:height="198dp" android:viewportWidth="400" android:viewportHeight="600">
+    <path android:fillColor="@color/ilustracao_parede_alta" android:pathData="M0,0h400v600h-400z" />
+    <path android:fillColor="@color/ilustracao_madeira" android:pathData="M42,62h316v476h-316z" />
+    <path android:fillColor="@color/ilustracao_papel" android:pathData="M68,92h264v360h-264z" />
+    <path android:strokeColor="@color/ilustracao_marinho" android:strokeWidth="10" android:pathData="M94,152h44v56h-44z M150,152h44v56h-44z M206,152h44v56h-44z M262,152h44v56h-44z" />
+    <path android:strokeColor="@color/ilustracao_marinho_claro" android:strokeWidth="10" android:pathData="M94,270h44v56h-44z M150,270h44v56h-44z M206,270h44v56h-44z M262,270h44v56h-44z" />
+    <path android:strokeColor="@color/ilustracao_dourado" android:strokeWidth="8" android:pathData="M116,208 v62 M284,208 v62" />
+    <path android:fillColor="@color/ilustracao_dourado" android:pathData="M92,386h122v32h-122z" />
+    <path android:fillColor="@color/ilustracao_marinho" android:pathData="M236,378h74v48h-74z" />
+    <path android:fillColor="@color/ilustracao_piso" android:pathData="M0,552h400v48h-400z" />
+</vector>

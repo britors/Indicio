@@ -33,6 +33,7 @@ internal fun ResumoCasoDto.paraDominio() = ResumoCaso(
     categoria = categoria.paraDominio(),
     disponivel = disponivel,
     revisao = RevisaoCaso.V1.takeIf { disponivel },
+    imagem = imagem?.paraDominio(),
 )
 
 internal fun CasoDto.paraDominio() = Caso(
@@ -56,6 +57,7 @@ internal fun ResumoCasoV2Dto.paraDominio() = ResumoCaso(
     } else {
         null
     },
+    imagem = imagem?.paraDominio(),
 )
 
 internal fun CasoV2Dto.paraDominio() = Caso(

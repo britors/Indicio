@@ -32,7 +32,8 @@ o fluxo completo estão em [Arquitetura do Indício](arquitetura.md).
 ## Passo a passo
 
 1. Escreva o arquivo do caso em `app/src/main/assets/casos/<id-do-caso>.json`.
-2. Acrescente uma entrada no `catalogo.json` apontando para ele.
+2. Acrescente uma entrada no `catalogo.json` apontando para ele, com uma capa
+   local e descrição acessível no campo `imagem`.
 3. Rode `./gradlew test`. O validador aponta erro por erro, com caso, cena e
    campo.
 4. Peça as ilustrações das cenas (veja [Imagens](#imagens)) antes de marcar o
