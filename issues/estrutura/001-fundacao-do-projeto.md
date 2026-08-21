@@ -10,7 +10,7 @@ Criar um projeto Android executável que sirva de base testável para todo o MVP
 ## Escopo
 
 - Configurar Gradle com Kotlin DSL, catálogo de versões e versões estáveis compatíveis.
-- Criar módulo `app` com namespace/application ID `br.com.avoren.indicio` e `minSdk 26`.
+- Criar módulo `app` com namespace/application ID `br.com.w3ti.indicio` e `minSdk 26`.
 - Usar Kotlin, Jetpack Compose, Material 3 e uma única Activity.
 - Adicionar Navigation Compose, lifecycle/ViewModel, StateFlow/coroutines, Room, DataStore e Kotlin Serialization.
 - Organizar pacotes por responsabilidades: `data`, `domain`, `ui`, `navigation` e `di` (ou equivalente documentado).

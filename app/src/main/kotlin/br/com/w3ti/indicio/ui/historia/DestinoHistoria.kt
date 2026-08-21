@@ -1,0 +1,187 @@
+package br.com.w3ti.indicio.ui.historia
+
+import androidx.activity.compose.BackHandler
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.Alignment
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.compose.LocalLifecycleOwner
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
+import br.com.w3ti.indicio.domain.armazenamento.RepositorioProgresso
+import br.com.w3ti.indicio.domain.caso.RepositorioCasos
+import br.com.w3ti.indicio.domain.dica.RepositorioDicas
+import br.com.w3ti.indicio.domain.model.caso.Pista
+import br.com.w3ti.indicio.domain.narracao.Narrador
+import br.com.w3ti.indicio.ui.comum.ConteudoCarregando
+import br.com.w3ti.indicio.ui.comum.ConteudoDeFalha
+import br.com.w3ti.indicio.ui.dica.DicaViewModel
+
+/**
+ * Destino de navegação da história.
+ *
+ * Decide entre carregamento, falha, cena em curso e conclusão. A conclusão é um
+ * estado da mesma sessão, e não um destino separado: assim o progresso não
+ * precisa ser recarregado nem duplicado entre dois ViewModels.
+ */
+@Composable
+fun DestinoHistoria(
+    repositorioCasos: RepositorioCasos,
+    repositorioProgresso: RepositorioProgresso,
+    repositorioDicas: RepositorioDicas,
+    criarNarrador: () -> Narrador,
+    casoId: String,
+    retomar: Boolean,
+    onPausar: (Boolean) -> Unit,
+    onAbrirEtapas: () -> Unit,
+    onAbrirCaderno: () -> Unit,
+    onConfiguracoes: () -> Unit,
+    onVoltarAoCatalogo: () -> Unit,
+    pistasNaoLidas: Int = 0,
+    onPistasReveladas: (List<Pista>) -> Unit = {},
+    onReiniciarCaso: () -> Unit = {},
+    emDescanso: Boolean = false,
+    modifier: Modifier = Modifier,
+    viewModel: HistoriaViewModel = viewModel(
+        factory = HistoriaViewModel.fabrica(
+            repositorioCasos = repositorioCasos,
+            repositorioProgresso = repositorioProgresso,
+            criarNarrador = criarNarrador,
+        ),
+    ),
+    dicaViewModel: DicaViewModel = viewModel(factory = DicaViewModel.fabrica(repositorioDicas)),
+) {
+    val descobertasPendentes = remember { mutableStateListOf<Pista>() }
+    val aoRevelarPistas by rememberUpdatedState(onPistasReveladas)
+
+    LaunchedEffect(viewModel) {
+        viewModel.eventos.collect { evento ->
+            if (evento is EventoHistoria.PistasReveladas) {
+                descobertasPendentes.addAll(evento.pistas)
+                aoRevelarPistas(evento.pistas)
+            }
+        }
+    }
+
+    LaunchedEffect(casoId, retomar) {
+        viewModel.abrir(casoId, retomar = retomar)
+    }
+
+    val estado by viewModel.estado.collectAsStateWithLifecycle()
+    val estadoNarracao by viewModel.estadoNarracao.collectAsStateWithLifecycle()
+    val estadoDica by dicaViewModel.estado.collectAsStateWithLifecycle()
+    val historiaEmCurso = estado as? EstadoHistoria.EmCurso
+
+    LaunchedEffect(casoId, historiaEmCurso?.cena?.id) {
+        historiaEmCurso?.let { atual ->
+            dicaViewModel.carregar(
+                casoId = casoId,
+                cenaId = atual.cena.id,
+                escolhas = atual.cena.escolhas,
+                escolhaSugerida = atual.escolhaSugerida,
+            )
+        }
+    }
+
+    LaunchedEffect(emDescanso) {
+        if (emDescanso) viewModel.silenciar()
+    }
+
+    // Sair da tela ou levá-la a segundo plano interrompe a fala; o mecanismo em
+    // si só é liberado quando o ViewModel morre.
+    val proprietario = LocalLifecycleOwner.current
+    DisposableEffect(proprietario) {
+        val observador = LifecycleEventObserver { _, evento ->
+            if (evento == Lifecycle.Event.ON_PAUSE) viewModel.silenciar()
+        }
+        proprietario.lifecycle.addObserver(observador)
+        onDispose {
+            proprietario.lifecycle.removeObserver(observador)
+            viewModel.silenciar()
+        }
+    }
+
+    // O botão do sistema abre a pausa em vez de sair da história sem aviso.
+    BackHandler(enabled = estado is EstadoHistoria.EmCurso && !emDescanso) {
+        val emCurso = estado as? EstadoHistoria.EmCurso
+        onPausar(emCurso?.temInvestigacaoLonga == true)
+    }
+
+    Box(modifier = modifier.fillMaxSize()) {
+        when (val atual = estado) {
+            is EstadoHistoria.Carregando -> ConteudoCarregando(Modifier.fillMaxSize())
+
+            is EstadoHistoria.Falha -> ConteudoDeFalha(
+                onTentarNovamente = { viewModel.abrir(casoId, retomar = retomar) },
+                modifier = Modifier.fillMaxSize(),
+            )
+
+            is EstadoHistoria.AtualizacaoNecessaria -> ConteudoAtualizacaoNecessaria(
+                tituloCaso = atual.tituloCaso,
+                onReiniciar = {
+                    onReiniciarCaso()
+                    viewModel.reiniciar()
+                },
+                onVoltarAoCatalogo = onVoltarAoCatalogo,
+                modifier = Modifier.fillMaxSize(),
+            )
+
+            is EstadoHistoria.EmCurso -> ConteudoHistoria(
+                estado = atual,
+                estadoNarracao = estadoNarracao,
+                onEscolher = viewModel::escolher,
+                onAlternarNarracao = viewModel::alternarNarracao,
+                onConfiguracoes = onConfiguracoes,
+                onAbrirEtapas = onAbrirEtapas,
+                onAbrirCaderno = onAbrirCaderno,
+                pistasNaoLidas = pistasNaoLidas,
+                bloquearMenu = emDescanso,
+                estadoDica = estadoDica,
+                onRevelarDica = dicaViewModel::revelar,
+                onRecarregarDica = dicaViewModel::recarregar,
+                modifier = Modifier.fillMaxSize(),
+            )
+
+            is EstadoHistoria.Concluida -> ConteudoConclusao(
+                estado = atual,
+                onJogarNovamente = {
+                    onReiniciarCaso()
+                    viewModel.reiniciar()
+                },
+                onVoltarAoCatalogo = onVoltarAoCatalogo,
+                modifier = Modifier.fillMaxSize(),
+            )
+        }
+
+        val descobertaAtual = descobertasPendentes.firstOrNull()
+        AnimatedVisibility(
+            visible = descobertaAtual != null,
+            modifier = Modifier.align(Alignment.BottomCenter),
+            enter = fadeIn() + slideInVertically { altura -> altura / 2 },
+            exit = fadeOut() + slideOutVertically { altura -> altura / 2 },
+        ) {
+            descobertaAtual?.let { pista ->
+                MomentoDeDescoberta(
+                    pista = pista,
+                    onDispensar = {
+                        if (descobertasPendentes.isNotEmpty()) descobertasPendentes.removeAt(0)
+                    },
+                )
+            }
+        }
+    }
+}

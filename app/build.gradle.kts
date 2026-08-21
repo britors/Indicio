@@ -10,11 +10,11 @@ ksp {
 }
 
 android {
-    namespace = "br.com.avoren.indicio"
+    namespace = "br.com.w3ti.indicio"
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "br.com.avoren.indicio"
+        applicationId = "br.com.w3ti.indicio"
         minSdk = 26
         targetSdk = 37
         versionCode = 1
