@@ -84,10 +84,10 @@ casos v1 e v2 simultaneamente; os onze casos jogáveis atuais usam o formato v2.
 
 ## Desenvolvimento
 
-Quem utiliza openSUSE Leap 16.0 pode preparar as ferramentas básicas com:
+Quem utiliza Lyra OS 27.02 Alpha 6 pode preparar as ferramentas básicas com:
 
 ```bash
-./scripts/setup-opensuse-leap.sh
+./scripts/setup-lyra-os.sh
 ```
 
 Consulte o [guia de contribuição](CONTRIBUTING.md) para instalação do Android Studio, fluxo de branches, testes e critérios técnicos e editoriais.

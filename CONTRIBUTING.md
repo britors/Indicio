@@ -2,18 +2,18 @@
 
 Obrigado pelo interesse em contribuir. O Indício busca oferecer investigação narrativa tranquila, adulta e acessível, com funcionamento totalmente offline.
 
-## Preparação no openSUSE Leap 16.0
+## Preparação no Lyra OS 27.02 Alpha 6
 
-O script do projeto instala OpenJDK 21, Git, ADB e utilitários necessários a partir dos repositórios do openSUSE:
+O script do projeto instala OpenJDK 21, Git, ADB e utilitários necessários a partir dos repositórios do Lyra OS:
 
 ```bash
-./scripts/setup-opensuse-leap.sh
+./scripts/setup-lyra-os.sh
 ```
 
 Para instalar também o Android Studio pelo Flathub:
 
 ```bash
-./scripts/setup-opensuse-leap.sh --with-android-studio
+./scripts/setup-lyra-os.sh --with-android-studio
 flatpak run com.google.AndroidStudio
 ```
 

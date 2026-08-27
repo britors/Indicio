@@ -5,6 +5,7 @@ readonly SDK_DEFAULT="${ANDROID_SDK_ROOT:-${ANDROID_HOME:-$HOME/Android/Sdk}}"
 readonly JAVA_DEFAULT="/usr/lib64/jvm/java-21-openjdk-21"
 readonly ENV_FILE="$HOME/.config/indicio/android-env.sh"
 readonly PROFILE_FILES=("$HOME/.bashrc" "$HOME/.profile")
+readonly FISH_CONF_D="$HOME/.config/fish/conf.d/indicio-android.fish"
 
 dry_run=false
 sdk_dir="$SDK_DEFAULT"
@@ -57,10 +58,23 @@ export PATH="\$JAVA_HOME/bin:\$ANDROID_HOME/platform-tools:\$ANDROID_HOME/emulat
 EOF
 )"
 
+fish_contents="$(cat <<EOF
+# Gerado por scripts/configure-android-dev.sh
+set -gx JAVA_HOME "$java_dir"
+set -gx ANDROID_HOME "$sdk_dir"
+set -gx ANDROID_SDK_ROOT "\$ANDROID_HOME"
+fish_add_path -g "\$JAVA_HOME/bin" "\$ANDROID_HOME/platform-tools" "\$ANDROID_HOME/emulator" "\$ANDROID_HOME/cmdline-tools/latest/bin"
+EOF
+)"
+
 if $dry_run; then
     printf '%s\n' "[$ENV_FILE]"
     printf '%s\n' "$env_contents"
     printf 'Perfis: %s\n' "${PROFILE_FILES[*]}"
+    if [[ -d "$HOME/.config/fish" ]]; then
+        printf '\n%s\n' "[$FISH_CONF_D]"
+        printf '%s\n' "$fish_contents"
+    fi
     exit 0
 fi
 
@@ -79,9 +93,18 @@ for profile in "${PROFILE_FILES[@]}"; do
     fi
 done
 
+if [[ -d "$HOME/.config/fish" ]]; then
+    mkdir -p "$(dirname "$FISH_CONF_D")"
+    printf '%s\n' "$fish_contents" > "$FISH_CONF_D"
+    chmod 0644 "$FISH_CONF_D"
+fi
+
 # shellcheck disable=SC1090
 source "$ENV_FILE"
 printf 'Ambiente salvo em %s\n' "$ENV_FILE"
+if [[ -d "$HOME/.config/fish" ]]; then
+    printf 'Ambiente fish salvo em %s\n' "$FISH_CONF_D"
+fi
 printf 'JAVA_HOME=%s\nANDROID_HOME=%s\n' "$JAVA_HOME" "$ANDROID_HOME"
 
 missing=0

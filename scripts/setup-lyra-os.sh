@@ -3,22 +3,22 @@
 set -Eeuo pipefail
 
 readonly EXPECTED_ID="lyra-os"
-readonly EXPECTED_VERSION="2026.08-alpha5"
+readonly EXPECTED_VERSION="27.02-alpha6"
 readonly ANDROID_STUDIO_APP_ID="com.google.AndroidStudio"
 
 install_android_studio=false
 
 usage() {
     cat <<'EOF'
-Uso: ./scripts/setup-opensuse-leap.sh [opções]
+Uso: ./scripts/setup-lyra-os.sh [opções]
 
-Instala no openSUSE Leap 16.0 as ferramentas básicas para desenvolver o Indício.
+Instala no Lyra OS 27.02 Alpha 6 as ferramentas básicas para desenvolver o Indício.
 
 Opções:
   --with-android-studio  Instala o Android Studio pelo Flathub (pacote comunitário).
   -h, --help             Mostra esta ajuda.
 
-Sem opções, instala apenas pacotes dos repositórios do openSUSE. O Android Studio
+Sem opções, instala apenas pacotes dos repositórios do Lyra OS. O Android Studio
 pode então ser instalado pelo arquivo oficial disponível em developer.android.com.
 EOF
 }
@@ -49,7 +49,7 @@ fi
 source /etc/os-release
 
 if [[ "${ID:-}" != "$EXPECTED_ID" || "${VERSION_ID:-}" != "$EXPECTED_VERSION" ]]; then
-    printf 'Este script requer openSUSE Leap %s; encontrado: %s %s.\n' \
+    printf 'Este script requer Lyra OS %s; encontrado: %s %s.\n' \
         "$EXPECTED_VERSION" "${ID:-desconhecido}" "${VERSION_ID:-desconhecida}" >&2
     exit 1
 fi
@@ -60,12 +60,12 @@ if [[ "$(uname -m)" != "x86_64" ]]; then
 fi
 
 if [[ "${EUID}" -eq 0 ]]; then
-    printf 'Execute como usuário comum; o script solicitará sudo quando necessário.\n' >&2
+    printf 'Execute como usuário comum; o script solicitará pkexec quando necessário.\n' >&2
     exit 1
 fi
 
-if ! command -v sudo >/dev/null 2>&1; then
-    printf 'O comando sudo é necessário para instalar os pacotes do sistema.\n' >&2
+if ! command -v pkexec >/dev/null 2>&1; then
+    printf 'O comando pkexec é necessário para instalar os pacotes do sistema.\n' >&2
     exit 1
 fi
 
@@ -79,8 +79,8 @@ packages=(
     zip
 )
 
-printf 'Instalando ferramentas dos repositórios do openSUSE...\n'
-sudo zypper --non-interactive install --no-recommends "${packages[@]}"
+printf 'Instalando ferramentas dos repositórios do Lyra OS...\n'
+pkexec zypper --non-interactive install --no-recommends "${packages[@]}"
 
 if "$install_android_studio"; then
     printf 'Configurando o Flathub para o usuário atual...\n'
